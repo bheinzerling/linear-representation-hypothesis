@@ -14,7 +14,8 @@ provide a framework for assessing the evidence for each claim.
 ## Explore the evidence
 
 - [Literature data](data/literature/README.md): evidence ratings for 30 studies,
-  rationales and primary-source references, plus the purpose-coding records.
+  rationales and primary-source references, plus the purpose-coding records
+  and the completed [60-episode author audit](data/literature/human_audit/README.md).
 - [Experiment map](docs/experiment-map.md): each paper figure's inputs,
   calculations, and reproduction command.
 - [Numerical data](data/numerical/README.md): frozen observations, experiment

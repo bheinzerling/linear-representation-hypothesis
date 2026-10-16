@@ -1,0 +1,63 @@
+<View>
+  <Style>
+    .review-layout { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(330px, 1fr); gap: 28px; align-items: start; }
+    .review-passage { font-size: 16px; line-height: 1.65; min-width: 0; }
+    .review-form { min-width: 0; padding: 20px; border: 1px solid #d6dce4; border-radius: 10px; background: #f8fafc; }
+    .review-form h3 { font-size: 17px; line-height: 1.4; margin-top: 20px; }
+    .review-form h4, .review-instructions h4 { font-size: 14px; font-weight: normal; line-height: 1.5; }
+    .lsf-sidepanels__wrapper_align_right { display: none !important; }
+    mark { background: #fff1a8; padding: 1px 2px; }
+    @media (max-width: 850px) { .review-layout { grid-template-columns: minmax(0, 1fr); } .review-form { padding: 14px; } }
+  </Style>
+  <Header value="Human validation of LRH purpose coding"/>
+  <View className="review-instructions" style="font-size:14px;line-height:1.5;margin-bottom:18px">
+    <Header size="5" value="Classify what this passage does with the linear representation hypothesis (LRH). Several purposes may occur together. Base your decisions on the passage and its surrounding text."/>
+    <Header size="5" value="Read the original PDF when extraction or context is unclear. Record the pages consulted in Notes. Choose Uncertain when you cannot decide. Submit saves a completed review and advances; partially entered choices are saved as drafts."/>
+  </View>
+  <HyperText name="metadata" value="$meta" inline="true" selectionEnabled="false" clickableLinks="true"/>
+  <View className="review-layout">
+    <View className="review-passage">
+      <HyperText name="passage" value="$passage" inline="true" selectionEnabled="false"/>
+    </View>
+    <View className="review-form">
+      <Header size="4" value="1. What kind of episode is this?"/>
+      <Header size="5" value="Substantive: a meaningful use or discussion of the LRH. Bibliography only: a reference entry or title. Structural fragment: navigation, a running header, or isolated text without an argumentative use. Insufficient context: the available text does not permit a decision."/>
+      <Choices name="episode_status" toName="passage" choice="single-radio" required="true">
+        <Choice value="Substantive"/>
+        <Choice value="Bibliography only"/>
+        <Choice value="Structural fragment"/>
+        <Choice value="Insufficient context"/>
+      </Choices>
+      <View visibleWhen="choice-selected" whenTagName="episode_status" whenChoiceValue="Substantive">
+        <Header size="4" value="2. Which purposes are present?"/>
+        <Header size="5" value="Judge each purpose separately. Present and absent refer to the function of this passage, not to whether you accept the hypothesis."/>
+        <Header size="4" value="Define / position"/>
+        <Header size="5" value="Defines or formalizes the LRH, attributes it to prior work, frames a problem, or positions the paper within the literature."/>
+        <Choices name="define_position" toName="passage" choice="single-radio" showInLine="true" required="true">
+          <Choice value="Present"/><Choice value="Absent"/><Choice value="Uncertain"/>
+        </Choices>
+        <Header size="4" value="Motivate / apply"/>
+        <Header size="5" value="Uses the LRH as a premise, justifies a method, or applies it to interpret a result."/>
+        <Choices name="motivate_apply" toName="passage" choice="single-radio" showInLine="true" required="true">
+          <Choice value="Present"/><Choice value="Absent"/><Choice value="Uncertain"/>
+        </Choices>
+        <Header size="4" value="Test / support"/>
+        <Header size="5" value="Presents a theoretical explanation, an empirical test, or an evidential claim about the LRH. Evidence may come from earlier work and may oppose the hypothesis."/>
+        <Choices name="test_support" toName="passage" choice="single-radio" showInLine="true" required="true">
+          <Choice value="Present"/><Choice value="Absent"/><Choice value="Uncertain"/>
+        </Choices>
+        <Header size="4" value="Qualify / challenge"/>
+        <Header size="5" value="Limits or refines a formulation, extends or repairs it, or presents a challenge or counterevidence. Constructive extensions count here."/>
+        <Choices name="qualify_challenge" toName="passage" choice="single-radio" showInLine="true" required="true">
+          <Choice value="Present"/><Choice value="Absent"/><Choice value="Uncertain"/>
+        </Choices>
+      </View>
+      <Header size="4" value="Notes (optional)"/>
+      <TextArea name="notes" toName="passage" rows="4" maxSubmissions="1" editable="true" transcription="true" showSubmitButton="false" placeholder="Pages consulted, evidence, extraction problems, or an unclear category boundary…"/>
+      <Choices name="context_check" toName="passage" choice="multiple">
+        <Choice value="Consulted original PDF"/>
+        <Choice value="Additional context still needed"/>
+      </Choices>
+    </View>
+  </View>
+</View>

@@ -19,8 +19,14 @@ uv run python -m lrh.analysis.literature --data-dir data/literature --output-dir
 
 The runner recomputes counts from 376 coded episodes, agreement over sixty
 duplicated episodes, and consistency between the study records and evidence
-ratings. Purpose coding used automated agents. Independent human validation
-is pending. The evidence ratings are interpretive judgments assessed against
+ratings. It also reproduces the completed author audit of those sixty episodes
+from the [released judgments and protocol](human_audit/README.md), including
+episode-status and purpose-level comparisons with both coding agents.
+The author classified 47 episodes as substantive, twelve as bibliography
+entries, and one as a structural fragment. Status agreement with each agent
+is 58/60. These comparisons describe the selected audit sample; human
+intercoder reliability and corpus-wide error are unmeasured.
+The evidence ratings are interpretive judgments assessed against
 primary sources; computational consistency checks do not independently
 establish those judgments.
 

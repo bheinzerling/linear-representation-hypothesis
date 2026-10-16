@@ -1,0 +1,61 @@
+case_id,episode_id,phase,paper_id,paper_title,year,citation_rank,page_start,page_end,context_sha256
+H001,W4407632011-E02,strong_coding,W4407632011,The Hidden Dimensions of LLM Alignment: A Multi-Dimensional Analysis of Orthogonal Safety Directions,2025,68,8,8,7d2c4cb4aaaa92515f502a51541b4687db9251e42c4abd1d372360e83a9245ba
+H002,W7128648018-E01,expanded_coding,W7128648018,Circuit Fingerprints: How Answer Tokens Encode Their Geometrical Path,2026,264,2,2,a1008229733b3a411fd53fb573b4fc26ee890819d7882fa07f478e2259d8ab08
+H003,W7133570893-E02,expanded_coding,W7133570893,What Is the Alignment Tax?,2026,204,8,8,1dee150cfab076080fc5cad001e777c8fc7e534a7a5bff61874858653ce2adac
+H004,W7140345706-E01,expanded_coding,W7140345706,What Do World Models Learn in RL? Probing Latent Representations in Learned Environment Simulators,2026,240,1,2,9965ea9447a82fcc8d262391f0e40b3db6ac8adf4e734846f275a1fde894a697
+H005,W7163777239-E01,expanded_coding,W7163777239,Subspace-Aware Sparse Autoencoders for Effective Mechanistic Interpretability,2026,296,1,2,0f274dfff5f4fac59b2bc8fa78c240cdb9210c61a5eda8e3376623053e49adf4
+H006,W4387804512-E01,expanded_coding,W4387804512,Removing Spurious Concepts from Neural Network Representations via Joint Subspace Estimation,2023,171,11,11,3330c99b25ebdc62d9c8702ec19ed4e82bf41145ab294829466794ef760ea409
+H007,W4389157175-E01,strong_coding,W4389157175,Is This the Subspace You Are Looking for? An Interpretability Illusion for Subspace Activation Patching,2023,39,5,5,8e07e771151337d4a32674b15c760acba03c0de9fcc6581cf96d96c0cfa76046
+H008,W4414977078-E01,expanded_coding,W4414977078,Prototype-Based Dynamic Steering for Large Language Models,2025,216,3,3,0e8c676eb151de5d6139250709a5b6e74763d9113c3bd73f8cc9cdd543955b2e
+H009,W4416780402-E02,expanded_coding,W4416780402,Visualizing LLM Latent Space Geometry Through Dimensionality Reduction,2025,193,14,14,0f9595e25f9446529be71fc977c7ad3af95aadcb02df3255df230372ae5142a6
+H010,W4403365499-E01,strong_coding,W4403365499,Efficient Dictionary Learning with Switch Sparse Autoencoders,2024,48,11,13,090f361b0a638a75334ab570d5f1bbb53f61bd7b0792d0d7a83ad8df559fbe9d
+H011,W4404653002-E02,strong_coding,W4404653002,Do I Know This Entity? Knowledge Awareness and Hallucinations in Language Models,2024,24,17,17,5280c4dca37c25d50b53779104636edac406ec70fc03d30473336d2ecf1a6330
+H012,W4417459818-E01,expanded_coding,W4417459818,Superposition as Lossy Compression: Measure with Sparse Autoencoders and Connect to Adversarial Vulnerability,2025,176,3,4,51054e61c048d85e705239b4dc8402a479bde9161245753c93af6284ab91003f
+H013,W4407012541-E02,strong_coding,W4407012541,Differentially Private Steering for Large Language Model Alignment,2025,99,13,14,5244d06e565dbbd23ca433762f202cc85e55f1ff36462d1642d9438b5ee4979b
+H014,W4407425033-E01,strong_coding,W4407425033,JBShield: Defending Large Language Models from Jailbreak Attacks through Activated Concept Analysis and Manipulation,2025,40,2,2,21f4ef7afcd5abc09d42d31720af5778c6d0436cf60c6c3c1c47f3d98d63be6c
+H015,W7141771974-E01,expanded_coding,W7141771974,The Geometric Price of Discrete Logic: Context-driven Manifold Dynamics of Number Representations,2026,301,1,2,239404736cad96e3b3e7727c07140ff6b9c511fc7cdbc993048e82333503d3f5
+H016,W4403365238-E01,strong_coding,W4403365238,Efficiently Learning at Test-Time: Active Fine-Tuning of LLMs,2024,46,15,16,88eeb9c7ea9acced3895c6be8b8dbe9a475bfeb6e0025afa2745adf1f5a35b9b
+H017,W7162765278-E04,expanded_coding,W7162765278,Representation Alignment Rests on Linear Structure,2026,289,6,7,80a327cf143180ea81589cc227fad0bba8ca19e202597f912f474119c4b9de35
+H018,W4407124196-E01,strong_coding,W4407124196,Language Models Use Trigonometry to Do Addition,2025,34,2,2,b64a2fd4e86ec822e074e5a5ced5eb2502698739e15ec795819eb4a0092cfe30
+H019,W7133364708-E07,expanded_coding,W7133364708,The Lattice Representation Hypothesis of Large Language Models,2026,236,16,16,684a7f88c38f1bd629db3ba54d408f1ceb5c68dc8009fb13ccd1737bec3949e3
+H020,W4406052064-E01,strong_coding,W4406052064,ICLR: In-Context Learning of Representations,2024,45,15,16,2d6ec01418a64bcdf4752eae75f0713aec496306a2f895171dd7370bd620ebb5
+H021,W4404350086-E02,strong_coding,W4404350086,Cross-Entropy Is All You Need To Invert the Data Generating Process,2024,59,1,1,dc4fd19455400378818529f508bc23a4da5ae5abcf9ea5b874343b7ff1bddc0a
+H022,W4399453715-E02,strong_coding,W4399453715,Feature contamination: Neural networks learn uncorrelated features and fail to generalize,2024,90,49,49,40713f84663d638eb6d3c54e15cb5c36b81e3dc1b3cfedc31bdffb6368e88693
+H023,W7160260990-E02,expanded_coding,W7160260990,The Cylindrical Representation Hypothesis for Language Model Steering,2026,300,2,3,5261b4300c9593da2de7c47dfefd352e94fd03f616af001a714b24f4ea6e716f
+H024,W4410049505-E05,expanded_coding,W4410049505,The quasi-semantic competence of LLMs: a case study on the part-whole relation,2025,258,19,19,58847fe17fb7ace18401304eea7a7ecc6a0f3243cf20f0fd14116fc4b89d81df
+H025,W4403851170-E01,strong_coding,W4403851170,A is for Absorption: Studying Feature Splitting and Absorption in Sparse Autoencoders,2024,20,1,1,a3a573a21c6c1b6b91917934833800e4c15ad35f1f6710f3ae6d598ee46750ba
+H026,W7163287101-E01,expanded_coding,W7163287101,Toward Identifiable Sparse Autoencoders,2026,304,3,3,6432f526251037db5275c3580be57156520a821212c9dfb6d4b6b5cca43f28fc
+H027,W4391940658-E02,strong_coding,W4391940658,Interpreting CLIP with Sparse Linear Concept Embeddings (SpLiCE),2024,23,4,4,d899894d8cdbb5732ef01fa3c166939aa8a25d65799f76a9b37be4227a0d1425
+H028,W7128864932-E01,expanded_coding,W7128864932,From Atoms to Trees: Building a Structured Feature Forest with Hierarchical Sparse Autoencoders,2026,180,3,3,3ea76f8888fc867faa2c06140b5471d3ad77b22a6a105efbbc76b13e6e45e44a
+H029,W4415036317-E01,strong_coding,W4415036317,Improved Representation Steering for Language Models,2025,92,9,9,07beb0c281c7c49424196d29a552774b67bd69830e91298db294041a5eba06b0
+H030,W4399401478-E03,strong_coding,W4399401478,The Geometry of Categorical and Hierarchical Concepts in Large Language Models,2024,21,10,11,58d4804b24a029ce85fab12fc8d1ca59b3a25bbac281de1516ac9373cdfe0070
+H031,W7126123405-E03,expanded_coding,W7126123405,Decomposing multimodal embedding spaces with group-sparse autoencoders,2026,224,11,13,684449fe8e747ba6e53b3086094019f27f3d20546e5cbf3c029b4877ef2b233d
+H032,W7140346447-E01,expanded_coding,W7140346447,Thinking in Different Spaces: Domain-Specific Latent Geometry Survives Cross-Architecture Translation,2026,303,2,2,5a835a276529a2f53a8f953ea70d17dfc70f289f433b45900c027013fd3353fa
+H033,W4394868309-E01,strong_coding,W4394868309,Foundational Challenges in Assuring Alignment and Safety of Large Language Models,2024,10,25,25,6d2b17ed7b6970bf4570b9d96a89ab2b6e240e8d21efcac723b99ba63bc42d09
+H034,W4396945540-E04,strong_coding,W4396945540,Towards Principled Evaluations of Sparse Autoencoders for Interpretability and Control,2024,29,7,7,6aa450bfaa18f398dec88cb06536dd97a675294fb1e0fea5eb25359f5df61fdb
+H035,W4415275356-E03,expanded_coding,W4415275356,In-Distribution Steering: Balancing Control and Coherence in Language Model Generation,2026,153,10,11,9426374531353e1854114e5638b8d3d17cc5e08cf4686ec842e4870eb7ceb062
+H036,W4415924648-E02,expanded_coding,W4415924648,Atlas-Alignment: Making Interpretability Transferable Across Language Models,2025,246,2,3,ad1c58c4a5924c13ef0b80ee812087a111cc97f4a1a999b26356bebb79dc3f55
+H037,W7128864197-E01,expanded_coding,W7128864197,How Many Features Can a Language Model Store Under the Linear Representation Hypothesis?,2026,166,1,3,5b8d0e2acb48cc9960cc7e3d0752985a0777fc533e1eb0dd782ae4625b2cee1d
+H038,W4403573479-E01,strong_coding,W4403573479,Interpretability as Compression: Reconsidering SAE Explanations of Neural Activations with MDL-SAEs,2024,76,3,3,4ea48e8f79b1b1b3212bb92942b01842be07eb6aa6482342f2b8790b24db9c54
+H039,W4414580992-E03,strong_coding,W4414580992,The Origins of Representation Manifolds in Large Language Models,2025,51,5,6,2220c0291a50ff8dc338d3908f6f1b3b3db867101786fc6978b42eda7d6de23a
+H040,W4404752287-E01,strong_coding,W4404752287,Recurrent Neural Networks Learn to Store and Generate Sequences using Non-Linear Representations,2024,44,2,2,9ad64a0e5500ba0e5d036b9c670e5e637a726d1093bc5183b3706803173ac9c4
+H041,W7140128870-E01,strong_coding,W7140128870,Shifting Perspectives: Steering Vectors for Robust Bias Mitigation in LLMs,2026,95,3,3,a11a5f383b379e99205c87c9546b55d990b4b541f3acf847b7173d85d049be0b
+H042,W4388514540-E05,strong_coding,W4388514540,The Linear Representation Hypothesis and the Geometry of Large Language Models,2023,4,6,6,b377228f5ad8888b62fd7fdbcc5920bd4afb5c443d2a45875027c4df380baf11
+H043,W4416037038-E01,expanded_coding,W4416037038,ThoughtProbe: Classifier-Guided LLM Thought Space Exploration via Probing Representations,2025,219,8,8,2fa5e1cd3a9d2a1274a64e1b4ac227e567cc8d7ba77ab7c3f605d9f05ba125ca
+H044,W4403818992-E01,expanded_coding,W4403818992,Sparse Attention Decomposition Applied to Circuit Tracing,2024,188,11,11,1f20e799d6f7eeabb1beaadc2effdedf238f57813fcc021088efa26cd0c3593e
+H045,W7129227184-E02,expanded_coding,W7129227184,SynthSAEBench: Evaluating Sparse Autoencoders on Scalable Realistic Synthetic Data,2026,183,3,4,c81c85ae83eeb39ee847ec292cf7982203c0da872e9cf1932b6404ad6b0f90be
+H046,W4405255380-E04,expanded_coding,W4405255380,Frame Representation Hypothesis: Multi-Token LLM Interpretability and Concept-Guided Text Generation,2025,147,10,10,7902e48e346f5e7a730e79ab12c053c318ee2b3aed298a3cfad7656fb87f2c66
+H047,W4414580992-E02,strong_coding,W4414580992,The Origins of Representation Manifolds in Large Language Models,2025,51,4,4,6b3de3bdd2e2d5d9a7b5841bf6f2da3080d1bee6a3812e4a9e5e4763f65bb078
+H048,W4407632011-E01,strong_coding,W4407632011,The Hidden Dimensions of LLM Alignment: A Multi-Dimensional Analysis of Orthogonal Safety Directions,2025,68,2,2,6c676b3ffca85a0a6b1a4cb2feb9dcece87a5183dc136ef96f639e82feff87cc
+H049,W7123371645-E01,expanded_coding,W7123371645,Do Sparse Autoencoders Identify Reasoning Features in Language Models?,2026,150,2,2,925f0975b8581a8392ceff58b473874de1a0435e1cbb5eea39325b76db03fa58
+H050,W7133570893-E01,expanded_coding,W7133570893,What Is the Alignment Tax?,2026,204,2,2,1bcc99ff5a2eed50e3e05ddd94aed5b3d466e7e16280ae496f6f0417e31662a4
+H051,W4404653002-E01,strong_coding,W4404653002,Do I Know This Entity? Knowledge Awareness and Hallucinations in Language Models,2024,24,2,2,b87b67bb1e374f0508c4edb0e36ebc5624f63d196e9d820d3386135fd7563496
+H052,W4404449930-E02,strong_coding,W4404449930,Refusal in LLMs is an Affine Function,2024,72,7,8,c7d358c92d8239602fcf86f2b9bd5551dfee9c91a5c7009abf838e722efbbe67
+H053,W4415152285-E02,expanded_coding,W4415152285,From Tokens to Lattices: Emergent Lattice Structures in Language Models,2025,213,13,13,c4ca7fc2f74d7f642edb3dbf32cc64a876acf48b7093a7f339e68d0f6f57b660
+H054,W4402670798-E01,strong_coding,W4402670798,Towards Tracing Trustworthiness Dynamics: Revisiting Pre-training Period of Large Language Models,2024,81,4,4,0cf11cc738e32e05661028a1d3c0c11f60e0267e8a6ce2cc622e356e87674169
+H055,W4404783740-E01,strong_coding,W4404783740,RoseLoRA: Row and Column-wise Sparse Low-rank Adaptation of Pre-trained Language Model for Knowledge Editing and Fine-tuning,2024,73,2,2,29980c97781b0b040b8757ffcfdf4c438a2c011cad106db18994fd10ca749cf8
+H056,W7128864197-E07,expanded_coding,W7128864197,How Many Features Can a Language Model Store Under the Linear Representation Hypothesis?,2026,166,18,18,f7d4f6211aeba644f09e497ed04a1a8caf087b1894e5b6bd187495df896861ce
+H057,W7128865075-E02,expanded_coding,W7128865075,TADA! Tuning Audio Diffusion Models through Activation Steering,2026,298,12,14,2c5c07b3e938318efdf1dea4c85c0b6b0dbbfda418aa45adac256337351a76fd
+H058,W4407124196-E02,strong_coding,W4407124196,Language Models Use Trigonometry to Do Addition,2025,34,5,5,dfb39a5f42e7977076472e5021e3fd096e00edd7576f85582f6244de5a802963
+H059,W4417143004-E01,expanded_coding,W4417143004,A Unified Theory of Sparse Dictionary Learning in Mechanistic Interpretability: Piecewise Biconvexity and Spurious Minima,2025,209,2,3,11b84ce33b40aeb21a98d8c9c920894c9e36191f66ab057b85115829a6d90cb3
+H060,W4404313164-E02,strong_coding,W4404313164,The Geometry of Concepts: Sparse Autoencoder Feature Structure,2024,35,3,3,468de19a1285fb863a6594af741bf7f43349c0ccf007a79c5b1e6224d0047a3f

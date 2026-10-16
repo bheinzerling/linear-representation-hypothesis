@@ -1,0 +1,60 @@
+{
+  "automated_source_sha256": {
+    "coding/expanded_coding/assignment_manifest.csv": "6fa3916a21e84f7ab5994925856ec305ee5949cecf05d749e56c9d7da1fd0c49",
+    "coding/expanded_coding/coder_a_annotations.jsonl": "0c3a1d55e7851a50245232585e6ef8d0afcf3b6e119675e96143e1a1908a3671",
+    "coding/expanded_coding/coder_b_annotations.jsonl": "5c2a49502b724af62f8f9df7fe3e38f0b4d332efaae853d078ad24c1c29e96e3",
+    "coding/strong_coding/assignment_manifest.csv": "85340399626ab1b731970efa89701b8a5b3371a962c1214f57659e4d2f333c78",
+    "coding/strong_coding/coder_a_annotations.jsonl": "a7a18fc6c454743421bf1587cedc53ff2df160ad31cc92030dc7088c2842f5e8",
+    "coding/strong_coding/coder_b_annotations.jsonl": "fd3a2123d8c7a7346cde44b8438e4fbbcade808262e14ae4f04f8e127339ff84"
+  },
+  "blinding": "The interface hid machine judgments, citation ranks, and sampling groups.",
+  "display_randomization_seed": 20261002,
+  "earlier_targeted_packet": {
+    "selection": "Twenty purpose-disagreement cases and ten controls.",
+    "status": "prepared separately before the completed 60-case review",
+    "total_cases": 30
+  },
+  "export_fields": [
+    "reviewer_id",
+    "case_id",
+    "episode_id",
+    "phase",
+    "episode_status",
+    "define_position",
+    "motivate_apply",
+    "test_support",
+    "qualify_challenge"
+  ],
+  "interpretation": "One author reviewed the selected episodes. Human-machine agreement concerns this stratified sample; human intercoder reliability and corpus-wide error are unmeasured.",
+  "label_config_sha256": "bd0cfe46d2586ea976bda7dfa1332fefb9c76b4d4b1d255e5b80d47cb02430ac",
+  "original_automated_source_sha256": {
+    "coding/expanded_coding/assignment_manifest.csv": "6fa3916a21e84f7ab5994925856ec305ee5949cecf05d749e56c9d7da1fd0c49",
+    "coding/expanded_coding/coder_a_annotations.jsonl": "e1291d2b008af52ebc8039e7517d7f6c52729cee6a309329967dc5d32fadbce2",
+    "coding/expanded_coding/coder_b_annotations.jsonl": "87ac45e347b28c5f46087dec4b60a428f902b454176a1aa0c56b4070755155e9",
+    "coding/strong_coding/assignment_manifest.csv": "85340399626ab1b731970efa89701b8a5b3371a962c1214f57659e4d2f333c78",
+    "coding/strong_coding/coder_a_annotations.jsonl": "4f06e6b35351372e30ad749190e24b746d72130c432868612dcfcfdbddd03c69",
+    "coding/strong_coding/coder_b_annotations.jsonl": "fb35bd225ad55c1a5a2a8f8b691f31710819ca2391f6ceba8e30bd2856d93647"
+  },
+  "passage_corpus_sha256": "1e05ad12ef4f4b94400cea3a2253eb110c31043886b11d2dd49a3308ed0c9d18",
+  "private_fields_excluded": [
+    "reviewer account",
+    "annotation identifier",
+    "save timestamp",
+    "free-text notes",
+    "revision history",
+    "credentials",
+    "database",
+    "source passages",
+    "source PDFs"
+  ],
+  "released_source_verification": "Episode identifiers, statuses, rhetorical functions, and coder assignments match the original review inputs; file serialization may differ in the release.",
+  "review_dates": [
+    "2026-10-03"
+  ],
+  "reviewer_id": "author_1",
+  "reviewer_role": "one author",
+  "schema_version": 1,
+  "selection": "all duplicate-coded episodes from both reliability audits",
+  "source_annotations_sha256": "b3c947c405f0dbb6363455e0a5e68b011a768b1c9fa26ee3edb1a09d8326b20c",
+  "source_study_manifest_sha256": "cb99e2a0e261d07a277b47f41496ceb2c65d3f1ca4762f462d03ba9885f8bba8"
+}

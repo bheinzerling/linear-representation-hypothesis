@@ -9,6 +9,7 @@ from collections import Counter
 from pathlib import Path
 
 from lrh.analysis.coding import audit_pairs, paper_presence, purpose_agreement, sensitivity
+from lrh.analysis.human_audit import verify as verify_human_audit
 from lrh.io import write_json
 
 
@@ -28,6 +29,7 @@ def main():
     args = parser.parse_args()
     root = args.data_dir
     summary = json.loads((root / "purpose_summary.json").read_text())
+    human_audit = verify_human_audit(root)
     primary = jsonl_rows(root / "coding/expanded_coding/corpus_annotations_primary.jsonl")
     versions = csv_rows(root / "paper_versions.csv")
     aliases = {row["version_document_id"]: row["canonical_document_id"] for row in versions}
@@ -89,6 +91,7 @@ def main():
         args.output_dir / "metrics.json",
         {
             "coded_episodes": len(primary),
+            "human_audit": human_audit,
             "substantive_papers": len(papers),
             "presence": presence,
             "duplicated_episodes": len(left),

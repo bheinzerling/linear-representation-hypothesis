@@ -16,6 +16,14 @@ rationales, and coding definitions. These records expose the basis for the
 interpretive judgments. Recomputing the counts and checking table consistency
 establishes agreement between the stored records and their aggregations.
 
+The completed author audit is released under `data/literature/human_audit/`.
+Its case-level labels reproduce the sixty-episode counts in Appendix A and
+the human-machine comparisons. Provenance records distinguish the original
+private export from the public label files, retain hashes of the study inputs,
+and separate the earlier thirty-case planning packet from the completed review.
+The literature runner and repository verifier check the released labels;
+the verifier also checks the manuscript's audit sample and table counts.
+
 The model-input artifact has an archive checksum and per-file checksums in
 `data/manifests/model-inputs.json`. The extraction command verifies both. New
 model runs use the separate experiment lockfiles; the frozen CPU observations

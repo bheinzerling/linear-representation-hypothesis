@@ -86,18 +86,49 @@
     "verified_version_pairs": 3
   },
   "human_audit": {
-    "control_cases": 10,
-    "disputed_cases": 20,
-    "interpretation": "Targeted validation sample; cannot estimate corpus-wide error or prevalence.",
+    "annotations_sha256": "75728fc2498f090c1f46898bcdecb7f47be22df575faa7b4972e6839b4def390",
+    "documents": 54,
+    "earlier_targeted_packet": {
+      "selection": "Twenty purpose-disagreement cases and ten controls.",
+      "status": "prepared separately before the completed 60-case review",
+      "total_cases": 30
+    },
+    "episode_status_counts": {
+      "bibliography_only": 12,
+      "structural_fragment": 1,
+      "substantive": 47
+    },
+    "files": {
+      "README.md": "../../literature/human_audit/README.md",
+      "annotations.csv": "../../literature/human_audit/annotations.csv",
+      "case_manifest.csv": "../../literature/human_audit/case_manifest.csv",
+      "label_config.xml": "../../literature/human_audit/label_config.xml",
+      "metrics.json": "../../literature/human_audit/metrics.json",
+      "provenance.json": "../../literature/human_audit/provenance.json"
+    },
+    "interpretation": "Completed blinded review by one author of the two stratified audit samples; human intercoder reliability and corpus-wide error are unmeasured.",
+    "review_date": "2026-10-03",
+    "reviewer_id": "author_1",
+    "reviewer_role": "one author",
     "seed": 20261002,
-    "selection": "All substantive pooled-audit disagreements on define_position or test_support, plus up to ten randomly selected remaining audit cases. Controls may disagree on other purposes.",
-    "status": "prepared; independent human judgments pending",
-    "total_cases": 30
+    "selection": "all duplicate-coded episodes from both reliability audits",
+    "status": "completed",
+    "status_agreement": {
+      "primary": {
+        "matches": 58,
+        "total": 60
+      },
+      "secondary": {
+        "matches": 58,
+        "total": 60
+      }
+    },
+    "total_cases": 60
   },
   "limitations": [
     "Exact phrase, Semantic Scholar resolution and citation threshold, PDF availability and extraction define a selected corpus.",
     "Verified renamed preprints and proceedings versions are merged; additional undetected version pairs are possible.",
-    "Session metadata identifies both agents as using gpt-5.6-sol with high reasoning effort; exact backend revisions and sampling parameters are unavailable. Agreement between agents using the same model can reflect shared errors; independent human validation is pending.",
+    "Session metadata identifies both agents as using gpt-5.6-sol with high reasoning effort; exact backend revisions and sampling parameters are unavailable. Agreement between agents using the same model can reflect shared errors. The completed author audit covers the selected episodes, with human intercoder reliability unmeasured.",
     "Episode-level reliability describes two stratified audit samples, not a paper-weighted random audit of the corpus."
   ],
   "overlap": {

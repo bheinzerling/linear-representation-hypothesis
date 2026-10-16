@@ -486,15 +486,18 @@ This corpus comprises accessible PDFs from candidates with at least one citation
 We extracted each phrase occurrence with the preceding and following paragraphs and merged overlapping context windows into \emph{episodes}.
 
 One author reviewed 60 episodes from 54 documents in two 30-episode samples, each containing ten episodes selected at random from each of three citation-rank groups.
+The review was completed on 3 October 2026 using an interface that hid machine judgments and sampling groups.
 Of these episodes, 47 (78\%) were classified as substantive uses of the LRH, including explanations of the hypothesis, methodological motivation, and discussion of favorable or contrary evidence.
 The remaining episodes were twelve bibliography entries and one structural fragment.
 This author audit involved no recruited participants or crowdworkers and collected no participant data.
+The \href{https://github.com/bheinzerling/linear-representation-hypothesis/tree/main/data/literature/human_audit}{released audit records} contain the case-level status and purpose judgments, episode identifiers, and sampling phases, with a script that reproduces the counts and comparisons with the machine annotations.
 
 We classified all 376 episodes using two \texttt{gpt-5.6-sol} coding agents with high reasoning effort, assigning one primary annotation per episode.
 Under this scheme, an episode is substantive when it articulates an LRH proposition, adopts it as a premise, or evaluates it.
 Applying the scheme identifies at least one substantive episode in 182 of 203 distinct papers (90\%) after merging three verified version pairs.
 As a consistency check, the agents double-coded 60 episodes and agreed on all episode statuses, although agreement can reflect shared model errors.
-Table~\ref{tab:lrh-substantive-annotations} summarizes the human and LLM classifications.
+On those same episodes, each agent agreed with the author's status judgment in 58 of 60 cases.
+Table~\ref{tab:lrh-substantive-annotations} summarizes the author audit and the automated classifications of the audit sample and full corpus.
 These results indicate frequent substantive engagement within the selected corpus.
 Estimating its prevalence among the database results in Figure~\ref{fig:lrh-mentions} requires representative sampling.
 
@@ -507,10 +510,12 @@ Estimating its prevalence among the database results in Figure~\ref{fig:lrh-ment
 Annotation & $n$ & Substantive & Non-subst. & Unclear \\
 \midrule
 Human & 60 & 47 (78\%) & 13 & 0 \\
-LLM & 376 & 314 (84\%) & 56 & 6 \\
+LLM (audit) & 60 & 47 (78\%) & 12 & 1 \\
+LLM (corpus) & 376 & 314 (84\%) & 56 & 6 \\
 \bottomrule
 \end{tabular}
-\caption{Episode classifications in the human audit sample and the full LLM-coded corpus.
+\caption{Episode-status counts for the author audit, the same episodes coded by both LLM agents, and the full LLM-coded corpus.
+The LLM audit counts are identical for both agents.
 Non-substantive episodes are bibliography entries or structural fragments; unclear cases have insufficient context.}
 \label{tab:lrh-substantive-annotations}
 \end{table}
