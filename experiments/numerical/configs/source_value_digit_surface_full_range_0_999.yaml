@@ -1,0 +1,11 @@
+seed: 1729
+source_run_dir: out/runs/source_value_rhs_addition_dataset__2026_05_13
+model_alias: llama_3_2_3b
+layer_idx: 8
+pca_components: 32
+surface_samples_axis: 32
+report_stem: 2026-05-14-source-value-digit-surface-full-range-0-999
+fit_groups:
+  - addition_formula_rhs_source
+  - addition_verbalized_rhs_source
+report_title: "Full-Range Source-Value Digit Surfaces: 0..999"

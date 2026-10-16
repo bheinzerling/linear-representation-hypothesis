@@ -1,0 +1,4 @@
+construction,regime,property_count,constituent_count,rank,description
+normalized_property_targets,value_disjoint,20,68,41,centered normalized target matrix
+sequential_deletion_union,value_disjoint,20,217,217,union of test-confirmed value-disjoint deletion directions
+sequential_deletion_union,occurrence_heldout,20,955,861,union of test-confirmed occurrence-held-out deletion directions

@@ -1,0 +1,299 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "analytic_memo": {
+      "type": "string"
+    },
+    "author_commitment": {
+      "enum": [
+        "endorses",
+        "adopts_as_assumption",
+        "reports_support",
+        "neutral_attribution",
+        "qualifies",
+        "challenges",
+        "mixed",
+        "unclear",
+        "not_applicable"
+      ]
+    },
+    "author_commitment_target": {
+      "type": "string"
+    },
+    "causal_status": {
+      "enum": [
+        "no_causal_claim",
+        "causal_effect_asserted",
+        "causal_effect_tested",
+        "conflates_accessibility_and_use",
+        "unclear",
+        "not_applicable"
+      ]
+    },
+    "citation_functions": {
+      "items": {
+        "enum": [
+          "foundational_attribution",
+          "supporting_evidence",
+          "method_ancestry",
+          "critical_target",
+          "neutral_reference",
+          "unresolved_numeric_citation",
+          "none",
+          "not_applicable"
+        ]
+      },
+      "minItems": 1,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "cited_sources": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "coder_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "confidence": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "context_priority": {
+      "enum": [
+        "none",
+        "desirable_for_verification",
+        "required_for_classification"
+      ]
+    },
+    "coverage": {
+      "enum": [
+        "some_features",
+        "specified_feature_class",
+        "broad_typicality",
+        "all_features",
+        "unstated",
+        "not_applicable"
+      ]
+    },
+    "cross_level_status": {
+      "enum": [
+        "same_level",
+        "cross_level_transfer",
+        "unclear",
+        "not_applicable"
+      ]
+    },
+    "decomposition_strength": {
+      "enum": [
+        "local_feature",
+        "exhaustive_decomposition",
+        "unstated",
+        "not_applicable"
+      ]
+    },
+    "dimensionality": {
+      "enum": [
+        "one_dimensional",
+        "multidimensional",
+        "mixed",
+        "unstated",
+        "not_applicable"
+      ]
+    },
+    "episode_id": {
+      "pattern": "^W[0-9]+-E[0-9]{2}$",
+      "type": "string"
+    },
+    "episode_status": {
+      "enum": [
+        "substantive",
+        "bibliography_only",
+        "structural_fragment",
+        "context_insufficient"
+      ]
+    },
+    "evidence_or_operationalizations": {
+      "items": {
+        "enum": [
+          "linear_probe",
+          "counterfactual_difference_or_alignment",
+          "intervention_or_steering",
+          "sparse_reconstruction_or_sae",
+          "geometry_or_topology",
+          "formal_result_or_derivation",
+          "downstream_task_performance",
+          "weight_or_model_manipulation",
+          "literature_assertion",
+          "proposed_only",
+          "none_stated",
+          "not_applicable"
+        ]
+      },
+      "minItems": 1,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "evidence_quote": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "evidence_relation": {
+      "enum": [
+        "direct_test",
+        "compatible_but_nonisolating",
+        "premise_only",
+        "unclear",
+        "none",
+        "not_applicable"
+      ]
+    },
+    "linear_properties": {
+      "items": {
+        "enum": [
+          "linear_accessibility",
+          "contrastive_alignment",
+          "additive_composition",
+          "additive_intervention",
+          "projection_geometry",
+          "sparse_reconstruction",
+          "linear_identifiability",
+          "unspecified",
+          "not_applicable"
+        ]
+      },
+      "minItems": 1,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "lrh_proposition": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "precision": {
+      "enum": [
+        "exact",
+        "approximate_or_noisy",
+        "mixed",
+        "unstated",
+        "not_applicable"
+      ]
+    },
+    "representational_objects": {
+      "items": {
+        "enum": [
+          "fixed_direction_or_offset",
+          "feature_subspace",
+          "manifold_within_subspace",
+          "function_class",
+          "sparse_dictionary",
+          "latent_coordinate_transform",
+          "weight_or_task_matrix",
+          "curved_or_topological_structure",
+          "unspecified",
+          "not_applicable"
+        ]
+      },
+      "minItems": 1,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "requested_context": {
+      "type": "string"
+    },
+    "rhetorical_functions": {
+      "items": {
+        "enum": [
+          "definition_or_formalization",
+          "background_or_attribution",
+          "problem_setting",
+          "theoretical_premise",
+          "theoretical_explanation",
+          "method_motivation",
+          "empirical_test",
+          "evidential_claim",
+          "application_or_interpretation",
+          "qualification_or_refinement",
+          "extension_or_repair",
+          "challenge_or_counterevidence",
+          "literature_positioning",
+          "not_applicable"
+        ]
+      },
+      "minItems": 1,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "schema_version": {
+      "const": "0.2"
+    },
+    "scope_modifiers": {
+      "items": {
+        "enum": [
+          "sparse",
+          "nonnegative",
+          "overcomplete",
+          "orthogonal",
+          "bounded_norm",
+          "not_applicable"
+        ]
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "selectivity_tested": {
+      "type": "boolean"
+    },
+    "usage_summary": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "variation": {
+      "enum": [
+        "fixed_across_inputs",
+        "context_dependent",
+        "unstated",
+        "not_applicable"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "coder_id",
+    "episode_id",
+    "episode_status",
+    "usage_summary",
+    "lrh_proposition",
+    "rhetorical_functions",
+    "author_commitment",
+    "author_commitment_target",
+    "representational_objects",
+    "linear_properties",
+    "coverage",
+    "dimensionality",
+    "variation",
+    "precision",
+    "decomposition_strength",
+    "scope_modifiers",
+    "evidence_or_operationalizations",
+    "evidence_relation",
+    "causal_status",
+    "selectivity_tested",
+    "cross_level_status",
+    "citation_functions",
+    "cited_sources",
+    "context_priority",
+    "requested_context",
+    "confidence",
+    "evidence_quote",
+    "analytic_memo"
+  ],
+  "title": "LRH structured second-pilot annotation",
+  "type": "object"
+}

@@ -1,0 +1,16 @@
+family,partition,independent_value_count,minimum_contexts,mean_contexts,maximum_contexts
+addition_formula,dev,100,4,19.72,20
+addition_formula,test,100,8,19.8,20
+addition_formula,train,800,2,19.9475,20
+addition_verbalized,dev,100,4,19.72,20
+addition_verbalized,test,100,8,19.8,20
+addition_verbalized,train,800,2,19.9475,20
+identity_patchscopes,dev,100,20,20.0,20
+identity_patchscopes,test,100,20,20.0,20
+identity_patchscopes,train,800,20,20.0,20
+subtraction_formula,dev,100,11,19.76,20
+subtraction_formula,test,100,14,19.83,20
+subtraction_formula,train,800,11,19.935,20
+subtraction_verbalized,dev,100,11,19.76,20
+subtraction_verbalized,test,100,14,19.83,20
+subtraction_verbalized,train,800,11,19.935,20

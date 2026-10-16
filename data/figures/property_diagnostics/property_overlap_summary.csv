@@ -1,0 +1,5 @@
+property_a,property_b,pair_label,max_canonical_cosine
+parity,residue_mod_4,Parity / residue mod 4,0.999590124
+hundreds_digit,magnitude,Hundreds digit / magnitude,0.989312360
+divisible_by_3,residue_mod_3,Divisible by 3 / residue mod 3,0.987003054
+divisible_by_4,residue_mod_4,Divisible by 4 / residue mod 4,0.978217627

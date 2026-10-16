@@ -1,0 +1,13 @@
+{
+  "criteria": {
+    "D": "A fitted affine probe predicts the specified target on independent held-out examples. Identify the target encoding and the split; successful reconstruction or a nonlinear decoder alone does not establish this criterion.",
+    "E": "An affine probe uses fewer labels or has lower complexity at comparable prediction error, or a shorter total description length. Name the comparator and cost. Accuracy alone does not measure efficiency.",
+    "I": "A frozen probe or identified structure transfers across target-preserving changes in contexts, domains, or values. Compare frozen-probe performance or separately fitted structures. Refitting and testing only within each context does not test transfer.",
+    "N": "Removing candidate information impairs the specified behavior, with other relevant information preserved. Identify the removed object, baseline, behavioral error, and collateral effects. Ablating the complement tests retention of the candidate.",
+    "R": "Directions or subspaces agree across changes in fitted samples, analysis choices, or model training. Repeated prediction scores and the recurrence of a broad visual pattern provide weaker evidence than comparisons of the fitted objects.",
+    "SC": "Activation-space objects preserve independently specified target relations, such as distances, hierarchy, or operations. State the target relation and the geometric comparison; classification alone leaves this criterion unresolved.",
+    "S_C": "Setting candidate content induces the predicted target behavior under a specified background and intervention policy. Report exact success, partial effects, and off-target changes at the tested activation sites.",
+    "S_M": "A proposed representation and its transformations explain ordinary computation and intervention effects. Quantitative reconstruction is the formal criterion; circuit localization or partial computational accounts can provide limited evidence."
+  },
+  "method": "Source-checked automated adjudication, with three parallel assessments and reconciliation. These ratings are interpretive judgments; no independent human double coding or inter-rater reliability estimate is available."
+}

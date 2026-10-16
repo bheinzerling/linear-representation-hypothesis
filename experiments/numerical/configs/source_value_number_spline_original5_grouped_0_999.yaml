@@ -1,0 +1,19 @@
+seed: 1729
+source_run_dir: out/runs/source_value_original_prompt_representations_5styles_0_999__2026_05_13
+model_alias: llama_3_2_3b
+layer_idx: 8
+value_min: 0
+value_max: 999
+pca_components: 32
+spline_samples: 240
+report_stem: 2026-05-13-source-value-number-spline-original5-grouped-0-999
+fit_groups:
+  - all_original_5styles
+report_title: "Grouped Original-Style Source-Value Number Spline Fit: 0..999"
+research_question: "If we average across the five original prompt styles and their 20 variants per number, do the resulting 100-representation number centroids support a coherent causalab-style one-dimensional spline over source_value?"
+executive_summary: "This report computes one centroid per source value 0..999 by averaging all five original prompt styles and all 20 variants per style, so each centroid uses 100 activations. It then fits a natural cubic spline to the 1,000 centroids using the supervised task parameter coordinate u = source_value, after projecting activations to PCA-32 and z-scoring the PCA coordinates."
+main_findings: "The aggregate fit is a deliberately pooled diagnostic: it shows what happens when style and prompt-variant structure are treated as nuisance variation and averaged into a single number centroid. Use the figures to check whether those centroids sit near the observed activation cloud or whether cross-style averaging again creates off-distribution points."
+interpretation: "Unlike the previous style-split report, this report intentionally groups across prompt styles. If the five prompt styles occupy separated regions, these 100-activation centroids can fall between clusters; if they align by numeric value, the spline should trace an interpretable numeric path through the cloud."
+limitations: "The fit does not remove style-specific offsets before averaging, does not align representations by prompt family, and does not test behavior or steering. The centroid path is therefore a pooled representation diagnostic, not evidence that this is the model's natural numeric manifold."
+implications: "If this grouped path is visually off-distribution, subsequent steering experiments should prefer style-specific or style-aligned manifolds. If it is coherent, the aggregate centroids may be useful as a higher-SNR numeric manifold estimate."
+recommended_next_experiments: "Compare this grouped spline against the existing per-style spline report and quantify centroid-to-nearest-datapoint distances by number and style. The most useful next split is likely prompt style first, then fixed context or aligned variant within style."

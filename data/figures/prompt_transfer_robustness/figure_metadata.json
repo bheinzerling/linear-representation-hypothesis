@@ -1,0 +1,81 @@
+{
+  "figure_id": "fig_prompt_family_pls_transfer",
+  "source_file": "pls_family_transfer.csv",
+  "source_sha256": "e7ffd5c970f5173ae1d9f7550bd6fa50ed5f51702f9fd99665700f2e73df719b",
+  "provenance_file": "provenance.json",
+  "provenance_sha256": "e4cbfbbc1e5c054c30f86c9f11a322e799e558789d65a9422b70c2b5f48ab04b",
+  "source_repository_commit": "9dde66cbaf2b0e2b4a3a561a405aeaf0cd15ffd1",
+  "family_order": [
+    "addition_formula",
+    "addition_verbalized",
+    "subtraction_formula",
+    "subtraction_verbalized",
+    "identity_patchscopes"
+  ],
+  "variant_display_labels": {
+    "addition_formula": "$a+b=$",
+    "addition_verbalized": "a plus b",
+    "subtraction_formula": "$a-b=$",
+    "subtraction_verbalized": "a minus b",
+    "identity_patchscopes": "$b=$"
+  },
+  "probe_label": "Scalar PLS",
+  "rendering": {
+    "heatmap": "single nearest-neighbor image per matrix",
+    "colorbar": "single gradient image",
+    "text_and_separators": "vector",
+    "canvas_inches": [
+      6.3,
+      2.6
+    ],
+    "layout": "three panels in one row",
+    "panel_side_inches": 1.35,
+    "colorbar_orientation": "horizontal",
+    "font_sizes_pt": {
+      "cells": 7,
+      "ticks": 7.5,
+      "labels": 8,
+      "titles": 8.5
+    },
+    "font_weight": "normal",
+    "font_files": {
+      "Regular": {
+        "path": "/usr/share/texmf/fonts/opentype/public/tex-gyre/texgyreheros-regular.otf",
+        "sha256": "6ae1a09d5a940367b7aaaa91ee8bd8a2c333bfe193e7096e23f931357d62081f"
+      },
+      "Bold": {
+        "path": "/usr/share/texmf/fonts/opentype/public/tex-gyre/texgyreheros-bold.otf",
+        "sha256": "b170162835f4efc288886dd4231406dc47e19b614cf4416836635599d44a7d60"
+      },
+      "Italic": {
+        "path": "/usr/share/texmf/fonts/opentype/public/tex-gyre/texgyreheros-italic.otf",
+        "sha256": "6473df7fa107b3fb4be38973710afe22b0640c2ac076d5337cf126bed9aa108c"
+      },
+      "Bold Italic": {
+        "path": "/usr/share/texmf/fonts/opentype/public/tex-gyre/texgyreheros-bolditalic.otf",
+        "sha256": "166fc6d068d9c9974281555cb3d730365537a9b676ab269bb5163f5a75496505"
+      }
+    },
+    "helper_sha256": "e41e89d0b1b56ce6414129eaf10d473ed42db97f683cb63915b27f35ea95850d",
+    "style_helper_sha256": "2c957dc9d05eee67963cfc52d4c097131afdde565d2210ad9e1d27a695dcb0a6"
+  },
+  "panels": [
+    "raw_affine_mae",
+    "family_mean_aligned_mae",
+    "direction_cosine"
+  ],
+  "mae_color_range": [
+    0.0,
+    100.0
+  ],
+  "cosine_color_range": [
+    -1.0,
+    1.0
+  ],
+  "generation_script": "render_pls_transfer.py",
+  "generation_script_sha256": "b404fdd6a1fc9c23e1226be7f9a3b0a625b216c4a6abb2c2561e2c553022c5d7",
+  "generation_command": "uv run --group figures python figures/render_pls_transfer.py",
+  "output_pdf_sha256": "60f7ddb9c97f96eeca8e23bceef07a323afc1478797cb667f0f161276e1a4406",
+  "output_png_sha256": "dfd98e23ea969e7fb94f6dcbb4163fc774acd5fffd5453f7116ff73d142a8389",
+  "output_svg_sha256": "7b13e342856f7f6bf4aa208140d1dd0f171d53d0eed30fe0c4dcfc524ebcad9d"
+}

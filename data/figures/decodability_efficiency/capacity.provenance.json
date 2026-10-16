@@ -1,0 +1,121 @@
+{
+  "source": {
+    "cache": "out/runs/source_value_rhs_addition_dataset_llama_3_1_8b_layer10__2026_06_15/representations/llama_3_1_8b/layer_10/source_token_representations.npz",
+    "cache_sha256": "42cf4af31df100654d0efebc27e0a82d375464fd1833e54b121e85cc9418092a",
+    "collection": {
+      "activation_dtype_in_memory": "float32",
+      "batch_size": 64,
+      "device": "cuda",
+      "dtype": "float16",
+      "hidden_dim": 4096,
+      "layer_idx": 10,
+      "model_alias": "llama_3_1_8b",
+      "model_name": "meta-llama/Llama-3.1-8B",
+      "num_rows": 40000,
+      "storage_dtype": "float16"
+    },
+    "prompt_style": "addition_formula_rhs_source",
+    "value_range": [
+      0,
+      999
+    ],
+    "selected_rows": 20000,
+    "centroids": 1000,
+    "contexts_per_centroid": 20,
+    "auxiliary_values": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      8,
+      13,
+      21,
+      34,
+      55,
+      89,
+      144,
+      233,
+      377,
+      486,
+      610,
+      731,
+      812,
+      900,
+      999
+    ],
+    "centroid_aggregation": "float32 arithmetic mean, as in the original probe run"
+  },
+  "split": {
+    "path": "data/prompt_cache_canonical_source_splits_t800_d100_te100__a68a297dd188__r0/split_00/source_values.json",
+    "sha256": "e0ab1eaf6db11396291155ad12f61b49b9260da63c6302709836159132930d20"
+  },
+  "source_figure3_config": {
+    "architectures": "linear,pls,circular_reg,circular_cls",
+    "device": "cuda",
+    "fit_x_modes": "all_x",
+    "random_controls": 50,
+    "report_path": "experiments/numerical/experiment-reports/2026-06-15-probe-manifold-effective-dimensionality-llama31-8b-layer10.html",
+    "repr_npz": "experiments/numerical/out/runs/source_value_rhs_addition_dataset_llama_3_1_8b_layer10__2026_06_15/representations/llama_3_1_8b/layer_10/source_token_representations.npz",
+    "seed": 1729,
+    "split_json": "experiments/numerical/data/prompt_cache_canonical_source_splits_t800_d100_te100__a68a297dd188__r0/split_00/source_values.json",
+    "style_id": "addition_formula_rhs_source"
+  },
+  "source_figure3_summary": {
+    "path": "experiment-reports/artifacts/2026-06-15-probe-manifold-effective-dimensionality-llama31-8b-layer10/probe_eval_summary.csv",
+    "sha256": "17ad892685478387eb9ddd546856868022cf7c8eb73b9fff6e05a21ec5af14fc"
+  },
+  "comparison": {
+    "training_values": 800,
+    "development_values": 100,
+    "test_values": 100,
+    "layer": 10,
+    "model": "meta-llama/Llama-3.1-8B",
+    "prompt_families": 1,
+    "hyperparameter_selection": "all predefined sweep settings plotted; test curves descriptive",
+    "uncertainty": "one fixed split and seed; no intervals"
+  },
+  "x_axis": {
+    "linear": "sum(s_j^2/(s_j^2+lambda)) of centered fitting activations",
+    "pls": "retained PLS components",
+    "circular_reg": "sinusoidal code dimension",
+    "circular_cls": "sinusoidal code dimension; hidden projection width fixed at 100",
+    "interpretation": "family-specific complexity measures, not a common learned-parameter count"
+  },
+  "verification": [
+    {
+      "architecture": "linear",
+      "test_mae": 8.96,
+      "archived_mae": 8.96
+    },
+    {
+      "architecture": "pls",
+      "test_mae": 9.89,
+      "archived_mae": 9.89
+    },
+    {
+      "architecture": "circular_cls",
+      "test_mae": 1.09,
+      "archived_mae": 1.14
+    },
+    {
+      "architecture": "circular_reg",
+      "test_mae": 1.63,
+      "archived_mae": 1.63
+    }
+  ],
+  "generation": {
+    "script": "scripts/run_figure3_probe_capacity_sweep.py",
+    "script_sha256": "aa036213064c8bf32048edc65421aa65d683c0fdafa287d67693902620fc89fe",
+    "numpy": "1.26.4",
+    "sklearn": "1.8.0",
+    "torch": "2.11.0+cu130",
+    "device": "cuda",
+    "deterministic_algorithms": true,
+    "cublas_workspace_config": ":4096:8"
+  },
+  "outputs": {
+    "experiment-reports/artifacts/2026-09-09-figure3-probe-capacity/points.csv": "a888bd7bd26db69154efbd819f63967b23b4a005bcd0baa048ff061ad51a5995",
+    "experiment-reports/artifacts/2026-09-09-figure3-probe-capacity/results.jsonl": "7b06684413df90781c1eef8aed9091601db1d7e4407090bc2d4f08d5ed5c160c"
+  }
+}

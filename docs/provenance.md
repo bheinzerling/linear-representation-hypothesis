@@ -1,0 +1,23 @@
+# Evidence and provenance
+
+`data/MANIFEST.sha256` identifies every supplied data file. Numerical experiment
+conditions are recorded in `data/numerical/reported_config.json`; the adjoining
+input provenance records the observation units, upstream artifact hashes, and
+reductions used for the numerical calculations.
+
+Frozen display inputs in `data/figures/` retain the measurements and analytic
+definitions used by the manuscript figures. Their local manifests identify the
+files consumed by each renderer. Rendering records include the source hashes,
+font identities, and library versions. The source and data needed to run these
+calculations are included here.
+
+Literature records include primary-source URLs, page references, rating
+rationales, and coding definitions. These records expose the basis for the
+interpretive judgments. Recomputing the counts and checking table consistency
+establishes agreement between the stored records and their aggregations.
+
+The model-input artifact has an archive checksum and per-file checksums in
+`data/manifests/model-inputs.json`. The extraction command verifies both. New
+model runs use the separate experiment lockfiles; the frozen CPU observations
+retain the values used by the paper even when reruns differ across hardware
+or software environments.

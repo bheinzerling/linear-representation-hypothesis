@@ -1,0 +1,34 @@
+seed: 1729
+models_config: configs/models.yaml
+tokenizer_model: llama_3_2_3b
+models:
+  - llama_3_2_3b
+device: cuda
+batch_size: 64
+value_min: 0
+value_max: 999
+context_variants: 20
+output_dir: out/runs/source_value_prompt_style_representations_5styles_0_999__2026_05_13
+selected_settings:
+  - style_id: successor
+    variant_id: add_one
+    fewshot_k: 0
+  - style_id: interval_bucket
+    variant_id: hundreds_band
+    fewshot_k: 3
+  - style_id: rounding_nearest_hundred
+    variant_id: hundred_rounding
+    fewshot_k: 3
+  - style_id: magnitude_comparison
+    variant_id: above_threshold
+    fewshot_k: 3
+  - style_id: semantic_affordability
+    variant_id: meets_minimum
+    fewshot_k: 3
+representations:
+  enabled: true
+  models:
+    - llama_3_2_3b
+  layer_idx: 8
+  batch_size: 64
+  storage_dtype: float16

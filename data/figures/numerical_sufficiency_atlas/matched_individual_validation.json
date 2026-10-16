@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "fitting_condition": "individual prompts",
+  "evaluation_cohort": "canonical_dev",
+  "source_prompts": 100,
+  "interventions_per_method": 2000,
+  "fit_ids": {
+    "individual_circular_reg": "322562ce7123b4aaaad8abfacf7dce2d25ca50d2dd8a5d8b9ccb513d17b93fbc",
+    "individual_linear": "2855e6c925ccca42630cb4606277b4d1970c7073113379949125b51bbaa416c6"
+  },
+  "plot_values_match_packet": true,
+  "lower_panel_pixel_differences": 0,
+  "other_figure_records_preserved": 6,
+  "canvas_unchanged": true,
+  "takeaway_sentence_preserved": true,
+  "figure_number": 7,
+  "figure_page": 8,
+  "latex_issues": [],
+  "pdf_sha256": "8549097ed680dcb49acd23d67cd045f1973fcf80c7f457d2f61a87683f90f602",
+  "input_manifest_sha256": "f875d2ce9f22351fa5d4b7b235ca449e8e6c0b8a961c87729b93a0301e7bfd8f",
+  "source_script_sha256": {
+    "figures/individual_prompt_data.py": "468960466a383d35cc97462ee90f86fc0e2e2144a652b47ff5f39bc9c6a4523b",
+    "figures/render_main.py": "6e5157cac9cc1d7b8d38a7ce676c35f0dbc11a791a427f512d75a03a68d1f849",
+    "figures/numerical_panels.py": "cb34319970bcd7e67c098f5730c9bdfcfba18ed0dd9d7d43e7aa94b45c85d539"
+  },
+  "exporter_commit": "3c3ffd055c07499c4fe145dd0f5da0c67cc75b56",
+  "comparison_parent": "539600e30d289223bc9ff23f5ad511fd669fab33"
+}

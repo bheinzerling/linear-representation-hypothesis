@@ -1,0 +1,10 @@
+default:
+  device: cuda
+  dtype: float16
+  trust_remote_code: false
+  attn_implementation: eager
+models:
+  llama_3_1_8b:
+    hf_id: meta-llama/Llama-3.1-8B
+    label: Llama 3.1 8B
+    revision: d04e592bb4f6aa9cfee91e2e20afa771667e1d4b

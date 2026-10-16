@@ -1,0 +1,44 @@
+seed: 1729
+models_config: configs/models.yaml
+tokenizer_model: llama_3_2_3b
+models:
+  - llama_3_2_3b
+device: cuda
+batch_size: 64
+value_min: 0
+value_max: 999
+output_dir: out/runs/source_value_rhs_addition_dataset__2026_05_13
+report_stem: 2026-05-13-source-value-rhs-addition-behavior-pilot
+x_values:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 5
+  - 8
+  - 13
+  - 21
+  - 34
+  - 55
+  - 89
+  - 144
+  - 233
+  - 377
+  - 486
+  - 610
+  - 731
+  - 812
+  - 900
+  - 999
+behavior:
+  enabled: true
+  source_stride: 20
+  batch_size: 64
+  max_new_tokens: 8
+representations:
+  enabled: true
+  models:
+    - llama_3_2_3b
+  layer_idx: 8
+  batch_size: 64
+  storage_dtype: float16

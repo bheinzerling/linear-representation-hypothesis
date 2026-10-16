@@ -1,0 +1,43 @@
+activation_cache_root: out/activation_caches/source_value_probe_canonical_prompt_sequences
+delta_kinds:
+  - value_code
+evaluation_batch_size: 100
+family: addition_formula
+family_label: Addition Formula
+intervention_layer_idx: 10
+model: llama_3_1_8b
+models_config: configs/models.yaml
+probe_architectures:
+  - pls
+probe_batch_size: 64
+probe_specs:
+  pls:
+    n_components: 16
+    scale: false
+reference_methods:
+  - causalab_centroid_endpoint
+  - counterfactual_patch
+representation_source: prompt_activations
+require_activation_cache_hit: false
+search:
+  methods:
+    - fixed
+seed: 1729
+split_dataset_dir: data/prompt_cache_canonical_source_splits_t800_d100_te100__a68a297dd188__r0
+split_name: split_00
+target_sampler:
+  distance_buckets:
+    - [1, 1]
+    - [2, 5]
+    - [6, 10]
+    - [11, 25]
+    - [26, 50]
+    - [51, 100]
+    - [101, 200]
+    - [201, 300]
+    - [301, 400]
+    - [401, 500]
+  n_targets_per_example: 20
+use_activation_cache: true
+value_max: 999
+value_min: 0

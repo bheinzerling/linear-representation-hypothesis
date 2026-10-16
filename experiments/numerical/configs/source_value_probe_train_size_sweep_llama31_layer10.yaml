@@ -1,0 +1,131 @@
+seed: 1729
+models_config: configs/models.yaml
+model: llama_3_1_8b
+expected_model_revision: d04e592bb4f6aa9cfee91e2e20afa771667e1d4b
+device: cuda
+dtype: float16
+attn_implementation: eager
+intervention_layer_idx: 10
+evaluation_batch_size: 100
+
+split_values_json: data/prompt_cache_canonical_source_splits_t800_d100_te100__a68a297dd188__r0/split_00/source_values.json
+
+centroid_source:
+  repr_npz: out/runs/source_value_rhs_addition_llama31_layer10_formula_centroids__20260824/representations/llama_3_1_8b/layer_10/source_token_representations.npz
+  style_id: addition_formula_rhs_source
+  fit_x: all
+  expected_sha256: d4c4980345ca11681ccc85c6ea31a56deb404e3cbffeb1daf61b007508ed79df
+  expected_rows_per_value: 20
+  expected_hidden_dim: 4096
+
+intervention_panel:
+  csv: out/runs/source_value_inductive_transductive_steering__e3cb8f324d41__r0/interventions__test_values.csv
+  expected_sha256: 4417ac26de5f77b097adbf65004cfebb584b493fcb05a65d7e24e99124a4b56d
+  expected_pair_hash: c56088234a0a81c5ed5aae0d5c5d3d123d972496decae5a875c5ea2e3dfa80b2
+  expected_rows: 2000
+  expected_source_values: 100
+  expected_targets_per_source: 20
+
+probe_methods: [linear, pls, circular_reg, circular_cls]
+probe_specs:
+  linear:
+    ridge_lambda: 0.551881046550891
+  pls:
+    n_components: 16
+    scale: false
+  circular_reg:
+    basis_dim: 10
+  circular_cls:
+    basis_dim: 10
+    hidden_dim: 100
+    lr: 0.01
+    weight_decay: 0.001
+    betas: [0.9, 0.999]
+    max_epochs: 1000
+    patience: 20
+    val_fraction: 0.1
+    batch_size: 256
+    device: cuda
+    seed: 1729
+
+sweep:
+  start: 10
+  stop: 1000
+  step: 10
+  training_order: canonical_python_shuffle_prefix
+  fit_value_order: sorted_prefix_values
+  probe_methods: [linear, pls, circular_reg, circular_cls]
+  duplicate_sentinel_size: 800
+  forward_mode: full_hook
+  selected_scale: 1.0
+  hyperparameter_policy: frozen_from_figure6
+  circular_cls_training_policy: internal_value_holdout_select_then_full_prefix_refit
+  dev_role_during_sweep: diagnostic_only
+  evaluation_value_policy: fixed_canonical_test_panel
+
+phase_policy:
+  train_size_10_to_800: train_only_inductive
+  train_size_810_to_900: train_plus_dev_test_held_out
+  train_size_910_to_990: partial_test_overlap
+  train_size_1000: fully_transductive
+
+report:
+  bootstrap_seed: 1729
+  bootstrap_replicates: 2000
+  anchor_train_sizes: [10, 20, 50, 100, 200, 400, 800, 900, 1000]
+
+# The n=800 circular-classification reference used the selected checkpoint
+# without a full-prefix refit, so it is retained as a labelled legacy
+# comparison rather than an equality anchor for the uniform sweep curve.
+reference_anchors:
+  train_size_800:
+    linear:
+      decoding_test_mae: 8.95
+      decoding_test_accuracy: 0.02
+      steering_mae: 246.45773969420398
+      steering_exact_accuracy: 0.0
+      mean_target_probability: 0.0000650850504795663
+    pls:
+      decoding_test_mae: 9.87
+      decoding_test_accuracy: 0.05
+      steering_mae: 242.4471361999917
+      steering_exact_accuracy: 0.0
+      mean_target_probability: 0.00006772836913292426
+    circular_reg:
+      decoding_test_mae: 1.63
+      decoding_test_accuracy: 0.16
+      steering_mae: 253.36347240721668
+      steering_exact_accuracy: 0.0
+      mean_target_probability: 0.00006267049062939014
+    circular_cls:
+      comparison_only: true
+      decoding_test_mae: 1.19
+      decoding_test_accuracy: 0.21
+      steering_mae: 252.90512605950883
+      steering_exact_accuracy: 0.0
+      mean_target_probability: 0.0000872171529645562
+  train_size_1000:
+    linear:
+      decoding_test_mae: 4.34
+      decoding_test_accuracy: 0.11
+      steering_mae: 247.40386129060207
+      steering_exact_accuracy: 0.0
+      mean_target_probability: 0.00006464336592513615
+    pls:
+      decoding_test_mae: 6.91
+      decoding_test_accuracy: 0.04
+      steering_mae: 242.1849620197703
+      steering_exact_accuracy: 0.0
+      mean_target_probability: 0.00006807679193104203
+    circular_reg:
+      decoding_test_mae: 0.0
+      decoding_test_accuracy: 1.0
+      steering_mae: 253.46236512675125
+      steering_exact_accuracy: 0.0
+      mean_target_probability: 0.00006072209880308072
+    circular_cls:
+      decoding_test_mae: 0.47
+      decoding_test_accuracy: 0.54
+      steering_mae: 241.13717589482513
+      steering_exact_accuracy: 0.0
+      mean_target_probability: 0.0001390376879745449

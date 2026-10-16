@@ -1,0 +1,111 @@
+activation_cache_root: out/activation_caches/source_value_probe_canonical_prompt_sequences
+agop_specs:
+  rfm_agop_p1:
+    p: 1
+    n_iters: 1
+    ridge_lambda: 0.01
+    calibration_ridge_lambda: 0.001
+    bandwidth: median
+    metric_rank: 8
+    diagonal_floor: 1.0e-6
+  rfm_agop_p2:
+    p: 2
+    n_iters: 1
+    ridge_lambda: 0.01
+    calibration_ridge_lambda: 0.001
+    bandwidth: median
+    metric_rank: 8
+    diagonal_floor: 1.0e-6
+  rfm_agop_p4:
+    p: 4
+    n_iters: 1
+    ridge_lambda: 0.01
+    calibration_ridge_lambda: 0.001
+    bandwidth: median
+    metric_rank: 8
+    diagonal_floor: 1.0e-6
+  rfm_agop_p8:
+    p: 8
+    n_iters: 1
+    ridge_lambda: 0.01
+    calibration_ridge_lambda: 0.001
+    bandwidth: median
+    metric_rank: 8
+    diagonal_floor: 1.0e-6
+delta_kinds:
+- value_code
+evaluation_batch_size: 100
+evaluate_probe_specs: false
+family: addition_formula
+family_label: Addition Formula
+intervention_layer_idx: 8
+model: llama_3_2_3b
+models_config: configs/models.yaml
+probe_batch_size: 64
+probe_specs:
+  circular_cls:
+    basis_dim: 10
+    batch_size: 256
+    betas:
+    - 0.9
+    - 0.999
+    device: cuda
+    hidden_dim: 100
+    lr: 0.01
+    max_epochs: 1000
+    patience: 20
+    seed: 1729
+    val_fraction: 0.1
+    weight_decay: 0.001
+  circular_reg:
+    basis_dim: 10
+  linear:
+    ridge_lambda: 0.551881046550891
+  pls:
+    n_components: 16
+    scale: false
+representation_source: prompt_activations
+require_activation_cache_hit: true
+search:
+  l2_penalty: 0.0005
+  lr: 0.05
+  manifold_norm_budget_multiplier: 8.0
+  max_scale: 8.0
+  objective: target_logprob
+  steps: 20
+  methods:
+  - fixed
+  - scale_search
+  - manifold_search
+  - equal_budget_search
+  equal_budget_patch_multipliers:
+  - 1.0
+seed: 1729
+split_dataset_dir: data/prompt_cache_canonical_source_splits_t800_d100_te100__a68a297dd188__r0
+split_name: split_00
+target_sampler:
+  distance_buckets:
+  - - 1
+    - 1
+  - - 2
+    - 5
+  - - 6
+    - 10
+  - - 11
+    - 25
+  - - 26
+    - 50
+  - - 51
+    - 100
+  - - 101
+    - 200
+  - - 201
+    - 300
+  - - 301
+    - 400
+  - - 401
+    - 500
+  n_targets_per_example: 10
+use_activation_cache: true
+value_max: 999
+value_min: 0

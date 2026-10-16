@@ -1,0 +1,326 @@
+{
+  "paper_width_cm": 16,
+  "source_font_pt": 6,
+  "palette": {
+    "prior": {
+      "label": "Prior work",
+      "ink": "#365F83",
+      "tint": "#FBFCFD"
+    },
+    "ours": {
+      "label": "Number experiments",
+      "ink": "#8B4D21",
+      "tint": "#FDFBF9"
+    },
+    "schematic": {
+      "label": "Schematic",
+      "ink": "#696969",
+      "tint": "#FCFCFC"
+    }
+  },
+  "figures": [
+    {
+      "stem": "fig_decodability_efficiency",
+      "title_size": 8.5,
+      "title_weight": 700,
+      "panels": [
+        {
+          "letter": "a",
+          "source": "schematic",
+          "groups": [
+            "text_57"
+          ],
+          "title": "(a) Local linearization",
+          "left": 0.7,
+          "right": 91.3,
+          "top": 0.7,
+          "bottom": 172.1,
+          "title_x": 5.148
+        },
+        {
+          "letter": "b",
+          "source": "ours",
+          "groups": [
+            "text_58"
+          ],
+          "title": "(b) Linear decoding of nonlinear structure",
+          "left": 94.3,
+          "right": 212.0,
+          "top": 0.7,
+          "bottom": 172.1,
+          "title_x": 97.812,
+          "title_lines": [
+            "(b) Linear",
+            "decoding of",
+            "nonlinear structure"
+          ]
+        },
+        {
+          "letter": "c",
+          "source": "ours",
+          "groups": [
+            "text_59"
+          ],
+          "title": "(c) Probe performance",
+          "left": 214.7,
+          "right": 364.0,
+          "top": 0.7,
+          "bottom": 172.1,
+          "title_x": 217.7604
+        },
+        {
+          "letter": "d",
+          "source": "ours",
+          "groups": [
+            "text_60"
+          ],
+          "title": "(d) Probe complexity",
+          "left": 366.5,
+          "right": 514.1,
+          "top": 0.7,
+          "bottom": 172.1,
+          "title_x": 369.6264
+        }
+      ]
+    },
+    {
+      "stem": "fig_robustness_invariance_structure",
+      "title_size": 8.8,
+      "title_weight": 600,
+      "panels": [
+        {
+          "letter": "a",
+          "source": "prior",
+          "groups": [
+            "text_77"
+          ],
+          "title": "(a) Robustness",
+          "left": 4.1648,
+          "right": 146.4304,
+          "top": 0.7,
+          "bottom": 229.8,
+          "title_x": 8.1648
+        },
+        {
+          "letter": "b",
+          "source": "ours",
+          "groups": [
+            "text_78"
+          ],
+          "title": "(b) Invariance",
+          "left": 155.6672,
+          "right": 297.9328,
+          "top": 0.7,
+          "bottom": 229.8,
+          "title_x": 159.6672
+        },
+        {
+          "letter": "c",
+          "source": "prior",
+          "groups": [
+            "text_79"
+          ],
+          "title": "(c) Structural correspondence",
+          "left": 307.1696,
+          "right": 449.4352,
+          "top": 0.7,
+          "bottom": 229.8,
+          "title_x": 311.1696
+        }
+      ]
+    },
+    {
+      "stem": "fig_causal_use",
+      "title_size": 8.8,
+      "title_weight": 600,
+      "panels": [
+        {
+          "letter": "a",
+          "source": "prior",
+          "groups": [
+            "text_38"
+          ],
+          "title": "(a) Refusal",
+          "left": 5.885039,
+          "right": 149.412598,
+          "top": 0.7,
+          "bottom": 168.6,
+          "title_x": 10.885039
+        },
+        {
+          "letter": "b",
+          "source": "prior",
+          "groups": [
+            "text_40"
+          ],
+          "title": "(b) Sentiment",
+          "left": 154.912598,
+          "right": 300.442519,
+          "top": 0.7,
+          "bottom": 168.6,
+          "title_x": 161.914961
+        },
+        {
+          "letter": "c",
+          "source": "ours",
+          "groups": [
+            "text_42"
+          ],
+          "title": "(c) Number properties",
+          "left": 305.942519,
+          "right": 449.043307,
+          "top": 0.7,
+          "bottom": 168.6,
+          "title_x": 312.944882
+        }
+      ]
+    },
+    {
+      "stem": "fig_number_property_evidence_main",
+      "title_size": 7.6,
+      "title_weight": 600,
+      "panels": [
+        {
+          "letter": "a",
+          "source": "ours",
+          "groups": [
+            "text_94"
+          ],
+          "title": "(a) Property decodability",
+          "left": 2.1776,
+          "right": 215.4232,
+          "top": 0.7,
+          "bottom": 219.0,
+          "title_x": 6.1776
+        },
+        {
+          "letter": "b",
+          "source": "ours",
+          "groups": [
+            "text_96"
+          ],
+          "title": "(b) Contradictions after edits",
+          "left": 219.4232,
+          "right": 342.5196,
+          "top": 0.7,
+          "bottom": 219.0,
+          "title_x": 223.4232
+        },
+        {
+          "letter": "c",
+          "source": "ours",
+          "groups": [
+            "text_98"
+          ],
+          "title": "(c) Outputs before and after edits",
+          "left": 344.5196,
+          "right": 511.3,
+          "top": 0.7,
+          "bottom": 219.0,
+          "title_x": 348.5196
+        }
+      ]
+    },
+    {
+      "stem": "fig_numerical_sufficiency_atlas",
+      "title_size": 8.6,
+      "title_weight": 400,
+      "panels": [
+        {
+          "letter": "a",
+          "source": "ours",
+          "groups": [
+            "text_48",
+            "text_49"
+          ],
+          "title": "(a) Held-out predictions",
+          "left": 7.722,
+          "right": 170.7,
+          "top": 0.7,
+          "bottom": 120.0,
+          "title_x": 12.87
+        },
+        {
+          "letter": "b",
+          "source": "ours",
+          "groups": [
+            "text_50",
+            "text_51"
+          ],
+          "title": "(b) Circular code excerpt",
+          "left": 177.606,
+          "right": 342.6,
+          "top": 0.7,
+          "bottom": 120.0,
+          "title_x": 182.754
+        },
+        {
+          "letter": "c",
+          "source": "ours",
+          "groups": [
+            "text_52",
+            "text_53"
+          ],
+          "title": "(c) Steering error",
+          "left": 347.49,
+          "right": 510.5,
+          "top": 0.7,
+          "bottom": 120.0,
+          "title_x": 352.638
+        },
+        {
+          "letter": "d",
+          "source": "schematic",
+          "groups": [
+            "text_54",
+            "text_55"
+          ],
+          "title": "(d) Circular edit leaves the old axial value",
+          "left": 7.722,
+          "right": 170.7,
+          "top": 123.0,
+          "bottom": 240.8,
+          "title_x": 12.87
+        },
+        {
+          "letter": "e",
+          "source": "ours",
+          "groups": [
+            "text_61",
+            "text_62"
+          ],
+          "title": "(e) 20 properties, rank-41 basis",
+          "left": 177.606,
+          "right": 342.6,
+          "top": 123.0,
+          "bottom": 240.8,
+          "title_x": 182.754,
+          "title_lines": [
+            "(e) 20 properties,",
+            "rank-41 basis"
+          ]
+        },
+        {
+          "letter": "f",
+          "source": "schematic",
+          "groups": [
+            "text_63",
+            "text_64"
+          ],
+          "title": "(f) Two valid edits have an invalid sum",
+          "left": 347.49,
+          "right": 510.5,
+          "top": 123.0,
+          "bottom": 240.8,
+          "title_x": 352.638
+        }
+      ],
+      "body_translation_pt": {
+        "axes_5": [
+          -5,
+          0
+        ]
+      }
+    }
+  ]
+}

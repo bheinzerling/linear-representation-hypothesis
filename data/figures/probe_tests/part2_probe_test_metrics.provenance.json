@@ -1,0 +1,130 @@
+{
+  "source": {
+    "repository": "accurate-num-repr",
+    "commit": "b388a80e66291f37ba36c7573bcbb90ecdcce79d",
+    "path": "experiment-reports/artifacts/2026-06-15-probe-manifold-effective-dimensionality-llama31-8b-layer10/probe_eval_summary.csv",
+    "sha256": "17ad892685478387eb9ddd546856868022cf7c8eb73b9fff6e05a21ec5af14fc",
+    "row_filter": "Test rows with fit_mode=all_x for linear, pls, circular_reg, and circular_cls."
+  },
+  "snapshot": {
+    "path": "data/figures/probe_tests/part2_probe_test_metrics.csv",
+    "sha256": "5eabd78cf310e647f4e131e729e11a39ce02d20db95748c128a9afe0e8d9ad85"
+  },
+  "matched_setting": {
+    "model": "meta-llama/Llama-3.1-8B",
+    "layer": 10,
+    "prompt_family": "addition_formula_rhs_source",
+    "activation_site": "source-number token",
+    "auxiliary_contexts_per_centroid": 20,
+    "train_values": 800,
+    "dev_values": 100,
+    "test_values": 100,
+    "split": "split_00",
+    "split_seed": 1729
+  },
+  "metrics": {
+    "mae": "Mean absolute error of decoded numerical predictions.",
+    "r2": "1 - RMSE^2 / 77796.5675, the variance of the 100 test targets.",
+    "exact_accuracy": "Fraction of decoded numerical predictions equal to the target.",
+    "circular_value_decoding": "Regression selects the closest sinusoidal code by cosine similarity; classification selects the highest-scoring numerical label.",
+    "median_absolute_error": "Median of the 100 decoded absolute errors: reproduced predictions for ridge, PLS, and circular regression; exact order-statistic bounds from archived integer-error totals for circular classification."
+  },
+  "median_recovery": {
+    "source": {
+      "cache": "out/runs/source_value_rhs_addition_dataset_llama_3_1_8b_layer10__2026_06_15/representations/llama_3_1_8b/layer_10/source_token_representations.npz",
+      "cache_sha256": "42cf4af31df100654d0efebc27e0a82d375464fd1833e54b121e85cc9418092a",
+      "collection": {
+        "activation_dtype_in_memory": "float32",
+        "batch_size": 64,
+        "device": "cuda",
+        "dtype": "float16",
+        "hidden_dim": 4096,
+        "layer_idx": 10,
+        "model_alias": "llama_3_1_8b",
+        "model_name": "meta-llama/Llama-3.1-8B",
+        "num_rows": 40000,
+        "storage_dtype": "float16"
+      },
+      "prompt_style": "addition_formula_rhs_source",
+      "value_range": [
+        0,
+        999
+      ],
+      "selected_rows": 20000,
+      "centroids": 1000,
+      "contexts_per_centroid": 20,
+      "auxiliary_values": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        8,
+        13,
+        21,
+        34,
+        55,
+        89,
+        144,
+        233,
+        377,
+        486,
+        610,
+        731,
+        812,
+        900,
+        999
+      ],
+      "centroid_aggregation": "float32 arithmetic mean, as in the original probe run"
+    },
+    "original_summary": {
+      "path": "experiment-reports/artifacts/2026-06-15-probe-manifold-effective-dimensionality-llama31-8b-layer10/probe_eval_summary.csv",
+      "sha256": "17ad892685478387eb9ddd546856868022cf7c8eb73b9fff6e05a21ec5af14fc"
+    },
+    "split": {
+      "path": "data/prompt_cache_canonical_source_splits_t800_d100_te100__a68a297dd188__r0/split_00/source_values.json",
+      "sha256": "e0ab1eaf6db11396291155ad12f61b49b9260da63c6302709836159132930d20"
+    },
+    "generation": {
+      "script": "scripts/recover_figure3_probe_medians.py",
+      "script_sha256": "d925be2bbe882d27fc5aaa33bfd1883e6b2381190cd34ecc5588930341422599",
+      "command": "OPENBLAS_NUM_THREADS=4 OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 uv run --frozen --no-sync python scripts/recover_figure3_probe_medians.py",
+      "numpy_version": "1.26.4",
+      "pandas_version": "3.0.2",
+      "sklearn_version": "1.8.0",
+      "device": "cpu",
+      "source_script_hashes": {
+        "src/magnitude_intervention.py": "84e30c633a56bc1c25965e59e46273b21a331f0701e4cef73560872073f8ce27",
+        "src/ones_digit_intervention.py": "14c77dcb16591dc29f0acd2c710188ccdcb50669a657b5f68fa73bacdda6cd2e",
+        "src/activation_steering.py": "f4e5695f7ad2f007df6c912cba137bd7a40e074d85efffc282affd8c4bbe55b9",
+        "scripts/analyze_figure3_number_helix.py": "fbd7cdb320d31423031bd2eab3ca1765fd48a5c6dcaf1c1444c45b76068d2d26",
+        "scripts/measure_probe_manifold_effective_dimensionality.py": "4fe32b6a7a2ddc5c4378dbdee3f304121d62524276715d34fcf1efb7beccb364"
+      }
+    },
+    "verification": {
+      "archived_train_dev_test_metrics_matched": 36,
+      "absolute_tolerance": 1e-12
+    },
+    "classifier_median_certificate": {
+      "architecture": "circular_cls",
+      "num_examples": 100,
+      "num_zero_errors": 20,
+      "sum_abs_error": 114,
+      "num_errors_at_least_two_upper_bound": 34,
+      "lower_middle_rank": 50,
+      "upper_middle_rank": 51,
+      "median_abs_error": 1.0,
+      "assumption": "absolute errors are nonnegative integers after numerical decoding",
+      "proof": "The zero count forces both central errors to be at least one. The upper bound on errors at least two forces both to be at most one."
+    },
+    "outputs": {
+      "experiment-reports/artifacts/2026-09-07-figure3-probe-medians/probe_medians.csv": "b47527cfcf1edb9e1726559b875a9debabdfb4e70e87a0aabbf4a07a15efcabc",
+      "experiment-reports/artifacts/2026-09-07-figure3-probe-medians/reproduced_test_predictions.csv": "deab25a96e14e976b21479b292b14906929c42563545f51eac9815e5cb824ca6",
+      "experiment-reports/artifacts/2026-09-07-figure3-probe-medians/classifier_median_certificate.json": "957c73b22c5db2cbbb7818511a53bdfd9af16cd358e7275bb0fd06e9cbfd2a92"
+    },
+    "paper_snapshots": {
+      "data/figures/probe_tests/reproduced_test_predictions.csv": "deab25a96e14e976b21479b292b14906929c42563545f51eac9815e5cb824ca6",
+      "data/figures/probe_tests/classifier_median_certificate.json": "957c73b22c5db2cbbb7818511a53bdfd9af16cd358e7275bb0fd06e9cbfd2a92"
+    }
+  }
+}

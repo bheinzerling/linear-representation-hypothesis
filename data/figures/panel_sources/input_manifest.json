@@ -1,0 +1,32 @@
+{
+  "fig_decodability_efficiency": {
+    "path": "data/figures/panel_sources/decodability-input.svg",
+    "original": "figures/fig_decodability_efficiency.svg",
+    "sha256": "17fc0b8f0cea8257d3b095a789a74de9ac8ac9d620d57f9ba6ae15c5f546572c"
+  },
+  "fig_robustness_invariance_structure": {
+    "path": "figures/fig_robustness_invariance_structure.svg",
+    "original": "figures/fig_robustness_invariance_structure.svg",
+    "sha256": "8f92847a76bd644c83341965c6b2fbbcdf08d597d25863bc9d30e0ae05f0dfa5"
+  },
+  "fig_causal_use": {
+    "path": "figures/fig_causal_use.svg",
+    "original": "figures/fig_causal_use.svg",
+    "sha256": "f53c0aac5fe4ee5503c6d3e38fa1249dd3f5a0e6a967a20315a47850c272389c"
+  },
+  "fig_number_property_evidence_main": {
+    "path": "figures/fig_number_property_evidence_main.svg",
+    "original": "figures/fig_number_property_evidence_main.svg",
+    "sha256": "608ec8929feba442c8ef065b8bc1cafca04b155feb952b1373b4b9396bfd7e4a",
+    "panel_titles": {
+      "a": "(a) Property accessibility",
+      "b": "(b) Contradiction frequency",
+      "c": "(c) Property contradictions"
+    }
+  },
+  "fig_numerical_sufficiency_atlas": {
+    "path": "figures/fig_numerical_sufficiency_atlas.svg",
+    "original": "figures/fig_numerical_sufficiency_atlas.svg",
+    "sha256": "3111c86f315f8225d1fa96e7655a5791c98ceead9b491269ed7eaa42af206da3"
+  }
+}

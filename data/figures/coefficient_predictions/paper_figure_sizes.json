@@ -1,0 +1,46 @@
+{
+  "fig_lrh_fulltext_mentions": [
+    242.537,
+    189.277
+  ],
+  "fig_decodability_control_gap_absolute_mae": [
+    584.766,
+    150.025
+  ],
+  "fig_lrh_purpose_composition": [
+    238.473,
+    192.015
+  ],
+  "fig_circular_component_pairs": [
+    520.844,
+    626.465
+  ],
+  "fig_probe_capacity_paths": [
+    789.767,
+    525.37
+  ],
+  "fig_prompt_family_pls_transfer": [
+    251.879,
+    254.293
+  ],
+  "fig_prompt_style_centering_transfer": [
+    504.225,
+    592.126
+  ],
+  "fig_number_property_random_scaling": [
+    514.541,
+    340.224
+  ],
+  "fig_decodability_control_gap_dimensionality_scatter": [
+    525.257,
+    188.082
+  ],
+  "fig_centroid_pca_dimensionality_sweep": [
+    510.929,
+    324.076
+  ],
+  "fig_property_geometry": [
+    511.687,
+    382.08
+  ]
+}

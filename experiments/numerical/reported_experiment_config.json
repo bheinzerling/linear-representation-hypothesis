@@ -1,0 +1,79 @@
+{
+  "activation_site": {
+    "layer": 10,
+    "position": "source-number token",
+    "repository_layer_index_includes_embedding": true
+  },
+  "block_interactions": {
+    "confirmatory_rows": 1500,
+    "owner_blocks": 19,
+    "pair_conditions": 171,
+    "seed": 20260729
+  },
+  "circular_component_example": {
+    "basis_dimension": 10,
+    "layer": 3,
+    "model": {
+      "dimension": 3072,
+      "identifier": "meta-llama/Llama-3.2-3B",
+      "revision": "13afe5124825b4f3751f836b40dafda64c1ed062"
+    },
+    "partition": "test",
+    "prompt_family": "addition_verbalized",
+    "relative_layer": 0.1,
+    "split": "split_00"
+  },
+  "coordinate_regression": {
+    "development_contexts": 20,
+    "rows_per_context": 20,
+    "seed": 20260729,
+    "test_contexts": 20,
+    "training_contexts": 60
+  },
+  "intervention_panel": {
+    "source_contexts": 100,
+    "targets_per_source": 20,
+    "total_rows": 2000
+  },
+  "model": {
+    "dtype": "float16",
+    "identifier": "meta-llama/Llama-3.1-8B",
+    "revision": "d04e592bb4f6aa9cfee91e2e20afa771667e1d4b"
+  },
+  "probe_specs": {
+    "circular_classifier": {
+      "basis_dim": 10,
+      "batch_size": 256,
+      "learning_rate": 0.01,
+      "max_epochs": 1000,
+      "patience": 20,
+      "seed": 1729,
+      "weight_decay": 0.001
+    },
+    "circular_regression": {
+      "basis_dim": 10
+    },
+    "linear": {
+      "ridge_lambda": 0.551881046550891
+    },
+    "pls": {
+      "n_components": 16,
+      "scale": false
+    }
+  },
+  "prompt_family": "addition_formula",
+  "seed": 1729,
+  "subspace_search": {
+    "learning_rate": 0.05,
+    "method": "unconstrained_manifold_search",
+    "objective": "target_logprob",
+    "optimization_steps": 20,
+    "pls_basis_components": 16,
+    "unconstrained_l2_penalty": 0.0
+  },
+  "split": {
+    "development": 100,
+    "test": 100,
+    "training": 800
+  }
+}

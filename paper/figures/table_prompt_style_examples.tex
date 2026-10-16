@@ -1,0 +1,34 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.08}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.08\textwidth}>{\raggedright\arraybackslash}p{0.09\textwidth}>{\raggedright\arraybackslash}p{0.09\textwidth}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{0.09\textwidth}@{}}
+\toprule
+Case & Source value & Expected output & Prompt shown to model & Output \\
+\midrule
+\multicolumn{5}{@{}l}{\textbf{Addition Formula}: $s + x = y$; $x + s = y$}\\
+correct & $s=87$ & $y=95$ & 279+3=282; 92+851=943; 599+283=882; 8+87= & 95 \\
+wrong & $s=455$ & $y=514$ & 590+48=638; 402+339=741; 43+931=974; 59+455= & 614 \\
+\addlinespace[0.25em]
+\multicolumn{5}{@{}l}{\textbf{Addition Verbalized}: The result of $s$ plus $x$ is $y$; The result of $x$ plus $s$ is $y$}\\
+correct & $s=87$ & $y=95$ & The result of 8 plus 87 is  & 95 \\
+wrong & $s=183$ & $y=219$ & The result of 183 plus 36 is  & 19 \\
+\addlinespace[0.25em]
+\multicolumn{5}{@{}l}{\textbf{Subtraction Formula}: $s - x = y$; $x - s = y$}\\
+correct & $s=87$ & $y=74$ & 279-189=90; 848-738=110; 54-29=25; 87-13= & 74 \\
+wrong & $s=274$ & $y=12$ & 788-710=78; 133-24=109; 917-916=1; 286-274= & 112 \\
+\addlinespace[0.25em]
+\multicolumn{5}{@{}l}{\textbf{Subtraction Verbalized}: The result of $s$ minus $x$ is $y$; The result of $x$ minus $s$ is $y$}\\
+correct & $s=87$ & $y=65$ & The result of 152 minus 87 is  & 65 \\
+wrong & $s=194$ & $y=193$ & The result of 194 minus 1 is  & 3 \\
+\addlinespace[0.25em]
+\multicolumn{5}{@{}l}{\textbf{Copying}: $s = y$}\\
+correct & $s=121$ & $y=121$ & 643 = 643; 2 = 2; 431 = 431; 121 =  & 121 \\
+\bottomrule
+\end{tabularx}
+\caption{The five prompt variants place the source value $s$ in different arithmetic and textual contexts; $y$ is the expected output.
+Examples are Llama-3.2-1B development cases from the complexity sweep.
+The displayed continuations parse directly as the numbers used for evaluation.}
+\label{tab:prompt-style-examples}
+\end{table*}

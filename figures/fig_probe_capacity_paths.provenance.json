@@ -1,0 +1,93 @@
+{
+  "command": "uv run --group figures python figures/render_complexity.py",
+  "script_sha256": "9c966a29e0c08d91018692026c5ba83eabdb795a1add46a2c49f3053283f14bc",
+  "inputs": {
+    "points.jsonl": "bd5ee278cbedde36f583eb8ad35c3e141984bbaf4e8307e94cba610c745fc173",
+    "baseline_by_model.jsonl": "06f965e88bde1ba77244ce20dd774ee6010e6859fcd4ce4b08cfcaadf6470f22",
+    "metadata.json": "bd61e87a15c9903f60a64b727074d9f1620d550a3a31e7ebac2377b59d041c60"
+  },
+  "aggregation": {
+    "capacity_selection": "all tested capacities retained",
+    "layers": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "x": "maximum family-specific complexity across the same five families at each matched capacity step",
+    "y": "arithmetic mean of test MAE over five prompt families"
+  },
+  "complexity_definition": {
+    "linear": "Ridge effective degrees of freedom",
+    "pls": "Retained PLS component count",
+    "circular_reg": "Sinusoidal code dimension",
+    "circular_cls": "Sinusoidal code dimension",
+    "interpretation": "Compare tuning trends within each probe family; equal axis values identify different fitted objects across families.",
+    "storage_field": "The historical JSONL field effective_df retains its name and all original values."
+  },
+  "canvas_inches": [
+    6.3,
+    7.35
+  ],
+  "layout": {
+    "rows": 3,
+    "columns": 2,
+    "model_order": [
+      "llama_3_2_1b",
+      "llama_3_2_3b",
+      "llama_3_1_8b",
+      "olmo_3_7b_base",
+      "olmo_2_13b",
+      "gpt_oss_20b"
+    ],
+    "legend_rows": 2,
+    "export_canvas_pt": [
+      453.59999999999997,
+      529.1999999999999
+    ],
+    "target_paper_width_pt": 453.543,
+    "font_sizes_pt": {
+      "ticks": 7,
+      "legend": 8,
+      "titles_and_axis_labels": 8.5
+    },
+    "font_weight": "normal",
+    "grid": "major horizontal guides only"
+  },
+  "fonts": {
+    "Regular": {
+      "path": "/usr/share/texmf/fonts/opentype/public/tex-gyre/texgyreheros-regular.otf",
+      "sha256": "6ae1a09d5a940367b7aaaa91ee8bd8a2c333bfe193e7096e23f931357d62081f"
+    },
+    "Bold": {
+      "path": "/usr/share/texmf/fonts/opentype/public/tex-gyre/texgyreheros-bold.otf",
+      "sha256": "b170162835f4efc288886dd4231406dc47e19b614cf4416836635599d44a7d60"
+    },
+    "Italic": {
+      "path": "/usr/share/texmf/fonts/opentype/public/tex-gyre/texgyreheros-italic.otf",
+      "sha256": "6473df7fa107b3fb4be38973710afe22b0640c2ac076d5337cf126bed9aa108c"
+    },
+    "Bold Italic": {
+      "path": "/usr/share/texmf/fonts/opentype/public/tex-gyre/texgyreheros-bolditalic.otf",
+      "sha256": "166fc6d068d9c9974281555cb3d730365537a9b676ab269bb5163f5a75496505"
+    }
+  },
+  "sha256": {
+    "figures/render_complexity.py": "9c966a29e0c08d91018692026c5ba83eabdb795a1add46a2c49f3053283f14bc",
+    "data/figures/probe_capacity_paths/points.jsonl": "bd5ee278cbedde36f583eb8ad35c3e141984bbaf4e8307e94cba610c745fc173",
+    "data/figures/probe_capacity_paths/baseline_by_model.jsonl": "06f965e88bde1ba77244ce20dd774ee6010e6859fcd4ce4b08cfcaadf6470f22",
+    "figures/fig_probe_capacity_paths.pdf": "56330edfa394def94a687c4f4ccbf01837fff2c56fcfd998e88b07363eab3c29",
+    "figures/fig_probe_capacity_paths.png": "a6f84456fcd56a22440b523ddac0610b34f0c3af016bed4892373a289eb72385"
+  },
+  "outputs": {
+    "fig_probe_capacity_paths.pdf": "56330edfa394def94a687c4f4ccbf01837fff2c56fcfd998e88b07363eab3c29",
+    "fig_probe_capacity_paths.png": "a6f84456fcd56a22440b523ddac0610b34f0c3af016bed4892373a289eb72385"
+  }
+}

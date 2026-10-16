@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "models": [
+    "llama_3_2_1b",
+    "llama_3_2_3b",
+    "llama_3_8b",
+    "olmo_3_7b_base",
+    "olmo_2_13b",
+    "gpt_oss_20b"
+  ],
+  "conditions": [
+    "single_context",
+    "context_centroid"
+  ],
+  "metric_rows": 9900,
+  "mean_cell_rows": 900,
+  "capacity_source": "single-context native-development selections from the 2026-04-20 sweep",
+  "split": "split_00; 800 train, 100 development, and 100 test integer values",
+  "relative_layers": [
+    0.0,
+    0.1,
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "runs": [
+    {
+      "model_alias": "llama_3_2_1b",
+      "run_id": "llama_3_2_1b__1bab9949843ef131",
+      "model_revision": "4e20de362430cd3b72f300e6b0f18e50e7166e08",
+      "run_config_sha256": "07cd29bc583028d7f7d32cb88a67eea2126c123a9d9cddf8d8c64d9cd44a7c6a",
+      "metrics_sha256": "a170402d4ce89e3e58da8090531d4b12bbb3c00fb30cc33a999c87b5280d0412",
+      "mean_cells_sha256": "e9ca79f8a4a0329dad74becf545e517f73b4086346d62bec4c7efc4328f2bb1c"
+    },
+    {
+      "model_alias": "llama_3_2_3b",
+      "run_id": "llama_3_2_3b__f6705aef5814a78b",
+      "model_revision": "13afe5124825b4f3751f836b40dafda64c1ed062",
+      "run_config_sha256": "07cd29bc583028d7f7d32cb88a67eea2126c123a9d9cddf8d8c64d9cd44a7c6a",
+      "metrics_sha256": "b2f77809e098b8ad1cab05f00be2b8a627c089f2a223653417aba6d84684e20f",
+      "mean_cells_sha256": "69aad03683801a2ee83553471dc2e8419de2542b29dbec53e54e6c5cdde2f9e1"
+    },
+    {
+      "model_alias": "llama_3_8b",
+      "run_id": "llama_3_8b__055da014e4d73c5c",
+      "model_revision": "8cde5ca8380496c9a6cc7ef3a8b46a0372a1d920",
+      "run_config_sha256": "07cd29bc583028d7f7d32cb88a67eea2126c123a9d9cddf8d8c64d9cd44a7c6a",
+      "metrics_sha256": "7ef69f6e6fb2a828ddda13301a0ec8b82b178262375e5ab71e674649cbb1200e",
+      "mean_cells_sha256": "597711909a9d30dfe4ecd6a8c53cad4b4bc0c8a43ce5d386be480962c47aa1e5"
+    },
+    {
+      "model_alias": "olmo_3_7b_base",
+      "run_id": "olmo_3_7b_base__677bd857a3a18cdc",
+      "model_revision": "a81bae42db3975be1671e27b9c9a56da1a9f980f",
+      "run_config_sha256": "07cd29bc583028d7f7d32cb88a67eea2126c123a9d9cddf8d8c64d9cd44a7c6a",
+      "metrics_sha256": "47080d721a71494855ec078e10a2e0ea05ef3e20f10dc05c2c61b032c0c0dd4c",
+      "mean_cells_sha256": "ae285ef06a7a374df4883b66dd409c0265af4b15f244d2ef85226ebecba29f96"
+    },
+    {
+      "model_alias": "olmo_2_13b",
+      "run_id": "olmo_2_13b__f96d2e1ce450c250",
+      "model_revision": "3fefddc1bf18a30e1d9b91000271630718f2aa8b",
+      "run_config_sha256": "07cd29bc583028d7f7d32cb88a67eea2126c123a9d9cddf8d8c64d9cd44a7c6a",
+      "metrics_sha256": "fe34d804f93cb12a0a51cb9cd0843f299c2407834c7cdc61e046b2fda5aac19f",
+      "mean_cells_sha256": "d4ecca3176b8b5c83bc3f1aa12813bc8ddebb27a3289d3a89ec1156efd16c4b9"
+    },
+    {
+      "model_alias": "gpt_oss_20b",
+      "run_id": "gpt_oss_20b__4522e6aea50f0d45",
+      "model_revision": "6cee5e81ee83917806bbde320786a8fb61efebee",
+      "run_config_sha256": "07cd29bc583028d7f7d32cb88a67eea2126c123a9d9cddf8d8c64d9cd44a7c6a",
+      "metrics_sha256": "c1a1a4ae2edb191e1228af1194709f7a32d0feaf46e92cb234c9f3bd2c28c4c7",
+      "mean_cells_sha256": "cbc38fb46f6266d2ee5549bad54c436f309251152107b3200e39a05a525de5c8"
+    }
+  ]
+}

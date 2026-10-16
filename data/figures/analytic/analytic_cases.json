@@ -1,0 +1,246 @@
+{
+  "line": {
+    "original_states": "h(t)=(t,t)",
+    "decoder": "d(x,y)=x; P(x,y)=sqrt(2)*x",
+    "downstream": "F(x,y)=y",
+    "source": [
+      0.0,
+      0.0
+    ],
+    "target": [
+      1.0,
+      1.0
+    ],
+    "edit": [
+      1.0,
+      0.0
+    ],
+    "target_probe": 1,
+    "requested_output": 1,
+    "edited_probe": 1.0,
+    "edited_output": 0.0,
+    "original_samples_checked": 101,
+    "distance_scaling": "P preserves all pairwise distances on y=x"
+  },
+  "parabola": {
+    "original_states": "h(t)=(t,t^2)",
+    "decoder": "d(x,y)=x",
+    "downstream": "F_lambda(x,y)=x+lambda*(y-x^2), lambda=1",
+    "source": [
+      0.0,
+      0.0
+    ],
+    "target": [
+      1.0,
+      1.0
+    ],
+    "edit": [
+      1.0,
+      0.0
+    ],
+    "target_probe": 1,
+    "requested_output": 1,
+    "edited_probe": 1.0,
+    "edited_output": 0.0,
+    "original_samples_checked": 101,
+    "downstream_family": "All lambda agree with d on the parabola; F_lambda(1,0)=1-lambda"
+  },
+  "chord": {
+    "original_states": "h(t)=(t,t^2), -1<=t<=1",
+    "decoder": "d(x,y)=x",
+    "downstream": "F(x,y)=x+y-x^2",
+    "source": [
+      -1.0,
+      1.0
+    ],
+    "target": [
+      0.0,
+      0.0
+    ],
+    "edit": [
+      0.0,
+      1.0
+    ],
+    "target_probe": 0,
+    "requested_output": 0,
+    "edited_probe": 0.0,
+    "edited_output": 1.0,
+    "original_samples_checked": 201,
+    "chord": "h_chord(t)=(t,1)",
+    "chord_output": "t+1-t^2",
+    "valid_endpoints": [
+      [
+        -1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ]
+  },
+  "helix_scalar": {
+    "original_states": "h(t)=(cos(pi*t/2),sin(pi*t/2),t), 0<=t<=1",
+    "decoder": "d(x,y,z)=z",
+    "downstream": "F(x,y,z)=2/pi*atan2(y,x)",
+    "source": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "target": [
+      0.0,
+      1.0,
+      1.0
+    ],
+    "edit": [
+      1.0,
+      0.0,
+      1.0
+    ],
+    "target_probe": 1,
+    "requested_output": 1,
+    "edited_probe": 1.0,
+    "edited_output": 0.0,
+    "original_samples_checked": 101
+  },
+  "helix_circular": {
+    "original_states": "h(t)=(cos(pi*t/2),sin(pi*t/2),t), 0<=t<=1",
+    "decoder": "P(x,y,z)=(x,y); d=2/pi*atan2(P_2,P_1)",
+    "downstream": "F(x,y,z)=z",
+    "source": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "target": [
+      0.0,
+      1.0,
+      1.0
+    ],
+    "edit": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "target_probe": 1,
+    "requested_output": 1,
+    "edited_probe": 1.0,
+    "edited_output": 0.0,
+    "original_samples_checked": 101,
+    "edited_circular_code": [
+      0,
+      1
+    ],
+    "target_circular_code": [
+      0,
+      1
+    ]
+  },
+  "context": {
+    "original_states": "h(t,c)=(t,c*t^2,c), c in {1,2}",
+    "decoder": "d(x,y,c)=x",
+    "downstream": "F(x,y,c)=x+y-c*x^2",
+    "source": [
+      0.0,
+      0.0,
+      2.0
+    ],
+    "target": [
+      1.0,
+      2.0,
+      2.0
+    ],
+    "edit": [
+      1.0,
+      1.0,
+      2.0
+    ],
+    "target_probe": 1,
+    "requested_output": 1,
+    "edited_probe": 1.0,
+    "edited_output": 0.0,
+    "original_samples_checked": 202,
+    "fitted_displacement": [
+      1,
+      1,
+      0
+    ],
+    "context1_output": 1
+  },
+  "surface": {
+    "original_states": "h(u,v)=(u,v,u*v), 0<=u,v<=1",
+    "decoder": "P(u,v,z)=(u,v)",
+    "downstream": "F(u,v,z)=z",
+    "source": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "target": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "edit": [
+      1.0,
+      1.0,
+      0.0
+    ],
+    "target_probe": [
+      1,
+      1
+    ],
+    "requested_output": 1,
+    "edited_probe": [
+      1.0,
+      1.0
+    ],
+    "edited_output": 0.0,
+    "original_samples_checked": 441,
+    "individual_edits": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ]
+    ],
+    "omitted_interaction": 1,
+    "independent_displacements": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ]
+    ],
+    "available_edit_basis": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "independent_coefficients": "(u,v,0)",
+    "joint_coefficients": "(u,v,u*v)"
+  }
+}

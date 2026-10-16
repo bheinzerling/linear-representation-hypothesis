@@ -1,0 +1,66 @@
+activation_cache_root: out/activation_caches/source_value_probe_canonical_prompt_sequences
+delta_kinds:
+  - value_code
+evaluation_batch_size: 100
+family: addition_formula
+family_label: Addition Formula
+intervention_layer_idx: 10
+model: llama_3_1_8b
+models_config: configs/models.yaml
+probe_architectures:
+  - linear
+  - pls
+  - pls_x_weight1
+  - circular_reg
+  - circular_cls
+probe_batch_size: 64
+probe_specs:
+  linear:
+    ridge_lambda: 0.551881046550891
+  pls:
+    n_components: 16
+    scale: false
+  pls_x_weight1:
+    n_components: 16
+    scale: false
+  circular_reg:
+    basis_dim: 10
+  circular_cls:
+    basis_dim: 10
+    batch_size: 256
+    betas: [0.9, 0.999]
+    device: cuda
+    hidden_dim: 100
+    lr: 0.01
+    max_epochs: 1000
+    patience: 20
+    seed: 1729
+    val_fraction: 0.1
+    weight_decay: 0.001
+reference_methods:
+  - causalab_centroid_endpoint
+  - counterfactual_patch
+representation_source: prompt_activations
+require_activation_cache_hit: false
+search:
+  methods:
+    - fixed
+seed: 1729
+split_dataset_dir: data/prompt_cache_canonical_source_splits_t800_d100_te100__a68a297dd188__r0
+split_name: split_00
+target_sampler:
+  distance_buckets:
+    - [1, 1]
+    - [2, 5]
+    - [6, 10]
+    - [11, 25]
+    - [26, 50]
+    - [51, 100]
+    - [101, 200]
+    - [201, 300]
+    - [301, 400]
+    - [401, 500]
+  n_targets_per_example: 20
+use_activation_cache: true
+value_max: 999
+value_min: 0

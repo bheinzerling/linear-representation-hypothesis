@@ -1,0 +1,12 @@
+seed: 1729
+source_run_dir: out/runs/source_value_rhs_addition_dataset__2026_05_13
+model_alias: llama_3_2_3b
+layer_idx: 8
+value_min: 0
+value_max: 999
+pca_components: 32
+spline_samples: 240
+report_stem: 2026-05-13-source-value-number-spline-0-999
+fit_groups:
+  - addition_formula_rhs_source
+  - addition_verbalized_rhs_source

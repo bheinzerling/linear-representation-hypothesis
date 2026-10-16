@@ -1,0 +1,38 @@
+[project]
+name = "linear-representation-hypothesis"
+version = "0.1.0"
+description = "Code and evidence for Linear? Representation? Hypothesis?"
+requires-python = ">=3.11,<3.13"
+license = "MIT"
+authors = [
+  {name = "Benjamin Heinzerling"},
+  {name = "Kentaro Inui"},
+]
+dependencies = [
+  "matplotlib==3.10.8",
+  "numpy==2.3.3",
+  "pandas==3.0.2",
+]
+
+[project.urls]
+Repository = "https://github.com/bheinzerling/linear-representation-hypothesis"
+
+[dependency-groups]
+dev = ["pytest>=8,<9", "ruff>=0.12,<1"]
+figures = ["cairocffi==1.7.1", "fonttools>=4.60,<5", "pillow>=11,<13"]
+
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lrh"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+exclude = ["experiments", "figures"]

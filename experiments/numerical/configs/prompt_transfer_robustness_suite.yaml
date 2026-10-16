@@ -1,0 +1,40 @@
+schema_version: 1
+seed: 1729
+models_config: configs/models.yaml
+split_dataset_dir: data/prompt_cache_variant_source_splits_t800_d100_te100_nv20__d92ce3119139__r0
+split_name: split_00
+selection_csv: experiment-reports/artifacts/2026-04-20-source-value-probe-prompt-style-transfer-split00-relative-layers/selected_transfer_summary.csv
+output_root: out/prompt_transfer_robustness_suite
+storage_dtype: float16
+relative_layers: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+families:
+  - addition_formula
+  - addition_verbalized
+  - subtraction_formula
+  - subtraction_verbalized
+  - identity_patchscopes
+architectures: [circular, pls, linear]
+direction_architectures: [pls, linear]
+conditions: [all_context_centroid, seen_context_centroid, heldout_context_centroid]
+pooled_assignment_replicates: 3
+bootstrap_replicates: 2000
+bootstrap_confidence_level: 0.95
+models:
+  llama_3_2_1b:
+    revision: 4e20de362430cd3b72f300e6b0f18e50e7166e08
+    batch_size: 128
+  llama_3_2_3b:
+    revision: 13afe5124825b4f3751f836b40dafda64c1ed062
+    batch_size: 96
+  llama_3_8b:
+    revision: 8cde5ca8380496c9a6cc7ef3a8b46a0372a1d920
+    batch_size: 64
+  olmo_3_7b_base:
+    revision: a81bae42db3975be1671e27b9c9a56da1a9f980f
+    batch_size: 64
+  olmo_2_13b:
+    revision: 3fefddc1bf18a30e1d9b91000271630718f2aa8b
+    batch_size: 32
+  gpt_oss_20b:
+    revision: 6cee5e81ee83917806bbde320786a8fb61efebee
+    batch_size: 32

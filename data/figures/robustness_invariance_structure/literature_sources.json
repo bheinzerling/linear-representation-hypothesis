@@ -1,0 +1,49 @@
+{
+  "tigges": {
+    "url": "https://arxiv.org/pdf/2310.15154v1",
+    "location": "Figure 2, page 3",
+    "model": "GPT2-small",
+    "layer": "first residual-stream layer",
+    "target": "sentiment",
+    "dataset": "ToyMovieReview adjective representations",
+    "extraction": "Published percentage labels divided by 100; all five estimators and random control retained."
+  },
+  "park_hierarchy": {
+    "study": "Kiho Park et al. (2025)",
+    "title": "The Geometry of Categorical and Hierarchical Concepts in Large Language Models",
+    "url": "https://arxiv.org/html/2406.01506v3",
+    "bibkey": "park2025geometry",
+    "location": "Figure 1; Theorem 8; Appendix F, Figures 10 and 12",
+    "evidence": "A formalization of hierarchical orthogonality, with empirical tests of concept-vector differences in whitened softmax spaces.",
+    "construction": "Four-level organism/animal/mammal/dog chain with plant, bird, and cat siblings. A three-dimensional schematic shows the highlighted chain's three orthogonal increments.",
+    "metric": "Causal inner product, estimated through whitening of unembeddings.",
+    "visual_reference": "chapter2_overview.png",
+    "visual_reference_sha256": "1c40b0c64be8b5b958fd56601cf0b99b1e3f455c2b624054462db98f0fd708fd",
+    "verified_on": "2026-09-11"
+  },
+  "hernandez_relations": {
+    "study": "Hernandez et al. (2024)",
+    "title": "Linearity of Relation Decoding in Transformer Language Models",
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/2b6d7285306fe896fca9b2e9a02ff6ec-Paper-Conference.pdf",
+    "bibkey": "hernandez2024linearity",
+    "location": "Sections 2.2--3; https://lre.baulab.info/",
+    "evidence": "Relation-specific affine maps recover subject--object mappings for most test subjects for nearly half of 47 evaluated relations.",
+    "construction": "Miles Davis/trumpet follows the paper; Yo-Yo Ma/cello is an additional illustrative pair. Positions and arrows are schematic.",
+    "verified_on": "2026-09-11"
+  },
+  "paulo_belrose": {
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/3c1fe56b043848b211030c202764c6a7-Paper-Conference.pdf",
+    "location": "Abstract; Sections 1 and 3",
+    "shared_fraction_approximate": 0.3,
+    "latent_count_reported": "131K",
+    "model": "Llama 3 8B",
+    "comparison": "Same data and data order, different random initialization seeds.",
+    "match_definition": "Same assigned counterpart in encoder and decoder matching, with both cosine similarities at least 0.7.",
+    "note": "The ICLR 2026 abstract retains the same rounded 30% fraction as arXiv v2; 70% is its approximate complement.",
+    "original_verified_url": "https://arxiv.org/html/2501.16615v2",
+    "source_version": "ICLR 2026 proceedings",
+    "verified_pdf_sha256": "be386a370850dc542a7392784e460f7d3f8c56d5da75c35b36d3c1942d415558",
+    "verified_on": "2026-09-10",
+    "activation_site": "feedforward network"
+  }
+}

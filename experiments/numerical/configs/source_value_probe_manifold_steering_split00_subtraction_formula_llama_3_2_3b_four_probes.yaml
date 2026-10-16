@@ -1,0 +1,65 @@
+seed: 1729
+models_config: configs/models.yaml
+model: llama_3_2_3b
+split_dataset_dir: data/prompt_cache_canonical_source_splits_t800_d100_te100__a68a297dd188__r0
+split_name: split_00
+family: subtraction_formula
+family_label: Subtraction Formula
+representation_source: prompt_activations
+intervention_layer_idx: 0
+probe_batch_size: 64
+evaluation_batch_size: 100
+use_activation_cache: true
+require_activation_cache_hit: true
+activation_cache_root: out/activation_caches/source_value_probe_canonical_prompt_sequences
+value_min: 0
+value_max: 999
+delta_kinds:
+  - value_code
+probe_specs:
+  linear:
+    ridge_lambda: 0.551881046550891
+  pls:
+    n_components: 16
+    scale: false
+  circular_reg:
+    basis_dim: 10
+  circular_cls:
+    basis_dim: 10
+    hidden_dim: 100
+    lr: 0.01
+    weight_decay: 0.001
+    betas: [0.9, 0.999]
+    max_epochs: 1000
+    patience: 20
+    val_fraction: 0.1
+    batch_size: 256
+    device: cuda
+    seed: 1729
+target_sampler:
+  n_targets_per_example: 10
+  distance_buckets:
+    - [1, 1]
+    - [2, 5]
+    - [6, 10]
+    - [11, 25]
+    - [26, 50]
+    - [51, 100]
+    - [101, 200]
+    - [201, 300]
+    - [301, 400]
+    - [401, 500]
+search:
+  objective: target_logprob
+  steps: 20
+  lr: 0.05
+  l2_penalty: 0.0005
+  max_scale: 8.0
+  manifold_norm_budget_multiplier: 8.0
+  methods:
+    - fixed
+    - scale_search
+    - manifold_search
+    - equal_budget_search
+    - unconstrained_manifold_search
+  unconstrained_l2_penalty: 0.0

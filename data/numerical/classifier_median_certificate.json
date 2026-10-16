@@ -1,0 +1,12 @@
+{
+  "architecture": "circular_cls",
+  "num_examples": 100,
+  "num_zero_errors": 20,
+  "sum_abs_error": 114,
+  "num_errors_at_least_two_upper_bound": 34,
+  "lower_middle_rank": 50,
+  "upper_middle_rank": 51,
+  "median_abs_error": 1.0,
+  "assumption": "absolute errors are nonnegative integers after numerical decoding",
+  "proof": "The zero count forces both central errors to be at least one. The upper bound on errors at least two forces both to be at most one."
+}

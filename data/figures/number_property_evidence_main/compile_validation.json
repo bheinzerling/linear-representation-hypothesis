@@ -1,0 +1,87 @@
+{
+  "command": "./compile.sh",
+  "paper_source_sha256": "cbf6f2dd6431720b3d7e7609ed1b233a720a3b4102c39442d7d421a4641b3991",
+  "paper_pdf_sha256": "794722239e35786babd72aecd450dc30c3b8dae48cb6a7892b63df6367ffc461",
+  "figure_pdf_sha256": "c17db714517de5b9143672d882b16795521a9282f541c59a161077da0dd564dc",
+  "figure_label": "fig:number-property-accessibility-main",
+  "figure_number_page": [
+    "6",
+    "7"
+  ],
+  "total_pages": 37,
+  "float_count": 29,
+  "float_number_page_changes": {
+    "tab:property-inconsistency-examples": [
+      [
+        "9",
+        "34"
+      ],
+      [
+        "9",
+        "35"
+      ]
+    ],
+    "fig:property-reasoning": [
+      [
+        "18",
+        "34"
+      ],
+      [
+        "19",
+        "34"
+      ]
+    ],
+    "fig:decodability-control-gap-absolute-mae": [
+      [
+        "6",
+        "7"
+      ],
+      [
+        "7",
+        "8"
+      ]
+    ],
+    "fig:number-property-accessibility-appendix": [
+      null,
+      [
+        "18",
+        "34"
+      ]
+    ],
+    "fig:number-property-accessibility-main": [
+      [
+        "7",
+        "7"
+      ],
+      [
+        "6",
+        "7"
+      ]
+    ],
+    "fig:geometric-interventions": [
+      [
+        "19",
+        "37"
+      ],
+      [
+        "20",
+        "37"
+      ]
+    ]
+  },
+  "critical_latex_warnings": [],
+  "inspected_pages": [
+    6,
+    7,
+    8,
+    9
+  ],
+  "frozen_full_activation_values_equal": true,
+  "other_panels_changed_pixels": 0,
+  "embedded_fonts": [
+    "TeX Gyre Heros Regular",
+    "TeX Gyre Heros Bold",
+    "DejaVu Sans Mono"
+  ],
+  "renumbering_authorized": true
+}

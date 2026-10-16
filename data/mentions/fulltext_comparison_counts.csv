@@ -1,0 +1,15 @@
+series_id,series_label,snapshot_date,year,result_count,partial_year
+google_scholar_survey,"Google Scholar, survey snapshot",2025-12,2022,2,False
+google_scholar_survey,"Google Scholar, survey snapshot",2025-12,2023,11,False
+google_scholar_survey,"Google Scholar, survey snapshot",2025-12,2024,149,False
+google_scholar_survey,"Google Scholar, survey snapshot",2025-12,2025,447,False
+google_scholar_current,"Google Scholar, current pilot",2026-07-31,2022,3,False
+google_scholar_current,"Google Scholar, current pilot",2026-07-31,2023,13,False
+google_scholar_current,"Google Scholar, current pilot",2026-07-31,2024,157,False
+google_scholar_current,"Google Scholar, current pilot",2026-07-31,2025,491,False
+google_scholar_current,"Google Scholar, current pilot",2026-07-31,2026,676,True
+openalex_current,"OpenAlex, current full-text index",2026-07-31,2022,0,False
+openalex_current,"OpenAlex, current full-text index",2026-07-31,2023,21,False
+openalex_current,"OpenAlex, current full-text index",2026-07-31,2024,136,False
+openalex_current,"OpenAlex, current full-text index",2026-07-31,2025,183,False
+openalex_current,"OpenAlex, current full-text index",2026-07-31,2026,526,True

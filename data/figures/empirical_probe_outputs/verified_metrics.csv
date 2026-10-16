@@ -1,0 +1,7 @@
+split,architecture,num_examples,accuracy,mean_abs_error,rmse
+train,linear,800,0.065,5.00875,6.284007479308089
+dev,linear,100,0.02,9.63,20.124363343966934
+test,linear,100,0.02,8.96,13.692333621410194
+train,circular_reg,800,1.0,0.0,0.0
+dev,circular_reg,100,0.19,1.49,1.8248287590894658
+test,circular_reg,100,0.16,1.63,1.9416487838947598

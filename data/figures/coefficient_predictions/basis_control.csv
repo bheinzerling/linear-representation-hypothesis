@@ -1,0 +1,9 @@
+method,label,effective_d95,target_mae,exact_accuracy,n,imposed_rank,coordinate_information,construction
+linear,Linear probe,1,218.3271014273341,0.0,2000,,probe fitted to source activations,fixed linear-probe edit path
+pls,PLS probe,1,214.79600972928816,0.0,2000,,probe fitted to source activations,fixed PLS-coefficient edit path
+circular_reg,Circular regression,7,221.28196796324784,0.0,2000,,probe fitted to source activations,fixed circular-regression edit path
+circular_cls,Circular classifier,9,221.8248312118042,0.0,2000,,probe fitted to source activations,fixed circular-classifier edit path
+property_coordinates,Property coordinates,15,219.28172597763367,0.0,2000,41,target property labels,all owner blocks replaced by probe-predicted coefficients
+in_span_search,In-span search,35,2.460232827372932,0.9945,2000,41,target value and output scoring,per-example coefficient search under the exact-patch norm budget
+centroid_patch,Centroid patch,49,5.365805356487688,0.993,2000,64,target value,PCA64 centroid intervention delta
+counterfactual_patch,Counterfactual patch,228,3.417449366046081,0.9995,2000,,target activation,exact contextual intervention delta

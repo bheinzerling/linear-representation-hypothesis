@@ -1,0 +1,233 @@
+{
+  "aggregation": "One count per purpose per paper; union across substantive episodes and verified versions; purposes overlap; no weighting, annual extrapolation, or population estimate.",
+  "annotator_provenance": {
+    "annotators": [
+      {
+        "annotation_phases_referenced": [
+          "pilot",
+          "second_pilot",
+          "strong_coding",
+          "expanded_coding"
+        ],
+        "coder_id": "coder_a",
+        "model_identifier": "gpt-5.6-sol",
+        "provider": "openai",
+        "reasoning_effort": "high",
+        "session_log": "rollout-2026-07-31T09-38-46-019fb59b-fd5b-7d41-a3a6-3d575f43cccb.jsonl",
+        "session_log_sha256": "7a68a5672b5122d9f1c93e642784a5c30f2ed3508d497e6cfefa0d812c8273e4",
+        "turn_context_records": 6
+      },
+      {
+        "annotation_phases_referenced": [
+          "pilot",
+          "second_pilot",
+          "strong_coding",
+          "expanded_coding"
+        ],
+        "coder_id": "coder_b",
+        "model_identifier": "gpt-5.6-sol",
+        "provider": "openai",
+        "reasoning_effort": "high",
+        "session_log": "rollout-2026-07-31T09-38-51-019fb59c-1037-7680-8df8-6ee6305591cf.jsonl",
+        "session_log_sha256": "d6ffb2f2388181cfcf7766716bbd4a83df4a0060a913a1a1cdbf21156979a81d",
+        "turn_context_records": 5
+      }
+    ],
+    "archive_policy": "Only the model metadata and source hashes are recorded here. Full session logs are outside the repository and contain material unrelated to the study.",
+    "interpretation": "Two separate coding agents used the same model identifier and reasoning effort throughout their recorded annotation turns. Agreement between these agents can reflect shared model errors.",
+    "recovered_from": "Archived Codex agent session metadata on 2026-10-02",
+    "schema_version": "1.0",
+    "unavailable_metadata": [
+      "exact backend model revision",
+      "sampling temperature",
+      "sampling top_p"
+    ]
+  },
+  "audited_replacement_sensitivity": {
+    "by_family": {
+      "define_position": {
+        "change_percentage_points": -3.2967032967032965,
+        "primary_count": 147,
+        "replacement_count": 141
+      },
+      "motivate_apply": {
+        "change_percentage_points": -0.5494505494505495,
+        "primary_count": 141,
+        "replacement_count": 140
+      },
+      "qualify_challenge": {
+        "change_percentage_points": -0.5494505494505495,
+        "primary_count": 102,
+        "replacement_count": 101
+      },
+      "test_support": {
+        "change_percentage_points": 1.098901098901099,
+        "primary_count": 117,
+        "replacement_count": 119
+      }
+    },
+    "interpretation": "Only the observed duplicate-label disagreements are perturbed; shared bias and unaudited labels are untested.",
+    "maximum_absolute_change_percentage_points": 3.2967032967032965,
+    "replaced_episodes": 60
+  },
+  "corpus": {
+    "documents": 206,
+    "episode_status_counts": {
+      "bibliography_only": 47,
+      "context_insufficient": 6,
+      "structural_fragment": 9,
+      "substantive": 314
+    },
+    "episodes": 376,
+    "papers_after_version_merge": 203,
+    "retrieval": "567 OpenAlex exact-phrase candidates; 519 resolved to Semantic Scholar; all 311 with at least one citation scanned; 206 eligible full-text documents retained.",
+    "substantive_documents": 185,
+    "substantive_papers": 182,
+    "verified_version_pairs": 3
+  },
+  "human_audit": {
+    "control_cases": 10,
+    "disputed_cases": 20,
+    "interpretation": "Targeted validation sample; cannot estimate corpus-wide error or prevalence.",
+    "seed": 20261002,
+    "selection": "All substantive pooled-audit disagreements on define_position or test_support, plus up to ten randomly selected remaining audit cases. Controls may disagree on other purposes.",
+    "status": "prepared; independent human judgments pending",
+    "total_cases": 30
+  },
+  "limitations": [
+    "Exact phrase, Semantic Scholar resolution and citation threshold, PDF availability and extraction define a selected corpus.",
+    "Verified renamed preprints and proceedings versions are merged; additional undetected version pairs are possible.",
+    "Session metadata identifies both agents as using gpt-5.6-sol with high reasoning effort; exact backend revisions and sampling parameters are unavailable. Agreement between agents using the same model can reflect shared errors; independent human validation is pending.",
+    "Episode-level reliability describes two stratified audit samples, not a paper-weighted random audit of the corpus."
+  ],
+  "overlap": {
+    "motivate_and_test": 87,
+    "multiple_families": 172,
+    "number_of_families_histogram": {
+      "1": 10,
+      "2": 60,
+      "3": 71,
+      "4": 41
+    }
+  },
+  "presence": [
+    {
+      "audit_substantive_episodes": 47,
+      "binary_kappa": 0.46387832699619763,
+      "paper_count": 147,
+      "paper_percentage": 80.76923076923077,
+      "purpose_id": "define_position",
+      "purpose_label": "Define / position",
+      "substantive_papers": 182
+    },
+    {
+      "audit_substantive_episodes": 47,
+      "binary_kappa": 0.6320939334637964,
+      "paper_count": 141,
+      "paper_percentage": 77.47252747252747,
+      "purpose_id": "motivate_apply",
+      "purpose_label": "Motivate / apply",
+      "substantive_papers": 182
+    },
+    {
+      "audit_substantive_episodes": 47,
+      "binary_kappa": 0.5965665236051503,
+      "paper_count": 117,
+      "paper_percentage": 64.28571428571429,
+      "purpose_id": "test_support",
+      "purpose_label": "Test / support",
+      "substantive_papers": 182
+    },
+    {
+      "audit_substantive_episodes": 47,
+      "binary_kappa": 0.7017225747960109,
+      "paper_count": 102,
+      "paper_percentage": 56.043956043956044,
+      "purpose_id": "qualify_challenge",
+      "purpose_label": "Qualify / challenge",
+      "substantive_papers": 182
+    }
+  ],
+  "purpose_functions": {
+    "define_position": [
+      "background_or_attribution",
+      "definition_or_formalization",
+      "literature_positioning",
+      "problem_setting"
+    ],
+    "motivate_apply": [
+      "application_or_interpretation",
+      "method_motivation",
+      "theoretical_premise"
+    ],
+    "qualify_challenge": [
+      "challenge_or_counterevidence",
+      "extension_or_repair",
+      "qualification_or_refinement"
+    ],
+    "test_support": [
+      "empirical_test",
+      "evidential_claim",
+      "theoretical_explanation"
+    ]
+  },
+  "reliability": {
+    "by_round": {
+      "expanded_coding": {
+        "fine_grained_rhetorical_function_exact_set_agreement": 0.043478260869565216,
+        "fine_grained_rhetorical_function_mean_jaccard": 0.5811594202898551,
+        "purpose_family_binary_kappa": {
+          "define_position": 0.25806451612903236,
+          "motivate_apply": 0.5490196078431373,
+          "qualify_challenge": 0.8257575757575757,
+          "test_support": 0.42975206611570227
+        },
+        "purpose_family_exact_set_agreement": 0.2608695652173913,
+        "purpose_family_mean_jaccard": 0.7282608695652174,
+        "substantive_audit_episode_count": 23
+      },
+      "strong_coding": {
+        "fine_grained_rhetorical_function_exact_set_agreement": 0.20833333333333334,
+        "fine_grained_rhetorical_function_mean_jaccard": 0.6438492063492064,
+        "purpose_family_binary_kappa": {
+          "define_position": 0.6571428571428571,
+          "motivate_apply": 0.6666666666666667,
+          "qualify_challenge": 0.5833333333333333,
+          "test_support": 0.7798165137614678
+        },
+        "purpose_family_exact_set_agreement": 0.5416666666666666,
+        "purpose_family_mean_jaccard": 0.8020833333333334,
+        "substantive_audit_episode_count": 24
+      }
+    },
+    "duplicated_episodes": 60,
+    "fine_grained_rhetorical_function_exact_set_agreement": 0.1276595744680851,
+    "fine_grained_rhetorical_function_mean_jaccard": 0.6131712259371834,
+    "purpose_family_binary_kappa": {
+      "define_position": 0.46387832699619763,
+      "motivate_apply": 0.6320939334637964,
+      "qualify_challenge": 0.7017225747960109,
+      "test_support": 0.5965665236051503
+    },
+    "purpose_family_exact_set_agreement": 0.40425531914893614,
+    "purpose_family_mean_jaccard": 0.7659574468085106,
+    "substantive_audit_episode_count": 47
+  },
+  "source_sha256": {
+    "annotator_provenance.json": "a2ef5df8868215caff7a8ad8a2c9a26e7bae36f5bf0ede4759c41a841cfc2807",
+    "build_figure1_estimates.py": "d4f29469d36a8e813f7364ab48b727be226e5eff56e36ab8874f2ebf2822f146",
+    "build_purpose_summary.py": "b54f2f0d7b68f11189eef51618e09cd4ba5b60b2907eb25c7f37e9dc4e917288",
+    "codebook_v0.1.md": "ebfa11df874334b1a9d84b0324fc5fb94c1d28e18ab00ff7d4ba5efed0e8ef47",
+    "expanded_coding/assignment_manifest.csv": "6fa3916a21e84f7ab5994925856ec305ee5949cecf05d749e56c9d7da1fd0c49",
+    "expanded_coding/coder_a_annotations.jsonl": "e1291d2b008af52ebc8039e7517d7f6c52729cee6a309329967dc5d32fadbce2",
+    "expanded_coding/coder_b_annotations.jsonl": "87ac45e347b28c5f46087dec4b60a428f902b454176a1aa0c56b4070755155e9",
+    "expanded_coding/corpus_annotations_primary.jsonl": "d96069fe4a033febeeb2aabc1817c33952963b63fdb8223311bce5604d3f9023",
+    "paper_versions.csv": "d01aac65614626ba713e5016af451a8567a0d298ea449b6c88fb551caf30adca",
+    "private/expanded_episodes.jsonl": "1e05ad12ef4f4b94400cea3a2253eb110c31043886b11d2dd49a3308ed0c9d18",
+    "strong_coding/assignment_manifest.csv": "85340399626ab1b731970efa89701b8a5b3371a962c1214f57659e4d2f333c78",
+    "strong_coding/coder_a_annotations.jsonl": "4f06e6b35351372e30ad749190e24b746d72130c432868612dcfcfdbddd03c69",
+    "strong_coding/coder_b_annotations.jsonl": "fb35bd225ad55c1a5a2a8f8b691f31710819ca2391f6ceba8e30bd2856d93647",
+    "validate_expanded_coding.py": "b7c3d6e75cc431873dbea60688d047223b3b8665b0612011a5a9fa9450f174bd",
+    "validate_second_pilot.py": "c88d881f5ba13d895388a72533cc2fbcd13cea3435f6ce38c7d9455c2daad868"
+  }
+}

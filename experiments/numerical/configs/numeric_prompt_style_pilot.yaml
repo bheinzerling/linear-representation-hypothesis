@@ -1,0 +1,19 @@
+seed: 1729
+models_config: configs/models.yaml
+output_dir: out/runs/numeric_prompt_style_pilot__2026_05_07
+report_stem: 2026-05-07-numeric-prompt-style-pilot
+device: cuda
+batch_size: 32
+num_values: 100
+value_min: 0
+value_max: 998
+fewshot_k_values:
+  - 0
+  - 3
+models:
+  - llama_3_2_1b
+  - llama_3_2_3b
+  - llama_3_8b
+  - olmo_3_7b_base
+  - olmo_2_13b
+  - gpt_oss_20b

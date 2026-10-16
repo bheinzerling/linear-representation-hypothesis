@@ -1,0 +1,6 @@
+comparison_group,method,label,subspace_rank,rank_label,exact_accuracy,ci_low,ci_high,n,target_access,construction
+similar_rank,property_projected,Projected exact patch,41,rank 41,90.65,88.35,92.70,2000,counterfactual target activation,orthogonal projection of the exact contextual patch into the fixed property span
+similar_rank,centroid_pca40,Centroid PCA,40,rank 40,90.80,,,2000,requested target value,centroid endpoint restricted to the first 40 PCA components
+high_accuracy,property_oracle,In-span oracle,41,rank 41,99.45,98.80,99.95,2000,requested target and output scoring,target-aware constrained optimization inside the fixed property span
+high_accuracy,centroid_pca64,Centroid PCA,64,rank 64,99.30,,,2000,requested target value,centroid endpoint restricted to the first 64 PCA components
+reference,full_patch,Full exact patch,4096,full hidden,99.95,99.85,100.00,2000,counterfactual target activation,full exact contextual patch

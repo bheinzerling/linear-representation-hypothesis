@@ -1,0 +1,57 @@
+{
+  "attention": "eager",
+  "bootstrap": {
+    "clusters": 100,
+    "replicates": 10000,
+    "seed": 1729
+  },
+  "cohort": "canonical_dev",
+  "components": {
+    "C1": {
+      "column": 8,
+      "function": "sin(v * 1000**(-4/5))"
+    },
+    "C3": {
+      "column": 6,
+      "function": "sin(v * 1000**(-3/5))"
+    }
+  },
+  "decoder_block": 9,
+  "dtype": "float16",
+  "evaluation_source_prompts": 100,
+  "evaluation_values": "Development; previously exposed replication cohort",
+  "experiment": "2026-10-15-figure7-matched-probes",
+  "files": {
+    "code_support.csv": "4ebe35dfd0b9af90332ed58331f2d42543df44c462e58f724688f97f17b516a7",
+    "component_predictions.csv": "44b29fe4c7a802027174d9d7a5b4f8e838a729f9a5298612bf1c9f6747462854",
+    "decoding_metrics.csv": "a24ad1baf5f1a344892f4f83895881bb8d351b9ef1df22a226da4c280ae76948",
+    "decoding_predictions.csv": "49249492943ad3fe5c1c55cfd7230e65053f2037935c3c70bfbe6b7e4141badd",
+    "steering_rows.csv.gz": "941cf917cb6ea555c6b313da83ee8424fa50d2f974f2b07a568a961b5658e589",
+    "steering_summary.csv": "b0f7af99f915f2f4aec59cf5ff638430568c6ece839085cd1646df53b519fc17"
+  },
+  "fit_ids": {
+    "individual_circular_reg": "322562ce7123b4aaaad8abfacf7dce2d25ca50d2dd8a5d8b9ccb513d17b93fbc",
+    "individual_linear": "2855e6c925ccca42630cb4606277b4d1970c7073113379949125b51bbaa416c6"
+  },
+  "fitting_values": 800,
+  "framework_layer": 10,
+  "model": "Llama-3.1-8B",
+  "prediction_sampling": "First frozen case (target slot 0) per source prompt; individual activations, no averaging",
+  "revision": "d04e592bb4f6aa9cfee91e2e20afa771667e1d4b",
+  "run_identity": "c5398ee4b3b87d6df98409189a13c2028078e136171e11a91265793fdb44e437",
+  "script_sha256": "7a40312013f618b4e58aee2c2b54930839de9282aed8e9ec03850de540a0beb2",
+  "source_sha256": {
+    "behavior_canonical_dev_control_centroid_difference.csv": "a5f271a33b876c60aa2f250d489b5bfb1d732dc0a95e4994a2fd0312e681479b",
+    "behavior_canonical_dev_control_counterfactual_patch.csv": "d7b9c3365d3ffcc0bad24617a35663166639594f28027e9a0f017903f42eb452",
+    "behavior_canonical_dev_control_no_edit.csv": "8cef1390fa15ec1c9a5cb2e8f7c03fb0c278804812a1c7c2ba77a997057ebb84",
+    "behavior_canonical_dev_control_pca64_centroid_difference.csv": "fd8e29321d55afea7450018303ec5ec540d3d00e70f01c5d86985de346ad5b27",
+    "behavior_canonical_dev_individual_circular_reg_label_difference.csv": "642032d945f1405dea5cbc7befd02cedd0210d25791c57fb50b3477a2cc2f45f",
+    "behavior_canonical_dev_individual_linear_label_difference.csv": "6bde9292ff6f4ec1a19210ecf6bfc08cc0fd72fabb9f2eab173f046bd19a92bd",
+    "cases_canonical_dev.jsonl": "e6fdce70d297a99bda85e7fb88de9be3978ef621db638f3fa0906601e21008a1",
+    "probe_individual_circular_reg.json": "4946bf1079f66ee5d335b586e25ff5fe5ff2f02431bb90bc946072a4b57ce9be",
+    "probe_individual_linear.json": "91b59c3042f6ac6d71374d4bba6d50f6c0b152e1ac79d9c423a262ed0767b49f",
+    "source_canonical_dev.npy": "9c47cd55c034bea33ffbea5eb068ffdbeb1c12adbd5cef711227b4d70fb8d3f8"
+  },
+  "target_replacements_per_prompt": 20,
+  "validated_result_sha256": "8d4bc0bb465bf93e283e884b9b0de3da3dfab7e610ca7ed87c44537736b6d6bd"
+}

@@ -1,0 +1,39 @@
+seed: 1729
+models_config: configs/models.yaml
+split_dataset_dir: data/source_value_zero_partner_splits_t800_d100_te100__1f6a65217316__r0
+split_name: split_00
+representation_source: prompt_activations
+use_activation_cache: true
+require_activation_cache_hit: true
+activation_cache_root: out/activation_caches/source_value_zero_partner_prompt_sequences
+relative_layers:
+  - 0.0
+  - 0.1
+  - 0.2
+  - 0.3
+  - 0.4
+  - 0.5
+  - 0.6
+  - 0.7
+  - 0.8
+  - 0.9
+  - 1.0
+models:
+  - llama_3_2_3b
+probe_batch_size_by_model:
+  llama_3_2_3b: 64
+prompt_families:
+  - family: addition_x1_plus_zero
+    family_label: Addition x1 + 0
+  - family: addition_zero_plus_x2
+    family_label: Addition 0 + x2
+variants:
+  - linear_coef
+  - pls_coef
+  - pls_x_weight1
+max_removed_rank: 8
+selection_partition: dev
+selection_metric: mean_abs_error
+center_mode: train_mean
+basis_rtol: 1.0e-8
+basis_atol: 1.0e-10

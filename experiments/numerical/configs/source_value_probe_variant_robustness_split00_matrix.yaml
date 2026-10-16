@@ -1,0 +1,30 @@
+seed: 1729
+models_config: configs/models.yaml
+split_dataset_dir: data/prompt_cache_variant_source_splits_t800_d100_te100_nv20__d92ce3119139__r0
+split_name: split_00
+representation_source: prompt_activations
+probe_layer_idx: 0
+report_stem: 2026-04-20-source-value-probe-variant-robustness-split00
+models:
+  - llama_3_2_1b
+  - llama_3_2_3b
+  - llama_3_8b
+  - olmo_3_7b_base
+  - gpt_oss_20b
+probe_batch_size_by_model:
+  llama_3_2_1b: 64
+  llama_3_2_3b: 64
+  llama_3_8b: 48
+  olmo_3_7b_base: 48
+  gpt_oss_20b: 8
+prompt_families:
+  - family: addition_formula
+    family_label: Addition Formula
+  - family: addition_verbalized
+    family_label: Addition Verbalized
+  - family: subtraction_formula
+    family_label: Subtraction Formula
+  - family: subtraction_verbalized
+    family_label: Subtraction Verbalized
+  - family: identity_patchscopes
+    family_label: Identity Patchscopes

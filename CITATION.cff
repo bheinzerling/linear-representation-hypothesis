@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "Please cite Linear? Representation? Hypothesis? when using this code or data."
+title: "Linear? Representation? Hypothesis?"
+type: software
+authors:
+  - family-names: Heinzerling
+    given-names: Benjamin
+  - family-names: Inui
+    given-names: Kentaro
+repository-code: "https://github.com/bheinzerling/linear-representation-hypothesis"
+url: "https://github.com/bheinzerling/linear-representation-hypothesis"
+license: MIT
+version: 0.1.0

@@ -1,0 +1,6 @@
+{"mean_abs_error": 239.45, "model_alias": "gpt_oss_20b"}
+{"mean_abs_error": 239.45, "model_alias": "llama_3_2_1b"}
+{"mean_abs_error": 239.45, "model_alias": "llama_3_2_3b"}
+{"mean_abs_error": 239.45, "model_alias": "olmo_2_13b"}
+{"mean_abs_error": 239.45, "model_alias": "olmo_3_7b_base"}
+{"mean_abs_error": 239.45, "model_alias": "llama_3_1_8b"}

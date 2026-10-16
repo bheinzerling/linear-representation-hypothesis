@@ -1,0 +1,149 @@
+episode_id,paper_id,paper_title,year,citation_rank,citation_count,source,primary_worker,audit_worker
+W7162893478-E01,W7162893478,Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet,2026,2,710,arxiv,coder_b,
+W4388514540-E01,W4388514540,The Linear Representation Hypothesis and the Geometry of Large Language Models,2023,4,639,arxiv,coder_b,
+W4388514540-E02,W4388514540,The Linear Representation Hypothesis and the Geometry of Large Language Models,2023,4,639,arxiv,coder_b,
+W4388514540-E03,W4388514540,The Linear Representation Hypothesis and the Geometry of Large Language Models,2023,4,639,arxiv,coder_b,
+W4388514540-E04,W4388514540,The Linear Representation Hypothesis and the Geometry of Large Language Models,2023,4,639,arxiv,coder_b,
+W4388514540-E05,W4388514540,The Linear Representation Hypothesis and the Geometry of Large Language Models,2023,4,639,arxiv,coder_b,coder_a
+W4389518382-E01,W4389518382,Emergent Linear Representations in World Models of Self-Supervised Sequence Models,2023,7,357,acl_anthology,coder_b,
+W4389518382-E02,W4389518382,Emergent Linear Representations in World Models of Self-Supervised Sequence Models,2023,7,357,acl_anthology,coder_b,
+W4394868309-E01,W4394868309,Foundational Challenges in Assuring Alignment and Safety of Large Language Models,2024,10,240,arxiv,coder_a,coder_b
+W4394868309-E02,W4394868309,Foundational Challenges in Assuring Alignment and Safety of Large Language Models,2024,10,240,arxiv,coder_a,
+W4387929831-E01,W4387929831,Linear Representations of Sentiment in Large Language Models,2023,16,176,arxiv,coder_b,
+W4387929831-E02,W4387929831,Linear Representations of Sentiment in Large Language Models,2023,16,176,arxiv,coder_b,
+W4403590208-E01,W4403590208,Programming Refusal with Conditional Activation Steering,2024,17,174,arxiv,coder_a,
+W4403590208-E02,W4403590208,Programming Refusal with Conditional Activation Steering,2024,17,174,arxiv,coder_a,
+W4406949968-E01,W4406949968,Open Problems in Mechanistic Interpretability,2025,18,174,arxiv,coder_a,
+W4406949968-E02,W4406949968,Open Problems in Mechanistic Interpretability,2025,18,174,arxiv,coder_a,
+W4406949968-E03,W4406949968,Open Problems in Mechanistic Interpretability,2025,18,174,arxiv,coder_a,
+W4406949968-E04,W4406949968,Open Problems in Mechanistic Interpretability,2025,18,174,arxiv,coder_a,
+W4406949968-E05,W4406949968,Open Problems in Mechanistic Interpretability,2025,18,174,arxiv,coder_a,
+W4403578769-E01,W4403578769,Improving Instruction-Following in Language Models through Activation Steering,2024,19,144,arxiv,coder_b,
+W4403851170-E01,W4403851170,A is for Absorption: Studying Feature Splitting and Absorption in Sparse Autoencoders,2024,20,141,arxiv,coder_b,coder_a
+W4403851170-E02,W4403851170,A is for Absorption: Studying Feature Splitting and Absorption in Sparse Autoencoders,2024,20,141,arxiv,coder_b,
+W4399401478-E01,W4399401478,The Geometry of Categorical and Hierarchical Concepts in Large Language Models,2024,21,137,arxiv,coder_b,
+W4399401478-E02,W4399401478,The Geometry of Categorical and Hierarchical Concepts in Large Language Models,2024,21,137,arxiv,coder_b,
+W4399401478-E03,W4399401478,The Geometry of Categorical and Hierarchical Concepts in Large Language Models,2024,21,137,arxiv,coder_b,coder_a
+W4399401478-E04,W4399401478,The Geometry of Categorical and Hierarchical Concepts in Large Language Models,2024,21,137,arxiv,coder_b,
+W4400375635-E01,W4400375635,A Practical Review of Mechanistic Interpretability for Transformer-Based Language Models,2024,22,133,arxiv,coder_a,
+W4391940658-E01,W4391940658,Interpreting CLIP with Sparse Linear Concept Embeddings (SpLiCE),2024,23,132,arxiv,coder_a,
+W4391940658-E02,W4391940658,Interpreting CLIP with Sparse Linear Concept Embeddings (SpLiCE),2024,23,132,arxiv,coder_a,coder_b
+W4404653002-E01,W4404653002,Do I Know This Entity? Knowledge Awareness and Hallucinations in Language Models,2024,24,121,arxiv,coder_b,coder_a
+W4404653002-E02,W4404653002,Do I Know This Entity? Knowledge Awareness and Hallucinations in Language Models,2024,24,121,arxiv,coder_b,coder_a
+W4396945540-E01,W4396945540,Towards Principled Evaluations of Sparse Autoencoders for Interpretability and Control,2024,29,86,arxiv,coder_b,
+W4396945540-E02,W4396945540,Towards Principled Evaluations of Sparse Autoencoders for Interpretability and Control,2024,29,86,arxiv,coder_b,
+W4396945540-E03,W4396945540,Towards Principled Evaluations of Sparse Autoencoders for Interpretability and Control,2024,29,86,arxiv,coder_b,
+W4396945540-E04,W4396945540,Towards Principled Evaluations of Sparse Autoencoders for Interpretability and Control,2024,29,86,arxiv,coder_b,coder_a
+W4396945540-E05,W4396945540,Towards Principled Evaluations of Sparse Autoencoders for Interpretability and Control,2024,29,86,arxiv,coder_b,
+W4392576577-E01,W4392576577,On the Origins of Linear Representations in Large Language Models,2024,30,78,arxiv,coder_b,
+W4403814983-E01,W4403814983,Robust LLM safeguarding via refusal feature adversarial training,2024,32,70,arxiv,coder_a,
+W4389500793-E01,W4389500793,Improving Activation Steering in Language Models with Mean-Centring,2023,33,68,arxiv,coder_b,
+W4407124196-E01,W4407124196,Language Models Use Trigonometry to Do Addition,2025,34,67,arxiv,coder_a,coder_b
+W4407124196-E02,W4407124196,Language Models Use Trigonometry to Do Addition,2025,34,67,arxiv,coder_a,coder_b
+W4404313164-E01,W4404313164,The Geometry of Concepts: Sparse Autoencoder Feature Structure,2024,35,65,arxiv,coder_b,
+W4404313164-E02,W4404313164,The Geometry of Concepts: Sparse Autoencoder Feature Structure,2024,35,65,arxiv,coder_b,coder_a
+W4403577986-E01,W4403577986,Semantics-Adaptive Activation Intervention for LLMs via Dynamic Steering Vectors,2024,38,62,arxiv,coder_a,
+W4389157175-E01,W4389157175,Is This the Subspace You Are Looking for? An Interpretability Illusion for Subspace Activation Patching,2023,39,60,arxiv,coder_a,coder_b
+W4389157175-E02,W4389157175,Is This the Subspace You Are Looking for? An Interpretability Illusion for Subspace Activation Patching,2023,39,60,arxiv,coder_a,
+W4407425033-E01,W4407425033,JBShield: Defending Large Language Models from Jailbreak Attacks through Activated Concept Analysis and Manipulation,2025,40,60,arxiv,coder_b,coder_a
+W4402671301-E01,W4402671301,CausalGym: Benchmarking causal interpretability methods on linguistic tasks,2024,42,50,acl_anthology,coder_b,
+W4402671301-E02,W4402671301,CausalGym: Benchmarking causal interpretability methods on linguistic tasks,2024,42,50,acl_anthology,coder_b,
+W4392120787-E01,W4392120787,A Language Model's Guide Through Latent Space,2024,43,49,arxiv,coder_a,
+W4404752287-E01,W4404752287,Recurrent Neural Networks Learn to Store and Generate Sequences using Non-Linear Representations,2024,44,49,acl_anthology,coder_b,coder_a
+W4406052064-E01,W4406052064,ICLR: In-Context Learning of Representations,2024,45,47,arxiv,coder_a,coder_b
+W4403365238-E01,W4403365238,Efficiently Learning at Test-Time: Active Fine-Tuning of LLMs,2024,46,46,arxiv,coder_b,coder_a
+W4403365238-E02,W4403365238,Efficiently Learning at Test-Time: Active Fine-Tuning of LLMs,2024,46,46,arxiv,coder_b,
+W4403365238-E03,W4403365238,Efficiently Learning at Test-Time: Active Fine-Tuning of LLMs,2024,46,46,arxiv,coder_b,
+W4403365499-E01,W4403365499,Efficient Dictionary Learning with Switch Sparse Autoencoders,2024,48,43,arxiv,coder_b,coder_a
+W4415135936-E01,W4415135936,From Flat to Hierarchical: Extracting Sparse Representations with Matching Pursuit,2025,49,42,arxiv,coder_a,
+W4415135936-E02,W4415135936,From Flat to Hierarchical: Extracting Sparse Representations with Matching Pursuit,2025,49,42,arxiv,coder_a,
+W4415135936-E03,W4415135936,From Flat to Hierarchical: Extracting Sparse Representations with Matching Pursuit,2025,49,42,arxiv,coder_a,
+W4414580992-E01,W4414580992,The Origins of Representation Manifolds in Large Language Models,2025,51,39,arxiv,coder_b,
+W4414580992-E02,W4414580992,The Origins of Representation Manifolds in Large Language Models,2025,51,39,arxiv,coder_b,coder_a
+W4414580992-E03,W4414580992,The Origins of Representation Manifolds in Large Language Models,2025,51,39,arxiv,coder_b,coder_a
+W4391835954-E01,W4391835954,Learning Interpretable Concepts: Unifying Causal Representation Learning and Foundation Models,2024,53,37,arxiv,coder_a,
+W7106861322-E01,W7106861322,Latent Collaboration in Multi-Agent Systems,2025,57,34,arxiv,coder_b,
+W4404350086-E01,W4404350086,Cross-Entropy Is All You Need To Invert the Data Generating Process,2024,59,32,openalex_resolved,coder_a,
+W4404350086-E02,W4404350086,Cross-Entropy Is All You Need To Invert the Data Generating Process,2024,59,32,openalex_resolved,coder_a,coder_b
+W4404350086-E03,W4404350086,Cross-Entropy Is All You Need To Invert the Data Generating Process,2024,59,32,openalex_resolved,coder_a,
+W4404350086-E04,W4404350086,Cross-Entropy Is All You Need To Invert the Data Generating Process,2024,59,32,openalex_resolved,coder_a,
+W4404350086-E05,W4404350086,Cross-Entropy Is All You Need To Invert the Data Generating Process,2024,59,32,openalex_resolved,coder_a,
+W4404784060-E01,W4404784060,Multi-property Steering of Large Language Models with Dynamic Activation Composition,2024,60,32,acl_anthology,coder_a,
+W4396787071-E01,W4396787071,A Philosophical Introduction to Language Models - Part II: The Way Forward,2024,61,31,arxiv,coder_a,
+W4396787071-E02,W4396787071,A Philosophical Introduction to Language Models - Part II: The Way Forward,2024,61,31,arxiv,coder_a,
+W4416037584-E01,W4416037584,What Features in Prompts Jailbreak LLMs? Investigating the Mechanisms Behind Attacks,2024,64,29,acl_anthology,coder_b,
+W4412888258-E01,W4412888258,Mechanistic Interpretability of Emotion Inference in Large Language Models,2025,65,29,acl_anthology,coder_a,
+W4407632011-E01,W4407632011,The Hidden Dimensions of LLM Alignment: A Multi-Dimensional Analysis of Orthogonal Safety Directions,2025,68,28,arxiv,coder_b,coder_a
+W4407632011-E02,W4407632011,The Hidden Dimensions of LLM Alignment: A Multi-Dimensional Analysis of Orthogonal Safety Directions,2025,68,28,arxiv,coder_b,coder_a
+W4404404507-E01,W4404404507,Towards Unifying Interpretability and Control: Evaluation via Intervention,2024,69,27,arxiv,coder_b,
+W4415275272-E01,W4415275272,Prompt-based Adaptation in Large-scale Vision Models: A Survey,2025,71,25,arxiv,coder_a,
+W4404449930-E01,W4404449930,Refusal in LLMs is an Affine Function,2024,72,24,arxiv,coder_a,
+W4404449930-E02,W4404449930,Refusal in LLMs is an Affine Function,2024,72,24,arxiv,coder_a,coder_b
+W4404783740-E01,W4404783740,RoseLoRA: Row and Column-wise Sparse Low-rank Adaptation of Pre-trained Language Model for Knowledge Editing and Fine-tuning,2024,73,24,acl_anthology,coder_b,coder_a
+W4406072134-E01,W4406072134,Relational Composition in Neural Networks: A Survey and Call to Action,2024,74,23,arxiv,coder_b,
+W4406072134-E02,W4406072134,Relational Composition in Neural Networks: A Survey and Call to Action,2024,74,23,arxiv,coder_b,
+W4403573479-E01,W4403573479,Interpretability as Compression: Reconsidering SAE Explanations of Neural Activations with MDL-SAEs,2024,76,22,arxiv,coder_a,coder_b
+W4399062371-E01,W4399062371,LiSeCo: Linear Semantic Control for Language Generation,2024,77,22,arxiv,coder_a,
+W4399062371-E02,W4399062371,LiSeCo: Linear Semantic Control for Language Generation,2024,77,22,arxiv,coder_a,
+W4403883367-E01,W4403883367,Towards Inference-time Category-wise Safety Steering for Large Language Models,2024,80,21,arxiv,coder_b,
+W4402670798-E01,W4402670798,Towards Tracing Trustworthiness Dynamics: Revisiting Pre-training Period of Large Language Models,2024,81,21,acl_anthology,coder_a,coder_b
+W4392867127-E01,W4392867127,Towards a theory of model distillation,2024,87,17,arxiv,coder_b,
+W4392867127-E02,W4392867127,Towards a theory of model distillation,2024,87,17,arxiv,coder_b,
+W4392867127-E03,W4392867127,Towards a theory of model distillation,2024,87,17,arxiv,coder_b,
+W4392867127-E04,W4392867127,Towards a theory of model distillation,2024,87,17,arxiv,coder_b,
+W4392867127-E05,W4392867127,Towards a theory of model distillation,2024,87,17,arxiv,coder_b,
+W4392867127-E06,W4392867127,Towards a theory of model distillation,2024,87,17,arxiv,coder_b,
+W4399453715-E01,W4399453715,Feature contamination: Neural networks learn uncorrelated features and fail to generalize,2024,90,16,arxiv,coder_b,
+W4399453715-E02,W4399453715,Feature contamination: Neural networks learn uncorrelated features and fail to generalize,2024,90,16,arxiv,coder_b,coder_a
+W4403345627-E01,W4403345627,Quantifying Feature Space Universality Across Large Language Models via Sparse Autoencoders,2024,91,16,arxiv,coder_b,
+W4415036317-E01,W4415036317,Improved Representation Steering for Language Models,2025,92,16,arxiv,coder_a,coder_b
+W7140128870-E01,W7140128870,Shifting Perspectives: Steering Vectors for Robust Bias Mitigation in LLMs,2026,95,15,acl_anthology,coder_a,coder_b
+W7140128870-E02,W7140128870,Shifting Perspectives: Steering Vectors for Robust Bias Mitigation in LLMs,2026,95,15,acl_anthology,coder_a,
+W4407012541-E01,W4407012541,Differentially Private Steering for Large Language Model Alignment,2025,99,14,arxiv,coder_b,
+W4407012541-E02,W4407012541,Differentially Private Steering for Large Language Model Alignment,2025,99,14,arxiv,coder_b,coder_a
+W7125350820-E01,W7125350820,"Locate, Steer, and Improve: A Practical Survey of Actionable Mechanistic Interpretability in Large Language Models",2026,101,14,arxiv,coder_b,
+W4415150863-E01,W4415150863,I Predict Therefore I Am: Is Next Token Prediction Enough to Learn Human-Interpretable Concepts from Data?,2025,103,13,arxiv,coder_a,
+W4415150863-E02,W4415150863,I Predict Therefore I Am: Is Next Token Prediction Enough to Learn Human-Interpretable Concepts from Data?,2025,103,13,arxiv,coder_a,
+W4415150863-E03,W4415150863,I Predict Therefore I Am: Is Next Token Prediction Enough to Learn Human-Interpretable Concepts from Data?,2025,103,13,arxiv,coder_a,
+W4415150863-E04,W4415150863,I Predict Therefore I Am: Is Next Token Prediction Enough to Learn Human-Interpretable Concepts from Data?,2025,103,13,arxiv,coder_a,
+W4415150863-E05,W4415150863,I Predict Therefore I Am: Is Next Token Prediction Enough to Learn Human-Interpretable Concepts from Data?,2025,103,13,arxiv,coder_a,
+W4415150863-E06,W4415150863,I Predict Therefore I Am: Is Next Token Prediction Enough to Learn Human-Interpretable Concepts from Data?,2025,103,13,arxiv,coder_a,
+W4415150863-E07,W4415150863,I Predict Therefore I Am: Is Next Token Prediction Enough to Learn Human-Interpretable Concepts from Data?,2025,103,13,arxiv,coder_a,
+W4415150863-E08,W4415150863,I Predict Therefore I Am: Is Next Token Prediction Enough to Learn Human-Interpretable Concepts from Data?,2025,103,13,arxiv,coder_a,
+W4415328675-E01,W4415328675,When Less Language is More: Language-Reasoning Disentanglement Makes LLMs Better Multilingual Reasoners,2025,105,13,arxiv,coder_a,
+W4406840930-E01,W4406840930,DRESSing Up LLM: Efficient Stylized Question-Answering via Style Subspace Editing,2025,106,12,arxiv,coder_b,
+W4415338491-E01,W4415338491,Beyond Linear Probes: Dynamic Safety Monitoring for Language Models,2025,108,11,arxiv,coder_a,
+W4415338491-E02,W4415338491,Beyond Linear Probes: Dynamic Safety Monitoring for Language Models,2025,108,11,arxiv,coder_a,
+W7130762585-E01,W7130762585,ODESteer: A Unified ODE-Based Steering Framework for LLM Alignment,2026,110,11,arxiv,coder_a,
+W4402670397-E01,W4402670397,SPIN: Sparsifying and Integrating Internal Neurons in Large Language Models for Text Classification,2023,111,10,acl_anthology,coder_b,
+W4391212511-E01,W4391212511,"A Reply to Makelov et al. (2023)'s ""Interpretability Illusion"" Arguments",2024,112,10,arxiv,coder_b,
+W4391212511-E02,W4391212511,"A Reply to Makelov et al. (2023)'s ""Interpretability Illusion"" Arguments",2024,112,10,arxiv,coder_b,
+W4394906322-E01,W4394906322,DESTEIN: Navigating Detoxification of Language Models via Universal Steering Pairs and Head-wise Activation Fusion,2024,113,10,arxiv,coder_a,
+W4407213451-E01,W4407213451,Analyze Feature Flow to Enhance Interpretation and Steering in Language Models,2025,114,10,arxiv,coder_b,
+W4412886637-E01,W4412886637,Cross-model Transferability among Large Language Models on the Platonic Representations of Concepts,2025,115,10,acl_anthology,coder_a,
+W4402671141-E01,W4402671141,Monotonic Representation of Numeric Attributes in Language Models,2024,119,9,acl_anthology,coder_b,
+W4415317895-E01,W4415317895,RepIt: Steering Language Models with Concept-Specific Refusal Vectors,2025,121,9,arxiv,coder_a,
+W4417275656-E01,W4417275656,Mechanistic indicators of understanding in large language models,2026,122,9,openalex_resolved,coder_a,
+W4417275656-E02,W4417275656,Mechanistic indicators of understanding in large language models,2026,122,9,openalex_resolved,coder_a,
+W4417275656-E03,W4417275656,Mechanistic indicators of understanding in large language models,2026,122,9,openalex_resolved,coder_a,
+W7133365278-E01,W7133365278,Truth as a Trajectory: What Internal Representations Reveal About Large Language Model Reasoning,2026,123,9,acl_anthology,coder_a,
+W7133365278-E02,W7133365278,Truth as a Trajectory: What Internal Representations Reveal About Large Language Model Reasoning,2026,123,9,acl_anthology,coder_a,
+W4403622999-E01,W4403622999,Can DPO Learn Diverse Human Values? A Theoretical Scaling Law,2024,124,8,arxiv,coder_b,
+W4399795335-E01,W4399795335,Words in Motion: Extracting Interpretable Control Vectors for Motion Transformers,2024,125,8,arxiv,coder_b,
+W4399795335-E02,W4399795335,Words in Motion: Extracting Interpretable Control Vectors for Motion Transformers,2024,125,8,arxiv,coder_b,
+W4417145582-E01,W4417145582,Sparse but Wrong: Incorrect L0 Leads to Incorrect Features in Sparse Autoencoders,2025,127,8,arxiv,coder_a,
+W4417145582-E02,W4417145582,Sparse but Wrong: Incorrect L0 Leads to Incorrect Features in Sparse Autoencoders,2025,127,8,arxiv,coder_a,
+W7134093724-E01,W7134093724,Observing and Controlling Features in Vision-Language-Action Models,2026,129,8,arxiv,coder_b,
+W7134093724-E02,W7134093724,Observing and Controlling Features in Vision-Language-Action Models,2026,129,8,arxiv,coder_b,
+W4404305162-E01,W4404305162,Mechanisms of Symbol Processing for In-Context Learning in Transformer Networks,2024,130,7,arxiv,coder_a,
+W4416036359-E01,W4416036359,Breaking Bad Tokens: Detoxification of LLMs Using Sparse Autoencoders,2025,131,7,acl_anthology,coder_b,
+W4416036868-E01,W4416036868,Superpose Task-specific Features for Model Merging,2025,132,7,acl_anthology,coder_a,
+W4416036868-E02,W4416036868,Superpose Task-specific Features for Model Merging,2025,132,7,acl_anthology,coder_a,
+W4416036868-E03,W4416036868,Superpose Task-specific Features for Model Merging,2025,132,7,acl_anthology,coder_a,
+W4416036868-E04,W4416036868,Superpose Task-specific Features for Model Merging,2025,132,7,acl_anthology,coder_a,
+W4416036035-E01,W4416036035,Towards Achieving Concept Completeness for Textual Concept Bottleneck Models,2025,133,7,acl_anthology,coder_a,
+W4407574828-E01,W4407574828,When Do Neural Networks Learn World Models?,2025,134,7,arxiv,coder_b,
+W4416219694-E01,W4416219694,SOM Directions Are Better than One: Multi-Directional Refusal Suppression in Language Models,2026,136,7,arxiv,coder_a,
+W4416219694-E02,W4416219694,SOM Directions Are Better than One: Multi-Directional Refusal Suppression in Language Models,2026,136,7,arxiv,coder_a,
+W4409361491-E01,W4409361491,LEGEND: Leveraging Representation Engineering to Annotate Safety Margin for Preference Datasets,2024,140,6,openalex_resolved,coder_a,
+W4403963891-E01,W4403963891,Lens: Rethinking Multilingual Enhancement for Large Language Models,2024,141,6,arxiv,coder_b,

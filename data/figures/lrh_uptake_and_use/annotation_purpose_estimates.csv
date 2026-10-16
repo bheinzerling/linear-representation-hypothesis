@@ -1,0 +1,17 @@
+year,partial_year,semantic_scholar_count,sample_substantive_papers,purpose_id,purpose_label,fractional_sample_papers,sample_share,estimated_semantic_scholar_papers
+2023,False,2,10,define_position,Define / position,3.166667,0.31666667,0.633333
+2023,False,2,10,motivate_apply,Motivate / apply,3.333333,0.33333333,0.666667
+2023,False,2,10,test_support,Test / support,2.000000,0.20000000,0.400000
+2023,False,2,10,qualify_challenge,Qualify / challenge,1.500000,0.15000000,0.300000
+2024,False,6,52,define_position,Define / position,16.166667,0.31089744,1.865385
+2024,False,6,52,motivate_apply,Motivate / apply,14.333333,0.27564103,1.653846
+2024,False,6,52,test_support,Test / support,13.333333,0.25641026,1.538462
+2024,False,6,52,qualify_challenge,Qualify / challenge,8.166667,0.15705128,0.942308
+2025,False,16,51,define_position,Define / position,14.416667,0.28267974,4.522876
+2025,False,16,51,motivate_apply,Motivate / apply,16.250000,0.31862745,5.098039
+2025,False,16,51,test_support,Test / support,12.916667,0.25326797,4.052288
+2025,False,16,51,qualify_challenge,Qualify / challenge,7.416667,0.14542484,2.326797
+2026,True,32,72,define_position,Define / position,20.416667,0.28356481,9.074074
+2026,True,32,72,motivate_apply,Motivate / apply,21.083333,0.29282407,9.370370
+2026,True,32,72,test_support,Test / support,14.083333,0.19560185,6.259259
+2026,True,32,72,qualify_challenge,Qualify / challenge,16.416667,0.22800926,7.296296

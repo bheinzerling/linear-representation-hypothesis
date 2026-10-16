@@ -1,0 +1,109 @@
+{
+  "schema_version": 2,
+  "property": "parity",
+  "classification": {
+    "model": "Llama-3.1-8B",
+    "value": 273,
+    "variant_id": "structured_10shot",
+    "n_demonstrations": 10,
+    "direction": {
+      "transformer_block": 9,
+      "hidden_state_index": 10,
+      "locus": "query_number",
+      "dose_l2": 7.738790988922119
+    },
+    "conditions": {
+      "baseline": "baseline",
+      "edit": "historical_direct",
+      "random_control": "historical_random"
+    },
+    "instruction": "Ten-shot prompt: add zero and report parity (even or odd).",
+    "prompt_suffix": "Input: 273\nResult after adding zero:",
+    "baseline_output": "273\nodd",
+    "edited_output": "273\neven",
+    "control_output": "273\nodd",
+    "controls": [
+      "random_direction"
+    ],
+    "display_transform": "Show the final query after ten demonstrations. Retain the first reported result and parity label; omit the repeated field label and subsequent generated examples."
+  },
+  "enumeration": {
+    "model": "Qwen3.6-27B",
+    "direction": {
+      "layer": 19,
+      "locus": "last_digit",
+      "alpha": 12.0
+    },
+    "instruction": "Select every number that is odd.",
+    "format_instruction": "Copy each selected number exactly from the input and preserve the input order.",
+    "source_numbers": [
+      956,
+      634,
+      585,
+      625,
+      308,
+      375,
+      80,
+      415,
+      824,
+      949
+    ],
+    "target_values": [
+      634
+    ],
+    "baseline_output": [
+      585,
+      625,
+      375,
+      415,
+      949
+    ],
+    "edited_output": [
+      634,
+      585,
+      625,
+      375,
+      415,
+      949
+    ],
+    "control_output": [
+      585,
+      625,
+      375,
+      415,
+      949
+    ],
+    "controls": [
+      "wrong_sign",
+      "random_direction",
+      "delimiter_location"
+    ]
+  },
+  "sources": [
+    {
+      "repository": "accurate-num-repr",
+      "path": "out/parity_probe_causal_contextualization/llama31_8b_layer10_v1/examples.jsonl.gz",
+      "sha256": "7edb6ac0f80f4e7ecbedb35db15e99377b053c89ca443a6046cb3d8c9df4f84c"
+    },
+    {
+      "repository": "accurate-num-repr",
+      "path": "out/parity_probe_causal_contextualization/llama31_8b_layer10_v1/metadata.json",
+      "sha256": "3a84cb0866ba595476883f234f41ca0ff5f5e77a16b3e0270aff5865eb335d6f"
+    },
+    {
+      "repository": "natural-language-transcoder",
+      "path": "out/number_property_list_steering/qwen3_6_27b_parity_corrected_v1/parity/examples.jsonl.gz",
+      "sha256": "c4a1a7e10b3aac6caa9dbd4d3b86c1284838f8dff5cbc66cbaf698ff39ba98c3"
+    },
+    {
+      "repository": "natural-language-transcoder",
+      "path": "out/number_property_list_steering/qwen3_6_27b_parity_corrected_v1/parity/config.json",
+      "sha256": "3ef4061c91383f04e587fe0c3ec728e362b7201eadc486ddf3d3dee0694fb9cf"
+    },
+    {
+      "repository": "natural-language-transcoder",
+      "path": "out/number_property_list_steering/qwen3_6_27b_parity_corrected_v1/parity/selected_strengths.json",
+      "sha256": "2941133dda75e9f7e9e66313fa59f92ff4665107e1805258b009301574b8315c"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "control.csv": {
+    "source": "data/figures/decodability_control_gap/direct_control_probe_mae_comparison.csv",
+    "sha256": "da98124aeb7b2216f41c45771ad9b428d28250b531d8943896ab39926ecd68fa"
+  },
+  "probe_metrics.csv": {
+    "source": "data/figures/probe_tests/part2_probe_eval_summary.csv",
+    "sha256": "17ad892685478387eb9ddd546856868022cf7c8eb73b9fff6e05a21ec5af14fc"
+  },
+  "probe_outputs.csv": {
+    "source": "data/figures/empirical_probe_outputs/probe_outputs.csv",
+    "sha256": "a7d5378f0f029aaf24a27b2aaa98d39536fa91a58af5e26016d08cf0e145129c"
+  },
+  "probe_provenance.json": {
+    "source": "data/figures/empirical_probe_outputs/provenance.json",
+    "sha256": "f0a5089abe28ebb44a667edcfd5168e69117d4427682b5dc277faf3edb18f4a8"
+  },
+  "components.csv": {
+    "source": "data/figures/mainline_circular_components/component_summary.csv",
+    "sha256": "344aaf4562540eedd0c9875a8cce6a04bb0e6fe053d41b9438afc0ff0b165739"
+  },
+  "component_metadata.json": {
+    "source": "data/figures/mainline_circular_components/metadata.json",
+    "sha256": "b8c34054d09d9ef6e4c1cf09db42eda794303cdac7bb4b91738198e69e1af258"
+  },
+  "component_provenance.json": {
+    "source": "data/figures/mainline_circular_components/provenance.json",
+    "sha256": "3fe5e20132541ea163e5720b59b9071d92090f86bd3e4cd030a823ec62d3b35b"
+  },
+  "coefficient_rows.csv.gz": {
+    "source": "data/04_why_strong_lrh_does_not_yield_control/coordinate_prediction_rows.csv.gz",
+    "sha256": "df6d84fa64a4125871dc9205f56844885258ca44badf9d318ee83420b8a13c10"
+  },
+  "basis_control.csv": {
+    "source": "data/figures/property_diagnostics/dimensionality_control.csv",
+    "sha256": "c1777487bdedf683f1cf03088c692fdb5de106e379cf6878512bff1e65c3db81"
+  },
+  "paper_figure_style.py": {
+    "source": "figures/paper_figure_style.py",
+    "sha256": "a2a37dc25620d2f523824e576ea48548e952ee7ebf9c9c46b13cff3a6fbf9477"
+  },
+  "paper_figure_sizes.json": {
+    "source": "figures/paper_figure_sizes.json",
+    "sha256": "5085ba3fc3810dd3e28465b36bf9a460efcd7036bec96630cc58ec004478302b"
+  },
+  "SpaceGrotesk.ttf": {
+    "source": "experiment-reports/artifacts/2026-10-03-numerical-figure-flow/inputs/SpaceGrotesk.ttf",
+    "sha256": "acad6de1fc93436f5c0f1f4137751ef04f1aea3063e7036535970ffcfbd79f72"
+  },
+  "SpaceGrotesk-OFL.txt": {
+    "source": "experiment-reports/artifacts/2026-10-03-numerical-figure-flow/inputs/SpaceGrotesk-OFL.txt",
+    "sha256": "18a4de52385f6b988782639d5d0cc1326e5a8c2de9a7f01d7b20d9aedcc60943"
+  }
+}

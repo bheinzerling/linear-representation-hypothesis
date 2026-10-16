@@ -1,0 +1,31 @@
+queue_root: out/remote_queues/source_value_steering_addition_formula_rel0p3_2000_gpt_oss
+generated_config_root: out/generated_configs/source_value_steering_addition_formula_rel0p3_2000_gpt_oss
+output_root: out/runs
+base_config_path: configs/source_value_probe_manifold_steering_split00_addition_formula_llama_3_2_3b_four_probes.yaml
+relative_layer: 0.3
+run_overrides:
+  probe_architectures:
+    - circular_reg
+  require_activation_cache_hit: false
+  target_sampler:
+    n_targets_per_example: 20
+  search:
+    objective: target_logprob
+    steps: 20
+    lr: 0.05
+    l2_penalty: 0.0005
+    max_scale: 8.0
+    manifold_norm_budget_multiplier: 8.0
+    methods:
+      - fixed
+      - probe_manifold_path_search
+      - unconstrained_manifold_search
+    path_min_position: 0.0
+    path_max_position: 1.0
+    path_num_positions: 11
+    unconstrained_l2_penalty: 0.0
+models:
+  - name: gpt_oss_20b
+    overrides:
+      probe_batch_size: 8
+      evaluation_batch_size: 4

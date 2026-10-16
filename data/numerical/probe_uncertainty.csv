@@ -1,0 +1,17 @@
+architecture,metric,estimate,low,high,n,replicates,status
+linear,r2,0.99759012504,0.996011603524,0.998710644646,100,10000,conditional_value_bootstrap
+linear,accuracy,0.02,0,0.05,100,10000,conditional_value_bootstrap
+linear,mean_abs_error,8.96,7.08,11.16,100,10000,conditional_value_bootstrap
+linear,median_abs_error,6,4.5,8,100,10000,conditional_value_bootstrap
+pls,r2,0.997195634627,0.99514107446,0.99852984852,100,10000,conditional_value_bootstrap
+pls,accuracy,0.04,0.01,0.08,100,10000,conditional_value_bootstrap
+pls,mean_abs_error,9.89,7.93975,12.21,100,10000,conditional_value_bootstrap
+pls,median_abs_error,7,5,8,100,10000,conditional_value_bootstrap
+circular_reg,r2,0.999951540278,0.999935659382,0.999962834954,100,10000,conditional_value_bootstrap
+circular_reg,accuracy,0.16,0.09,0.23,100,10000,conditional_value_bootstrap
+circular_reg,mean_abs_error,1.63,1.42,1.84,100,10000,conditional_value_bootstrap
+circular_reg,median_abs_error,2,1,2,100,10000,conditional_value_bootstrap
+circular_cls,r2,0.999975063167,,,100,0,per_value_predictions_unavailable
+circular_cls,accuracy,0.2,,,100,0,per_value_predictions_unavailable
+circular_cls,mean_abs_error,1.14,,,100,0,per_value_predictions_unavailable
+circular_cls,median_abs_error,1,,,100,0,per_value_predictions_unavailable

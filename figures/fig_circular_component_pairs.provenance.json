@@ -1,0 +1,53 @@
+{
+  "data": {
+    "data/figures/empirical_probe_outputs/probe_outputs.csv": "a7d5378f0f029aaf24a27b2aaa98d39536fa91a58af5e26016d08cf0e145129c",
+    "data/figures/empirical_probe_outputs/provenance.json": "f0a5089abe28ebb44a667edcfd5168e69117d4427682b5dc277faf3edb18f4a8",
+    "data/figures/mainline_circular_components/metadata.json": "b8c34054d09d9ef6e4c1cf09db42eda794303cdac7bb4b91738198e69e1af258",
+    "data/figures/mainline_circular_components/component_summary.csv": "344aaf4562540eedd0c9875a8cce6a04bb0e6fe053d41b9438afc0ff0b165739",
+    "data/figures/mainline_circular_components/provenance.json": "3fe5e20132541ea163e5720b59b9071d92090f86bd3e4cd030a823ec62d3b35b"
+  },
+  "generation": {
+    "script": "figures/render_components.py",
+    "script_sha256": "353663e43e885900ec28ece91eb0486485804c7da0deb1e72d08b3cc4f90c88a",
+    "command": "uv run --group figures python figures/render_components.py",
+    "matplotlib_version": "3.10.8",
+    "pdf_backend": "matplotlib.pdf",
+    "pdf_fonttype": 3,
+    "font_family": "TeX Gyre Heros",
+    "fonts": {
+      "Regular": {
+        "file": "texgyreheros-regular.otf",
+        "sha256": "6ae1a09d5a940367b7aaaa91ee8bd8a2c333bfe193e7096e23f931357d62081f"
+      },
+      "Bold": {
+        "file": "texgyreheros-bold.otf",
+        "sha256": "b170162835f4efc288886dd4231406dc47e19b614cf4416836635599d44a7d60"
+      },
+      "Italic": {
+        "file": "texgyreheros-italic.otf",
+        "sha256": "6473df7fa107b3fb4be38973710afe22b0640c2ac076d5337cf126bed9aa108c"
+      },
+      "Bold Italic": {
+        "file": "texgyreheros-bolditalic.otf",
+        "sha256": "166fc6d068d9c9974281555cb3d730365537a9b676ab269bb5163f5a75496505"
+      }
+    }
+  },
+  "display": {
+    "component_order": "increasing angular frequency; sine then cosine within each pair",
+    "axis_limits": [
+      -1.1,
+      1.1
+    ],
+    "partitions": {
+      "train": 800,
+      "dev": 100,
+      "test": 100
+    },
+    "metrics_use_unclipped_predictions": true
+  },
+  "outputs": {
+    "figures/fig_circular_component_pairs.pdf": "58c1dc58b155269a47ece2342d8d94f816dea7d488d3a78f5cf404877f53050a",
+    "figures/fig_circular_component_pairs.png": "7eb2498f2a7eeb9ec60e6c62377fee857df0021890ad45dc57d1948f56c5e9ca"
+  }
+}

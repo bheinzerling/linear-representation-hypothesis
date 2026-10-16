@@ -1,0 +1,40 @@
+{
+  "environments": {
+    "cpu": {
+      "kind": "local",
+      "python": {"preferred": "3.12"},
+      "package_manager": "uv",
+      "dependency_groups": ["dev", "figures"],
+      "launch_profiles": {
+        "reproduction": {
+          "prepare": "uv sync --locked",
+          "preflight": "uv run python scripts/verify.py",
+          "command": "uv run python scripts/reproduce.py",
+          "output_root": "out/reproduction"
+        },
+        "figures": {
+          "prepare": "uv sync --locked --group figures",
+          "preflight": "fc-match 'TeX Gyre Heros'",
+          "command": "uv run --group figures python scripts/render_figures.py",
+          "output_root": "figures"
+        }
+      }
+    },
+    "numerical": {
+      "kind": "local-or-accelerator",
+      "paths": {"repo": "experiments/numerical"},
+      "python": {"preferred": "3.12"},
+      "package_manager": "uv",
+      "prepare": "uv sync --locked",
+      "notes": ["Uses the lockfile in experiments/numerical.", "CUDA and checkpoint memory requirements depend on the selected model."]
+    },
+    "properties": {
+      "kind": "local-or-accelerator",
+      "paths": {"repo": "experiments/properties"},
+      "python": {"preferred": "3.13"},
+      "package_manager": "uv",
+      "prepare": "uv sync --locked",
+      "notes": ["Uses the lockfile in experiments/properties."]
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "probe_outputs.csv": {
+    "source": "data/figures/empirical_probe_outputs/probe_outputs.csv",
+    "sha256": "a7d5378f0f029aaf24a27b2aaa98d39536fa91a58af5e26016d08cf0e145129c"
+  },
+  "probe_outputs.provenance.json": {
+    "source": "data/figures/empirical_probe_outputs/provenance.json",
+    "sha256": "f0a5089abe28ebb44a667edcfd5168e69117d4427682b5dc277faf3edb18f4a8"
+  },
+  "probe_metrics.csv": {
+    "source": "data/figures/probe_tests/part2_probe_test_metrics.csv",
+    "sha256": "5eabd78cf310e647f4e131e729e11a39ce02d20db95748c128a9afe0e8d9ad85"
+  },
+  "probe_metrics.provenance.json": {
+    "source": "data/figures/probe_tests/part2_probe_test_metrics.provenance.json",
+    "sha256": "b4e3a96065709c7f1be92065df705ccf3a9ec10c8859362d2fc7d3c52a96e201"
+  },
+  "reference_panels.py": {
+    "sources": {
+      "figures/gen_fig_linear_accessibility_routes.py": "3feb71aa5fa4c6789970db3de1b757a6754c9ad0bddca350533b07cf8dbaa957",
+      "figures/gen_fig_number_probe_outputs.py": "a0c4db6f80bc992849daaa300659d1c7daf819d1588e927deb0448098bc40fa4"
+    },
+    "sha256": "6c483b22f5e95260bc950e120c9e778a4e81ac9ac5e4dad60a7496da8f4c143b",
+    "adaptation": "Optional vertical offset moves the legend, colorbar, and value label together; plotted points and projection are unchanged. The evaluation-region upper edge and label are raised by about 7 points."
+  },
+  "capacity_points.csv": {
+    "source": "experiments/numerical/experiment-reports/artifacts/2026-09-09-figure3-probe-capacity/points.csv",
+    "sha256": "a888bd7bd26db69154efbd819f63967b23b4a005bcd0baa048ff061ad51a5995"
+  },
+  "capacity.provenance.json": {
+    "source": "experiments/numerical/experiment-reports/artifacts/2026-09-09-figure3-probe-capacity/provenance.json",
+    "sha256": "339de3975157b502209a66449fe13e15a3d11bcacf6e40b5818961e5a256c2d9"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "model_name": "meta-llama/Llama-3.1-8B",
+  "model_alias": "llama_3_1_8b",
+  "layer_idx": 10,
+  "hidden_dim": 4096,
+  "architecture": "circular_reg",
+  "basis_dim": 10,
+  "prompt_style": "addition_formula_rhs_source",
+  "contexts_per_centroid": 20,
+  "split_name": "split_00",
+  "selection": "fixed condition from the mainline probe comparison",
+  "component_order": "increasing angular frequency; sine then cosine within each pair",
+  "display_limits": [
+    -1.1,
+    1.1
+  ],
+  "metrics_use_unclipped_predictions": true,
+  "decoding": {
+    "train": {
+      "n_values": 800,
+      "mae": 0.0,
+      "rmse": 0.0,
+      "accuracy": 1.0,
+      "r2": 1.0
+    },
+    "dev": {
+      "n_values": 100,
+      "mae": 1.49,
+      "rmse": 1.8248287590894658,
+      "accuracy": 0.19,
+      "r2": 0.9999565422721833
+    },
+    "test": {
+      "n_values": 100,
+      "mae": 1.63,
+      "rmse": 1.9416487838947598,
+      "accuracy": 0.16,
+      "r2": 0.9999515402784319
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "command": "uv run --group figures python figures/numerical_steering_accuracy.py --source-root accurate-num-repr",
+  "script_sha256": "822476bf9b9c4fc2719bce1901e869b920051cae046811cbebbe3da46b151753",
+  "control_sha256": "da98124aeb7b2216f41c45771ad9b428d28250b531d8943896ab39926ecd68fa",
+  "snapshot_sha256": "d9f8f0c695c9f43e4bace03ed3e324eba1b25549b690d5097b4581f681ce5ba6",
+  "sources": {
+    "linear": {
+      "run": "experiments/numerical/out/runs/source_value_probe_manifold_steering__9bbad17c01ee__r0",
+      "details_sha256": "0e232304823b5c9b0c7bf2da458a466c9f208de0853664ff5ac8fea774d92cf2",
+      "config_sha256": "e50b6b71b59b944ede2937de3a97ff5b765a50ebd4732f440f7d090cd9273810",
+      "architecture": "linear",
+      "method": "fixed",
+      "stage": "intervention"
+    },
+    "circular_reg": {
+      "run": "experiments/numerical/out/runs/source_value_probe_manifold_steering__9bbad17c01ee__r0",
+      "details_sha256": "0e232304823b5c9b0c7bf2da458a466c9f208de0853664ff5ac8fea774d92cf2",
+      "config_sha256": "e50b6b71b59b944ede2937de3a97ff5b765a50ebd4732f440f7d090cd9273810",
+      "architecture": "circular_reg",
+      "method": "fixed",
+      "stage": "intervention"
+    },
+    "centroid_patch": {
+      "run": "experiments/numerical/out/runs/source_value_probe_manifold_steering__d10de45c376a__r0",
+      "details_sha256": "da892b4e87fad2438220a147166265d05dc9d1543dd04cf71fd4d6c75b071ec4",
+      "config_sha256": "afdb7bda01f7907a4822eb6e2b4d911d55342c842b65dc8afac3ed1b1a1dbb54",
+      "architecture": "causalab_pca64_1d_manifold",
+      "method": "causalab_pca64_centroid_endpoint",
+      "stage": "intervention"
+    }
+  },
+  "matched_interventions_sha256": "b649c4f7fed2420e26686e8c8e8fa2652bf009d2273cce8927826dac01ff7c4b",
+  "metric": "Fraction of all interventions whose argmax numeric output equals the target output, or differs from it by at most 10 (inclusive). Non-numeric outputs count as failures.",
+  "target": "The counterfactual arithmetic answer (shifted_target), after changing the source operand.",
+  "reported_mae": "The original MAE uses the probability-weighted expected numeric output; accuracy uses the argmax output.",
+  "results": {
+    "linear": {
+      "n": 2000,
+      "exact_count": 0,
+      "within10_count": 317,
+      "exact_accuracy": 0.0,
+      "within10_accuracy": 0.1585
+    },
+    "circular_reg": {
+      "n": 2000,
+      "exact_count": 0,
+      "within10_count": 316,
+      "exact_accuracy": 0.0,
+      "within10_accuracy": 0.158
+    },
+    "centroid_patch": {
+      "n": 2000,
+      "exact_count": 1986,
+      "within10_count": 1988,
+      "exact_accuracy": 0.993,
+      "within10_accuracy": 0.994
+    },
+    "no_edit": {
+      "n": 2000,
+      "exact_count": 0,
+      "within10_count": 316,
+      "exact_accuracy": 0.0,
+      "within10_accuracy": 0.158
+    }
+  }
+}

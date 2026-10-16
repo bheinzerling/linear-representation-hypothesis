@@ -1,0 +1,208 @@
+{
+  "probe": {
+    "model_id": "meta-llama/Llama-3.1-8B",
+    "layer_index": 10,
+    "target_values": [
+      0,
+      999
+    ],
+    "split": {
+      "train": 800,
+      "development": 100,
+      "test": 100
+    },
+    "centroid_contexts": 20,
+    "projection_space": "supervised ridge and sine/cosine probe outputs",
+    "display_pair_index": 3,
+    "display_angular_frequency": 0.01584893192461114,
+    "effective_df_column": "historical field; family-specific complexity measures",
+    "complexity_measures": {
+      "linear": "ridge effective degrees of freedom = sum(s_j^2/(s_j^2+lambda))",
+      "pls": "retained PLS components",
+      "circular_reg": "sinusoidal code dimension",
+      "circular_cls": "sinusoidal code dimension; hidden projection width fixed at 100"
+    }
+  },
+  "pls_transfer": {
+    "models": [
+      {
+        "model_alias": "llama_3_2_1b",
+        "model_id": "meta-llama/Llama-3.2-1B",
+        "model_revision": "4e20de362430cd3b72f300e6b0f18e50e7166e08",
+        "n_layers": 16
+      },
+      {
+        "model_alias": "llama_3_2_3b",
+        "model_id": "meta-llama/Llama-3.2-3B",
+        "model_revision": "13afe5124825b4f3751f836b40dafda64c1ed062",
+        "n_layers": 28
+      },
+      {
+        "model_alias": "llama_3_8b",
+        "model_id": "meta-llama/Meta-Llama-3-8B",
+        "model_revision": "8cde5ca8380496c9a6cc7ef3a8b46a0372a1d920",
+        "n_layers": 32
+      },
+      {
+        "model_alias": "olmo_3_7b_base",
+        "model_id": "allenai/Olmo-3-1025-7B",
+        "model_revision": "a81bae42db3975be1671e27b9c9a56da1a9f980f",
+        "n_layers": 32
+      },
+      {
+        "model_alias": "olmo_2_13b",
+        "model_id": "allenai/OLMo-2-1124-13B",
+        "model_revision": "3fefddc1bf18a30e1d9b91000271630718f2aa8b",
+        "n_layers": 40
+      },
+      {
+        "model_alias": "gpt_oss_20b",
+        "model_id": "openai/gpt-oss-20b",
+        "model_revision": "6cee5e81ee83917806bbde320786a8fb61efebee",
+        "n_layers": 24
+      }
+    ],
+    "relative_layers": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "split": {
+      "train": 800,
+      "development": 100,
+      "test": 100,
+      "value_disjoint": true
+    },
+    "probe": "PLS scalar magnitude decoder; independently fitted within each prompt family.",
+    "capacity_selection": "Native-family development choices from the April 20 sweep.",
+    "direction_comparison": "Signed cosine between unit scalar decoder weight vectors at the same checkpoint and layer.",
+    "transfer": "Freeze source-family direction, gain, and intercept, and test the other family activations.",
+    "alignment": "Translate each family's training-activation mean to the equal-family global training mean; freeze source direction and gain. Target labels are unused.",
+    "averaging": "Equal weights for six models, eleven relative layers, and applicable family pairs. Compute angles before averaging."
+  },
+  "deletion": {
+    "model_id": "meta-llama/Llama-3.1-8B",
+    "layer_index": 10,
+    "fitted_basis_rank": 41,
+    "fitted_property_count": 20,
+    "fitting_prompts": "addition formulas",
+    "split_count": 10,
+    "prompts_per_task": 1000,
+    "unique_source_values": 639,
+    "raw_rows": 98000,
+    "reduced_units": 56000,
+    "bootstrap": {
+      "cluster": "source_value",
+      "replicates": 2000,
+      "seed_derivation": "first four little-endian bytes of SHA256(\"20260915::\" + task_id + \"::bootstrap\")",
+      "control_seed_reduction": "arithmetic mean within split/task/source_value/family",
+      "interval": "95% percentile",
+      "interpretation": "conditional on ten frozen fitted bases; evaluation uncertainty only"
+    }
+  },
+  "steering_accuracy": {
+    "methods": [
+      "linear",
+      "circular_reg",
+      "centroid_patch"
+    ],
+    "interventions_per_method": 2000,
+    "source_clusters": 100,
+    "target_edits_per_cluster": 20,
+    "metric": "argmax numeric output equals target_output, or differs by at most 10; nonnumeric outputs fail",
+    "reported_mae": "legacy probability-weighted expected numeric output, a different metric",
+    "bootstrap": {
+      "seed": 20261013,
+      "replicates": 10000,
+      "cluster": "baseline_row_idx",
+      "interval": "95% paired source-cluster percentile",
+      "zero_exact_success": "report zero/n and omit degenerate bootstrap interval"
+    }
+  },
+  "coefficient_prediction": {
+    "source_file": "04_why_strong_lrh_does_not_yield_control/coordinate_prediction_rows.csv.gz",
+    "interventions_per_method": 400,
+    "heldout_source_clusters": 20,
+    "target_values": "occur in training and evaluation",
+    "methods": [
+      "independent_property_all",
+      "ridge",
+      "rbf"
+    ],
+    "joint_methods_input": "property labels and source activations",
+    "independent_method_input": "property labels only",
+    "dose": "differs across methods; settings selected on development contexts",
+    "bootstrap": {
+      "seed": 20260826,
+      "replicates": 10000,
+      "cluster": "baseline_row_idx",
+      "interval": "95% source-cluster percentile"
+    },
+    "output_scored_search": {
+      "source_file": "04_why_strong_lrh_does_not_yield_control/dimensionality_control.csv",
+      "separate_interventions": 2000,
+      "accuracy": 0.9945
+    }
+  },
+  "parity": {
+    "counts": "fixed baseline-correct classification and enumeration evaluation sets; descriptive frequencies",
+    "uncertainty": "no binomial population interpretation or intervals from the archived counts",
+    "classification_model": "meta-llama/Llama-3.1-8B",
+    "enumeration_model": "Qwen/Qwen3.6-27B"
+  },
+  "appendix_capacity": {
+    "points": 4752,
+    "model_order": [
+      "llama_3_2_1b",
+      "llama_3_2_3b",
+      "llama_3_1_8b",
+      "olmo_3_7b_base",
+      "olmo_2_13b",
+      "gpt_oss_20b"
+    ],
+    "aggregation": {
+      "capacity_selection": "all tested capacities retained",
+      "layers": [
+        0.0,
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9,
+        1.0
+      ],
+      "x": "maximum family-specific complexity across the same five families at each matched capacity step",
+      "y": "arithmetic mean of test MAE over five prompt families"
+    },
+    "complexity_definition": {
+      "linear": "Ridge effective degrees of freedom",
+      "pls": "Retained PLS component count",
+      "circular_reg": "Sinusoidal code dimension",
+      "circular_cls": "Sinusoidal code dimension",
+      "interpretation": "Compare tuning trends within each probe family; equal axis values identify different fitted objects across families.",
+      "storage_field": "The historical JSONL field effective_df retains its name and all original values."
+    },
+    "checkpoint_replacement": {
+      "hf_id": "meta-llama/Llama-3.1-8B",
+      "label": "Llama 3.1 8B",
+      "revision": "d04e592bb4f6aa9cfee91e2e20afa771667e1d4b"
+    },
+    "underlying_families": 5,
+    "layers": 11,
+    "data_level": "Frozen per-model/depth/setting averages of five prompt-family test MAEs; underlying family rows not included.",
+    "same_fit_as_figure3d": false,
+    "uncertainty": "One fixed value-disjoint split; no refit/evaluation intervals in this aggregate bundle."
+  }
+}

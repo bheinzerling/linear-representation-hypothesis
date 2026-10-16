@@ -1,0 +1,50 @@
+seed: 1729
+models_config: configs/models.yaml
+tokenizer_model: llama_3_2_3b
+models:
+  - llama_3_2_3b
+device: cuda
+batch_size: 64
+value_min: 0
+value_max: 999
+evaluation_split: dev
+num_variants: 20
+contexts_per_source: 10
+operand_modes:
+  - x1
+  - x2
+output_dir: out/runs/source_value_original_prompt_representations_5styles_0_999__2026_05_13
+prompt_families:
+  - family: addition_formula
+    family_label: Addition Formula
+    render_kind: arithmetic
+    task: addition
+    template: "x1+x2="
+  - family: addition_verbalized
+    family_label: Addition Verbalized
+    render_kind: arithmetic
+    task: addition
+    template: "The result of x1 plus x2 is "
+  - family: subtraction_formula
+    family_label: Subtraction Formula
+    render_kind: arithmetic
+    task: subtraction
+    template: "x1-x2="
+  - family: subtraction_verbalized
+    family_label: Subtraction Verbalized
+    render_kind: arithmetic
+    task: subtraction
+    template: "The result of x1 minus x2 is "
+  - family: identity_patchscopes
+    family_label: Identity Patchscopes
+    render_kind: identity
+    identity_num_examples: 4
+    identity_operator: " = "
+    identity_separator: "; "
+representations:
+  enabled: true
+  models:
+    - llama_3_2_3b
+  layer_idx: 8
+  batch_size: 64
+  storage_dtype: float16

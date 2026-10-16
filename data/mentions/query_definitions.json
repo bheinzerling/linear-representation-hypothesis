@@ -1,0 +1,9 @@
+{
+  "explicit_label": {
+    "label": "Linear representation hypothesis",
+    "regex": "\\blinear representation hypothesis\\b",
+    "candidate_queries": [
+      "\"linear representation hypothesis\""
+    ]
+  }
+}

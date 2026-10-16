@@ -1,0 +1,61 @@
+{
+  "verified_on": "2026-09-15",
+  "tigges": {
+    "citation": "Tigges et al. (2024)",
+    "title": "Language Models Linearly Represent Sentiment",
+    "url": "https://aclanthology.org/2024.blackboxnlp-1.5.pdf",
+    "location": "Table 4 and Section 4.1, page 8 (printed page 65)",
+    "pdf_sha256": "4bd43b75cc5f86e6d8634999a6270aeb9b17aa2601ca47109ddcbb539f533c5d",
+    "model": "Pythia-2.8B",
+    "selection": "Originally correct SST examples with at least one comma; positive/negative completions are among the top ten predicted tokens.",
+    "intervention": "Layer-specific mean ablation at every layer.",
+    "baseline_accuracy_percent": 100,
+    "chance_accuracy_percent": 50,
+    "uncertainty": "Not specified for these intervention aggregates.",
+    "conditions": [
+      {"id": "baseline", "label": "No ablation", "direction": "None", "positions": "none", "accuracy_percent": 100, "loss_pp": 0},
+      {"id": "random_all", "label": "Random direction, all tokens", "direction": "Random", "positions": "all", "accuracy_percent": null, "accuracy_lower_bound_open": 99, "accuracy_upper_bound_closed": 100, "loss_pp": null, "loss_lower_bound_closed": 0, "loss_upper_bound_open": 1},
+      {"id": "sentiment_all", "label": "Sentiment direction, all tokens", "direction": "Sentiment", "positions": "all", "accuracy_percent": 62, "loss_pp": 38},
+      {"id": "sentiment_commas", "label": "Sentiment direction, commas", "direction": "Sentiment", "positions": "commas", "accuracy_percent": 82, "loss_pp": 18},
+      {"id": "full_commas", "label": "Full state, commas", "direction": "Full state", "positions": "commas", "accuracy_percent": 81, "loss_pp": 19}
+    ]
+  },
+  "lasri": {
+    "citation": "Lasri et al. (2022)",
+    "title": "Probing for the Usage of Grammatical Number",
+    "url": "https://aclanthology.org/2022.acl-long.603.pdf",
+    "location": "Appendix Table 1, page 14 (printed page 8831); Figure 3",
+    "pdf_sha256": "833941c451b76b1a36c3babe71ae819a8c6d41d5d641311ababb71d684bb885a",
+    "model": "BERT-base",
+    "metric": "Number-agreement accuracy loss, percentage points; published proportions multiplied by 100.",
+    "layer_zero": "Non-contextual token representations",
+    "layers": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "subject_loss_pp": [32, 32, 27, 29, 28, 29, 22, 9, 4, 0, 0, 0, 0],
+    "target_loss_pp": [4, 1, 1, 1, 1, 0, 1, 0, 0, 9, 29, 33, 23],
+    "subject_random_loss_pp": [6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    "target_random_loss_pp": [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1],
+    "subject_removed_rank": [17, 51, 33, 70, 22, 37, 48, 52, 64, 39, 22, 39, 26],
+    "target_removed_rank": [1, 13, 15, 26, 30, 17, 21, 44, 24, 22, 22, 26, 33],
+    "uncertainty": "Not specified in Appendix Table 1."
+  },
+  "hanna": {
+    "citation": "Hanna et al. (2023)",
+    "title": "How does GPT-2 compute greater-than?: Interpreting mathematical abilities in a pre-trained language model",
+    "url": "https://arxiv.org/html/2305.00586v5",
+    "pdf_url": "https://arxiv.org/pdf/2305.00586v5",
+    "pdf_sha256": "c23636a032c05443bd82984c6e8949d1b24f8b84ae4afa3a9ca634abbc7d15d1",
+    "location": "Section 4.1 and Figure 9; metric definition in Section 2",
+    "model": "GPT-2 small",
+    "metric": "Probability assigned to two-digit years greater than YY, minus probability assigned to years less than or equal to YY.",
+    "metric_range_percent": [-100, 100],
+    "baseline_probability_difference_percent": 81.7,
+    "baseline_example_sd_pp": 19.3,
+    "baseline_n": 10000,
+    "leace_probability_difference_percent": 64.7,
+    "leace_uncertainty": "Not specified in Section 4.1.",
+    "pca_ablation_result": "Little change reported",
+    "pca_ablation_numeric_value": null,
+    "geometry_status": "Schematic year order inspired by Figure 9; plotted point locations are constructed.",
+    "geometry_sample_in_source": "97 examples with unique start years; illustration is not a reconstruction of those points."
+  }
+}

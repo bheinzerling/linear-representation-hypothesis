@@ -1,0 +1,109 @@
+split,example_id,task_id,source_value,prompt,token_idx,target_text,target_token_id,target_numeric,output_kind,x1,x2,source_token_id,condition,family,operation,basis_rank,baseline_token_id,intervention_token_id,baseline_correct,intervention_correct,top1_agreement,baseline_target_logprob,intervention_target_logprob,target_logprob_delta,kl_original_to_intervention,delta_l2,centered_energy,basis_projection_energy,delta_energy_fraction,baseline_token,intervention_token,run_id,selection
+split_05,addition_formula:922,addition_formula,922,569+85=654; 444+93=537; 7+757=764; 2+922=,23,924,23890,924,int,2.0,922.0,20275,delete_property,delete_property,delete,41,23890,23873,True,False,False,-0.0181562352688935,-10.29978322396056,-10.281626988691666,10.132735851396518,2.960685286305363,19.1458370773845,8.76565736454507,0.4578362037196726,924,877,rank41_deletion__32c825d1d1a3__r0,random
+split_02,addition_formula:490,addition_formula,490,488+488=976; 641+90=731; 474+283=757; 6+490=,23,496,19447,496,int,6.0,490.0,18518,delete_property,delete_property,delete,41,19447,11209,True,False,False,-0.0113080614279361,-9.611709764742043,-9.600401703314107,9.496892449371568,3.2025679514678544,22.549120560301567,10.25644148376901,0.4548488468249088,496,280,rank41_deletion__1fbb974e0479__r0,random
+split_00,addition_formula:005,addition_formula,5,30+381=411; 241+677=918; 3+895=898; 146+5=,23,151,9690,151,int,146.0,5.0,20,delete_property,delete_property,delete,41,9690,13104,True,False,False,-0.0414857168808282,-9.154099564806096,-9.112613847925267,8.768750236739928,4.397086014794545,28.00757735504144,19.33436542150177,0.6903262348045086,151,720,rank41_deletion__1fbb974e0479__r0,first lost correct answer
+split_00,addition_formula:628,addition_formula,628,268+715=983; 120+312=432; 598+177=775; 1+628=,23,629,24239,629,int,1.0,628.0,23574,delete_property,delete_property,delete,41,24239,24239,True,True,True,-0.0252632061891517,-0.488125096573345,-0.4628618903841932,0.4237682337298526,3.238293408103732,19.62560074065756,10.48654419696808,0.534329844754435,629,629,rank41_deletion__1fbb974e0479__r0,first preserved correct answer
+split_07,addition_verbalized:831,addition_verbalized,831,The result of 17 plus 8 is 25; The result of 24 plus 31 is 55; The result of 105 plus 12 is 117; The result of 831 plus 4 is ,40,835,23424,835,int,831.0,4.0,25009,delete_property,delete_property,delete,41,23424,20823,True,False,False,-0.0222373900112486,-9.484628022472672,-9.462390632461425,9.313011380209716,2.2919388794913376,25.994672867923835,5.252983827324007,0.2020792434670695,835,531,rank41_deletion__32c825d1d1a3__r0,random
+split_05,addition_verbalized:687,addition_verbalized,687,The result of 17 plus 8 is 25; The result of 24 plus 31 is 55; The result of 105 plus 12 is 117; The result of 687 plus 15 is ,40,702,20253,702,int,687.0,15.0,21897,delete_property,delete_property,delete,41,20253,20253,True,True,True,-0.0162888811596317,-0.0338982447057993,-0.0176093635461676,0.0154111215937518,2.3588864393759748,26.013425189173645,5.564345233871864,0.2139028287665728,702,702,rank41_deletion__32c825d1d1a3__r0,random
+split_00,addition_verbalized:005,addition_verbalized,5,The result of 17 plus 8 is 25; The result of 24 plus 31 is 55; The result of 105 plus 12 is 117; The result of 146 plus 5 is ,43,151,9690,151,int,146.0,5.0,20,delete_property,delete_property,delete,41,9690,18113,True,False,False,-0.0118088247541159,-4.849895809966672,-4.838086985212556,4.803110386822434,3.456958057252149,31.29018921890195,11.950559009600548,0.3819267095509089,151,351,rank41_deletion__1fbb974e0479__r0,first lost correct answer
+split_00,addition_verbalized:177,addition_verbalized,177,The result of 17 plus 8 is 25; The result of 24 plus 31 is 55; The result of 105 plus 12 is 117; The result of 32 plus 177 is ,43,209,12652,209,int,32.0,177.0,11242,delete_property,delete_property,delete,41,12652,12652,True,True,True,-0.0186518293687605,-0.5418010733198066,-0.5231492439510461,0.4953883797595149,2.495666426152137,23.15936525226233,6.228350910622983,0.2689344393847135,209,209,rank41_deletion__1fbb974e0479__r0,first preserved correct answer
+split_06,identity_patchscopes:748,identity_patchscopes,748,750 = 750; 757 = 757; 780 = 780; 804 = 804; 748 = ,24,748,20338,748,int,,,20338,delete_property,delete_property,delete,41,20338,17521,True,False,False,-0.0921737458983393,-3.068391121702632,-2.9762173758042927,2.626121300360787,2.726719817051152,34.294893273271946,7.435000960699467,0.2167961539187528,748,768,rank41_deletion__32c825d1d1a3__r0,random
+split_05,identity_patchscopes:199,identity_patchscopes,199,230 = 230; 261 = 261; 265 = 265; 267 = 267; 199 = ,24,199,2550,199,int,,,2550,delete_property,delete_property,delete,41,2550,3753,True,False,False,-0.20536417710478,-4.365078756298619,-4.159714579193839,3.2593571931424727,3.034350869596623,36.65555428347517,9.207285199821785,0.2511839032256171,199,198,rank41_deletion__32c825d1d1a3__r0,random
+split_00,identity_patchscopes:005,identity_patchscopes,5,6 = 6; 46 = 46; 53 = 53; 57 = 57; 5 = ,24,5,20,5,int,,,20,delete_property,delete_property,delete,41,20,21,True,False,False,-0.0771579220486629,-3.435622236811607,-3.3584643147629443,3.0049322387986117,3.952155295437917,37.787761932403626,15.61953147925797,0.4133489436923748,5,6,rank41_deletion__1fbb974e0479__r0,first lost correct answer
+split_00,identity_patchscopes:053,identity_patchscopes,53,57 = 57; 59 = 59; 99 = 99; 108 = 108; 53 = ,24,53,4331,53,int,,,4331,delete_property,delete_property,delete,41,4331,4331,True,True,True,-0.0874271120801601,-0.3797462444167685,-0.2923191323366083,0.1812952263706042,3.077537617163438,33.02358013957401,9.471237785056012,0.2868022711355301,53,53,rank41_deletion__1fbb974e0479__r0,first preserved correct answer
+split_03,magnitude_comparison:332,magnitude_comparison,332,"Q: Does 3 exceed 500? Answer yes or no.
+A: no
+
+Q: Does 58 exceed 500? Answer yes or no.
+A: no
+
+Q: Does 241 exceed 500? Answer yes or no.
+A: no
+
+Q: Does 332 exceed 500? Answer yes or no.
+A:",58,no,912,0,bool,,,17079,delete_property,delete_property,delete,41,912,912,True,True,True,-0.3782030405841468,-0.4748200521305925,-0.0966170115464457,0.0087505751275684,2.431320260705246,27.838967314227496,5.911318210115828,0.2123397087037336, no, no,rank41_deletion__1fbb974e0479__r0,random
+split_07,magnitude_comparison:928,magnitude_comparison,928,"Q: Does 3 exceed 500? Answer yes or no.
+A: no
+
+Q: Does 58 exceed 500? Answer yes or no.
+A: no
+
+Q: Does 241 exceed 500? Answer yes or no.
+A: no
+
+Q: Does 928 exceed 500? Answer yes or no.
+A:",58,yes,10035,1,bool,,,25001,delete_property,delete_property,delete,41,10035,10035,True,True,True,-0.3589157197997323,-0.4268950131126665,-0.0679792933129341,0.0052197373130022,2.3883116499282013,29.317682608757558,5.704032537182768,0.194559461377036, yes, yes,rank41_deletion__32c825d1d1a3__r0,random
+split_00,magnitude_comparison:293,magnitude_comparison,293,"Q: Does 3 exceed 500? Answer yes or no.
+A: no
+
+Q: Does 58 exceed 500? Answer yes or no.
+A: no
+
+Q: Does 241 exceed 500? Answer yes or no.
+A: no
+
+Q: Does 293 exceed 500? Answer yes or no.
+A:",58,no,912,0,bool,,,17313,delete_property,delete_property,delete,41,912,10035,True,False,False,-0.6041327695830496,-0.7657964267706028,-0.1616636571875531,0.0133800054725149,2.378929090727778,27.94843788166154,5.659303618710892,0.2024908741831421, no, yes,rank41_deletion__1fbb974e0479__r0,first lost correct answer
+split_00,magnitude_comparison:005,magnitude_comparison,5,"Q: Does 3 exceed 500? Answer yes or no.
+A: no
+
+Q: Does 58 exceed 500? Answer yes or no.
+A: no
+
+Q: Does 241 exceed 500? Answer yes or no.
+A: no
+
+Q: Does 5 exceed 500? Answer yes or no.
+A:",58,no,912,0,bool,,,20,delete_property,delete_property,delete,41,912,912,True,True,True,-0.3278982542820756,-0.536935480489948,-0.2090372262078723,0.0425301758255026,3.4488935853753917,31.67863970387072,11.894866963243524,0.3754854082888579, no, no,rank41_deletion__1fbb974e0479__r0,first preserved correct answer
+split_01,parity:561,parity,561,"Q: Is 3 even? Answer yes or no.
+A: no
+
+Q: Is 58 even? Answer yes or no.
+A: yes
+
+Q: Is 241 even? Answer yes or no.
+A: no
+
+Q: Is 561 even? Answer yes or no.
+A:",52,no,912,0,bool,,,20460,delete_property,delete_property,delete,41,912,912,True,True,True,-0.1424785101253469,-0.3305106834287166,-0.1880321733033696,0.064671130293109,2.299095036341915,34.471442628809335,5.285837986132032,0.1533396221054705, no, no,rank41_deletion__1fbb974e0479__r0,random
+split_02,parity:507,parity,507,"Q: Is 3 even? Answer yes or no.
+A: no
+
+Q: Is 58 even? Answer yes or no.
+A: yes
+
+Q: Is 241 even? Answer yes or no.
+A: no
+
+Q: Is 507 even? Answer yes or no.
+A:",52,no,912,0,bool,,,20068,delete_property,delete_property,delete,41,10035,10035,False,False,True,-0.8048029978081424,-0.8310961116704476,-0.0262931138623052,0.0007025393509609,2.308532899738416,29.101697902823105,5.329324149174658,0.1831276019347884, yes, yes,rank41_deletion__1fbb974e0479__r0,random
+split_00,parity:108,parity,108,"Q: Is 3 even? Answer yes or no.
+A: no
+
+Q: Is 58 even? Answer yes or no.
+A: yes
+
+Q: Is 241 even? Answer yes or no.
+A: no
+
+Q: Is 108 even? Answer yes or no.
+A:",52,yes,10035,1,bool,,,6640,delete_property,delete_property,delete,41,10035,912,True,False,False,-0.1818948116423726,-0.7192754810100439,-0.5373806693676713,0.2632153584989679,2.4550139915640843,28.790100182813006,6.027093698775419,0.2093460481382224, yes, no,rank41_deletion__1fbb974e0479__r0,first lost correct answer
+split_00,parity:005,parity,5,"Q: Is 3 even? Answer yes or no.
+A: no
+
+Q: Is 58 even? Answer yes or no.
+A: yes
+
+Q: Is 241 even? Answer yes or no.
+A: no
+
+Q: Is 5 even? Answer yes or no.
+A:",52,no,912,0,bool,,,20,delete_property,delete_property,delete,41,912,912,True,True,True,-0.0221417553075014,-0.0188653185565428,0.0032764367509585,0.0019889434726296,3.5345814854865027,36.28601041351536,12.493266277543974,0.3442998041165374, no, no,rank41_deletion__1fbb974e0479__r0,first preserved correct answer
+split_09,subtraction_formula:347,subtraction_formula,347,25-8=17; 64-31=33; 117-12=105; 347-314=,21,33,1644,33,int,347.0,314.0,17678,delete_property,delete_property,delete,41,1644,4103,True,False,False,-0.0487795521002425,-8.399734743759215,-8.350955191658972,7.970227189472456,3.057682108402609,29.6587415567518,9.349419876045424,0.3152331955202945,33,52,rank41_deletion__32c825d1d1a3__r0,random
+split_01,subtraction_formula:068,subtraction_formula,68,25-8=17; 64-31=33; 117-12=105; 68-37=,21,31,2148,31,int,68.0,37.0,2614,delete_property,delete_property,delete,41,2148,1758,True,False,False,-0.028244771006161,-5.111173514754647,-5.082928743748486,4.898937939631867,2.978478843198089,24.06034550197052,8.87133621937863,0.3687119213916557,31,35,rank41_deletion__1fbb974e0479__r0,random
+split_00,subtraction_formula:005,subtraction_formula,5,25-8=17; 64-31=33; 117-12=105; 5-4=,21,1,16,1,int,5.0,4.0,20,delete_property,delete_property,delete,41,16,508,True,False,False,-0.0230197032483445,-4.835038220078733,-4.812018516830388,4.661736941609625,3.934907061386458,29.034193771835326,15.483493581749013,0.5332847780594756,1,20,rank41_deletion__1fbb974e0479__r0,first lost correct answer
+split_00,subtraction_formula:006,subtraction_formula,6,25-8=17; 64-31=33; 117-12=105; 6-6=,21,0,15,0,int,6.0,6.0,21,delete_property,delete_property,delete,41,15,15,True,True,True,-0.0358533854697107,-0.8768357704383583,-0.8409823849686475,0.7855818525180733,3.9429298246409887,27.86363939525088,15.546695602043416,0.5579563883063036,0,0,rank41_deletion__1fbb974e0479__r0,first preserved correct answer
+split_04,subtraction_verbalized:749,subtraction_verbalized,749,The result of 25 minus 8 is 17; The result of 64 minus 31 is 33; The result of 117 minus 12 is 105; The result of 749 minus 488 is ,40,261,15602,261,int,749.0,488.0,25541,delete_property,delete_property,delete,41,15602,15537,True,False,False,-0.0162727736045376,-5.25244803037749,-5.2361752567729525,5.174169176942086,2.5955280692581835,25.82425108804581,6.736765958307113,0.2608697512790836,261,259,rank41_deletion__1fbb974e0479__r0,random
+split_03,subtraction_verbalized:495,subtraction_verbalized,495,The result of 25 minus 8 is 17; The result of 64 minus 31 is 33; The result of 117 minus 12 is 105; The result of 495 minus 414 is ,40,81,5932,81,int,495.0,414.0,21038,delete_property,delete_property,delete,41,5932,4103,True,False,False,-0.0051704001438608,-7.428412122286815,-7.423241722142954,7.381459548974608,2.7090037228961745,31.03463662804602,7.338701170665335,0.2364680875313792,81,52,rank41_deletion__1fbb974e0479__r0,random
+split_00,subtraction_verbalized:005,subtraction_verbalized,5,The result of 25 minus 8 is 17; The result of 64 minus 31 is 33; The result of 117 minus 12 is 105; The result of 5 minus 4 is ,40,1,16,1,int,5.0,4.0,20,delete_property,delete_property,delete,41,16,17,True,False,False,-0.0062373429535469,-5.329411649980841,-5.323174307027294,5.276041181367353,3.554822410988599,29.14455416231776,12.636762373666794,0.4335891468192505,1,2,rank41_deletion__1fbb974e0479__r0,first lost correct answer
+split_00,subtraction_verbalized:114,subtraction_verbalized,114,The result of 25 minus 8 is 17; The result of 64 minus 31 is 33; The result of 117 minus 12 is 105; The result of 114 minus 114 is ,40,0,15,0,int,114.0,114.0,8011,delete_property,delete_property,delete,41,15,15,True,True,True,-0.0030786022757069,-0.0213747777426682,-0.0182961754669612,0.0171297320751696,2.98295888826135,30.27361829013789,8.898043729057388,0.2939207214605089,0,0,rank41_deletion__1fbb974e0479__r0,first preserved correct answer

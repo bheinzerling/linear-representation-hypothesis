@@ -1,0 +1,14 @@
+report_stem: 2026-04-25-source-value-probe-manifold-steering-prompt-styles-four-probes-relative-layer-sweep-all-models
+model_reports:
+  - model: llama_3_2_1b
+    report_stem: 2026-04-25-llama-3-2-1b-source-value-probe-manifold-steering-prompt-styles-four-probes-relative-layer-sweep
+  - model: llama_3_2_3b
+    report_stem: 2026-04-24-llama-3-2-3b-source-value-probe-manifold-steering-prompt-styles-four-probes-relative-layer-sweep
+  - model: llama_3_8b
+    report_stem: 2026-04-25-llama-3-8b-source-value-probe-manifold-steering-prompt-styles-four-probes-relative-layer-sweep
+  - model: olmo_3_7b_base
+    report_stem: 2026-04-25-olmo-3-7b-base-source-value-probe-manifold-steering-prompt-styles-four-probes-relative-layer-sweep
+  - model: olmo_2_13b
+    report_stem: 2026-04-25-olmo-2-13b-source-value-probe-manifold-steering-prompt-styles-four-probes-relative-layer-sweep
+  - model: gpt_oss_20b
+    report_stem: 2026-04-25-gpt-oss-20b-source-value-probe-manifold-steering-prompt-styles-four-probes-relative-layer-sweep

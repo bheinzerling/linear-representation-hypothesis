@@ -1,0 +1,55 @@
+{
+  "command": "uv run python figures/numerical_uncertainty.py",
+  "script_sha256": "2c2c205b583ee4fbe65038108eb6f66b3f0cdc68b92505cb946c75751cc675e8",
+  "inputs": {
+    "data/figures/probe_tests/reproduced_test_predictions.csv": "deab25a96e14e976b21479b292b14906929c42563545f51eac9815e5cb824ca6",
+    "data/figures/decodability_efficiency/probe_metrics.csv": "5eabd78cf310e647f4e131e729e11a39ce02d20db95748c128a9afe0e8d9ad85",
+    "data/figures/numerical_sufficiency_atlas/steering_accuracy_rows.csv.gz": "d9f8f0c695c9f43e4bace03ed3e324eba1b25549b690d5097b4581f681ce5ba6",
+    "data/figures/deletion/provenance.json": "2ef7b6debc55359e34dff668b7b551952288137b6e808e90b09fc63fb12e9377",
+    "data/figures/number_property_evidence_main/contradiction_counts.csv": "70c1145802fa206c3f25acb551d1fb56fa486cff619fe981d2b16cc5b5dc2aec"
+  },
+  "bootstrap": {
+    "level": 0.95,
+    "replicates": 10000,
+    "seed": 20261013,
+    "quantile_method": "linear",
+    "numpy": "2.3.3"
+  },
+  "probe": {
+    "unit": "heldout numerical value",
+    "n": 100,
+    "paired_across_methods": true,
+    "conditioning": "one frozen split and fitted probe per method; fitting uncertainty excluded",
+    "r2_denominator": "target variance recomputed in each resampled evaluation set",
+    "classifier_exception": "Aggregate scores and a median certificate are available; per-value predictions are absent, so no classifier interval is estimated."
+  },
+  "steering": {
+    "unit": "baseline_row_idx, identifying one source context and value",
+    "clusters": 100,
+    "targets_per_cluster": 20,
+    "n_per_method": 2000,
+    "paired_across_methods_and_baseline": true,
+    "conditioning": "frozen model, policies, and twenty targets per source; policy-fitting uncertainty excluded",
+    "zero_successes": "Display the observed count. Percentile resampling of all-zero observations cannot estimate an upper success bound; interval endpoints are unavailable.",
+    "constant_paired_change": "An interval is omitted when all resampled paired changes are identical."
+  },
+  "existing_deletion_intervals": {
+    "cluster": "source_value",
+    "control_seed_reduction": "mean within each split/task/value before bootstrap",
+    "interpretation": "conditional on the ten frozen fitted bases; no training-set uncertainty",
+    "replicates": 2000,
+    "unit_weight": "one prompt",
+    "prompt_instances_per_task": 1000,
+    "distinct_source_values": 639,
+    "fitted_bases": 10,
+    "overlapping_splits": true
+  },
+  "contradiction_counts": {
+    "conditioning": "fixed baseline-correct sets of 100 classification queries and fifty enumeration prompts",
+    "intervals": "Counts are descriptive; a sampling design for population intervals is unavailable."
+  },
+  "outputs": {
+    "probe_metrics.csv": "5af9ae33be6e459c0f17de432cf0ebce00cddddb62b2040eee145c4480e6cf63",
+    "steering_accuracy.csv": "2232af8843a4f89c4e33d28bb27b1561a8969eff170d9d0090bdb2943a4ad378"
+  }
+}

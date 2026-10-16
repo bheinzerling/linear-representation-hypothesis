@@ -1,0 +1,7 @@
+{
+  "snapshot": "data/figures/refusal/author_evaluations.json",
+  "sha256": "3209d0ed9c42de33291ff1b6914dae183fc461be36eb75cbe1f9a979079d19de",
+  "source_commit": "9d852fae1a9121c78b29142de733cb1340770cc3",
+  "selection": "All five saved checkpoints, one smallest model per family; JailbreakBench baseline and directional ablation only.",
+  "selected_candidate": "07 · Operation above evidence"
+}

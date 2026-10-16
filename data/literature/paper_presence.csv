@@ -1,0 +1,5 @@
+purpose_id,purpose_label,paper_count,substantive_papers,paper_percentage,binary_kappa,audit_substantive_episodes
+define_position,Define / position,147,182,80.76923076923077,0.46387832699619763,47
+motivate_apply,Motivate / apply,141,182,77.47252747252747,0.6320939334637964,47
+test_support,Test / support,117,182,64.28571428571429,0.5965665236051503,47
+qualify_challenge,Qualify / challenge,102,182,56.043956043956044,0.7017225747960109,47

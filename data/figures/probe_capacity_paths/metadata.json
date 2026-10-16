@@ -1,0 +1,72 @@
+{
+  "aggregation": {
+    "capacity_selection": "all tested capacities retained",
+    "layers": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "x": "maximum family-specific complexity across the same five families at each matched capacity step",
+    "y": "arithmetic mean of test MAE over five prompt families"
+  },
+  "bundle_sha256": {
+    "baseline_by_model.jsonl": "06f965e88bde1ba77244ce20dd774ee6010e6859fcd4ce4b08cfcaadf6470f22",
+    "points.jsonl": "bd5ee278cbedde36f583eb8ad35c3e141984bbaf4e8307e94cba610c745fc173",
+    "replacement_points.jsonl": "053a01e6f38d0abaa1ddfd69bc6068b126371458f08fff8f7ccdb64511393881"
+  },
+  "bundle_version": 2,
+  "complexity_definition": {
+    "linear": "Ridge effective degrees of freedom",
+    "pls": "Retained PLS component count",
+    "circular_reg": "Sinusoidal code dimension",
+    "circular_cls": "Sinusoidal code dimension",
+    "interpretation": "Compare tuning trends within each probe family; equal axis values identify different fitted objects across families.",
+    "storage_field": "The historical JSONL field effective_df retains its name and all original values."
+  },
+  "checkpoint": {
+    "hf_id": "meta-llama/Llama-3.1-8B",
+    "label": "Llama 3.1 8B",
+    "revision": "d04e592bb4f6aa9cfee91e2e20afa771667e1d4b"
+  },
+  "comparison_notes": [
+    "Checkpoint replaced; prompt files, layer rule, token positions, capacities, fitter and evaluation code retained.",
+    "Five prompt-family shards start with global seed 1729 independently. The original runner seeds once per run and can import earlier probe fits; the new shards do not reproduce its classifier-initialization sequence. Inner classifier split seed stays 1729.",
+    "PyTorch 2.11.0 and NumPy/scikit-learn/Transformers versions matched across local and lab; GPU architectures differ.",
+    "Figure curves use test MAE, arithmetic mean across prompt families, and maximum effective DF across families at the same capacity step, matching the original plotted artifact.",
+    "Other five model panels will retain their exact frozen Figure 10 points.",
+    "Addition Formula moved from urakasumi to the local GB10 after 196 fits. All existing activation-cache files passed SHA-256 verification before resuming, and saved RNG states preserve continuation. GPU hardware changes for the remaining fits are recorded in worker segments.",
+    "Subtraction Formula moved from urakasumi to the GB10 after 364 fits, with all committed activation-cache files verified by SHA-256 and saved RNG continuation restored.",
+    "Addition Verbalized moved from urakasumi to the GB10 after 515 fits, with committed activation files checked by SHA-256 and saved RNG continuation restored.",
+    "Subtraction Verbalized moved from urakasumi to the GB10 after 612 fits, with committed activation files checked by SHA-256 and saved RNG continuation restored."
+  ],
+  "export_command": "scripts/export_figure10_llama31_capacity.py --manifest experiment-reports/artifacts/2026-09-09-figure10-llama31-capacity/manifest.json --original-bundle probe_capacity_paths --output-dir experiment-reports/artifacts/2026-09-09-figure10-llama31-capacity/figure_bundle",
+  "figure_id": "fig_probe_capacity_paths",
+  "model_order": [
+    "llama_3_2_1b",
+    "llama_3_2_3b",
+    "llama_3_1_8b",
+    "olmo_3_7b_base",
+    "olmo_2_13b",
+    "gpt_oss_20b"
+  ],
+  "original_bundle_sha256": {
+    "baseline_by_model.jsonl": "c9a3c47e7f160e37bc1d6772fb1dae77370b60c6246694eea4f2377c7c87868a",
+    "points.jsonl": "99f64ae210b35c769871395eadc14028209fc1b72be32a20349c359fec46db37"
+  },
+  "source_summary_sha256": {
+    "out/runs/figure10_llama31_20260909/source_value_probe_capacity_sweep_relative_layers__100624251098__r0/summary_metrics.jsonl": "56118d71175696b89a8613fc41ecf9fa0209082a3d84536371933545ba15c35c",
+    "out/runs/figure10_llama31_20260909/source_value_probe_capacity_sweep_relative_layers__390044ce40b9__r0/summary_metrics.jsonl": "7881364bcd5ec67754a968ad41241c4c8532f8e15a383a4b98d3d2fdc216f788",
+    "out/runs/figure10_llama31_20260909/source_value_probe_capacity_sweep_relative_layers__41ed840309d8__r0/summary_metrics.jsonl": "abd0db707669685b07a7be2b4e6f93d19ebce63bfc53c4b60d450443b508adb3",
+    "out/runs/figure10_llama31_20260909/source_value_probe_capacity_sweep_relative_layers__5a297a11df54__r0/summary_metrics.jsonl": "c3632a08d0597c0de9bc5ff23f87d64417f7deb4d04d35fc879d7199b8afff48",
+    "out/runs/figure10_llama31_20260909/source_value_probe_capacity_sweep_relative_layers__bb4fcfb84bc5__r0/summary_metrics.jsonl": "fc02ecc7c30be87dd40fb4760d7681bf4d4369fe6c78194aa81cc88542a31cea"
+  },
+  "study": "2026-09-09-figure10-llama31-capacity"
+}

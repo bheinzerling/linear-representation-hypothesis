@@ -1,0 +1,60 @@
+{
+  "snapshot_date": "2026-10-03",
+  "experiment_repository": "bheinzerling/accurate-num-repr",
+  "experiment_head_at_snapshot": "e135e34010884a08272b17e9438c32b337af581d",
+  "completed_experiment_commit": "adaa6018b1738dec7cde845b5ed6b672b5dd0999",
+  "report": "2026-09-15-rank41-deletion.html",
+  "files": [
+    {
+      "source": "experiments/numerical/experiment-reports/artifacts/2026-09-15-rank41-deletion/summary.csv",
+      "snapshot": "summary.csv",
+      "sha256": "0439eeb487b7efefa7e74922de0ad33b9eb60bf9b9381d832be7efc1ed6ee0f5"
+    },
+    {
+      "source": "experiments/numerical/experiment-reports/artifacts/2026-09-15-rank41-deletion/per_split.csv",
+      "snapshot": "per_split.csv",
+      "sha256": "c18c06622febdf58e84dfd917f039607ace1e94336f7a76ffa43834f4f9d77db"
+    },
+    {
+      "source": "experiments/numerical/experiment-reports/artifacts/2026-09-15-rank41-deletion/paired_control_contrasts.csv",
+      "snapshot": "paired_control_contrasts.csv",
+      "sha256": "dc5f919e602038505bb48c686c94376de8739c936c60ac993f1c58899b917dff"
+    },
+    {
+      "source": "experiments/numerical/experiment-reports/artifacts/2026-09-15-rank41-deletion/control_diagnostics.csv",
+      "snapshot": "control_diagnostics.csv",
+      "sha256": "19fa2e56f1bb10eb0f8ae1a8a7ff25d346f8a9e4d61060973801c515d09202c0"
+    },
+    {
+      "source": "experiments/numerical/experiment-reports/artifacts/2026-09-15-rank41-deletion/examples.csv",
+      "snapshot": "examples.csv",
+      "sha256": "f266d1ec92b1f045c9bdf9817fc2474482915832c5922425665eebfeb8aafe65"
+    },
+    {
+      "source": "experiments/numerical/experiment-reports/artifacts/2026-09-15-rank41-deletion/provenance.json",
+      "snapshot": "provenance.json",
+      "sha256": "2ef7b6debc55359e34dff668b7b551952288137b6e808e90b09fc63fb12e9377"
+    },
+    {
+      "source": "figures/literature_panels.py",
+      "snapshot": "context/literature_renderer.py",
+      "sha256": "509b1a1449b63e34eaf88a4d0e7e755a862f6d5fc33c94628dae7bed6e641f94"
+    },
+    {
+      "source": "data/figures/literature_interventions/literature_data.json",
+      "snapshot": "context/literature_data.json",
+      "sha256": "b85af0e1be3acf336dce87ef24659ccb448547964ffc2c9898e809169f936cc3"
+    },
+    {
+      "source": "figures/causal_panels.py",
+      "snapshot": "context/original_figure_generator.py",
+      "sha256": "da6fc0e5eab5e7601ec0980c905892efec83333e2bf5ca9c473c4e592a183e1e"
+    },
+    {
+      "source": "figures/fig_causal_use.svg",
+      "snapshot": "context/original_figure.svg",
+      "sha256": "23de9b055622a8729713a72f3bd6d55ae100b3805b6ee6a76f37aaf09922e396"
+    }
+  ],
+  "context_note": "Current working-tree renderer and evidence frozen for Figure 5a\u2013b previews. No existing manuscript assets are modified."
+}

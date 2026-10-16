@@ -1,0 +1,73 @@
+seed: 1729
+models_config: configs/models.yaml
+model: llama_3_2_3b
+split_dataset_dir: data/prompt_cache_canonical_source_splits_t800_d100_te100__a68a297dd188__r0
+split_name: split_00
+family: addition_formula
+family_label: Addition Formula
+representation_source: prompt_activations
+intervention_layer_idx: 8
+probe_batch_size: 64
+evaluation_batch_size: 100
+use_activation_cache: true
+require_activation_cache_hit: false
+activation_cache_root: out/activation_caches/source_value_probe_canonical_prompt_sequences
+value_min: 0
+value_max: 999
+evaluate_probe_specs: false
+delta_kinds:
+  - value_code
+probe_specs:
+  circular_cls:
+    basis_dim: 10
+    batch_size: 256
+    betas:
+      - 0.9
+      - 0.999
+    device: cuda
+    hidden_dim: 100
+    lr: 0.01
+    max_epochs: 1000
+    patience: 20
+    seed: 1729
+    val_fraction: 0.1
+    weight_decay: 0.001
+reference_methods:
+  - causalab_pca64_centroid_endpoint
+  - counterfactual_patch
+centroid_pca_components: 64
+target_sampler:
+  n_targets_per_example: 20
+  distance_buckets:
+    - [1, 1]
+    - [2, 5]
+    - [6, 10]
+    - [11, 25]
+    - [26, 50]
+    - [51, 100]
+    - [101, 200]
+    - [201, 300]
+    - [301, 400]
+    - [401, 500]
+search:
+  objective: target_logprob
+  steps: 20
+  lr: 0.05
+  l2_penalty: 0.0005
+  max_scale: 8.0
+  manifold_norm_budget_multiplier: 8.0
+  methods: []
+das_specs:
+  train_split_patch:
+    ranks: [1, 2, 4, 8, 16, 32, 64, 65, 66, 68, 72, 76, 77, 80, 84, 88, 92, 96, 112, 128, 160, 192, 224, 256, 512, 1024, 2048, 3072]
+    init: patch_pca
+    optimize_rank_max: 64
+    save_unoptimized_bases: false
+    objective: target_logprob
+    n_targets_per_example: 4
+    max_train_interventions: 1600
+    batch_size: 32
+    steps: 80
+    lr: 0.01
+    l2_penalty: 0.0
+    seed: 4831

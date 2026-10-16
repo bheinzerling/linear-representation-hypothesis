@@ -1,0 +1,5 @@
+method,label,exact_accuracy,n,target_access,construction
+independent_property_sum,Independent sum,0.00,400,requested target properties,sum of independently fitted property-block doses
+joint_ridge,Joint ridge,76.75,400,source activation and requested target properties,joint multi-output coordinate predictor
+rbf_kernel_ridge,RBF ridge,79.50,400,source activation and requested target properties,nonlinear joint coordinate predictor
+oracle_coordinates,Oracle coordinates,92.50,400,counterfactual target activation,coordinates of the projected exact contextual patch

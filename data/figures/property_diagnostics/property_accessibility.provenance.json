@@ -1,0 +1,151 @@
+{
+  "frozen_on": "2026-08-04",
+  "source_repositories": {
+    "papers": {
+      "path": "papers",
+      "commit": "cd0ed65dbf430f90208774956aa63c983133a3fa"
+    },
+    "accurate_num_repr": {
+      "path": "accurate-num-repr",
+      "commit": "b388a80e66291f37ba36c7573bcbb90ecdcce79d"
+    },
+    "natural_language_transcoder": {
+      "path": "natural-language-transcoder",
+      "commit": "e34f41bebe8e6e1dddb02f3dccb5dd5d2a37a043"
+    }
+  },
+  "render_bundle": {
+    "generator": {
+      "path": "figures/gen_fig_number_property_accessibility.py",
+      "sha256": "2a88ff13378ecda949639b3a8ce9160825c3b362ec10338017d7a31e18728e1e"
+    },
+    "outputs": [
+      {
+        "path": "figures/fig_number_property_accessibility.pdf",
+        "sha256": "d43cb38d59cd705a131079fc27dbbc6aaa60ee8fef94d17aff3ca613cfc3bf6f",
+        "dimensions_points": [
+          514.8,
+          219.6
+        ]
+      },
+      {
+        "path": "figures/fig_number_property_accessibility.png",
+        "sha256": "6f30e41a6dbb3011ee9029571aaff13c4d8a95594f00dc0d44a91efe58c3db15",
+        "dimensions_pixels": [
+          2860,
+          1220
+        ],
+        "dpi": 400
+      }
+    ],
+    "command": [
+      "uv",
+      "run",
+      "--project",
+      "code",
+      "python",
+      "figures/gen_fig_number_property_accessibility.py"
+    ],
+    "label_revision_date": "2026-09-14",
+    "compile_command": "./compile.sh"
+  },
+  "derived_data": [
+    {
+      "path": "data/figures/property_diagnostics/property_accessibility_summary.csv",
+      "sha256": "aa20262224e61409bbc1f5f04187396e2c55c10c7bdbde8c33307279695e39dc",
+      "derivation": "For each categorical property, select value-disjoint test rows whose test partition contains every training class. Report the mean and range of balanced accuracy for full activations and fresh probes fitted in the separately trained rank-41 basis."
+    },
+    {
+      "path": "data/figures/property_diagnostics/property_contradiction_examples.json",
+      "sha256": "41262bda65831029d3b6d952b14156400902fdf579b18485839256631b2c12e7",
+      "derivation": "Retain the first qualifying Llama parity test case, input 273, from the matched causal contextualization evaluation, and the Qwen parity-test-0000 single-target enumeration case. The classification display shows the final query after ten demonstrations and the first result and parity fields. Enumeration inputs and generated values are retained unchanged."
+    }
+  ],
+  "upstream_sources": [
+    {
+      "panel": "a",
+      "repository": "accurate_num_repr",
+      "path": "out/extended_number_property_probes/llama31_8b_layer10_v1/probe_metrics.csv",
+      "sha256": "466a50abb17dbb7cc89bbe0fce0a14bcad9512e4fcca81e2d31fef3c1d7baecd"
+    },
+    {
+      "panel": "a",
+      "repository": "accurate_num_repr",
+      "path": "out/property_probe_training_scheme_comparison/llama31_8b_layer10_v1/probe_readout.csv",
+      "sha256": "38b53277a4585da2b64e15da34c557999dfdc11e89c8afd2230c99763cc5de34"
+    },
+    {
+      "panel": "a",
+      "repository": "accurate_num_repr",
+      "path": "out/property_probe_training_scheme_comparison/llama31_8b_layer10_v1/split_summary.csv",
+      "sha256": "3672656adbbf5a99c5bad0ea1631de2dc3ee5cfb3a9c0fb0a29eedbe4bd684d2"
+    },
+    {
+      "panel": "b",
+      "repository": "natural_language_transcoder",
+      "path": "out/number_property_list_steering/qwen3_6_27b_parity_corrected_v1/parity/examples.jsonl.gz",
+      "sha256": "c4a1a7e10b3aac6caa9dbd4d3b86c1284838f8dff5cbc66cbaf698ff39ba98c3"
+    },
+    {
+      "panel": "b_classification",
+      "repository": "accurate_num_repr",
+      "path": "out/parity_probe_causal_contextualization/llama31_8b_layer10_v1/examples.jsonl.gz",
+      "sha256": "7edb6ac0f80f4e7ecbedb35db15e99377b053c89ca443a6046cb3d8c9df4f84c"
+    },
+    {
+      "panel": "b_classification",
+      "repository": "accurate_num_repr",
+      "path": "out/parity_probe_causal_contextualization/llama31_8b_layer10_v1/metadata.json",
+      "sha256": "3a84cb0866ba595476883f234f41ca0ff5f5e77a16b3e0270aff5865eb335d6f"
+    }
+  ],
+  "model_metadata": {
+    "panel_a": {
+      "model": "meta-llama/Llama-3.1-8B",
+      "revision": "d04e592bb4f6aa9cfee91e2e20afa771667e1d4b",
+      "layer": 10
+    },
+    "panel_b": {
+      "classification": {
+        "model": "meta-llama/Llama-3.1-8B",
+        "revision": "d04e592bb4f6aa9cfee91e2e20afa771667e1d4b",
+        "direction_transformer_block": 9,
+        "direction_hidden_state_index": 10,
+        "direction_locus": "query_number",
+        "dose_l2": 7.738790988922119,
+        "prompt_variant": "structured_10shot",
+        "n_demonstrations": 10
+      },
+      "enumeration": {
+        "model": "Qwen/Qwen3.6-27B",
+        "revision": null,
+        "revision_note": "The archived run records the model identifier but no resolved revision.",
+        "direction_layer": 19,
+        "direction_locus": "last_digit",
+        "alpha": 12.0,
+        "n_demonstrations": 0
+      }
+    }
+  },
+  "protocol_boundaries": {
+    "panel_a": "Rank 41 is an imposed cap from the centered property-target rank, not a measured effective dimension or a one-property-per-coordinate decomposition.",
+    "panel_b": "The examples use separately fitted parity directions and different prompt protocols. Classification uses Llama-3.1-8B with ten demonstrations; enumeration uses Qwen3.6-27B without demonstrations. The rank-41 basis in panel (a) is evaluated independently. Controls reproduce the displayed baselines; aggregate effects are reported separately."
+  },
+  "example_revision_date": "2026-10-03",
+  "validation": {
+    "figure_dimensions_unchanged": true,
+    "panel_a_pixel_identical": true,
+    "figure_pixel_change_bbox": [
+      1635,
+      102,
+      2619,
+      613
+    ],
+    "qwen_enumeration_data_unchanged": true,
+    "llama_outputs_verified_against_archive": true,
+    "reproduction_examples_match": true,
+    "float_numbers_and_pages_unchanged": true,
+    "float_label_count": 28,
+    "critical_latex_warnings": []
+  }
+}

@@ -1,0 +1,12 @@
+seed: 1729
+source_run_dir: out/runs/source_value_rhs_addition_dataset__2026_05_13
+model_alias: llama_3_2_3b
+layer_idx: 8
+pca_components: 32
+surface_samples_axis: 40
+report_stem: 2026-05-14-source-value-digit-surface-0-99
+fit_groups:
+  - addition_formula_rhs_source
+  - addition_verbalized_rhs_source
+report_title: "Source-Value Digit Surface Fit: 0..99"
+research_question: "Do source-token number representations over 0..99 look cleaner when parameterized as a 2D digit grid, M(tens_digit, ones_digit), instead of a 1D source-value path?"

@@ -1,0 +1,4 @@
+canonical_document_id,version_document_id,canonical_url,version_url,verification
+W4404752305,W4387929831,https://aclanthology.org/2024.blackboxnlp-1.5/,https://arxiv.org/abs/2310.15154,Same four authors and sentiment-direction intervention study; published title is Language Models Linearly Represent Sentiment
+W4402671141,W4392933257,https://aclanthology.org/2024.acl-short.18/,https://arxiv.org/abs/2403.10381,Published ACL abstract explicitly links this arXiv long version
+W4416037038,W4417245851,https://aclanthology.org/2025.emnlp-main.307/,https://arxiv.org/abs/2504.06650,Same two authors and ThoughtProbe classifier-guided tree-search method; matching LRH passages

@@ -1,0 +1,9 @@
+experiment,model,condition,label,contradictions,n,rate
+classification,Llama-3.1-8B,baseline,Baseline,0,100,0.0
+classification,Llama-3.1-8B,historical_direct,Parity direction,93,100,0.93
+classification,Llama-3.1-8B,historical_random,Random direction,3,100,0.03
+enumeration,Qwen3.6-27B,no_steer,Baseline,0,50,0.0
+enumeration,Qwen3.6-27B,selected_direction,Parity direction,48,50,0.96
+enumeration,Qwen3.6-27B,wrong_sign,Wrong sign,10,50,0.2
+enumeration,Qwen3.6-27B,random_direction,Random direction,0,50,0.0
+enumeration,Qwen3.6-27B,delimiter_location,Delimiter location,3,50,0.06

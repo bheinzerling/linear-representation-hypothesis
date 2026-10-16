@@ -1,0 +1,25 @@
+seed: 1729
+model: llama_3_2_1b
+model_overrides:
+  probe_batch_size: 64
+  evaluation_batch_size: 100
+run_overrides:
+  search:
+    methods:
+      - fixed
+      - scale_search
+      - manifold_search
+      - equal_budget_search
+      - unconstrained_manifold_search
+    unconstrained_l2_penalty: 0.0
+relative_layers: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+base_report_stem: 2026-04-25-llama-3-2-1b-source-value-probe-manifold-steering-prompt-styles-four-probes
+aggregate_report_stem: 2026-04-25-llama-3-2-1b-source-value-probe-manifold-steering-prompt-styles-four-probes-relative-layer-sweep
+generated_config_root: out/generated_configs/source_value_probe_manifold_steering_relative_layers_llama_3_2_1b_four_probes
+sweep_output_root: out/sweeps
+base_config_paths:
+  - configs/source_value_probe_manifold_steering_split00_addition_formula_llama_3_2_3b_four_probes.yaml
+  - configs/source_value_probe_manifold_steering_split00_addition_verbalized_llama_3_2_3b_four_probes.yaml
+  - configs/source_value_probe_manifold_steering_split00_subtraction_formula_llama_3_2_3b_four_probes.yaml
+  - configs/source_value_probe_manifold_steering_split00_subtraction_verbalized_llama_3_2_3b_four_probes.yaml
+  - configs/source_value_probe_manifold_steering_split00_identity_patchscopes_llama_3_2_3b_four_probes.yaml

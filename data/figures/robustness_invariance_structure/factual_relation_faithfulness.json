@@ -1,0 +1,111 @@
+{
+  "source_title": "Linearity of Relation Decoding in Transformer Language Models",
+  "authors": "Hernandez et al. (2024)",
+  "source_url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/2b6d7285306fe896fca9b2e9a02ff6ec-Paper-Conference.pdf",
+  "source_pdf_sha256": "33fe36aaff9a7c8634bdc588a68627b35a5f28e6d69f573db2692febcda6a4c4",
+  "source_page_one_based": 6,
+  "source_figure": 3,
+  "model": "GPT-J",
+  "source_reported_trials": 24,
+  "source_examples_per_map": 8,
+  "metric": "First-token agreement with the full LM on facts for which the full LM predicts the correct object",
+  "selection": "Three factual relations selected for recognizable labels and visibly different reported means; includes the instrument relation used in the schematic.",
+  "extraction": "Normalize vector rectangle heights using the source chart zero and one endpoints. Values are measurements of published artwork, not original per-trial results. Visible numbers round to whole percentages and carry an approximation sign.",
+  "calibration": {
+    "axis_zero_y": 383.5125,
+    "axis_one_y": 716.1525
+  },
+  "uncertainty": "Figure 3 shows means without uncertainty marks. Trial-level uncertainty was not recovered.",
+  "rows": [
+    {
+      "relation": "country capital city",
+      "label": "country \u2192 capital",
+      "object_label": "Capital",
+      "category": "factual",
+      "bar_index_zero_based": 7,
+      "faithfulness_from_vector_geometry": 0.8802083333333331,
+      "faithfulness_display_percent": 88,
+      "random_guess_from_vector_geometry": 0.048611111111111154,
+      "random_guess_display_percent": 5,
+      "bar_vertices": [
+        [
+          317.011,
+          383.5125
+        ],
+        [
+          342.98686,
+          383.5125
+        ],
+        [
+          342.98686,
+          676.305
+        ],
+        [
+          317.011,
+          676.305
+        ]
+      ],
+      "baseline_y": 399.6825
+    },
+    {
+      "relation": "person plays instrument",
+      "label": "plays instrument",
+      "object_label": "Instrument",
+      "category": "factual",
+      "bar_index_zero_based": 22,
+      "faithfulness_from_vector_geometry": 0.5898638167388166,
+      "faithfulness_display_percent": 59,
+      "random_guess_from_vector_geometry": 0.3064456770081771,
+      "random_guess_display_percent": 31,
+      "bar_vertices": [
+        [
+          804.0584,
+          383.5125
+        ],
+        [
+          830.03427,
+          383.5125
+        ],
+        [
+          830.03427,
+          579.7248
+        ],
+        [
+          804.0584,
+          579.7248
+        ]
+      ],
+      "baseline_y": 485.44859
+    },
+    {
+      "relation": "company CEO",
+      "label": "company \u2192 CEO",
+      "object_label": "CEO",
+      "category": "factual",
+      "bar_index_zero_based": 45,
+      "faithfulness_from_vector_geometry": 0.06451322751322748,
+      "faithfulness_display_percent": 6,
+      "random_guess_from_vector_geometry": 0.009481571669071695,
+      "random_guess_display_percent": 1,
+      "bar_vertices": [
+        [
+          1550.8644,
+          383.5125
+        ],
+        [
+          1576.8403,
+          383.5125
+        ],
+        [
+          1576.8403,
+          404.97218
+        ],
+        [
+          1550.8644,
+          404.97218
+        ]
+      ],
+      "baseline_y": 386.66645
+    }
+  ]
+}

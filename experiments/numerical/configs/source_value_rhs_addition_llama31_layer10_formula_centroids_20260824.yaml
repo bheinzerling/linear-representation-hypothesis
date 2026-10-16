@@ -1,0 +1,43 @@
+seed: 1729
+models_config: configs/models.yaml
+tokenizer_model: llama_3_1_8b
+models:
+  - llama_3_1_8b
+device: cuda
+batch_size: 64
+value_min: 0
+value_max: 999
+output_dir: out/runs/source_value_rhs_addition_llama31_layer10_formula_centroids__20260824
+report_stem: 2026-08-24-source-value-rhs-addition-llama31-layer10-formula-centroids
+x_values:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 5
+  - 8
+  - 13
+  - 21
+  - 34
+  - 55
+  - 89
+  - 144
+  - 233
+  - 377
+  - 486
+  - 610
+  - 731
+  - 812
+  - 900
+  - 999
+behavior:
+  enabled: false
+representations:
+  enabled: true
+  models:
+    - llama_3_1_8b
+  styles:
+    - addition_formula_rhs_source
+  layer_idx: 10
+  batch_size: 64
+  storage_dtype: float16

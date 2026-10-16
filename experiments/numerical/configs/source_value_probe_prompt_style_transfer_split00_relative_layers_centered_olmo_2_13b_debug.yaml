@@ -1,0 +1,25 @@
+seed: 1729
+models_config: configs/models.yaml
+split_dataset_dir: data/prompt_cache_canonical_source_splits_t800_d100_te100__a68a297dd188__r0
+split_name: split_00
+representation_source: prompt_activations
+center_representations: true
+progress_logging: true
+relative_layers:
+  - 0.0
+report_stem: 2026-04-21-source-value-probe-prompt-style-transfer-centered-split00-olmo-2-13b-debug
+models:
+  - olmo_2_13b
+probe_batch_size_by_model:
+  olmo_2_13b: 8
+prompt_families:
+  - family: addition_formula
+    family_label: Addition Formula
+  - family: addition_verbalized
+    family_label: Addition Verbalized
+  - family: subtraction_formula
+    family_label: Subtraction Formula
+  - family: subtraction_verbalized
+    family_label: Subtraction Verbalized
+  - family: identity_patchscopes
+    family_label: Identity Patchscopes

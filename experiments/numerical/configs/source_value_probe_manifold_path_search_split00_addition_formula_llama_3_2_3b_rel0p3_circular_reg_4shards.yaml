@@ -1,0 +1,12 @@
+seed: 1729
+run_overrides: {}
+relative_layers: [0.3]
+base_report_stem: 2026-05-25-llama-3-2-3b-addition-formula-rel0p3-probe-manifold-path-search-circular-reg-4shards
+aggregate_report_stem: 2026-05-25-llama-3-2-3b-addition-formula-rel0p3-probe-manifold-path-search-circular-reg-4shards
+generated_config_root: out/generated_configs/source_value_probe_manifold_path_search_split00_addition_formula_llama_3_2_3b_rel0p3_circular_reg_4shards
+sweep_output_root: out/sweeps
+base_config_paths:
+  - configs/source_value_probe_manifold_path_search_split00_addition_formula_llama_3_2_3b_layer8_circular_reg_shard0of4.yaml
+  - configs/source_value_probe_manifold_path_search_split00_addition_formula_llama_3_2_3b_layer8_circular_reg_shard1of4.yaml
+  - configs/source_value_probe_manifold_path_search_split00_addition_formula_llama_3_2_3b_layer8_circular_reg_shard2of4.yaml
+  - configs/source_value_probe_manifold_path_search_split00_addition_formula_llama_3_2_3b_layer8_circular_reg_shard3of4.yaml

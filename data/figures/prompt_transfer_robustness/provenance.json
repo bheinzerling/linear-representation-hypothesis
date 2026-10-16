@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-08-26",
+  "source_repository": "bheinzerling/accurate-num-repr",
+  "source_commit": "9dde66cbaf2b0e2b4a3a561a405aeaf0cd15ffd1",
+  "source_report": "experiment-reports/2026-08-26-prompt-transfer-robustness-suite.html",
+  "source_artifacts": [
+    {
+      "path": "experiment-reports/artifacts/2026-08-26-prompt-transfer-robustness-suite/q4_family_mean_alignment_paired.csv",
+      "sha256": "dd8f5e21fac448445379439a1606ee571dff7e0b00f0ced5e55a2f113eeda1e5",
+      "size_bytes": 457945
+    },
+    {
+      "path": "experiment-reports/artifacts/2026-08-26-prompt-transfer-robustness-suite/direction_pairs.csv.gz",
+      "sha256": "b7f8b653dcf6ffd7cbdff3fae54622eed16f685d547e77e366f6109d15eaeb16",
+      "size_bytes": 28942
+    },
+    {
+      "path": "experiment-reports/artifacts/2026-08-26-prompt-transfer-robustness-suite/metadata.json",
+      "sha256": "c69a482b73eb9d12208fbff6e828c34f1ac288270b70c7424ea9109cb03a3030",
+      "size_bytes": 9112
+    }
+  ],
+  "filters": {
+    "architecture": "pls",
+    "models": [
+      "llama_3_2_1b",
+      "llama_3_2_3b",
+      "llama_3_8b",
+      "olmo_3_7b_base",
+      "olmo_2_13b",
+      "gpt_oss_20b"
+    ],
+    "relative_layers": [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+  },
+  "aggregation": {
+    "raw_affine_mae": "arithmetic mean over the six registered models and eleven relative layers for each ordered train-family/test-family cell",
+    "family_mean_aligned_mae": "arithmetic mean over the same model-layer cells after translating each family from its training-set mean to the equal-family global training mean",
+    "direction_cosine": "arithmetic mean over the same model-layer cells for each unordered family pair; copied symmetrically, with diagonal defined as 1"
+  },
+  "sample_counts": {
+    "training_values_per_probe": 800,
+    "development_values": 100,
+    "test_values_per_cell": 100,
+    "family_mean_values": 800,
+    "models": 6,
+    "relative_layers": 11
+  }
+}

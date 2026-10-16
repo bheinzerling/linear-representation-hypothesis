@@ -1,0 +1,15 @@
+{
+  "source": "experiment-reports/artifacts/2026-10-04-figure7-three-panel-drafts/inputs",
+  "source_sha256": {
+    "accessibility.csv": "dfafee10665b7f98438974856ce81545365e569ccd47605e089b7764bdfe1654",
+    "contradiction_counts.csv": "70c1145802fa206c3f25acb551d1fb56fa486cff619fe981d2b16cc5b5dc2aec",
+    "examples.json": "41262bda65831029d3b6d952b14156400902fdf579b18485839256631b2c12e7",
+    "snapshot_manifest.json": "801ec79097864031d12de39bb178074ae316c2319f749a1a33247d7786cc8ab3"
+  },
+  "transformation": "Accessibility retains only property IDs, display names, split counts, chance, and full-activation mean/min/max; no numerical values change. Counts and examples are copied exactly.",
+  "files": {
+    "accessibility.csv": "dfafee10665b7f98438974856ce81545365e569ccd47605e089b7764bdfe1654",
+    "contradiction_counts.csv": "70c1145802fa206c3f25acb551d1fb56fa486cff619fe981d2b16cc5b5dc2aec",
+    "examples.json": "41262bda65831029d3b6d952b14156400902fdf579b18485839256631b2c12e7"
+  }
+}

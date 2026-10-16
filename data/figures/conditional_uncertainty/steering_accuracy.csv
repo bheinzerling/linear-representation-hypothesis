@@ -1,0 +1,9 @@
+method,metric,estimate,count,n,low,high,clusters,targets_per_cluster,replicates,status,change_from_no_edit,change_low,change_high
+linear,exact,0,0,2000,,,100,20,10000,zero_successes_interval_unavailable,0,,
+linear,within10,0.1585,317,2000,0.155,0.1625,100,20,10000,conditional_source_cluster_bootstrap,0.0005,0,0.0015
+circular_reg,exact,0,0,2000,,,100,20,10000,zero_successes_interval_unavailable,0,,
+circular_reg,within10,0.158,316,2000,0.1545,0.162,100,20,10000,conditional_source_cluster_bootstrap,0,,
+centroid_patch,exact,0.993,1986,2000,0.982,0.9995,100,20,10000,conditional_source_cluster_bootstrap,0.993,0.982,0.9995
+centroid_patch,within10,0.994,1988,2000,0.983,1,100,20,10000,conditional_source_cluster_bootstrap,0.836,0.824,0.844
+no_edit,exact,0,0,2000,,,100,20,10000,zero_successes_interval_unavailable,0,,
+no_edit,within10,0.158,316,2000,0.1545,0.162,100,20,10000,conditional_source_cluster_bootstrap,0,,

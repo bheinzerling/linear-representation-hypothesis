@@ -1,0 +1,1152 @@
+{
+  "figure_id": "fig_prompt_variant_transfer_scalar_pls",
+  "probe_method": "pls",
+  "probe_label": "Scalar PLS",
+  "data_values": 300,
+  "model_order": [
+    "llama_3_2_1b",
+    "llama_3_2_3b",
+    "llama_3_8b",
+    "olmo_3_7b_base",
+    "olmo_2_13b",
+    "gpt_oss_20b"
+  ],
+  "variant_order": [
+    "addition_formula",
+    "addition_verbalized",
+    "subtraction_formula",
+    "subtraction_verbalized",
+    "identity_patchscopes"
+  ],
+  "variant_labels": {
+    "addition_formula": "$a+b=$",
+    "addition_verbalized": "a plus b",
+    "subtraction_formula": "$a-b=$",
+    "subtraction_verbalized": "a minus b",
+    "identity_patchscopes": "$b=$"
+  },
+  "condition_order": [
+    "single_context",
+    "context_centroid"
+  ],
+  "paired_cells": [
+    {
+      "model": "llama_3_2_1b",
+      "train_variant": "addition_formula",
+      "test_variant": "addition_formula",
+      "single_context": 19.15,
+      "context_mean": 12.235454545454546
+    },
+    {
+      "model": "llama_3_2_1b",
+      "train_variant": "addition_formula",
+      "test_variant": "addition_verbalized",
+      "single_context": 76.49545454545455,
+      "context_mean": 64.19
+    },
+    {
+      "model": "llama_3_2_1b",
+      "train_variant": "addition_formula",
+      "test_variant": "subtraction_formula",
+      "single_context": 44.154545454545456,
+      "context_mean": 42.43545454545455
+    },
+    {
+      "model": "llama_3_2_1b",
+      "train_variant": "addition_formula",
+      "test_variant": "subtraction_verbalized",
+      "single_context": 72.72454545454546,
+      "context_mean": 71.94090909090909
+    },
+    {
+      "model": "llama_3_2_1b",
+      "train_variant": "addition_formula",
+      "test_variant": "identity_patchscopes",
+      "single_context": 29.70272727272728,
+      "context_mean": 44.57818181818182
+    },
+    {
+      "model": "llama_3_2_1b",
+      "train_variant": "addition_verbalized",
+      "test_variant": "addition_formula",
+      "single_context": 51.26363636363636,
+      "context_mean": 83.64999999999999
+    },
+    {
+      "model": "llama_3_2_1b",
+      "train_variant": "addition_verbalized",
+      "test_variant": "addition_verbalized",
+      "single_context": 16.404545454545453,
+      "context_mean": 13.784545454545452
+    },
+    {
+      "model": "llama_3_2_1b",
+      "train_variant": "addition_verbalized",
+      "test_variant": "subtraction_formula",
+      "single_context": 82.14454545454545,
+      "context_mean": 117.44090909090907
+    },
+    {
+      "model": "llama_3_2_1b",
+      "train_variant": "addition_verbalized",
+      "test_variant": "subtraction_verbalized",
+      "single_context": 23.05181818181818,
+      "context_mean": 34.91818181818182
+    },
+    {
+      "model": "llama_3_2_1b",
+      "train_variant": "addition_verbalized",
+      "test_variant": "identity_patchscopes",
+      "single_context": 48.974545454545456,
+      "context_mean": 53.58363636363636
+    },
+    {
+      "model": "llama_3_2_1b",
+      "train_variant": "subtraction_formula",
+      "test_variant": "addition_formula",
+      "single_context": 31.123636363636365,
+      "context_mean": 27.652727272727272
+    },
+    {
+      "model": "llama_3_2_1b",
+      "train_variant": "subtraction_formula",
+      "test_variant": "addition_verbalized",
+      "single_context": 60.49363636363637,
+      "context_mean": 69.39090909090909
+    },
+    {
+      "model": "llama_3_2_1b",
+      "train_variant": "subtraction_formula",
+      "test_variant": "subtraction_formula",
+      "single_context": 21.15363636363636,
+      "context_mean": 12.152727272727274
+    },
+    {
+      "model": "llama_3_2_1b",
+      "train_variant": "subtraction_formula",
+      "test_variant": "subtraction_verbalized",
+      "single_context": 54.8609090909091,
+      "context_mean": 67.06090909090909
+    },
+    {
+      "model": "llama_3_2_1b",
+      "train_variant": "subtraction_formula",
+      "test_variant": "identity_patchscopes",
+      "single_context": 27.91272727272728,
+      "context_mean": 37.19545454545455
+    },
+    {
+      "model": "llama_3_2_1b",
+      "train_variant": "subtraction_verbalized",
+      "test_variant": "addition_formula",
+      "single_context": 80.2390909090909,
+      "context_mean": 102.48454545454544
+    },
+    {
+      "model": "llama_3_2_1b",
+      "train_variant": "subtraction_verbalized",
+      "test_variant": "addition_verbalized",
+      "single_context": 56.14545454545455,
+      "context_mean": 28.69272727272727
+    },
+    {
+      "model": "llama_3_2_1b",
+      "train_variant": "subtraction_verbalized",
+      "test_variant": "subtraction_formula",
+      "single_context": 104.00363636363636,
+      "context_mean": 93.8490909090909
+    },
+    {
+      "model": "llama_3_2_1b",
+      "train_variant": "subtraction_verbalized",
+      "test_variant": "subtraction_verbalized",
+      "single_context": 13.899090909090908,
+      "context_mean": 12.857272727272727
+    },
+    {
+      "model": "llama_3_2_1b",
+      "train_variant": "subtraction_verbalized",
+      "test_variant": "identity_patchscopes",
+      "single_context": 61.91818181818182,
+      "context_mean": 72.59
+    },
+    {
+      "model": "llama_3_2_1b",
+      "train_variant": "identity_patchscopes",
+      "test_variant": "addition_formula",
+      "single_context": 63.14272727272728,
+      "context_mean": 73.38000000000001
+    },
+    {
+      "model": "llama_3_2_1b",
+      "train_variant": "identity_patchscopes",
+      "test_variant": "addition_verbalized",
+      "single_context": 61.040909090909096,
+      "context_mean": 74.67090909090909
+    },
+    {
+      "model": "llama_3_2_1b",
+      "train_variant": "identity_patchscopes",
+      "test_variant": "subtraction_formula",
+      "single_context": 70.29454545454546,
+      "context_mean": 51.56545454545455
+    },
+    {
+      "model": "llama_3_2_1b",
+      "train_variant": "identity_patchscopes",
+      "test_variant": "subtraction_verbalized",
+      "single_context": 52.57727272727273,
+      "context_mean": 81.48272727272727
+    },
+    {
+      "model": "llama_3_2_1b",
+      "train_variant": "identity_patchscopes",
+      "test_variant": "identity_patchscopes",
+      "single_context": 16.491818181818182,
+      "context_mean": 12.02909090909091
+    },
+    {
+      "model": "llama_3_2_3b",
+      "train_variant": "addition_formula",
+      "test_variant": "addition_formula",
+      "single_context": 22.331818181818186,
+      "context_mean": 11.446363636363635
+    },
+    {
+      "model": "llama_3_2_3b",
+      "train_variant": "addition_formula",
+      "test_variant": "addition_verbalized",
+      "single_context": 66.99363636363636,
+      "context_mean": 68.16636363636364
+    },
+    {
+      "model": "llama_3_2_3b",
+      "train_variant": "addition_formula",
+      "test_variant": "subtraction_formula",
+      "single_context": 46.776363636363634,
+      "context_mean": 35.951818181818176
+    },
+    {
+      "model": "llama_3_2_3b",
+      "train_variant": "addition_formula",
+      "test_variant": "subtraction_verbalized",
+      "single_context": 68.57272727272726,
+      "context_mean": 69.80090909090909
+    },
+    {
+      "model": "llama_3_2_3b",
+      "train_variant": "addition_formula",
+      "test_variant": "identity_patchscopes",
+      "single_context": 34.03818181818182,
+      "context_mean": 34.96181818181818
+    },
+    {
+      "model": "llama_3_2_3b",
+      "train_variant": "addition_verbalized",
+      "test_variant": "addition_formula",
+      "single_context": 65.7218181818182,
+      "context_mean": 85.92363636363636
+    },
+    {
+      "model": "llama_3_2_3b",
+      "train_variant": "addition_verbalized",
+      "test_variant": "addition_verbalized",
+      "single_context": 16.823636363636364,
+      "context_mean": 12.783636363636363
+    },
+    {
+      "model": "llama_3_2_3b",
+      "train_variant": "addition_verbalized",
+      "test_variant": "subtraction_formula",
+      "single_context": 83.50181818181818,
+      "context_mean": 89.61
+    },
+    {
+      "model": "llama_3_2_3b",
+      "train_variant": "addition_verbalized",
+      "test_variant": "subtraction_verbalized",
+      "single_context": 20.91909090909091,
+      "context_mean": 34.11909090909091
+    },
+    {
+      "model": "llama_3_2_3b",
+      "train_variant": "addition_verbalized",
+      "test_variant": "identity_patchscopes",
+      "single_context": 65.15818181818182,
+      "context_mean": 56.52
+    },
+    {
+      "model": "llama_3_2_3b",
+      "train_variant": "subtraction_formula",
+      "test_variant": "addition_formula",
+      "single_context": 46.775454545454544,
+      "context_mean": 27.114545454545453
+    },
+    {
+      "model": "llama_3_2_3b",
+      "train_variant": "subtraction_formula",
+      "test_variant": "addition_verbalized",
+      "single_context": 60.623636363636365,
+      "context_mean": 58.26545454545454
+    },
+    {
+      "model": "llama_3_2_3b",
+      "train_variant": "subtraction_formula",
+      "test_variant": "subtraction_formula",
+      "single_context": 22.503636363636364,
+      "context_mean": 11.355454545454544
+    },
+    {
+      "model": "llama_3_2_3b",
+      "train_variant": "subtraction_formula",
+      "test_variant": "subtraction_verbalized",
+      "single_context": 55.77727272727272,
+      "context_mean": 53.26
+    },
+    {
+      "model": "llama_3_2_3b",
+      "train_variant": "subtraction_formula",
+      "test_variant": "identity_patchscopes",
+      "single_context": 43.844545454545454,
+      "context_mean": 31.00909090909091
+    },
+    {
+      "model": "llama_3_2_3b",
+      "train_variant": "subtraction_verbalized",
+      "test_variant": "addition_formula",
+      "single_context": 88.86636363636363,
+      "context_mean": 57.74090909090909
+    },
+    {
+      "model": "llama_3_2_3b",
+      "train_variant": "subtraction_verbalized",
+      "test_variant": "addition_verbalized",
+      "single_context": 47.96363636363637,
+      "context_mean": 17.84181818181818
+    },
+    {
+      "model": "llama_3_2_3b",
+      "train_variant": "subtraction_verbalized",
+      "test_variant": "subtraction_formula",
+      "single_context": 109.6181818181818,
+      "context_mean": 49.71090909090909
+    },
+    {
+      "model": "llama_3_2_3b",
+      "train_variant": "subtraction_verbalized",
+      "test_variant": "subtraction_verbalized",
+      "single_context": 13.806363636363637,
+      "context_mean": 12.304545454545456
+    },
+    {
+      "model": "llama_3_2_3b",
+      "train_variant": "subtraction_verbalized",
+      "test_variant": "identity_patchscopes",
+      "single_context": 73.6590909090909,
+      "context_mean": 71.42181818181818
+    },
+    {
+      "model": "llama_3_2_3b",
+      "train_variant": "identity_patchscopes",
+      "test_variant": "addition_formula",
+      "single_context": 54.18636363636363,
+      "context_mean": 35.64272727272727
+    },
+    {
+      "model": "llama_3_2_3b",
+      "train_variant": "identity_patchscopes",
+      "test_variant": "addition_verbalized",
+      "single_context": 62.690000000000005,
+      "context_mean": 63.50181818181818
+    },
+    {
+      "model": "llama_3_2_3b",
+      "train_variant": "identity_patchscopes",
+      "test_variant": "subtraction_formula",
+      "single_context": 56.22,
+      "context_mean": 44.24
+    },
+    {
+      "model": "llama_3_2_3b",
+      "train_variant": "identity_patchscopes",
+      "test_variant": "subtraction_verbalized",
+      "single_context": 61.91363636363636,
+      "context_mean": 61.93181818181818
+    },
+    {
+      "model": "llama_3_2_3b",
+      "train_variant": "identity_patchscopes",
+      "test_variant": "identity_patchscopes",
+      "single_context": 18.921818181818185,
+      "context_mean": 11.331818181818182
+    },
+    {
+      "model": "llama_3_8b",
+      "train_variant": "addition_formula",
+      "test_variant": "addition_formula",
+      "single_context": 20.23454545454545,
+      "context_mean": 10.16090909090909
+    },
+    {
+      "model": "llama_3_8b",
+      "train_variant": "addition_formula",
+      "test_variant": "addition_verbalized",
+      "single_context": 58.220000000000006,
+      "context_mean": 65.26
+    },
+    {
+      "model": "llama_3_8b",
+      "train_variant": "addition_formula",
+      "test_variant": "subtraction_formula",
+      "single_context": 44.09090909090909,
+      "context_mean": 43.449090909090906
+    },
+    {
+      "model": "llama_3_8b",
+      "train_variant": "addition_formula",
+      "test_variant": "subtraction_verbalized",
+      "single_context": 53.48454545454545,
+      "context_mean": 76.63454545454546
+    },
+    {
+      "model": "llama_3_8b",
+      "train_variant": "addition_formula",
+      "test_variant": "identity_patchscopes",
+      "single_context": 29.02636363636364,
+      "context_mean": 30.14272727272727
+    },
+    {
+      "model": "llama_3_8b",
+      "train_variant": "addition_verbalized",
+      "test_variant": "addition_formula",
+      "single_context": 62.378181818181815,
+      "context_mean": 57.11636363636364
+    },
+    {
+      "model": "llama_3_8b",
+      "train_variant": "addition_verbalized",
+      "test_variant": "addition_verbalized",
+      "single_context": 15.962727272727273,
+      "context_mean": 13.155454545454546
+    },
+    {
+      "model": "llama_3_8b",
+      "train_variant": "addition_verbalized",
+      "test_variant": "subtraction_formula",
+      "single_context": 89.37363636363636,
+      "context_mean": 90.07636363636362
+    },
+    {
+      "model": "llama_3_8b",
+      "train_variant": "addition_verbalized",
+      "test_variant": "subtraction_verbalized",
+      "single_context": 23.782727272727275,
+      "context_mean": 38.24
+    },
+    {
+      "model": "llama_3_8b",
+      "train_variant": "addition_verbalized",
+      "test_variant": "identity_patchscopes",
+      "single_context": 56.70272727272727,
+      "context_mean": 52.32818181818182
+    },
+    {
+      "model": "llama_3_8b",
+      "train_variant": "subtraction_formula",
+      "test_variant": "addition_formula",
+      "single_context": 36.48272727272728,
+      "context_mean": 33.585454545454546
+    },
+    {
+      "model": "llama_3_8b",
+      "train_variant": "subtraction_formula",
+      "test_variant": "addition_verbalized",
+      "single_context": 73.85727272727273,
+      "context_mean": 70.62818181818182
+    },
+    {
+      "model": "llama_3_8b",
+      "train_variant": "subtraction_formula",
+      "test_variant": "subtraction_formula",
+      "single_context": 19.402727272727272,
+      "context_mean": 10.647272727272728
+    },
+    {
+      "model": "llama_3_8b",
+      "train_variant": "subtraction_formula",
+      "test_variant": "subtraction_verbalized",
+      "single_context": 67.07818181818182,
+      "context_mean": 73.93272727272728
+    },
+    {
+      "model": "llama_3_8b",
+      "train_variant": "subtraction_formula",
+      "test_variant": "identity_patchscopes",
+      "single_context": 39.199090909090906,
+      "context_mean": 44.81181818181818
+    },
+    {
+      "model": "llama_3_8b",
+      "train_variant": "subtraction_verbalized",
+      "test_variant": "addition_formula",
+      "single_context": 86.06818181818181,
+      "context_mean": 47.845454545454544
+    },
+    {
+      "model": "llama_3_8b",
+      "train_variant": "subtraction_verbalized",
+      "test_variant": "addition_verbalized",
+      "single_context": 64.80272727272728,
+      "context_mean": 18.957272727272727
+    },
+    {
+      "model": "llama_3_8b",
+      "train_variant": "subtraction_verbalized",
+      "test_variant": "subtraction_formula",
+      "single_context": 116.27090909090909,
+      "context_mean": 43.43
+    },
+    {
+      "model": "llama_3_8b",
+      "train_variant": "subtraction_verbalized",
+      "test_variant": "subtraction_verbalized",
+      "single_context": 15.30909090909091,
+      "context_mean": 12.30909090909091
+    },
+    {
+      "model": "llama_3_8b",
+      "train_variant": "subtraction_verbalized",
+      "test_variant": "identity_patchscopes",
+      "single_context": 76.12545454545455,
+      "context_mean": 58.41454545454546
+    },
+    {
+      "model": "llama_3_8b",
+      "train_variant": "identity_patchscopes",
+      "test_variant": "addition_formula",
+      "single_context": 36.34090909090909,
+      "context_mean": 38.71181818181819
+    },
+    {
+      "model": "llama_3_8b",
+      "train_variant": "identity_patchscopes",
+      "test_variant": "addition_verbalized",
+      "single_context": 60.4590909090909,
+      "context_mean": 63.025454545454544
+    },
+    {
+      "model": "llama_3_8b",
+      "train_variant": "identity_patchscopes",
+      "test_variant": "subtraction_formula",
+      "single_context": 51.643636363636354,
+      "context_mean": 74.01272727272728
+    },
+    {
+      "model": "llama_3_8b",
+      "train_variant": "identity_patchscopes",
+      "test_variant": "subtraction_verbalized",
+      "single_context": 58.36363636363637,
+      "context_mean": 79.19
+    },
+    {
+      "model": "llama_3_8b",
+      "train_variant": "identity_patchscopes",
+      "test_variant": "identity_patchscopes",
+      "single_context": 19.097272727272728,
+      "context_mean": 12.663636363636364
+    },
+    {
+      "model": "olmo_3_7b_base",
+      "train_variant": "addition_formula",
+      "test_variant": "addition_formula",
+      "single_context": 24.33,
+      "context_mean": 14.389090909090909
+    },
+    {
+      "model": "olmo_3_7b_base",
+      "train_variant": "addition_formula",
+      "test_variant": "addition_verbalized",
+      "single_context": 58.96636363636364,
+      "context_mean": 49.43363636363636
+    },
+    {
+      "model": "olmo_3_7b_base",
+      "train_variant": "addition_formula",
+      "test_variant": "subtraction_formula",
+      "single_context": 44.95909090909091,
+      "context_mean": 40.49090909090909
+    },
+    {
+      "model": "olmo_3_7b_base",
+      "train_variant": "addition_formula",
+      "test_variant": "subtraction_verbalized",
+      "single_context": 47.04909090909091,
+      "context_mean": 66.75
+    },
+    {
+      "model": "olmo_3_7b_base",
+      "train_variant": "addition_formula",
+      "test_variant": "identity_patchscopes",
+      "single_context": 28.80090909090909,
+      "context_mean": 25.15090909090909
+    },
+    {
+      "model": "olmo_3_7b_base",
+      "train_variant": "addition_verbalized",
+      "test_variant": "addition_formula",
+      "single_context": 88.05909090909091,
+      "context_mean": 78.26818181818182
+    },
+    {
+      "model": "olmo_3_7b_base",
+      "train_variant": "addition_verbalized",
+      "test_variant": "addition_verbalized",
+      "single_context": 21.962727272727275,
+      "context_mean": 16.598181818181818
+    },
+    {
+      "model": "olmo_3_7b_base",
+      "train_variant": "addition_verbalized",
+      "test_variant": "subtraction_formula",
+      "single_context": 112.25636363636364,
+      "context_mean": 107.09181818181818
+    },
+    {
+      "model": "olmo_3_7b_base",
+      "train_variant": "addition_verbalized",
+      "test_variant": "subtraction_verbalized",
+      "single_context": 28.28454545454545,
+      "context_mean": 51.29454545454546
+    },
+    {
+      "model": "olmo_3_7b_base",
+      "train_variant": "addition_verbalized",
+      "test_variant": "identity_patchscopes",
+      "single_context": 81.61272727272727,
+      "context_mean": 72.40363636363635
+    },
+    {
+      "model": "olmo_3_7b_base",
+      "train_variant": "subtraction_formula",
+      "test_variant": "addition_formula",
+      "single_context": 34.77272727272727,
+      "context_mean": 33.597272727272724
+    },
+    {
+      "model": "olmo_3_7b_base",
+      "train_variant": "subtraction_formula",
+      "test_variant": "addition_verbalized",
+      "single_context": 58.95727272727272,
+      "context_mean": 75.56181818181818
+    },
+    {
+      "model": "olmo_3_7b_base",
+      "train_variant": "subtraction_formula",
+      "test_variant": "subtraction_formula",
+      "single_context": 24.655454545454543,
+      "context_mean": 14.946363636363635
+    },
+    {
+      "model": "olmo_3_7b_base",
+      "train_variant": "subtraction_formula",
+      "test_variant": "subtraction_verbalized",
+      "single_context": 51.42818181818182,
+      "context_mean": 75.46363636363635
+    },
+    {
+      "model": "olmo_3_7b_base",
+      "train_variant": "subtraction_formula",
+      "test_variant": "identity_patchscopes",
+      "single_context": 32.093636363636364,
+      "context_mean": 30.66090909090909
+    },
+    {
+      "model": "olmo_3_7b_base",
+      "train_variant": "subtraction_verbalized",
+      "test_variant": "addition_formula",
+      "single_context": 100.92454545454548,
+      "context_mean": 58.6390909090909
+    },
+    {
+      "model": "olmo_3_7b_base",
+      "train_variant": "subtraction_verbalized",
+      "test_variant": "addition_verbalized",
+      "single_context": 72.59545454545454,
+      "context_mean": 29.42090909090909
+    },
+    {
+      "model": "olmo_3_7b_base",
+      "train_variant": "subtraction_verbalized",
+      "test_variant": "subtraction_formula",
+      "single_context": 133.93363636363637,
+      "context_mean": 54.28363636363636
+    },
+    {
+      "model": "olmo_3_7b_base",
+      "train_variant": "subtraction_verbalized",
+      "test_variant": "subtraction_verbalized",
+      "single_context": 19.26909090909091,
+      "context_mean": 15.824545454545454
+    },
+    {
+      "model": "olmo_3_7b_base",
+      "train_variant": "subtraction_verbalized",
+      "test_variant": "identity_patchscopes",
+      "single_context": 86.05909090909091,
+      "context_mean": 52.52272727272727
+    },
+    {
+      "model": "olmo_3_7b_base",
+      "train_variant": "identity_patchscopes",
+      "test_variant": "addition_formula",
+      "single_context": 45.38272727272727,
+      "context_mean": 36.47
+    },
+    {
+      "model": "olmo_3_7b_base",
+      "train_variant": "identity_patchscopes",
+      "test_variant": "addition_verbalized",
+      "single_context": 54.96363636363637,
+      "context_mean": 65.31545454545454
+    },
+    {
+      "model": "olmo_3_7b_base",
+      "train_variant": "identity_patchscopes",
+      "test_variant": "subtraction_formula",
+      "single_context": 51.96636363636364,
+      "context_mean": 45.1109090909091
+    },
+    {
+      "model": "olmo_3_7b_base",
+      "train_variant": "identity_patchscopes",
+      "test_variant": "subtraction_verbalized",
+      "single_context": 54.50727272727273,
+      "context_mean": 71.82181818181817
+    },
+    {
+      "model": "olmo_3_7b_base",
+      "train_variant": "identity_patchscopes",
+      "test_variant": "identity_patchscopes",
+      "single_context": 21.367272727272727,
+      "context_mean": 16.748181818181816
+    },
+    {
+      "model": "olmo_2_13b",
+      "train_variant": "addition_formula",
+      "test_variant": "addition_formula",
+      "single_context": 23.203636363636363,
+      "context_mean": 14.415454545454544
+    },
+    {
+      "model": "olmo_2_13b",
+      "train_variant": "addition_formula",
+      "test_variant": "addition_verbalized",
+      "single_context": 70.70181818181818,
+      "context_mean": 67.07727272727273
+    },
+    {
+      "model": "olmo_2_13b",
+      "train_variant": "addition_formula",
+      "test_variant": "subtraction_formula",
+      "single_context": 40.89363636363636,
+      "context_mean": 33.68090909090909
+    },
+    {
+      "model": "olmo_2_13b",
+      "train_variant": "addition_formula",
+      "test_variant": "subtraction_verbalized",
+      "single_context": 56.63181818181818,
+      "context_mean": 77.40272727272728
+    },
+    {
+      "model": "olmo_2_13b",
+      "train_variant": "addition_formula",
+      "test_variant": "identity_patchscopes",
+      "single_context": 26.071818181818184,
+      "context_mean": 29.66272727272727
+    },
+    {
+      "model": "olmo_2_13b",
+      "train_variant": "addition_verbalized",
+      "test_variant": "addition_formula",
+      "single_context": 67.58272727272727,
+      "context_mean": 57.25
+    },
+    {
+      "model": "olmo_2_13b",
+      "train_variant": "addition_verbalized",
+      "test_variant": "addition_verbalized",
+      "single_context": 18.22909090909091,
+      "context_mean": 14.355454545454544
+    },
+    {
+      "model": "olmo_2_13b",
+      "train_variant": "addition_verbalized",
+      "test_variant": "subtraction_formula",
+      "single_context": 91.5118181818182,
+      "context_mean": 73.33727272727273
+    },
+    {
+      "model": "olmo_2_13b",
+      "train_variant": "addition_verbalized",
+      "test_variant": "subtraction_verbalized",
+      "single_context": 24.83090909090909,
+      "context_mean": 56.99363636363636
+    },
+    {
+      "model": "olmo_2_13b",
+      "train_variant": "addition_verbalized",
+      "test_variant": "identity_patchscopes",
+      "single_context": 51.46636363636364,
+      "context_mean": 48.82909090909091
+    },
+    {
+      "model": "olmo_2_13b",
+      "train_variant": "subtraction_formula",
+      "test_variant": "addition_formula",
+      "single_context": 42.31363636363636,
+      "context_mean": 45.32636363636363
+    },
+    {
+      "model": "olmo_2_13b",
+      "train_variant": "subtraction_formula",
+      "test_variant": "addition_verbalized",
+      "single_context": 76.33363636363636,
+      "context_mean": 89.01727272727273
+    },
+    {
+      "model": "olmo_2_13b",
+      "train_variant": "subtraction_formula",
+      "test_variant": "subtraction_formula",
+      "single_context": 23.117272727272727,
+      "context_mean": 14.195454545454544
+    },
+    {
+      "model": "olmo_2_13b",
+      "train_variant": "subtraction_formula",
+      "test_variant": "subtraction_verbalized",
+      "single_context": 53.03545454545454,
+      "context_mean": 87.24454545454546
+    },
+    {
+      "model": "olmo_2_13b",
+      "train_variant": "subtraction_formula",
+      "test_variant": "identity_patchscopes",
+      "single_context": 29.65636363636364,
+      "context_mean": 40.11454545454546
+    },
+    {
+      "model": "olmo_2_13b",
+      "train_variant": "subtraction_verbalized",
+      "test_variant": "addition_formula",
+      "single_context": 83.01545454545455,
+      "context_mean": 63.23636363636364
+    },
+    {
+      "model": "olmo_2_13b",
+      "train_variant": "subtraction_verbalized",
+      "test_variant": "addition_verbalized",
+      "single_context": 61.66636363636364,
+      "context_mean": 21.42818181818182
+    },
+    {
+      "model": "olmo_2_13b",
+      "train_variant": "subtraction_verbalized",
+      "test_variant": "subtraction_formula",
+      "single_context": 107.72454545454546,
+      "context_mean": 61.33181818181819
+    },
+    {
+      "model": "olmo_2_13b",
+      "train_variant": "subtraction_verbalized",
+      "test_variant": "subtraction_verbalized",
+      "single_context": 17.504545454545454,
+      "context_mean": 14.88
+    },
+    {
+      "model": "olmo_2_13b",
+      "train_variant": "subtraction_verbalized",
+      "test_variant": "identity_patchscopes",
+      "single_context": 63.01454545454545,
+      "context_mean": 54.21363636363637
+    },
+    {
+      "model": "olmo_2_13b",
+      "train_variant": "identity_patchscopes",
+      "test_variant": "addition_formula",
+      "single_context": 46.59272727272728,
+      "context_mean": 44.269090909090906
+    },
+    {
+      "model": "olmo_2_13b",
+      "train_variant": "identity_patchscopes",
+      "test_variant": "addition_verbalized",
+      "single_context": 63.92545454545455,
+      "context_mean": 77.75636363636363
+    },
+    {
+      "model": "olmo_2_13b",
+      "train_variant": "identity_patchscopes",
+      "test_variant": "subtraction_formula",
+      "single_context": 51.356363636363646,
+      "context_mean": 39.82181818181818
+    },
+    {
+      "model": "olmo_2_13b",
+      "train_variant": "identity_patchscopes",
+      "test_variant": "subtraction_verbalized",
+      "single_context": 66.89818181818181,
+      "context_mean": 92.29545454545456
+    },
+    {
+      "model": "olmo_2_13b",
+      "train_variant": "identity_patchscopes",
+      "test_variant": "identity_patchscopes",
+      "single_context": 20.528181818181817,
+      "context_mean": 14.348181818181816
+    },
+    {
+      "model": "gpt_oss_20b",
+      "train_variant": "addition_formula",
+      "test_variant": "addition_formula",
+      "single_context": 24.91818181818182,
+      "context_mean": 14.02090909090909
+    },
+    {
+      "model": "gpt_oss_20b",
+      "train_variant": "addition_formula",
+      "test_variant": "addition_verbalized",
+      "single_context": 73.9509090909091,
+      "context_mean": 83.03090909090909
+    },
+    {
+      "model": "gpt_oss_20b",
+      "train_variant": "addition_formula",
+      "test_variant": "subtraction_formula",
+      "single_context": 48.32,
+      "context_mean": 35.18090909090909
+    },
+    {
+      "model": "gpt_oss_20b",
+      "train_variant": "addition_formula",
+      "test_variant": "subtraction_verbalized",
+      "single_context": 86.84909090909092,
+      "context_mean": 89.71181818181817
+    },
+    {
+      "model": "gpt_oss_20b",
+      "train_variant": "addition_formula",
+      "test_variant": "identity_patchscopes",
+      "single_context": 33.809999999999995,
+      "context_mean": 37.14090909090909
+    },
+    {
+      "model": "gpt_oss_20b",
+      "train_variant": "addition_verbalized",
+      "test_variant": "addition_formula",
+      "single_context": 75.4309090909091,
+      "context_mean": 61.98272727272727
+    },
+    {
+      "model": "gpt_oss_20b",
+      "train_variant": "addition_verbalized",
+      "test_variant": "addition_verbalized",
+      "single_context": 22.89,
+      "context_mean": 16.336363636363636
+    },
+    {
+      "model": "gpt_oss_20b",
+      "train_variant": "addition_verbalized",
+      "test_variant": "subtraction_formula",
+      "single_context": 102.3490909090909,
+      "context_mean": 80.5
+    },
+    {
+      "model": "gpt_oss_20b",
+      "train_variant": "addition_verbalized",
+      "test_variant": "subtraction_verbalized",
+      "single_context": 26.51181818181818,
+      "context_mean": 57.63181818181818
+    },
+    {
+      "model": "gpt_oss_20b",
+      "train_variant": "addition_verbalized",
+      "test_variant": "identity_patchscopes",
+      "single_context": 73.07454545454546,
+      "context_mean": 62.36272727272728
+    },
+    {
+      "model": "gpt_oss_20b",
+      "train_variant": "subtraction_formula",
+      "test_variant": "addition_formula",
+      "single_context": 38.23727272727273,
+      "context_mean": 41.379090909090905
+    },
+    {
+      "model": "gpt_oss_20b",
+      "train_variant": "subtraction_formula",
+      "test_variant": "addition_verbalized",
+      "single_context": 62.78363636363636,
+      "context_mean": 94.6
+    },
+    {
+      "model": "gpt_oss_20b",
+      "train_variant": "subtraction_formula",
+      "test_variant": "subtraction_formula",
+      "single_context": 28.70090909090909,
+      "context_mean": 13.867272727272727
+    },
+    {
+      "model": "gpt_oss_20b",
+      "train_variant": "subtraction_formula",
+      "test_variant": "subtraction_verbalized",
+      "single_context": 64.7390909090909,
+      "context_mean": 90.77181818181818
+    },
+    {
+      "model": "gpt_oss_20b",
+      "train_variant": "subtraction_formula",
+      "test_variant": "identity_patchscopes",
+      "single_context": 35.57909090909091,
+      "context_mean": 39.85
+    },
+    {
+      "model": "gpt_oss_20b",
+      "train_variant": "subtraction_verbalized",
+      "test_variant": "addition_formula",
+      "single_context": 72.82727272727273,
+      "context_mean": 68.31545454545454
+    },
+    {
+      "model": "gpt_oss_20b",
+      "train_variant": "subtraction_verbalized",
+      "test_variant": "addition_verbalized",
+      "single_context": 65.54181818181819,
+      "context_mean": 30.928181818181816
+    },
+    {
+      "model": "gpt_oss_20b",
+      "train_variant": "subtraction_verbalized",
+      "test_variant": "subtraction_formula",
+      "single_context": 123.94909090909093,
+      "context_mean": 62.49454545454546
+    },
+    {
+      "model": "gpt_oss_20b",
+      "train_variant": "subtraction_verbalized",
+      "test_variant": "subtraction_verbalized",
+      "single_context": 18.221818181818183,
+      "context_mean": 15.982727272727272
+    },
+    {
+      "model": "gpt_oss_20b",
+      "train_variant": "subtraction_verbalized",
+      "test_variant": "identity_patchscopes",
+      "single_context": 74.29727272727273,
+      "context_mean": 71.45363636363636
+    },
+    {
+      "model": "gpt_oss_20b",
+      "train_variant": "identity_patchscopes",
+      "test_variant": "addition_formula",
+      "single_context": 46.63545454545454,
+      "context_mean": 42.54181818181818
+    },
+    {
+      "model": "gpt_oss_20b",
+      "train_variant": "identity_patchscopes",
+      "test_variant": "addition_verbalized",
+      "single_context": 80.25909090909092,
+      "context_mean": 81.97363636363637
+    },
+    {
+      "model": "gpt_oss_20b",
+      "train_variant": "identity_patchscopes",
+      "test_variant": "subtraction_formula",
+      "single_context": 61.11272727272728,
+      "context_mean": 45.31818181818182
+    },
+    {
+      "model": "gpt_oss_20b",
+      "train_variant": "identity_patchscopes",
+      "test_variant": "subtraction_verbalized",
+      "single_context": 82.29272727272728,
+      "context_mean": 90.79727272727273
+    },
+    {
+      "model": "gpt_oss_20b",
+      "train_variant": "identity_patchscopes",
+      "test_variant": "identity_patchscopes",
+      "single_context": 23.34090909090909,
+      "context_mean": 15.27727272727273
+    }
+  ],
+  "color_range": [
+    0.0,
+    140.0
+  ],
+  "color_values": "unrounded MAE, capped at 140 for color only",
+  "display_precision": "one decimal throughout",
+  "layout": {
+    "rows": 3,
+    "columns": 2,
+    "canvas_pt": [
+      453.6,
+      504.0
+    ],
+    "cell_font_pt": 7,
+    "tick_font_pt": 7.5,
+    "title_font_pt": 8.5,
+    "font_weight": "normal",
+    "font_stretch": "normal"
+  },
+  "rendering": {
+    "heatmap": "single nearest-neighbor image per matrix",
+    "colorbar": "single gradient image",
+    "text_and_separators": "vector",
+    "helper_sha256": "8695a881e154e829028ed3fd3bae8fc31238b51a0f045bc1068df958e7dd8659"
+  },
+  "within_variant": "black outline; remaining cells show transfer",
+  "source_method_check": {
+    "source_script": "scripts/run_prompt_style_context_centroid_relative_layers.py",
+    "location": "lines 221-222 map circular to circular_reg; fit_magnitude_probe from line 347"
+  },
+  "inputs": {
+    "data/figures/prompt_style_context_centroid_relative_layers/mean_over_relative_layers_cells.csv": "2860777a1a095016fee8c87fe87e558e64af271eff18cf63bedd7e6c566c6b5c",
+    "data/figures/prompt_style_context_centroid_relative_layers/metadata.json": "fae85c30c83112401ec749b4766f2a5d1e27b4f8ebf18fc8a7c06a97d8eee5a3"
+  },
+  "generation": {
+    "script": "figures/render_transfer.py",
+    "script_sha256": "384971c7e905682d2bf8282acc7f1f2e43b34438a6835d878022506f4c2103da",
+    "command": "uv run --group figures python figures/render_transfer.py",
+    "numpy": "2.3.3",
+    "pandas": "3.0.2",
+    "matplotlib": "3.10.8",
+    "fonts": {
+      "Regular": {
+        "file": "texgyreheros-regular.otf",
+        "sha256": "6ae1a09d5a940367b7aaaa91ee8bd8a2c333bfe193e7096e23f931357d62081f"
+      },
+      "Bold": {
+        "file": "texgyreheros-bold.otf",
+        "sha256": "b170162835f4efc288886dd4231406dc47e19b614cf4416836635599d44a7d60"
+      },
+      "Italic": {
+        "file": "texgyreheros-italic.otf",
+        "sha256": "6473df7fa107b3fb4be38973710afe22b0640c2ac076d5337cf126bed9aa108c"
+      },
+      "Bold Italic": {
+        "file": "texgyreheros-bolditalic.otf",
+        "sha256": "166fc6d068d9c9974281555cb3d730365537a9b676ab269bb5163f5a75496505"
+      }
+    }
+  },
+  "validation": {
+    "minimum_cell_text_margin_pt": 1.031086956521724
+  },
+  "outputs": {
+    "figures/fig_prompt_variant_transfer_scalar_pls.pdf": "04f896af3d38e7d39ab091068c78a8f037a1088fe47e2f5eabc2744af1d9efae",
+    "figures/fig_prompt_variant_transfer_scalar_pls.svg": "5b044628cfec72e7af6235be9de471ff65ed98df44d3d9701889ce06ce5b2f04",
+    "figures/fig_prompt_variant_transfer_scalar_pls.png": "fb4bd62caac955f9cb8bf22e7f2a183def9c1cbbace87e54198a0366fc2c6097"
+  }
+}

@@ -1,0 +1,812 @@
+[
+  {
+    "candidate": "Linear sign direction",
+    "index": 1,
+    "key": "jobanputra2025subtract",
+    "label": "Jobanputra et al. (2025)",
+    "ratings": {
+      "D": "+1",
+      "E": "U",
+      "I": "U",
+      "N": "U",
+      "R": "U",
+      "SC": "U",
+      "S_C": "U",
+      "S_M": "U"
+    },
+    "representation_class": "linear",
+    "source": {
+      "pdf_sha256": "d0032ca6ad3dbf554656e5a0f40ce6da9ce3ac59471120bf435c76e83ff75406",
+      "resolved_version": "2511.02795v1",
+      "review_pdf_url": "https://arxiv.org/pdf/2511.02795v1",
+      "source_url": "https://arxiv.org/abs/2511.02795",
+      "title": "Can {LLM}s Subtract Numbers?",
+      "year": "2025"
+    },
+    "summary": "Sign probes are near perfect despite omitted minus signs; the evaluation split is undocumented.",
+    "target": "subtraction sign"
+  },
+  {
+    "candidate": "Sinusoidal code; affine class scores",
+    "index": 2,
+    "key": "kadlcik2025accurate",
+    "label": "Kadl\u010d\u00edk et al. (2025)",
+    "ratings": {
+      "D": "+3",
+      "E": "U",
+      "I": "U",
+      "N": "U",
+      "R": "U",
+      "SC": "U",
+      "S_C": "+1",
+      "S_M": "U"
+    },
+    "representation_class": "nonlinear",
+    "source": {
+      "pdf_sha256": "1dfab880f241be30d9471ff5cb765dc65e995b80bf9964bc2feba8b4c0849fea",
+      "resolved_version": "published venue PDF",
+      "review_pdf_url": "https://aclanthology.org/2025.emnlp-main.1356.pdf",
+      "source_url": "https://aclanthology.org/2025.emnlp-main.1356/",
+      "title": "Pre-trained Language Models Learn Remarkably Accurate Representations of Numbers",
+      "year": "2025"
+    },
+    "summary": "Affine identity scores mostly succeed; OLMo 2 32B fails. Four embedding repairs improve arithmetic.",
+    "target": "number-token identity"
+  },
+  {
+    "candidate": "Linear complexity direction",
+    "index": 3,
+    "key": "yao2026adaptivek",
+    "label": "Yao et al. (2026)",
+    "ratings": {
+      "D": "+3",
+      "E": "+2",
+      "I": "U",
+      "N": "U",
+      "R": "U",
+      "SC": "U",
+      "S_C": "U",
+      "S_M": "U"
+    },
+    "representation_class": "linear",
+    "source": {
+      "pdf_sha256": "456dd703966a5ddb7a8b7ea97fc7596064a4657769dd248fd36594a54a3c8bfa",
+      "resolved_version": "published venue PDF",
+      "review_pdf_url": "https://aclanthology.org/2026.findings-acl.1187.pdf",
+      "source_url": "https://aclanthology.org/2026.findings-acl.1187/",
+      "title": "{AdaptiveK}: Complexity-Driven Sparse Autoencoders for Interpretable Language Model Representations",
+      "year": "2026"
+    },
+    "summary": "Ridge and a 256-unit MLP have similar Pythia errors; targets are composite LLM ratings.",
+    "target": "text complexity"
+  },
+  {
+    "candidate": "Affine probes; SAE directions",
+    "index": 4,
+    "key": "chanin2025absorption",
+    "label": "Chanin et al. (2025)",
+    "ratings": {
+      "D": "+3",
+      "E": "U",
+      "I": "U",
+      "N": "+1",
+      "R": "-2",
+      "SC": "U",
+      "S_C": "~3",
+      "S_M": "U"
+    },
+    "representation_class": "linear",
+    "source": {
+      "pdf_sha256": "824e067e5ec1fc6ed201700f819e44c9e4196683f3c3d1cbb57cdda0dd579126",
+      "resolved_version": "published venue PDF",
+      "review_pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/764ff7477b8e24dbe01531f6791e8bdf-Paper-Conference.pdf",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/764ff7477b8e24dbe01531f6791e8bdf-Abstract-Conference.html",
+      "title": "A is for Absorption: Studying Feature Splitting and Absorption in Sparse Autoencoders",
+      "year": "2025"
+    },
+    "summary": "Affine probes outperform SAE recovery; feature assignment and replacement effects vary with settings.",
+    "target": "first-letter identity"
+  },
+  {
+    "candidate": "SAE encoder/decoder directions",
+    "index": 5,
+    "key": "paulo2026sparse",
+    "label": "Paulo and Belrose (2026)",
+    "ratings": {
+      "D": "U",
+      "E": "U",
+      "I": "U",
+      "N": "U",
+      "R": "-3",
+      "SC": "U",
+      "S_C": "U",
+      "S_M": "U"
+    },
+    "representation_class": "linear",
+    "source": {
+      "pdf_sha256": "be386a370850dc542a7392784e460f7d3f8c56d5da75c35b36d3c1942d415558",
+      "resolved_version": "published venue PDF",
+      "review_pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/3c1fe56b043848b211030c202764c6a7-Paper-Conference.pdf",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/3c1fe56b043848b211030c202764c6a7-Paper-Conference.pdf",
+      "title": "Sparse Autoencoders Trained on the Same Data Learn Different Features",
+      "year": "2026"
+    },
+    "summary": "Feature sets vary across identical-data seeds; encoder/decoder matches depend on SAE settings.",
+    "target": "SAE features"
+  },
+  {
+    "candidate": "Decoder directions; shared subspaces",
+    "index": 6,
+    "key": "gerasimov2026unstable",
+    "label": "Gerasimov et al. (2026)",
+    "ratings": {
+      "D": "U",
+      "E": "U",
+      "I": "U",
+      "N": "+1",
+      "R": "~3",
+      "SC": "U",
+      "S_C": "U",
+      "S_M": "U"
+    },
+    "representation_class": "linear",
+    "source": {
+      "pdf_sha256": "4e2134cf4493f6bdcff261d18b0cee2e828c59fa32f680a20a0daaf508c5bbe5",
+      "resolved_version": "2606.12138v1",
+      "review_pdf_url": "https://arxiv.org/pdf/2606.12138v1",
+      "source_url": "https://arxiv.org/abs/2606.12138",
+      "title": "Unstable Features, Reproducible Subspaces: Understanding Seed Dependence in Sparse Autoencoders",
+      "year": "2026"
+    },
+    "summary": "Decoder directions vary across seeds; subspaces recur, and masking changes reconstruction and loss.",
+    "target": "SAE decoder features"
+  },
+  {
+    "candidate": "Fourier spectra; modular directions",
+    "index": 7,
+    "key": "fu2026convergent",
+    "label": "Fu et al. (2026)",
+    "ratings": {
+      "D": "~3",
+      "E": "+2",
+      "I": "U",
+      "N": "U",
+      "R": "U",
+      "SC": "U",
+      "S_C": "U",
+      "S_M": "U"
+    },
+    "representation_class": "mixed",
+    "source": {
+      "pdf_sha256": "e3a8f2788fce6e82946a5bb0d784017e20a8e13bfb0ceff9fea0a86736f3c607",
+      "resolved_version": "2604.20817v2",
+      "review_pdf_url": "https://arxiv.org/pdf/2604.20817v2",
+      "source_url": "https://arxiv.org/abs/2604.20817",
+      "title": "Convergent Evolution: How Different Language Models Learn Similar Number Representations",
+      "year": "2026"
+    },
+    "summary": "Training and tokenization affect modular probes; linear probes often match larger MLPs.",
+    "target": "modular residues"
+  },
+  {
+    "candidate": "Space/time maps; selected neurons",
+    "index": 8,
+    "key": "gurnee2023language",
+    "label": "Gurnee and Tegmark (2024)",
+    "ratings": {
+      "D": "+3",
+      "E": "+3",
+      "I": "+2",
+      "N": "+1",
+      "R": "U",
+      "SC": "U",
+      "S_C": "+1",
+      "S_M": "U"
+    },
+    "representation_class": "linear",
+    "source": {
+      "pdf_sha256": "a0b88a991e94d5d5827d97bed34d5fe36fcd00b91e58834b589e3715d34740cf",
+      "resolved_version": "published venue PDF",
+      "review_pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/0a6059857ae5c82ea9726ee9282a7145-Paper-Conference.pdf",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/0a6059857ae5c82ea9726ee9282a7145-Abstract-Conference.html",
+      "title": "Language Models Represent Space and Time",
+      "year": "2024"
+    },
+    "summary": "Probe transfer is partial, with weak NYC results; interventions manipulate selected neurons.",
+    "target": "space and time"
+  },
+  {
+    "candidate": "Probe and mean-difference directions",
+    "index": 9,
+    "key": "marks2024geometry",
+    "label": "Marks and Tegmark (2024)",
+    "ratings": {
+      "D": "+3",
+      "E": "U",
+      "I": "~3",
+      "N": "U",
+      "R": "U",
+      "SC": "U",
+      "S_C": "+2",
+      "S_M": "U"
+    },
+    "representation_class": "linear",
+    "source": {
+      "pdf_sha256": "9d64b7633b07e7b9ba462ad5c405150d1fb7e834e3a7feedfc7f6ee196b83a6c",
+      "resolved_version": "2310.06824v3",
+      "review_pdf_url": "https://arxiv.org/pdf/2310.06824v3",
+      "source_url": "https://openreview.net/forum?id=aajyHYjjsk",
+      "title": "The Geometry of Truth: Emergent Linear Structure in Large Language Model Representations of True/False Datasets",
+      "year": "2024"
+    },
+    "summary": "Truth transfer varies across domains and negations; steering also depends on the fitted estimator.",
+    "target": "factual truth"
+  },
+  {
+    "candidate": "Affine truth-label probes",
+    "index": 10,
+    "key": "bao2025probing",
+    "label": "Bao et al. (2025)",
+    "ratings": {
+      "D": "+3",
+      "E": "+2",
+      "I": "~3",
+      "N": "U",
+      "R": "U",
+      "SC": "U",
+      "S_C": "U",
+      "S_M": "U"
+    },
+    "representation_class": "linear",
+    "source": {
+      "pdf_sha256": "b2075a17a61a5ed57a2992a2c700445f1bfac49ba70b92187ec9eb7d82de98e7",
+      "resolved_version": "published venue PDF",
+      "review_pdf_url": "https://aclanthology.org/2025.findings-acl.38.pdf",
+      "source_url": "https://aclanthology.org/2025.findings-acl.38/",
+      "title": "Probing the Geometry of Truth: Consistency and Generalization of Truth Directions in {LLMs} Across Logical Transformations and Question Answering Tasks",
+      "year": "2025"
+    },
+    "summary": "QA accuracy and calibration vary; negation pairs reuse facts, and context-grounding changes the target.",
+    "target": "factual truth"
+  },
+  {
+    "candidate": "Unembedding and steering directions",
+    "index": 11,
+    "key": "park2024linear",
+    "label": "Park, Choe, and Veitch (2024)",
+    "ratings": {
+      "D": "+2",
+      "E": "U",
+      "I": "+2",
+      "N": "U",
+      "R": "+1",
+      "SC": "+2",
+      "S_C": "+2",
+      "S_M": "U"
+    },
+    "representation_class": "linear",
+    "source": {
+      "pdf_sha256": "b3e51fab7e742aeaa18a82e5a17ae084416a707e89dec57e4e3b63944f4281ee",
+      "resolved_version": "published venue PDF",
+      "review_pdf_url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/park24c/park24c.pdf",
+      "source_url": "https://proceedings.mlr.press/v235/park24c.html",
+      "title": "The Linear Representation Hypothesis and the Geometry of Large Language Models",
+      "year": "2024"
+    },
+    "summary": "Alignment has exceptions; language directions transfer; additions use king-predicting contexts.",
+    "target": "analogy and language"
+  },
+  {
+    "candidate": "Parent directions; low-rank inverse maps",
+    "index": 12,
+    "key": "sakata2026hierarchy",
+    "label": "Sakata et al. (2026)",
+    "ratings": {
+      "D": "+3",
+      "E": "U",
+      "I": "~2",
+      "N": "U",
+      "R": "U",
+      "SC": "+1",
+      "S_C": "~2",
+      "S_M": "U"
+    },
+    "representation_class": "linear",
+    "source": {
+      "pdf_sha256": "058c5349156760ed16c6400481f83f734df6ebfad551212f9ffdd5ad1dd17387",
+      "resolved_version": "2604.07886v3",
+      "review_pdf_url": "https://arxiv.org/pdf/2604.07886v3",
+      "source_url": "https://arxiv.org/abs/2604.07886",
+      "title": "Linear Representations of Hierarchical Concepts in Language Models",
+      "year": "2026"
+    },
+    "summary": "Parent decoding transfers; all-layer edits give prompt-dependent target-over-original probabilities.",
+    "target": "concept hierarchies"
+  },
+  {
+    "candidate": "Magnitude-based onion code",
+    "index": 13,
+    "key": "csordas2024recurrent",
+    "label": "Csord\u00e1s et al. (2024)",
+    "ratings": {
+      "D": "-3",
+      "E": "U",
+      "I": "U",
+      "N": "U",
+      "R": "U",
+      "SC": "+3",
+      "S_C": "+3",
+      "S_M": "+1"
+    },
+    "representation_class": "nonlinear",
+    "source": {
+      "pdf_sha256": "a1e95a9c7ff1098d4b731dc93c488006cb1bd1909328e593540fbb5de1446ba4",
+      "resolved_version": "published venue PDF",
+      "review_pdf_url": "https://aclanthology.org/2024.blackboxnlp-1.17.pdf",
+      "source_url": "https://aclanthology.org/2024.blackboxnlp-1.17/",
+      "title": "Recurrent Neural Networks Learn to Store and Generate Sequences using Non-Linear Representations",
+      "year": "2024"
+    },
+    "summary": "Affine sequence probes fail; denoising and scaled token replacement support partial storage.",
+    "target": "small GRU sequences"
+  },
+  {
+    "candidate": "Two-dimensional circular features",
+    "index": 14,
+    "key": "engels2025notall",
+    "label": "Engels et al. (2025)",
+    "ratings": {
+      "D": "U",
+      "E": "U",
+      "I": "+1",
+      "N": "U",
+      "R": "+1",
+      "SC": "+3",
+      "S_C": "+3",
+      "S_M": "U"
+    },
+    "representation_class": "nonlinear",
+    "source": {
+      "pdf_sha256": "98bd7c761a66ee6a82c1c61d9ce540314b8af5fe8cd555748d8f567c26998e0a",
+      "resolved_version": "published venue PDF",
+      "review_pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/d3221cdb27e49d9c1cd35ad254feccfe-Paper-Conference.pdf",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/d3221cdb27e49d9c1cd35ad254feccfe-Abstract-Conference.html",
+      "title": "Not All Language Model Features Are One-Dimensionally Linear",
+      "year": "2025"
+    },
+    "summary": "Circular edits change calendar logits with the complement mean-ablated; planes organize new contexts.",
+    "target": "weekdays and months"
+  },
+  {
+    "candidate": "Affine maps to object states",
+    "index": 15,
+    "key": "hernandez2024linearity",
+    "label": "Hernandez et al. (2024)",
+    "ratings": {
+      "D": "~3",
+      "E": "U",
+      "I": "+2",
+      "N": "U",
+      "R": "U",
+      "SC": "~3",
+      "S_C": "+2",
+      "S_M": "U"
+    },
+    "representation_class": "linear",
+    "source": {
+      "pdf_sha256": "33fe36aaff9a7c8634bdc588a68627b35a5f28e6d69f573db2692febcda6a4c4",
+      "resolved_version": "published venue PDF",
+      "review_pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/2b6d7285306fe896fca9b2e9a02ff6ec-Paper-Conference.pdf",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/2b6d7285306fe896fca9b2e9a02ff6ec-Abstract-Conference.html",
+      "title": "Linearity of Relation Decoding in Transformer Language Models",
+      "year": "2024"
+    },
+    "summary": "Maps fit some of 47 relations and transfer to context-free subjects; edits target first object tokens.",
+    "target": "subject--object relations"
+  },
+  {
+    "candidate": "Affine maps to object states",
+    "index": 16,
+    "key": "merullo2025linear",
+    "label": "Merullo et al. (2025)",
+    "ratings": {
+      "D": "~2",
+      "E": "U",
+      "I": "U",
+      "N": "U",
+      "R": "U",
+      "SC": "~3",
+      "S_C": "~2",
+      "S_M": "U"
+    },
+    "representation_class": "linear",
+    "source": {
+      "pdf_sha256": "5990d3371d53ba8243a65c45c5fc544dd33ed7143b760ebb05f15da7f04a82a7",
+      "resolved_version": "published venue PDF",
+      "review_pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/b35c6f99df526a798433fabff039bd50-Paper-Conference.pdf",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/b35c6f99df526a798433fabff039bd50-Paper-Conference.pdf",
+      "title": "On Linear Representations and Pretraining Data Frequency in Language Models",
+      "year": "2025"
+    },
+    "summary": "Map predictions and edits vary by relation; pretraining co-occurrence correlates with intervention scores.",
+    "target": "factual relations"
+  },
+  {
+    "candidate": "Tensor-product bindings",
+    "index": 17,
+    "key": "lee2026tensor",
+    "label": "Lee et al. (2026)",
+    "ratings": {
+      "D": "+3",
+      "E": "+3",
+      "I": "U",
+      "N": "U",
+      "R": "+2",
+      "SC": "+3",
+      "S_C": "+2",
+      "S_M": "U"
+    },
+    "representation_class": "linear",
+    "source": {
+      "pdf_sha256": "5d710bf93dca36c7997a845dd44c8228c6514257a4f546149f426797b4f5e9e7",
+      "resolved_version": "2605.09967v1",
+      "review_pdf_url": "https://arxiv.org/pdf/2605.09967v1",
+      "source_url": "https://arxiv.org/abs/2605.09967",
+      "title": "Tensor Product Representation Probes Reveal Shared Structure Across Linear Directions",
+      "year": "2026"
+    },
+    "summary": "Factorized affine probes save parameters; fitted directions agree, and per-board searches aid edits.",
+    "target": "Othello board states"
+  },
+  {
+    "candidate": "Final-layer directions and polytopes",
+    "index": 18,
+    "key": "park2025geometry",
+    "label": "Park et al. (2025)",
+    "ratings": {
+      "D": "+2",
+      "E": "U",
+      "I": "U",
+      "N": "U",
+      "R": "+1",
+      "SC": "+3",
+      "S_C": "+1",
+      "S_M": "U"
+    },
+    "representation_class": "linear",
+    "source": {
+      "pdf_sha256": "4555a20c39b012871001bf46df3c6b800a9cebdf6b14c545fef4cbf2bf76cd8e",
+      "resolved_version": "published venue PDF",
+      "review_pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/be7430d22a4dae8516894e32f2fcc6db-Paper-Conference.pdf",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/be7430d22a4dae8516894e32f2fcc6db-Abstract-Conference.html",
+      "title": "The Geometry of Categorical and Hierarchical Concepts in Large Language Models",
+      "year": "2025"
+    },
+    "summary": "Hierarchy controls support geometry; output-layer algebra predicts log-odds, with generation untested.",
+    "target": "categorical and hierarchical concepts"
+  },
+  {
+    "candidate": "Selected mean-difference direction",
+    "index": 19,
+    "key": "arditi2024refusal",
+    "label": "Arditi et al. (2024)",
+    "ratings": {
+      "D": "U",
+      "E": "U",
+      "I": "U",
+      "N": "+3",
+      "R": "U",
+      "SC": "U",
+      "S_C": "+3",
+      "S_M": "+1"
+    },
+    "representation_class": "linear",
+    "source": {
+      "pdf_sha256": "00b84fce7160c8cec3ad5c02dd434292ec386e4b97a5d0e53c03fa40a0854cc6",
+      "resolved_version": "published venue PDF",
+      "review_pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/f545448535dfde4f9786555403ab7c49-Paper-Conference.pdf",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/f545448535dfde4f9786555403ab7c49-Abstract-Conference.html",
+      "title": "Refusal in Language Models Is Mediated by a Single Direction",
+      "year": "2024"
+    },
+    "summary": "All-layer ablation suppresses refusal; single-layer addition induces it across 13 models, with TruthfulQA degradation.",
+    "target": "refusal"
+  },
+  {
+    "candidate": "Direction and harmless reference",
+    "index": 20,
+    "key": "marshall2025refusal",
+    "label": "Marshall et al. (2025)",
+    "ratings": {
+      "D": "U",
+      "E": "U",
+      "I": "U",
+      "N": "~2",
+      "R": "U",
+      "SC": "U",
+      "S_C": "+2",
+      "S_M": "U"
+    },
+    "representation_class": "linear",
+    "source": {
+      "pdf_sha256": "9bbe7ed961390ebba7b73727ada1b87bb42d44f97c639c9b96d707f68ba62d8e",
+      "resolved_version": "2411.09003v3",
+      "review_pdf_url": "https://arxiv.org/pdf/2411.09003v3",
+      "source_url": "https://arxiv.org/abs/2411.09003",
+      "title": "Refusal in {LLM}s is an Affine Function",
+      "year": "2025"
+    },
+    "summary": "Affine edits alter refusal across ten models; a harmless reference preserves qualitative RWKV coherence.",
+    "target": "refusal"
+  },
+  {
+    "candidate": "Sentiment directions; traced circuits",
+    "index": 21,
+    "key": "tigges2023linear",
+    "label": "Tigges et al. (2024)",
+    "ratings": {
+      "D": "+3",
+      "E": "U",
+      "I": "~2",
+      "N": "+3",
+      "R": "+3",
+      "SC": "U",
+      "S_C": "+3",
+      "S_M": "+1"
+    },
+    "representation_class": "linear",
+    "source": {
+      "pdf_sha256": "4bd43b75cc5f86e6d8634999a6270aeb9b17aa2601ca47109ddcbb539f533c5d",
+      "resolved_version": "published venue PDF",
+      "review_pdf_url": "https://aclanthology.org/2024.blackboxnlp-1.5.pdf",
+      "source_url": "https://aclanthology.org/2024.blackboxnlp-1.5/",
+      "title": "Language Models Linearly Represent Sentiment",
+      "year": "2024"
+    },
+    "summary": "Estimators agree; adverb transfer fails partly; ablation and path patching support partial computation.",
+    "target": "sentiment"
+  },
+  {
+    "candidate": "Low-dimensional PLS subspaces",
+    "index": 22,
+    "key": "heinzerling2024monotonic",
+    "label": "Heinzerling and Inui (2024)",
+    "ratings": {
+      "D": "+2",
+      "E": "+3",
+      "I": "U",
+      "N": "U",
+      "R": "U",
+      "SC": "+2",
+      "S_C": "~3",
+      "S_M": "U"
+    },
+    "representation_class": "linear",
+    "source": {
+      "pdf_sha256": "88dcfeb6aa35ac5a0985576ee3491dcb5b72e5edf61015738e75506a2a1f64f5",
+      "resolved_version": "published venue PDF",
+      "review_pdf_url": "https://aclanthology.org/2024.acl-short.18.pdf",
+      "source_url": "https://aclanthology.org/2024.acl-short.18/",
+      "title": "Monotonic Representation of Numeric Attributes in Language Models",
+      "year": "2024"
+    },
+    "summary": "PLS scores use development labels preprocessed across splits; monotonic edits also alter other properties.",
+    "target": "expressed numeric properties"
+  },
+  {
+    "candidate": "Affine response scores; SAE directions",
+    "index": 23,
+    "key": "jahanparast2026opinions",
+    "label": "Jahanparast et al. (2026)",
+    "ratings": {
+      "D": "+3",
+      "E": "+3",
+      "I": "U",
+      "N": "U",
+      "R": "U",
+      "SC": "U",
+      "S_C": "+2",
+      "S_M": "U"
+    },
+    "representation_class": "linear",
+    "source": {
+      "pdf_sha256": "7b61bff620e363202ccfecf48a35448d96168f1ec78ec59b1ad83e577f29391a",
+      "resolved_version": "published venue PDF",
+      "review_pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/ebfd0d632e950922baad6ecb64cdc407-Paper-Conference.pdf",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2026/file/ebfd0d632e950922baad6ecb64cdc407-Paper-Conference.pdf",
+      "title": "What Do Large Language Models Know About Opinions?",
+      "year": "2026"
+    },
+    "summary": "Probes rival MLPs on survey labels; SAE swaps target another model-prompt distribution.",
+    "target": "survey responses"
+  },
+  {
+    "candidate": "Circular digit codes",
+    "index": 24,
+    "key": "levy2025base10",
+    "label": "Levy and Geva (2025)",
+    "ratings": {
+      "D": "+3",
+      "E": "U",
+      "I": "+1",
+      "N": "U",
+      "R": "U",
+      "SC": "+2",
+      "S_C": "+1",
+      "S_M": "U"
+    },
+    "representation_class": "nonlinear",
+    "source": {
+      "pdf_sha256": "121a2a2381588569bf68da091061cb2a6d29fdbcf017722ef61f6ecb19ccf23a",
+      "resolved_version": "published venue PDF",
+      "review_pdf_url": "https://aclanthology.org/2025.naacl-short.33.pdf",
+      "source_url": "https://aclanthology.org/2025.naacl-short.33/",
+      "title": "Language Models Encode Numbers Using Digit Representations in Base 10",
+      "year": "2025"
+    },
+    "summary": "Native PCA is cyclic; digit probes partly transfer to words; scaled reversals give 10--15\\% exact control.",
+    "target": "decimal digits"
+  },
+  {
+    "candidate": "Linear square--state directions",
+    "index": 25,
+    "key": "nanda2023emergent",
+    "label": "Nanda, Lee, and Wattenberg (2023)",
+    "ratings": {
+      "D": "+3",
+      "E": "U",
+      "I": "U",
+      "N": "U",
+      "R": "U",
+      "SC": "U",
+      "S_C": "+3",
+      "S_M": "+1"
+    },
+    "representation_class": "linear",
+    "source": {
+      "pdf_sha256": "16da94162fc8e66d253ee9c900b5c68199180ca5264d2b18a2fddbee4089427a",
+      "resolved_version": "published venue PDF",
+      "review_pdf_url": "https://aclanthology.org/2023.blackboxnlp-1.2.pdf",
+      "source_url": "https://aclanthology.org/2023.blackboxnlp-1.2/",
+      "title": "Emergent Linear Representations in World Models of Self-Supervised Sequence Models",
+      "year": "2023"
+    },
+    "summary": "Relative-state edits reproduce counterfactual legal moves; attention partly explains empty squares.",
+    "target": "player-relative state"
+  },
+  {
+    "candidate": "Curved concept manifolds",
+    "index": 26,
+    "key": "wurgaft2026manifold",
+    "label": "Wurgaft et al. (2026)",
+    "ratings": {
+      "D": "U",
+      "E": "U",
+      "I": "U",
+      "N": "U",
+      "R": "U",
+      "SC": "+2",
+      "S_C": "+2",
+      "S_M": "U"
+    },
+    "representation_class": "nonlinear",
+    "source": {
+      "pdf_sha256": "8dc25353e089b97e8f4a4474df3670f57fde0568a3a2ec08a51c234261051ca8",
+      "resolved_version": "2605.05115v1",
+      "review_pdf_url": "https://arxiv.org/pdf/2605.05115v1",
+      "source_url": "https://arxiv.org/abs/2605.05115",
+      "title": "Manifold Steering Reveals the Shared Geometry of Neural Network Representation and Behavior",
+      "year": "2026"
+    },
+    "summary": "Manifold edits preserve components that straight paths replace, confounding the geometry comparison.",
+    "target": "cyclic and sequential concepts"
+  },
+  {
+    "candidate": "Circular codes; sum harmonics",
+    "index": 27,
+    "key": "feucht2026arithmetic",
+    "label": "Feucht et al. (2026)",
+    "ratings": {
+      "D": "+2",
+      "E": "U",
+      "I": "+2",
+      "N": "+3",
+      "R": "U",
+      "SC": "+3",
+      "S_C": "+3",
+      "S_M": "+2"
+    },
+    "representation_class": "nonlinear",
+    "source": {
+      "pdf_sha256": "34ef8ead365361bdd4d7ae9bd3653c916bcfd232f147f4c1347dfb1b684e79cc",
+      "resolved_version": "2605.01148v1",
+      "review_pdf_url": "https://arxiv.org/pdf/2605.01148v1",
+      "source_url": "https://arxiv.org/abs/2605.01148",
+      "title": "Arithmetic in the Wild: {Llama} Uses Base-10 Addition to Reason About Cyclic Concepts",
+      "year": "2026"
+    },
+    "summary": "Held-out harmonic probes and transferred patches support addition; cyclic conversion is unresolved.",
+    "target": "addition and cycles"
+  },
+  {
+    "candidate": "Linear and periodic helix",
+    "index": 28,
+    "key": "kantamneni2025trigonometry",
+    "label": "Kantamneni and Tegmark (2025)",
+    "ratings": {
+      "D": "U",
+      "E": "U",
+      "I": "+1",
+      "N": "+2",
+      "R": "U",
+      "SC": "+3",
+      "S_C": "+3",
+      "S_M": "+2"
+    },
+    "representation_class": "mixed",
+    "source": {
+      "pdf_sha256": "d1ccb4a80d35d6358fb92adc60be31ae1ddb204a73f4f8f7edcd4cb70748cb3b",
+      "resolved_version": "2502.00873v1",
+      "review_pdf_url": "https://arxiv.org/pdf/2502.00873v1",
+      "source_url": "https://arxiv.org/abs/2502.00873",
+      "title": "Language Models Use Trigonometry to Do Addition",
+      "year": "2025"
+    },
+    "summary": "Helix replacement transfers; ablation supports partial addition computation, with trigonometry unresolved.",
+    "target": "integer arithmetic"
+  },
+  {
+    "candidate": "MLP and residual-stream directions",
+    "index": 29,
+    "key": "makelov2023subspace",
+    "label": "Makelov et al. (2024)",
+    "ratings": {
+      "D": "U",
+      "E": "U",
+      "I": "U",
+      "N": "+1",
+      "R": "+2",
+      "SC": "U",
+      "S_C": "+3",
+      "S_M": "~3"
+    },
+    "representation_class": "linear",
+    "source": {
+      "pdf_sha256": "2d9b00610ddd95fccf1ab366413358868cffcf8e704f804027e6554e9b2d747f",
+      "resolved_version": "published venue PDF",
+      "review_pdf_url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/70b8505ac79e3e131756f793cd80eb8d-Paper-Conference.pdf",
+      "source_url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/70b8505ac79e3e131756f793cd80eb8d-Abstract-Conference.html",
+      "title": "Is This the Subspace You Are Looking for? An Interpretability Illusion for Subspace Activation Patching",
+      "year": "2024"
+    },
+    "summary": "Illusory MLP patches recruit dormant pathways; residual tests support robustness and partial IOI computation.",
+    "target": "factual recall and IOI"
+  },
+  {
+    "candidate": "Low/high-frequency Fourier components",
+    "index": 30,
+    "key": "zhou2024fourier",
+    "label": "Zhou et al. (2024)",
+    "ratings": {
+      "D": "U",
+      "E": "U",
+      "I": "U",
+      "N": "+3",
+      "R": "U",
+      "SC": "+3",
+      "S_C": "U",
+      "S_M": "+2"
+    },
+    "representation_class": "nonlinear",
+    "source": {
+      "pdf_sha256": "a7c1c3a023dc2f825a8d000f786e6b254baa607a36fec4016280429040d6fb1e",
+      "resolved_version": "published venue PDF",
+      "review_pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/2cc8dc30e52798b27d37b795cc153310-Paper-Conference.pdf",
+      "source_url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/2cc8dc30e52798b27d37b795cc153310-Abstract-Conference.html",
+      "title": "Pre-trained Large Language Models Use Fourier Features to Compute Addition",
+      "year": "2024"
+    },
+    "summary": "Frequency ablation in integer addition predicts magnitude and modular errors, supporting partial computation.",
+    "target": "integer addition"
+  }
+]

@@ -1,0 +1,33 @@
+seed: 1729
+models_config: configs/models.yaml
+model: llama_3_2_3b
+split_dataset_dir: data/prompt_cache_canonical_source_splits_t800_d100_te100__a68a297dd188__r0
+split_name: split_00
+family: addition_formula
+family_label: Addition Formula
+source_partition: dev
+representation_source: prompt_activations
+intervention_layer_idx: 0
+evaluation_batch_size: 45
+value_min: 0
+value_max: 999
+source_sampler:
+  max_source_instances: null
+target_sampler:
+  mode: all_valid
+  max_targets_per_instance: null
+  max_interventions: null
+training:
+  objective: target_logprob
+  steps: 300
+  vector_lr: 0.01
+  alpha_lr: 0.1
+  vector_init_variance: 0.0001
+  alpha_init: 2.0
+  alpha_positive: true
+  alpha_max: 16.0
+  alpha_l2_penalty: 0.0
+  normalize_after_each_step: true
+  keep_best_checkpoint: true
+  pair_parallel_batch_size: 45
+  checkpoint_every: 1

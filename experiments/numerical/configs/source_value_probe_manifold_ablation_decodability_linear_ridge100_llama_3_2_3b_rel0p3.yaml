@@ -1,0 +1,27 @@
+seed: 1729
+models_config: configs/models.yaml
+split_dataset_dir: data/prompt_cache_canonical_source_splits_t800_d100_te100__a68a297dd188__r0
+split_name: split_00
+representation_source: prompt_activations
+activation_cache_root: out/activation_caches/source_value_probe_canonical_prompt_sequences
+use_activation_cache: true
+require_activation_cache_hit: true
+
+models:
+  - llama_3_2_3b
+relative_layers:
+  - 0.3
+prompt_families:
+  - family: addition_formula
+    family_label: Addition Formula
+
+probe_batch_size_by_model:
+  llama_3_2_3b: 64
+
+architecture: linear
+ridge_lambda: 100.0
+projection_basis_mode: coefficient
+max_projection_steps: 32
+center_mode: train_mean
+basis_rtol: 1.0e-8
+basis_atol: 1.0e-10
