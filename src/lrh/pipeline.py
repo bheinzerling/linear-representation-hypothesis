@@ -20,6 +20,7 @@ TASKS = {
     "mentions": "lrh.analysis.mentions",
     "numerical": "lrh.analysis.numerical",
     "literature": "lrh.analysis.literature",
+    "probe_mdl": "lrh.analysis.probe_mdl",
 }
 
 

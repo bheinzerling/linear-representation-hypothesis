@@ -10,6 +10,7 @@ is `src/lrh/analysis/numerical.py`; its outputs are in
 | Figure 3b | 1,000 supervised probe outputs with 800/100/100 value partitions | `fig03_supervised_probe_outputs` |
 | Figure 3c | Four test summaries; 300 per-value predictions for three probes; paired value bootstrap; classifier median certificate | `fig03_probe_metrics`, `probe_uncertainty.csv` |
 | Figure 3d | All 73 predefined complexity settings; each probe family's complexity measure | `fig03_family_complexity` |
+| Online-description-length appendix | 350,400 per-example coding costs and 73 sets of held-out predictions; both probability models and three orderings | `probe_mdl/fig_probe_mdl`, `probe_mdl/table_probe_mdl.tex` |
 | Appendix complexity sweep | 4,752 curve points across six models and eleven depths; 264 within-family optima | `fig_appendix_capacity_paths` |
 | Figure 4b | 660 direction comparisons and 1,650 transfer cells across six models and eleven depths | `fig04_pls_transfer` |
 | Figure 5c | 56,000 reduced deletion units; source-value bootstrap conditional on ten fitted bases; paired controls | `fig05_subspace_deletion` |
@@ -19,7 +20,7 @@ is `src/lrh/analysis/numerical.py`; its outputs are in
 | Figure 7f | 1,200 coefficient-prediction rows over twenty held-out sources; separate 2,000-edit output-scored search | `fig07_coefficient_predictions` |
 | Evidence tables; literature appendices | Thirty studies, 240 ratings, 376 coded episodes, and sixty duplicated episodes | `literature/metrics.json` |
 
-Output stems denote both PDF and PNG files. The mentions and literature paths
+Output stems denote both PDF and PNG files. The mentions, literature and MDL paths
 are relative to `out/reproduction/`; the remaining paths are relative to its
 `numerical/` subdirectory.
 

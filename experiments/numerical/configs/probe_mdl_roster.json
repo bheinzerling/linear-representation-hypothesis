@@ -1,0 +1,1104 @@
+[
+  {
+    "architecture": "circular_cls",
+    "archived_test_mae": 264.76,
+    "config": {
+      "basis_dim": 1,
+      "batch_size": 256,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "hidden_dim": 100,
+      "lr": 0.01,
+      "max_epochs": 1000,
+      "patience": 20,
+      "seed": 1729,
+      "val_fraction": 0.1,
+      "weight_decay": 0.001
+    },
+    "control_name": "basis_dim",
+    "control_value": 1.0,
+    "id": "circular_cls-00",
+    "old_effective_df": 1.0
+  },
+  {
+    "architecture": "circular_cls",
+    "archived_test_mae": 314.9,
+    "config": {
+      "basis_dim": 2,
+      "batch_size": 256,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "hidden_dim": 100,
+      "lr": 0.01,
+      "max_epochs": 1000,
+      "patience": 20,
+      "seed": 1729,
+      "val_fraction": 0.1,
+      "weight_decay": 0.001
+    },
+    "control_name": "basis_dim",
+    "control_value": 2.0,
+    "id": "circular_cls-01",
+    "old_effective_df": 2.0
+  },
+  {
+    "architecture": "circular_cls",
+    "archived_test_mae": 238.31,
+    "config": {
+      "basis_dim": 3,
+      "batch_size": 256,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "hidden_dim": 100,
+      "lr": 0.01,
+      "max_epochs": 1000,
+      "patience": 20,
+      "seed": 1729,
+      "val_fraction": 0.1,
+      "weight_decay": 0.001
+    },
+    "control_name": "basis_dim",
+    "control_value": 3.0,
+    "id": "circular_cls-02",
+    "old_effective_df": 3.0
+  },
+  {
+    "architecture": "circular_cls",
+    "archived_test_mae": 330.78,
+    "config": {
+      "basis_dim": 4,
+      "batch_size": 256,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "hidden_dim": 100,
+      "lr": 0.01,
+      "max_epochs": 1000,
+      "patience": 20,
+      "seed": 1729,
+      "val_fraction": 0.1,
+      "weight_decay": 0.001
+    },
+    "control_name": "basis_dim",
+    "control_value": 4.0,
+    "id": "circular_cls-03",
+    "old_effective_df": 4.0
+  },
+  {
+    "architecture": "circular_cls",
+    "archived_test_mae": 170.58,
+    "config": {
+      "basis_dim": 5,
+      "batch_size": 256,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "hidden_dim": 100,
+      "lr": 0.01,
+      "max_epochs": 1000,
+      "patience": 20,
+      "seed": 1729,
+      "val_fraction": 0.1,
+      "weight_decay": 0.001
+    },
+    "control_name": "basis_dim",
+    "control_value": 5.0,
+    "id": "circular_cls-04",
+    "old_effective_df": 5.0
+  },
+  {
+    "architecture": "circular_cls",
+    "archived_test_mae": 223.82,
+    "config": {
+      "basis_dim": 6,
+      "batch_size": 256,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "hidden_dim": 100,
+      "lr": 0.01,
+      "max_epochs": 1000,
+      "patience": 20,
+      "seed": 1729,
+      "val_fraction": 0.1,
+      "weight_decay": 0.001
+    },
+    "control_name": "basis_dim",
+    "control_value": 6.0,
+    "id": "circular_cls-05",
+    "old_effective_df": 6.0
+  },
+  {
+    "architecture": "circular_cls",
+    "archived_test_mae": 75.65,
+    "config": {
+      "basis_dim": 7,
+      "batch_size": 256,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "hidden_dim": 100,
+      "lr": 0.01,
+      "max_epochs": 1000,
+      "patience": 20,
+      "seed": 1729,
+      "val_fraction": 0.1,
+      "weight_decay": 0.001
+    },
+    "control_name": "basis_dim",
+    "control_value": 7.0,
+    "id": "circular_cls-06",
+    "old_effective_df": 7.0
+  },
+  {
+    "architecture": "circular_cls",
+    "archived_test_mae": 6.32,
+    "config": {
+      "basis_dim": 8,
+      "batch_size": 256,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "hidden_dim": 100,
+      "lr": 0.01,
+      "max_epochs": 1000,
+      "patience": 20,
+      "seed": 1729,
+      "val_fraction": 0.1,
+      "weight_decay": 0.001
+    },
+    "control_name": "basis_dim",
+    "control_value": 8.0,
+    "id": "circular_cls-07",
+    "old_effective_df": 8.0
+  },
+  {
+    "architecture": "circular_cls",
+    "archived_test_mae": 5.82,
+    "config": {
+      "basis_dim": 9,
+      "batch_size": 256,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "hidden_dim": 100,
+      "lr": 0.01,
+      "max_epochs": 1000,
+      "patience": 20,
+      "seed": 1729,
+      "val_fraction": 0.1,
+      "weight_decay": 0.001
+    },
+    "control_name": "basis_dim",
+    "control_value": 9.0,
+    "id": "circular_cls-08",
+    "old_effective_df": 9.0
+  },
+  {
+    "architecture": "circular_cls",
+    "archived_test_mae": 1.09,
+    "config": {
+      "basis_dim": 10,
+      "batch_size": 256,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "hidden_dim": 100,
+      "lr": 0.01,
+      "max_epochs": 1000,
+      "patience": 20,
+      "seed": 1729,
+      "val_fraction": 0.1,
+      "weight_decay": 0.001
+    },
+    "control_name": "basis_dim",
+    "control_value": 10.0,
+    "id": "circular_cls-09",
+    "old_effective_df": 10.0
+  },
+  {
+    "architecture": "circular_cls",
+    "archived_test_mae": 6.56,
+    "config": {
+      "basis_dim": 11,
+      "batch_size": 256,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "hidden_dim": 100,
+      "lr": 0.01,
+      "max_epochs": 1000,
+      "patience": 20,
+      "seed": 1729,
+      "val_fraction": 0.1,
+      "weight_decay": 0.001
+    },
+    "control_name": "basis_dim",
+    "control_value": 11.0,
+    "id": "circular_cls-10",
+    "old_effective_df": 11.0
+  },
+  {
+    "architecture": "circular_cls",
+    "archived_test_mae": 5.26,
+    "config": {
+      "basis_dim": 12,
+      "batch_size": 256,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "hidden_dim": 100,
+      "lr": 0.01,
+      "max_epochs": 1000,
+      "patience": 20,
+      "seed": 1729,
+      "val_fraction": 0.1,
+      "weight_decay": 0.001
+    },
+    "control_name": "basis_dim",
+    "control_value": 12.0,
+    "id": "circular_cls-11",
+    "old_effective_df": 12.0
+  },
+  {
+    "architecture": "circular_cls",
+    "archived_test_mae": 4.54,
+    "config": {
+      "basis_dim": 13,
+      "batch_size": 256,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "hidden_dim": 100,
+      "lr": 0.01,
+      "max_epochs": 1000,
+      "patience": 20,
+      "seed": 1729,
+      "val_fraction": 0.1,
+      "weight_decay": 0.001
+    },
+    "control_name": "basis_dim",
+    "control_value": 13.0,
+    "id": "circular_cls-12",
+    "old_effective_df": 13.0
+  },
+  {
+    "architecture": "circular_cls",
+    "archived_test_mae": 4.16,
+    "config": {
+      "basis_dim": 14,
+      "batch_size": 256,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "hidden_dim": 100,
+      "lr": 0.01,
+      "max_epochs": 1000,
+      "patience": 20,
+      "seed": 1729,
+      "val_fraction": 0.1,
+      "weight_decay": 0.001
+    },
+    "control_name": "basis_dim",
+    "control_value": 14.0,
+    "id": "circular_cls-13",
+    "old_effective_df": 14.0
+  },
+  {
+    "architecture": "circular_cls",
+    "archived_test_mae": 2.41,
+    "config": {
+      "basis_dim": 15,
+      "batch_size": 256,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "hidden_dim": 100,
+      "lr": 0.01,
+      "max_epochs": 1000,
+      "patience": 20,
+      "seed": 1729,
+      "val_fraction": 0.1,
+      "weight_decay": 0.001
+    },
+    "control_name": "basis_dim",
+    "control_value": 15.0,
+    "id": "circular_cls-14",
+    "old_effective_df": 15.0
+  },
+  {
+    "architecture": "circular_cls",
+    "archived_test_mae": 7.86,
+    "config": {
+      "basis_dim": 16,
+      "batch_size": 256,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "hidden_dim": 100,
+      "lr": 0.01,
+      "max_epochs": 1000,
+      "patience": 20,
+      "seed": 1729,
+      "val_fraction": 0.1,
+      "weight_decay": 0.001
+    },
+    "control_name": "basis_dim",
+    "control_value": 16.0,
+    "id": "circular_cls-15",
+    "old_effective_df": 16.0
+  },
+  {
+    "architecture": "circular_cls",
+    "archived_test_mae": 5.98,
+    "config": {
+      "basis_dim": 32,
+      "batch_size": 256,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "hidden_dim": 100,
+      "lr": 0.01,
+      "max_epochs": 1000,
+      "patience": 20,
+      "seed": 1729,
+      "val_fraction": 0.1,
+      "weight_decay": 0.001
+    },
+    "control_name": "basis_dim",
+    "control_value": 32.0,
+    "id": "circular_cls-16",
+    "old_effective_df": 32.0
+  },
+  {
+    "architecture": "circular_cls",
+    "archived_test_mae": 3.03,
+    "config": {
+      "basis_dim": 64,
+      "batch_size": 256,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "hidden_dim": 100,
+      "lr": 0.01,
+      "max_epochs": 1000,
+      "patience": 20,
+      "seed": 1729,
+      "val_fraction": 0.1,
+      "weight_decay": 0.001
+    },
+    "control_name": "basis_dim",
+    "control_value": 64.0,
+    "id": "circular_cls-17",
+    "old_effective_df": 64.0
+  },
+  {
+    "architecture": "circular_cls",
+    "archived_test_mae": 2.79,
+    "config": {
+      "basis_dim": 128,
+      "batch_size": 256,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "hidden_dim": 100,
+      "lr": 0.01,
+      "max_epochs": 1000,
+      "patience": 20,
+      "seed": 1729,
+      "val_fraction": 0.1,
+      "weight_decay": 0.001
+    },
+    "control_name": "basis_dim",
+    "control_value": 128.0,
+    "id": "circular_cls-18",
+    "old_effective_df": 128.0
+  },
+  {
+    "architecture": "circular_cls",
+    "archived_test_mae": 2.5,
+    "config": {
+      "basis_dim": 256,
+      "batch_size": 256,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "hidden_dim": 100,
+      "lr": 0.01,
+      "max_epochs": 1000,
+      "patience": 20,
+      "seed": 1729,
+      "val_fraction": 0.1,
+      "weight_decay": 0.001
+    },
+    "control_name": "basis_dim",
+    "control_value": 256.0,
+    "id": "circular_cls-19",
+    "old_effective_df": 256.0
+  },
+  {
+    "architecture": "circular_cls",
+    "archived_test_mae": 1.46,
+    "config": {
+      "basis_dim": 512,
+      "batch_size": 256,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "hidden_dim": 100,
+      "lr": 0.01,
+      "max_epochs": 1000,
+      "patience": 20,
+      "seed": 1729,
+      "val_fraction": 0.1,
+      "weight_decay": 0.001
+    },
+    "control_name": "basis_dim",
+    "control_value": 512.0,
+    "id": "circular_cls-20",
+    "old_effective_df": 512.0
+  },
+  {
+    "architecture": "circular_cls",
+    "archived_test_mae": 1.47,
+    "config": {
+      "basis_dim": 1024,
+      "batch_size": 256,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "hidden_dim": 100,
+      "lr": 0.01,
+      "max_epochs": 1000,
+      "patience": 20,
+      "seed": 1729,
+      "val_fraction": 0.1,
+      "weight_decay": 0.001
+    },
+    "control_name": "basis_dim",
+    "control_value": 1024.0,
+    "id": "circular_cls-21",
+    "old_effective_df": 1024.0
+  },
+  {
+    "architecture": "circular_cls",
+    "archived_test_mae": 1.49,
+    "config": {
+      "basis_dim": 2048,
+      "batch_size": 256,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "hidden_dim": 100,
+      "lr": 0.01,
+      "max_epochs": 1000,
+      "patience": 20,
+      "seed": 1729,
+      "val_fraction": 0.1,
+      "weight_decay": 0.001
+    },
+    "control_name": "basis_dim",
+    "control_value": 2048.0,
+    "id": "circular_cls-22",
+    "old_effective_df": 2048.0
+  },
+  {
+    "architecture": "circular_cls",
+    "archived_test_mae": 1.68,
+    "config": {
+      "basis_dim": 4096,
+      "batch_size": 256,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "hidden_dim": 100,
+      "lr": 0.01,
+      "max_epochs": 1000,
+      "patience": 20,
+      "seed": 1729,
+      "val_fraction": 0.1,
+      "weight_decay": 0.001
+    },
+    "control_name": "basis_dim",
+    "control_value": 4096.0,
+    "id": "circular_cls-23",
+    "old_effective_df": 4096.0
+  },
+  {
+    "architecture": "circular_reg",
+    "archived_test_mae": 537.45,
+    "config": {
+      "basis_dim": 1
+    },
+    "control_name": "basis_dim",
+    "control_value": 1.0,
+    "id": "circular_reg-24",
+    "old_effective_df": 1.0
+  },
+  {
+    "architecture": "circular_reg",
+    "archived_test_mae": 303.32,
+    "config": {
+      "basis_dim": 2
+    },
+    "control_name": "basis_dim",
+    "control_value": 2.0,
+    "id": "circular_reg-25",
+    "old_effective_df": 2.0
+  },
+  {
+    "architecture": "circular_reg",
+    "archived_test_mae": 282.5,
+    "config": {
+      "basis_dim": 3
+    },
+    "control_name": "basis_dim",
+    "control_value": 3.0,
+    "id": "circular_reg-26",
+    "old_effective_df": 3.0
+  },
+  {
+    "architecture": "circular_reg",
+    "archived_test_mae": 348.94,
+    "config": {
+      "basis_dim": 4
+    },
+    "control_name": "basis_dim",
+    "control_value": 4.0,
+    "id": "circular_reg-27",
+    "old_effective_df": 4.0
+  },
+  {
+    "architecture": "circular_reg",
+    "archived_test_mae": 130.41,
+    "config": {
+      "basis_dim": 5
+    },
+    "control_name": "basis_dim",
+    "control_value": 5.0,
+    "id": "circular_reg-28",
+    "old_effective_df": 5.0
+  },
+  {
+    "architecture": "circular_reg",
+    "archived_test_mae": 216.39,
+    "config": {
+      "basis_dim": 6
+    },
+    "control_name": "basis_dim",
+    "control_value": 6.0,
+    "id": "circular_reg-29",
+    "old_effective_df": 6.0
+  },
+  {
+    "architecture": "circular_reg",
+    "archived_test_mae": 114.71,
+    "config": {
+      "basis_dim": 7
+    },
+    "control_name": "basis_dim",
+    "control_value": 7.0,
+    "id": "circular_reg-30",
+    "old_effective_df": 7.0
+  },
+  {
+    "architecture": "circular_reg",
+    "archived_test_mae": 4.45,
+    "config": {
+      "basis_dim": 8
+    },
+    "control_name": "basis_dim",
+    "control_value": 8.0,
+    "id": "circular_reg-31",
+    "old_effective_df": 8.0
+  },
+  {
+    "architecture": "circular_reg",
+    "archived_test_mae": 17.28,
+    "config": {
+      "basis_dim": 9
+    },
+    "control_name": "basis_dim",
+    "control_value": 9.0,
+    "id": "circular_reg-32",
+    "old_effective_df": 9.0
+  },
+  {
+    "architecture": "circular_reg",
+    "archived_test_mae": 1.63,
+    "config": {
+      "basis_dim": 10
+    },
+    "control_name": "basis_dim",
+    "control_value": 10.0,
+    "id": "circular_reg-33",
+    "old_effective_df": 10.0
+  },
+  {
+    "architecture": "circular_reg",
+    "archived_test_mae": 4.69,
+    "config": {
+      "basis_dim": 11
+    },
+    "control_name": "basis_dim",
+    "control_value": 11.0,
+    "id": "circular_reg-34",
+    "old_effective_df": 11.0
+  },
+  {
+    "architecture": "circular_reg",
+    "archived_test_mae": 3.24,
+    "config": {
+      "basis_dim": 12
+    },
+    "control_name": "basis_dim",
+    "control_value": 12.0,
+    "id": "circular_reg-35",
+    "old_effective_df": 12.0
+  },
+  {
+    "architecture": "circular_reg",
+    "archived_test_mae": 3.21,
+    "config": {
+      "basis_dim": 13
+    },
+    "control_name": "basis_dim",
+    "control_value": 13.0,
+    "id": "circular_reg-36",
+    "old_effective_df": 13.0
+  },
+  {
+    "architecture": "circular_reg",
+    "archived_test_mae": 2.81,
+    "config": {
+      "basis_dim": 14
+    },
+    "control_name": "basis_dim",
+    "control_value": 14.0,
+    "id": "circular_reg-37",
+    "old_effective_df": 14.0
+  },
+  {
+    "architecture": "circular_reg",
+    "archived_test_mae": 3.54,
+    "config": {
+      "basis_dim": 15
+    },
+    "control_name": "basis_dim",
+    "control_value": 15.0,
+    "id": "circular_reg-38",
+    "old_effective_df": 15.0
+  },
+  {
+    "architecture": "circular_reg",
+    "archived_test_mae": 4.95,
+    "config": {
+      "basis_dim": 16
+    },
+    "control_name": "basis_dim",
+    "control_value": 16.0,
+    "id": "circular_reg-39",
+    "old_effective_df": 16.0
+  },
+  {
+    "architecture": "circular_reg",
+    "archived_test_mae": 2.98,
+    "config": {
+      "basis_dim": 32
+    },
+    "control_name": "basis_dim",
+    "control_value": 32.0,
+    "id": "circular_reg-40",
+    "old_effective_df": 32.0
+  },
+  {
+    "architecture": "circular_reg",
+    "archived_test_mae": 2.36,
+    "config": {
+      "basis_dim": 64
+    },
+    "control_name": "basis_dim",
+    "control_value": 64.0,
+    "id": "circular_reg-41",
+    "old_effective_df": 64.0
+  },
+  {
+    "architecture": "circular_reg",
+    "archived_test_mae": 1.67,
+    "config": {
+      "basis_dim": 128
+    },
+    "control_name": "basis_dim",
+    "control_value": 128.0,
+    "id": "circular_reg-42",
+    "old_effective_df": 128.0
+  },
+  {
+    "architecture": "circular_reg",
+    "archived_test_mae": 1.2,
+    "config": {
+      "basis_dim": 256
+    },
+    "control_name": "basis_dim",
+    "control_value": 256.0,
+    "id": "circular_reg-43",
+    "old_effective_df": 256.0
+  },
+  {
+    "architecture": "circular_reg",
+    "archived_test_mae": 0.98,
+    "config": {
+      "basis_dim": 512
+    },
+    "control_name": "basis_dim",
+    "control_value": 512.0,
+    "id": "circular_reg-44",
+    "old_effective_df": 512.0
+  },
+  {
+    "architecture": "circular_reg",
+    "archived_test_mae": 0.82,
+    "config": {
+      "basis_dim": 1024
+    },
+    "control_name": "basis_dim",
+    "control_value": 1024.0,
+    "id": "circular_reg-45",
+    "old_effective_df": 1024.0
+  },
+  {
+    "architecture": "circular_reg",
+    "archived_test_mae": 0.8,
+    "config": {
+      "basis_dim": 2048
+    },
+    "control_name": "basis_dim",
+    "control_value": 2048.0,
+    "id": "circular_reg-46",
+    "old_effective_df": 2048.0
+  },
+  {
+    "architecture": "circular_reg",
+    "archived_test_mae": 0.79,
+    "config": {
+      "basis_dim": 4096
+    },
+    "control_name": "basis_dim",
+    "control_value": 4096.0,
+    "id": "circular_reg-47",
+    "old_effective_df": 4096.0
+  },
+  {
+    "architecture": "linear",
+    "archived_test_mae": 232.39,
+    "config": {
+      "ridge_lambda": 44620.12701000639
+    },
+    "control_name": "ridge_lambda",
+    "control_value": 44620.12701000639,
+    "id": "linear-48",
+    "old_effective_df": 0.195068359375
+  },
+  {
+    "architecture": "linear",
+    "archived_test_mae": 225.6,
+    "config": {
+      "ridge_lambda": 22087.339157360217
+    },
+    "control_name": "ridge_lambda",
+    "control_value": 22087.339157360217,
+    "id": "linear-49",
+    "old_effective_df": 0.39013671875
+  },
+  {
+    "architecture": "linear",
+    "archived_test_mae": 212.83,
+    "config": {
+      "ridge_lambda": 10827.696138449186
+    },
+    "control_name": "ridge_lambda",
+    "control_value": 10827.696138449186,
+    "id": "linear-50",
+    "old_effective_df": 0.7802734375
+  },
+  {
+    "architecture": "linear",
+    "archived_test_mae": 190.31,
+    "config": {
+      "ridge_lambda": 5210.356991774891
+    },
+    "control_name": "ridge_lambda",
+    "control_value": 5210.356991774891,
+    "id": "linear-51",
+    "old_effective_df": 1.5605468749999996
+  },
+  {
+    "architecture": "linear",
+    "archived_test_mae": 154.65,
+    "config": {
+      "ridge_lambda": 2423.0901458388216
+    },
+    "control_name": "ridge_lambda",
+    "control_value": 2423.0901458388216,
+    "id": "linear-52",
+    "old_effective_df": 3.12109375
+  },
+  {
+    "architecture": "linear",
+    "archived_test_mae": 109.27,
+    "config": {
+      "ridge_lambda": 1061.5689133046187
+    },
+    "control_name": "ridge_lambda",
+    "control_value": 1061.5689133046187,
+    "id": "linear-53",
+    "old_effective_df": 6.2421875
+  },
+  {
+    "architecture": "linear",
+    "archived_test_mae": 65.8,
+    "config": {
+      "ridge_lambda": 420.58870410975726
+    },
+    "control_name": "ridge_lambda",
+    "control_value": 420.58870410975726,
+    "id": "linear-54",
+    "old_effective_df": 12.484375
+  },
+  {
+    "architecture": "linear",
+    "archived_test_mae": 35.49,
+    "config": {
+      "ridge_lambda": 141.13413548535536
+    },
+    "control_name": "ridge_lambda",
+    "control_value": 141.13413548535536,
+    "id": "linear-55",
+    "old_effective_df": 24.96875
+  },
+  {
+    "architecture": "linear",
+    "archived_test_mae": 20.33,
+    "config": {
+      "ridge_lambda": 37.93101152786279
+    },
+    "control_name": "ridge_lambda",
+    "control_value": 37.93101152786279,
+    "id": "linear-56",
+    "old_effective_df": 49.93749999999999
+  },
+  {
+    "architecture": "linear",
+    "archived_test_mae": 13.11,
+    "config": {
+      "ridge_lambda": 8.85947002445975
+    },
+    "control_name": "ridge_lambda",
+    "control_value": 8.85947002445975,
+    "id": "linear-57",
+    "old_effective_df": 99.875
+  },
+  {
+    "architecture": "linear",
+    "archived_test_mae": 9.65,
+    "config": {
+      "ridge_lambda": 1.9496165837717316
+    },
+    "control_name": "ridge_lambda",
+    "control_value": 1.9496165837717316,
+    "id": "linear-58",
+    "old_effective_df": 199.75
+  },
+  {
+    "architecture": "linear",
+    "archived_test_mae": 8.96,
+    "config": {
+      "ridge_lambda": 0.551881046550891
+    },
+    "control_name": "ridge_lambda",
+    "control_value": 0.551881046550891,
+    "id": "linear-59",
+    "old_effective_df": 334.5675920921172
+  },
+  {
+    "architecture": "linear",
+    "archived_test_mae": 8.84,
+    "config": {
+      "ridge_lambda": 0.3333288920874364
+    },
+    "control_name": "ridge_lambda",
+    "control_value": 0.3333288920874364,
+    "id": "linear-60",
+    "old_effective_df": 399.5
+  },
+  {
+    "architecture": "linear",
+    "archived_test_mae": 9.83,
+    "config": {
+      "ridge_lambda": 0.0
+    },
+    "control_name": "ridge_lambda",
+    "control_value": 0.0,
+    "id": "linear-61",
+    "old_effective_df": 799.0
+  },
+  {
+    "architecture": "pls",
+    "archived_test_mae": 49.54,
+    "config": {
+      "n_components": 1,
+      "scale": false
+    },
+    "control_name": "n_components",
+    "control_value": 1.0,
+    "id": "pls-62",
+    "old_effective_df": 1.0
+  },
+  {
+    "architecture": "pls",
+    "archived_test_mae": 30.67,
+    "config": {
+      "n_components": 2,
+      "scale": false
+    },
+    "control_name": "n_components",
+    "control_value": 2.0,
+    "id": "pls-63",
+    "old_effective_df": 2.0
+  },
+  {
+    "architecture": "pls",
+    "archived_test_mae": 20.5,
+    "config": {
+      "n_components": 4,
+      "scale": false
+    },
+    "control_name": "n_components",
+    "control_value": 4.0,
+    "id": "pls-64",
+    "old_effective_df": 4.0
+  },
+  {
+    "architecture": "pls",
+    "archived_test_mae": 12.61,
+    "config": {
+      "n_components": 8,
+      "scale": false
+    },
+    "control_name": "n_components",
+    "control_value": 8.0,
+    "id": "pls-65",
+    "old_effective_df": 8.0
+  },
+  {
+    "architecture": "pls",
+    "archived_test_mae": 9.89,
+    "config": {
+      "n_components": 16,
+      "scale": false
+    },
+    "control_name": "n_components",
+    "control_value": 16.0,
+    "id": "pls-66",
+    "old_effective_df": 16.0
+  },
+  {
+    "architecture": "pls",
+    "archived_test_mae": 9.36,
+    "config": {
+      "n_components": 32,
+      "scale": false
+    },
+    "control_name": "n_components",
+    "control_value": 32.0,
+    "id": "pls-67",
+    "old_effective_df": 32.0
+  },
+  {
+    "architecture": "pls",
+    "archived_test_mae": 9.52,
+    "config": {
+      "n_components": 64,
+      "scale": false
+    },
+    "control_name": "n_components",
+    "control_value": 64.0,
+    "id": "pls-68",
+    "old_effective_df": 64.0
+  },
+  {
+    "architecture": "pls",
+    "archived_test_mae": 9.67,
+    "config": {
+      "n_components": 128,
+      "scale": false
+    },
+    "control_name": "n_components",
+    "control_value": 128.0,
+    "id": "pls-69",
+    "old_effective_df": 128.0
+  },
+  {
+    "architecture": "pls",
+    "archived_test_mae": 9.67,
+    "config": {
+      "n_components": 256,
+      "scale": false
+    },
+    "control_name": "n_components",
+    "control_value": 256.0,
+    "id": "pls-70",
+    "old_effective_df": 256.0
+  },
+  {
+    "architecture": "pls",
+    "archived_test_mae": 9.69,
+    "config": {
+      "n_components": 512,
+      "scale": false
+    },
+    "control_name": "n_components",
+    "control_value": 512.0,
+    "id": "pls-71",
+    "old_effective_df": 512.0
+  },
+  {
+    "architecture": "pls",
+    "archived_test_mae": 9.67,
+    "config": {
+      "n_components": 799,
+      "scale": false
+    },
+    "control_name": "n_components",
+    "control_value": 799.0,
+    "id": "pls-72",
+    "old_effective_df": 799.0
+  }
+]

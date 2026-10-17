@@ -55,6 +55,39 @@ sweeps; `run_source_value_probe_prompt_style_transfer_relative_layers.py`
 performs native and cross-prompt evaluation. Inspect each script's `--help`
 for configuration and output options.
 
+## Online description length
+
+The appendix MDL experiment uses the 73 settings in
+`experiments/numerical/configs/probe_mdl_roster.json` and the original
+800/100/100 value partition in `probe_mdl_split.json`. From
+`experiments/numerical/`, inspect the plan or refit probes on the layer-10
+Llama-3.1-8B activation cache:
+
+```bash
+uv run python scripts/run_figure3_probe_mdl.py --device cpu --plan-only
+uv run python scripts/run_figure3_probe_mdl.py --device cpu \
+  --repr-npz /path/to/source_token_representations.npz \
+  --allow-new-activations
+```
+
+The cache and its adjacent `metadata.json` follow the numerical collection
+format: `activations`, `source_values`, `style_ids` and `x_values`, with twenty
+`addition_formula_rhs_source` contexts per integer. The runner averages in
+float32 before fitting in float64. The reference cache hash and all source
+package versions are recorded in `data/probe_mdl/protocol.json` at the repository
+root. A regenerated cache has a new recorded hash; the flag above permits
+that new input. Exact reference-cache reruns omit the flag.
+
+The runner fits probes and recalibrates each prefix from already transmitted
+labels, resetting classifier initialization to seed 1729. It writes block
+observations, held-out predictions, source hashes and completion records under
+`out/figure3-probe-mdl/`. CUDA fitting uses `--device cuda` and
+`CUBLAS_WORKSPACE_CONFIG=:4096:8`. No language model is loaded by this runner;
+activation collection uses the numerical model sources described above.
+
+The root CPU workflow reproduces the published aggregations directly from
+the released per-example observations; see [the data guide](../data/probe_mdl/README.md).
+
 ## Deletion
 
 The model-input artifact provides the ten prepared deletion bundles. From the

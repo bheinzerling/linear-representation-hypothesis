@@ -9,6 +9,7 @@ from pathlib import Path
 
 from lrh.analysis.human_audit import verify as verify_human_audit
 from lrh.analysis.human_audit import verify_manuscript
+from lrh.analysis.probe_mdl import calculate as verify_probe_mdl
 from lrh.io import sha256
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -104,6 +105,7 @@ def main() -> None:
     cells = verify_paper_tables()
     human_audit = verify_human_audit(ROOT / "data/literature")
     verify_manuscript((ROOT / "paper/paper.tex").read_text(), human_audit)
+    verify_probe_mdl(ROOT / "data/probe_mdl")
     symlinks = [
         p.relative_to(ROOT).as_posix()
         for folder in ("src", "scripts", "data", "figures", "paper", "experiments")

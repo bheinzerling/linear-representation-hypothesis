@@ -20,6 +20,8 @@ provide a framework for assessing the evidence for each claim.
   calculations, and reproduction command.
 - [Numerical data](data/numerical/README.md): frozen observations, experiment
   configurations, and uncertainty definitions.
+- [Online probe codelengths](data/probe_mdl/README.md): per-example coding costs,
+  held-out predictions and complete fitting settings for the appendix MDL comparison.
 
 ## Reproduce the results
 

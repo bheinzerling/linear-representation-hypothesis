@@ -11,6 +11,7 @@ GENERATORS = [
     "render_complexity.py",
     "render_pls_transfer.py",
     "render_transfer.py",
+    "render_probe_mdl.py",
 ]
 
 

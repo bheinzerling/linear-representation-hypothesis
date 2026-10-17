@@ -24,6 +24,14 @@ and separate the earlier thirty-case planning packet from the completed review.
 The literature runner and repository verifier check the released labels;
 the verifier also checks the manuscript's audit sample and table counts.
 
+The MDL release preserves per-example coding costs and held-out predictions
+from the completed 73-setting run. Its exporter verifies every original block
+before packing the observations, retaining exact cost values and recording the
+source inventory hash. The CPU workflow recalculates all block sums, online
+codes and held-out errors. `data/probe_mdl/protocol.json` records the original
+fit settings and environment; the portable fitting runner uses those settings
+with the public numerical experiment sources.
+
 The model-input artifact has an archive checksum and per-file checksums in
 `data/manifests/model-inputs.json`. The extraction command verifies both. New
 model runs use the separate experiment lockfiles; the frozen CPU observations
