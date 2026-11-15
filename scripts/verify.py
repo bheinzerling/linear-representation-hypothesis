@@ -40,12 +40,15 @@ def verify_manifest(root: Path = ROOT) -> int:
 
 def verify_model_imports(root: Path = ROOT) -> int:
     checked = 0
-    for folder, package in (("numerical", "src"), ("properties", "introlm")):
+    for folder, package in (("numerical", "src"), ("properties", "introlm"),
+                            ("individual_property_control", "introlm")):
         source = root / "experiments" / folder
         for path in sorted(source.rglob("*.py")):
-            if any(p in path.parts for p in (".venv", "__pycache__", "out", "data")):
+            if any(p in path.relative_to(source).parts for p in (".venv", "__pycache__", "out", "data")):
                 continue
             checked += 1
+            project = next((p for p in path.parents
+                            if p.is_relative_to(source) and (p / "pyproject.toml").is_file()), source)
             for node in ast.walk(ast.parse(path.read_text())):
                 if isinstance(node, ast.ImportFrom):
                     if node.level:
@@ -54,11 +57,11 @@ def verify_model_imports(root: Path = ROOT) -> int:
                             base = base.parent
                         names = [node.module] if node.module else []
                     else:
-                        base = source / "src" if package == "introlm" else source
+                        base = project / "src" if package == "introlm" else project
                         names = [node.module] if node.module else []
                         names = [n for n in names if n.split(".")[0] == package]
                 elif isinstance(node, ast.Import):
-                    base = source / "src" if package == "introlm" else source
+                    base = project / "src" if package == "introlm" else project
                     names = [n.name for n in node.names if n.name.split(".")[0] == package]
                 else:
                     continue
@@ -94,7 +97,7 @@ def verify_paper_tables(root: Path = ROOT) -> int:
                 raise ValueError(f"Manuscript and evidence ratings differ: {study}, {claim}")
             checked += 1
         seen.add(study)
-    if len(seen) != 30 or checked != (17 + 30) * len(claims):
+    if len(seen) != 30 or checked != (20 + 30) * len(claims):
         raise ValueError("The manuscript must contain the complete and excerpted evidence tables")
     return checked
 

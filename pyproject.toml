@@ -36,3 +36,8 @@ addopts = "-q"
 line-length = 100
 target-version = "py311"
 exclude = ["experiments", "figures"]
+
+[tool.ruff.lint.per-file-ignores]
+# Preserve the frozen independently used analysis and task definitions.
+"src/lrh/analysis/independent_analysis.py" = ["I001", "FURB167"]
+"src/lrh/analysis/task_protocol.py" = ["I001", "UP035", "FURB167"]

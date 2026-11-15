@@ -1,0 +1,63 @@
+{
+  "experiment": "2026-10-15-figure7-matched-probes",
+  "source_root": "02_spectrum_of_lrh_claims/numerical_full_model_rerun",
+  "files": {
+    "src/figure7_matched_probes.py": {
+      "sha256": "0883fd286a417c75ca2bcd67fadaf33ac147eda236a6a4895fbe4fabaaff8925",
+      "verification": "Original input manifest"
+    },
+    "src/source_value_rhs_addition_dataset.py": {
+      "sha256": "657d6351e4e4b6f8754214b4507a37999f3d04d04b6e44b7468d53f257078a83",
+      "verification": "Original input manifest"
+    },
+    "scripts/run_figure7_matched_probes.py": {
+      "sha256": "e0f7a57dd10ae89d3becf80553a709e9581b7480f8e595266a97fe64c85236e9",
+      "verification": "Original input manifest"
+    },
+    "scripts/prepare_figure7_matched_inputs.py": {
+      "sha256": "8e811d34130c6106251ee7d64d7b4b0938bf80a7098fd109d158943ed9d480b4",
+      "verification": "Original input manifest"
+    },
+    "scripts/export_figure7_individual_paper_data.py": {
+      "sha256": "7a40312013f618b4e58aee2c2b54930839de9282aed8e9ec03850de540a0beb2",
+      "verification": "Export manifest"
+    },
+    "scripts/validate_figure7_matched_results.py": {
+      "sha256": "1045a5eaafeb71cc2a84ae66968158cd2af78d358807b25db5f168d1e3c3a9d2",
+      "verification": "Current result-validation source"
+    },
+    "src/magnitude_intervention.py": {
+      "sha256": "84e30c633a56bc1c25965e59e46273b21a331f0701e4cef73560872073f8ce27",
+      "verification": "Original input manifest; existing snapshot unchanged"
+    },
+    "src/model_loader.py": {
+      "sha256": "0aac04b2aa0322d3d2ce02cb1331012206f0c7e4d1efd086538afa5d327ac478",
+      "verification": "Original input manifest; existing snapshot unchanged"
+    },
+    "src/activation_steering.py": {
+      "sha256": "f4e5695f7ad2f007df6c912cba137bd7a40e074d85efffc282affd8c4bbe55b9",
+      "verification": "Original input manifest; existing snapshot unchanged"
+    },
+    "src/utils.py": {
+      "sha256": "d72fb9bf8614acde099467d00639d8f901db802d975c133eeb3ac51e74cbcf0a",
+      "verification": "Original input manifest; existing snapshot unchanged"
+    },
+    "src/probes.py": {
+      "sha256": "e28a8e2119f5d8c2f8597a0462d490b120b325febd84ca7f9ec39057256da8c6",
+      "verification": "Original input manifest; existing snapshot unchanged"
+    },
+    "src/source_value_steering.py": {
+      "sha256": "4ebd7ec51c12efd713d145f94b304466284658faefcab5d643dc96529f238ce8",
+      "verification": "Original input manifest; existing snapshot unchanged"
+    }
+  },
+  "added_files": [
+    "src/figure7_matched_probes.py",
+    "src/source_value_rhs_addition_dataset.py",
+    "scripts/run_figure7_matched_probes.py",
+    "scripts/prepare_figure7_matched_inputs.py",
+    "scripts/export_figure7_individual_paper_data.py",
+    "scripts/validate_figure7_matched_results.py"
+  ],
+  "input_manifest_sha256": "d8603f6d94a3ab104f48874986915f5c9902f9f87810468ab6fe442a5951dbd7"
+}

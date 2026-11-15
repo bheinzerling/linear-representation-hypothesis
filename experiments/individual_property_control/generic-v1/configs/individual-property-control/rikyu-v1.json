@@ -1,0 +1,88 @@
+{
+  "batch_size": 16,
+  "fit_contexts": [
+    "property",
+    "addition"
+  ],
+  "main": {
+    "alphas": [
+      1.0,
+      2.0,
+      4.0,
+      8.0,
+      16.0
+    ],
+    "candidate_layers": 3,
+    "dev_examples": 60,
+    "test_examples": 100
+  },
+  "minimum_baseline_accuracy": 0.9,
+  "minimum_identity": 0.95,
+  "minimum_parse_coverage": 0.95,
+  "models": {
+    "llama31_8b": {
+      "chat": false,
+      "fixed_layer": 9,
+      "model_id": "meta-llama/Llama-3.1-8B",
+      "path": "models/d04e592bb4f6aa9cfee91e2e20afa771667e1d4b",
+      "revision": "d04e592bb4f6aa9cfee91e2e20afa771667e1d4b"
+    },
+    "qwen36_27b": {
+      "chat": true,
+      "fixed_layer": 19,
+      "model_id": "Qwen/Qwen3.6-27B",
+      "path": "models/6a9e13bd6fc8f0983b9b99948120bc37f49c13e9",
+      "revision": "6a9e13bd6fc8f0983b9b99948120bc37f49c13e9"
+    }
+  },
+  "pilot": {
+    "alphas": [
+      2.0,
+      8.0
+    ],
+    "candidate_layers": 1,
+    "dev_examples": 16,
+    "test_examples": 16
+  },
+  "pilot_properties": [
+    "parity",
+    "contains_zero",
+    "residue_mod_3"
+  ],
+  "pilot_seed": 20261101,
+  "pilot_use": "Runtime and schema validation only; main selections use development data inside each main split.",
+  "properties": [
+    "parity",
+    "primality",
+    "divisible_by_3",
+    "divisible_by_4",
+    "divisible_by_5",
+    "divisible_by_6",
+    "divisible_by_8",
+    "divisible_by_10",
+    "divisible_by_25",
+    "residue_mod_3",
+    "residue_mod_4",
+    "units_digit",
+    "tens_digit",
+    "hundreds_digit",
+    "digit_count",
+    "distinct_digit_count",
+    "contains_zero",
+    "has_repeated_digit",
+    "palindrome"
+  ],
+  "ridge": [
+    0.1,
+    1.0,
+    10.0,
+    100.0
+  ],
+  "schema_version": 1,
+  "seeds": [
+    20261110,
+    20261111,
+    20261112
+  ],
+  "study": "individual-property-control-20261110-v1"
+}

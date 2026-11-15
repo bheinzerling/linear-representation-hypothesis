@@ -14,7 +14,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-from lrh.analysis.uncertainty import probe_uncertainty, steering_uncertainty
+from lrh.analysis.figure7_matched import calculate as matched_figure7
+from lrh.analysis.uncertainty import probe_uncertainty
 from lrh.io import require_files, sha256, write_json
 
 METHODS = ["linear", "pls", "circular_reg", "circular_cls"]
@@ -555,9 +556,10 @@ def property_panel(data_dir: Path, output_dir: Path) -> dict:
 
 
 def control_panels(data_dir: Path, output_dir: Path) -> dict:
-    rows = pd.read_csv(data_dir / "steering_accuracy_rows.csv.gz")
-    uncertainty = steering_uncertainty(rows)
-    verify_intervals(uncertainty, data_dir / "steering_uncertainty.csv", ["method", "metric"])
+    matched = matched_figure7(data_dir.parent / "figures/numerical_sufficiency_atlas/individual_prompt_fits")
+    uncertainty = matched["steering"]
+    matched["test"].to_csv(output_dir / "figure7_probe_predictions.csv", index=False)
+    matched["probe_validation"].to_csv(output_dir / "figure7_edit_validation.csv", index=False)
     uncertainty.to_csv(output_dir / "steering_uncertainty.csv", index=False, float_format="%.12g")
     fig, ax = plt.subplots(figsize=(6.3, 2.7), layout="constrained")
     keys = ["linear", "circular_reg", "centroid_patch"]
@@ -585,18 +587,23 @@ def control_panels(data_dir: Path, output_dir: Path) -> dict:
                 )
             if row["count"] == 0:
                 ax.text(2, i + offset, "0/2000", va="center", fontsize=7)
-    ax.axvline(15.8, color="gray", ls=":", label="No-edit within ±10")
+    baseline = uncertainty.loc[
+        uncertainty.method.eq("no_edit") & uncertainty.metric.eq("within10"), "estimate"
+    ].item()
+    ax.axvline(100 * baseline, color="gray", ls=":", label="No-edit within ±10")
     ax.set_yticks(range(3), ["Scalar ridge edit", "Circular edit", "Centroid patch"])
     ax.invert_yaxis()
     ax.set(
         xlim=(-2, 102),
         xlabel="Accuracy (%)",
-        title="Figure 7c: source-cluster uncertainty for fixed edits",
+        title="Figure 7c: prediction-corrected edits; source-prompt uncertainty",
     )
     ax.legend(frameon=False, fontsize=7, loc="upper center", bbox_to_anchor=(0.5, 1.3), ncol=3)
     save(fig, output_dir, "fig07_control_accuracy")
 
-    coefficient_rows = pd.read_csv(data_dir / "coefficient_prediction_rows.csv.gz")
+    coefficient_rows = pd.read_csv(
+        data_dir / "coefficient_prediction_rows.csv.gz"
+    )
     conditions = ["independent_property_all", "ridge", "rbf"]
     estimates, reference = [], None
     matching = ["panel_row_idx", "baseline_row_idx", "source_value", "target_value"]
@@ -627,7 +634,9 @@ def control_panels(data_dir: Path, output_dir: Path) -> dict:
         )
     np.testing.assert_allclose([r["accuracy"] for r in estimates], [0, 0.7675, 0.795])
     search = (
-        pd.read_csv(data_dir / "dimensionality_control.csv")
+        pd.read_csv(
+            data_dir / "dimensionality_control.csv"
+        )
         .set_index("method")
         .loc["in_span_search"]
     )
@@ -643,10 +652,7 @@ def control_panels(data_dir: Path, output_dir: Path) -> dict:
             ax.errorbar(
                 100 * row["accuracy"],
                 i,
-                xerr=[
-                    [100 * (row["accuracy"] - row["low"])],
-                    [100 * (row["high"] - row["accuracy"])],
-                ],
+                xerr=[[100 * (row["accuracy"] - row["low"])], [100 * (row["high"] - row["accuracy"])]],
                 fmt="o",
                 color="#35618D",
                 capsize=2,
@@ -669,8 +675,7 @@ def control_panels(data_dir: Path, output_dir: Path) -> dict:
     )
     save(fig, output_dir, "fig07_coefficient_predictions")
 
-    output = pd.read_csv(data_dir / "probe_outputs.csv.gz")
-    test = output.loc[output.partition.eq("test")]
+    output, test = matched["support"], matched["test"]
     fig, axes = plt.subplots(1, 2, figsize=(7, 3), layout="constrained")
     axes[0].plot([0, 999], [0, 999], color="gray", lw=0.7)
     axes[0].scatter(
@@ -690,7 +695,8 @@ def control_panels(data_dir: Path, output_dir: Path) -> dict:
         label="Circular regression",
     )
     axes[0].set(
-        xlabel="Target value", ylabel="Predicted value", title="Figure 7a: 100 held-out values"
+        xlabel="Target value", ylabel="Predicted value",
+        title="Figure 7a: individual-prompt fits\n100 development source prompts",
     )
     axes[0].legend(frameon=False, fontsize=7)
     axes[1].plot(output.target_sin_4, output.target_sin_3, color="gray", lw=0.7)
@@ -705,7 +711,10 @@ def control_panels(data_dir: Path, output_dir: Path) -> dict:
     )
     save(fig, output_dir, "fig07_numerical_predictions")
     return {
+        "matched_fit_manifest": matched["manifest"],
+        "decoding": records(matched["decoding"]),
         "steering_accuracy": records(uncertainty),
+        "probe_target_validation": records(matched["probe_validation"]),
         "coefficient_prediction": estimates,
         "coefficient_comparison": "Joint methods add source activations; evaluation reuses targets and doses differ.",
         "output_scored_search": {
@@ -725,7 +734,7 @@ def main() -> None:
                 "input_provenance.json",
                 "reported_config.json",
                 "probe_uncertainty.csv",
-                "steering_uncertainty.csv",
+                "../figures/numerical_sufficiency_atlas/individual_prompt_fits/manifest.json",
             ]
         ]
     )

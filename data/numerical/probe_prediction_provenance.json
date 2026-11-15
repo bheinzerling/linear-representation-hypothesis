@@ -1,0 +1,36 @@
+{
+  "rows": 400,
+  "values_per_probe": 100,
+  "classifier_setting": {
+    "architecture": "circular_cls",
+    "archived_test_mae": 1.09,
+    "config": {
+      "basis_dim": 10,
+      "batch_size": 256,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "hidden_dim": 100,
+      "lr": 0.01,
+      "max_epochs": 1000,
+      "patience": 20,
+      "seed": 1729,
+      "val_fraction": 0.1,
+      "weight_decay": 0.001
+    },
+    "control_name": "basis_dim",
+    "control_value": 10.0,
+    "id": "circular_cls-09",
+    "old_effective_df": 10.0
+  },
+  "source": "08_probe_mdl/observations.npz",
+  "source_sha256": "f6a9081603c9f34822e319cb2f1f2bc6e1225334c2b9de5bdf057a9dfaf0a2a0",
+  "output_sha256": "3511e14eaa284793d3a29229bdf4f3791cc49a91ea03af74d98216171bc91cb0",
+  "verification": "All five reported metrics agree to absolute tolerance 1e-12; all methods share the same 100 held-out values.",
+  "checkpoint": {
+    "model": "meta-llama/Llama-3.1-8B",
+    "activation_sha256": "42cf4af31df100654d0efebc27e0a82d375464fd1833e54b121e85cc9418092a",
+    "resolved_revision": null
+  }
+}

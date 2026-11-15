@@ -20,6 +20,7 @@ provide a framework for assessing the evidence for each claim.
   calculations, and reproduction command.
 - [Numerical data](data/numerical/README.md): frozen observations, experiment
   configurations, and uncertainty definitions.
+- [Individual property control](docs/individual-property-control.md): complete saved generations, development selection, paired controls, and CPU reconstruction of the appendix intervals and seven-property result.
 - [Online probe codelengths](data/probe_mdl/README.md): per-example coding costs,
   held-out predictions and complete fitting settings for the appendix MDL comparison.
 

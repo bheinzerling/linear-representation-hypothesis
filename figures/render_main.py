@@ -862,7 +862,7 @@ def sufficiency():
             t.remove()
         elif t.get_text() in geometry_annotations:
             t.remove()
-    prediction, circular, steering, helix, coefficient_axis, surface = fig.axes
+    prediction, circular, steering, helix, policy, surface = fig.axes
     locate(prediction, [.087, .615, .222, .305-plot_clearance])
     axis_fonts(prediction, body(fig), body(fig, 7))
     for t in prediction.get_legend().get_texts():
@@ -897,9 +897,9 @@ def sufficiency():
     steering.tick_params(axis="y", labelsize=body(fig, 7))
     steering.legend(fontsize=body(fig, 7), loc="lower left", bbox_to_anchor=(-.82, -.42),
                     ncol=1, frameon=False, handletextpad=.2)
-    locate(coefficient_axis, [.805, .135-plot_clearance, .170, .285])
-    coefficient_axis.set_xlabel("Exact accuracy (%)", fontsize=body(fig), labelpad=2)
-    coefficient_axis.tick_params(labelsize=body(fig, 7), pad=3)
+    locate(policy, [.805, .135-plot_clearance, .170, .285])
+    policy.set_xlabel("Exact accuracy (%)", fontsize=body(fig), labelpad=2)
+    policy.tick_params(labelsize=body(fig, 7), pad=3)
     for axis, left, bottom in [(helix, .019, -.014), (surface, .351, .037)]:
         locate(axis, [left, bottom, .225, .373])
         axis.set_box_aspect(axis.get_box_aspect(), zoom=1.12)
@@ -920,19 +920,25 @@ def sufficiency():
         ("Edit 2", (0, 1, 0), (-5, 2), "right", "bottom", teal),
     ])
     panel_headers(fig, "fig_numerical_sufficiency_atlas", linebreaks={
-        "d": ["(d) Circular edit leaves", "the old axial value"],
-        "e": ["(e) Two valid edits have", "an invalid sum"]},
-        title_overrides={"c": "(c) Steering accuracy",
-                         "e": "(e) Two valid edits have an invalid sum",
-                         "f": "(f) 20 properties, rank-41 basis"},
+        "d": ["(d) Circular code matched,", "output unchanged"],
+        "e": ["(e) Valid edits can fail", "when combined"]},
+        title_overrides={"a": "(a) Accurate numerical decoding",
+                         "b": "(b) Circular code excerpt",
+                         "c": "(c) Probe edits yield little control",
+                         "d": "(d) Circular code matched, output unchanged",
+                         "e": "(e) Valid edits can fail when combined",
+                         "f": "(f) Control varies by edit method"},
         source_overrides={"e": "schematic", "f": "ours"})
+    for panel in RECORDS["fig_numerical_sufficiency_atlas"]["panels"]:
+        if panel["letter"] in "abcf":
+            assert len(panel["title_lines"]) == 1, (panel["letter"], panel["title_lines"])
     RECORDS["fig_numerical_sufficiency_atlas"]["steering_accuracy"] = {
         "methods": methods, "exact_percent": exact.tolist(), "within10_percent": lenient.tolist(),
         "no_edit_within10_percent": 100*accuracies.loc["no_edit", "within10_accuracy"],
         "n_per_method": 2000, "tolerance_inclusive": 10,
         "uncertainty": {"level": .95, "unit": "source context", "clusters": 100,
                         "replicates": 10000, "seed": 1729,
-                        "conditional_on": "fixed fitted probes, intervention procedures, and target set",
+                        "conditional_on": "fixed fitted probes, policies, and target set",
                         "zero_successes": "counts only; upper success bound unavailable",
                         "intervals": accuracies.loc[methods, ["exact_low", "exact_high",
                                       "within10_low", "within10_high"]].replace({np.nan: None}).to_dict(orient="index")},
@@ -943,6 +949,8 @@ def sufficiency():
         "fit_ids": evidence["matched_fit_manifest"]["fit_ids"],
         "evaluation_bank": "canonical_dev", "decoding_source_prompts": 100,
         "steering_cases": 2000, "averaging": False,
+        "primary_edit_rule": "prediction_corrected",
+        "probe_target_validation": evidence["probe_validation"].to_dict(orient="records"),
     }
     return fig
 

@@ -21,6 +21,7 @@ TASKS = {
     "numerical": "lrh.analysis.numerical",
     "literature": "lrh.analysis.literature",
     "probe_mdl": "lrh.analysis.probe_mdl",
+    "individual_property_control": "lrh.analysis.individual_property_control",
 }
 
 

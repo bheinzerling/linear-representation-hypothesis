@@ -20,7 +20,7 @@ PREPARE = runpy.run_path(str(ROOT / "scripts/prepare_model_inputs.py"))
 def test_repository_inputs_and_model_imports():
     assert VERIFY["verify_manifest"]() > 100
     assert VERIFY["verify_model_imports"]() > 50
-    assert VERIFY["verify_paper_tables"]() == 376
+    assert VERIFY["verify_paper_tables"]() == 400
 
 
 def test_paper_table_check_detects_a_changed_rating(tmp_path):
@@ -101,3 +101,18 @@ def test_model_inputs_verify_payload_and_preserve_different_existing_files(tmp_p
     extracted.write_text('{"values":[4]}')
     with pytest.raises(FileExistsError):
         PREPARE["extract"](archive, target, manifest)
+
+
+def test_model_input_download_verifies_hash_before_replacing_archive(tmp_path):
+    source = tmp_path / "asset.tar.gz"
+    source.write_bytes(b"complete release asset")
+    archive = tmp_path / "downloads/inputs.tar.gz"
+    manifest = {"download_url": source.as_uri(), "sha256": sha256(source)}
+    PREPARE["download"](archive, manifest)
+    assert archive.read_bytes() == source.read_bytes()
+    original = archive.read_bytes()
+    manifest["sha256"] = "0" * 64
+    with pytest.raises(ValueError, match="checksum mismatch"):
+        PREPARE["download"](archive, manifest)
+    assert archive.read_bytes() == original
+    assert list(archive.parent.iterdir()) == [archive]

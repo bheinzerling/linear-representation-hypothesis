@@ -1,8 +1,8 @@
 {
   "command": "uv run python figures/numerical_uncertainty.py",
-  "script_sha256": "2c2c205b583ee4fbe65038108eb6f66b3f0cdc68b92505cb946c75751cc675e8",
+  "script_sha256": "6346eabe8a713b5d7eff066f404470e77c727942cf149f74c611e8200ae9c754",
   "inputs": {
-    "data/figures/probe_tests/reproduced_test_predictions.csv": "deab25a96e14e976b21479b292b14906929c42563545f51eac9815e5cb824ca6",
+    "data/figures/probe_tests/complete_test_predictions.csv": "3511e14eaa284793d3a29229bdf4f3791cc49a91ea03af74d98216171bc91cb0",
     "data/figures/decodability_efficiency/probe_metrics.csv": "5eabd78cf310e647f4e131e729e11a39ce02d20db95748c128a9afe0e8d9ad85",
     "data/figures/numerical_sufficiency_atlas/steering_accuracy_rows.csv.gz": "d9f8f0c695c9f43e4bace03ed3e324eba1b25549b690d5097b4581f681ce5ba6",
     "data/figures/deletion/provenance.json": "2ef7b6debc55359e34dff668b7b551952288137b6e808e90b09fc63fb12e9377",
@@ -21,7 +21,7 @@
     "paired_across_methods": true,
     "conditioning": "one frozen split and fitted probe per method; fitting uncertainty excluded",
     "r2_denominator": "target variance recomputed in each resampled evaluation set",
-    "classifier_exception": "Aggregate scores and a median certificate are available; per-value predictions are absent, so no classifier interval is estimated."
+    "predictions": "All four probes have 100 held-out predictions and conditional evaluation intervals."
   },
   "steering": {
     "unit": "baseline_row_idx, identifying one source context and value",
@@ -29,7 +29,7 @@
     "targets_per_cluster": 20,
     "n_per_method": 2000,
     "paired_across_methods_and_baseline": true,
-    "conditioning": "frozen model, policies, and twenty targets per source; policy-fitting uncertainty excluded",
+    "conditioning": "frozen model, intervention procedures, and twenty targets per source; uncertainty from fitting the edits excluded",
     "zero_successes": "Display the observed count. Percentile resampling of all-zero observations cannot estimate an upper success bound; interval endpoints are unavailable.",
     "constant_paired_change": "An interval is omitted when all resampled paired changes are identical."
   },
@@ -49,7 +49,7 @@
     "intervals": "Counts are descriptive; a sampling design for population intervals is unavailable."
   },
   "outputs": {
-    "probe_metrics.csv": "5af9ae33be6e459c0f17de432cf0ebce00cddddb62b2040eee145c4480e6cf63",
+    "probe_metrics.csv": "655d579076e2693ce39787cf84a046e7916dd612b3dfedb32c31370bc8321a78",
     "steering_accuracy.csv": "2232af8843a4f89c4e33d28bb27b1561a8969eff170d9d0090bdb2943a4ad378"
   }
 }

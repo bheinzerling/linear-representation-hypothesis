@@ -2,12 +2,13 @@
 \centering
 \includegraphics[width=\textwidth]{../figures/fig_numerical_sufficiency_atlas_space_optimized.pdf}
 \caption{Probe-derived edits yield little control despite accurate numerical decoding.
-(a,b) Scalar ridge and circular regression decode values and codes from 100 individual Llama-3.1-8B development prompts.
-(c) On these prompts, edits from the same fits yield no exact target outputs (2,000 per method); a PCA centroid shift succeeds.
-The dotted line gives no-edit accuracy within $\pm10$.
-(d,e) Matching a circular code or summing valid property edits can preserve the source output.
-(f) Joint predictors use source activations and patch displacements, with different doses from the independent sum (400 edits, 20 source prompts).
-Output-scored search evaluates all 100 source prompts (2,000 edits).
-Whiskers in (c,f) give 95\% source-prompt bootstrap intervals for fixed fits (Appendices~\ref{sec:numerical-probe-setup} and~\ref{sec:numerical-control-dimension}).}
+(a,b) Numerical predictions and circular-code components from 100 unedited, held-out Llama-3.1-8B prompts; gray curve in (b): target code.
+(c) Edits set probe predictions to target codes by construction but yield no correct counterfactual sums (2,000 per method); adding differences between target and source activation centroids in PCA space achieves 99.8\%.
+Dotted line: no-edit accuracy within $\pm10$.
+(d,e) Schematics illustrate unchanged output-relevant components after code matching and missing interactions when valid property edits are summed.
+(f) Methods share a property subspace but differ in dose.
+Joint predictors use patch displacements as training targets and source activations plus property labels as inputs; search uses the requested output's probability (20 held-out source prompts for prediction, 100 for search).
+Whiskers give 95\% source-prompt bootstrap intervals for fixed fits.
+See Appendices~\ref{sec:numerical-probe-setup}, \ref{sec:geometric-illustrations}, and~\ref{sec:numerical-control-dimension}.}
 \label{fig:numerical-sufficiency-atlas}
 \end{figure*}

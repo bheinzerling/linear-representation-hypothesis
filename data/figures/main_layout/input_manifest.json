@@ -12,8 +12,8 @@
   "data/figures/coefficient_predictions/probe_metrics.csv": "17ad892685478387eb9ddd546856868022cf7c8eb73b9fff6e05a21ec5af14fc",
   "data/figures/coefficient_predictions/probe_outputs.csv": "a7d5378f0f029aaf24a27b2aaa98d39536fa91a58af5e26016d08cf0e145129c",
   "data/figures/coefficient_predictions/probe_provenance.json": "f0a5089abe28ebb44a667edcfd5168e69117d4427682b5dc277faf3edb18f4a8",
-  "data/figures/conditional_uncertainty/probe_metrics.csv": "5af9ae33be6e459c0f17de432cf0ebce00cddddb62b2040eee145c4480e6cf63",
-  "data/figures/conditional_uncertainty/provenance.json": "a3f6ce21bcd341fc0322dc26770512aae87311605eff0316b149e0e3200159e5",
+  "data/figures/conditional_uncertainty/probe_metrics.csv": "655d579076e2693ce39787cf84a046e7916dd612b3dfedb32c31370bc8321a78",
+  "data/figures/conditional_uncertainty/provenance.json": "6a2a4d0aee7b32fbfad5ab5caf71d232e36a0a334e7bdd69df65bce721d03508",
   "data/figures/conditional_uncertainty/steering_accuracy.csv": "2232af8843a4f89c4e33d28bb27b1561a8969eff170d9d0090bdb2943a4ad378",
   "data/figures/decodability_efficiency/capacity.provenance.json": "339de3975157b502209a66449fe13e15a3d11bcacf6e40b5818961e5a256c2d9",
   "data/figures/decodability_efficiency/capacity_points.csv": "a888bd7bd26db69154efbd819f63967b23b4a005bcd0baa048ff061ad51a5995",
@@ -41,9 +41,9 @@
   "data/figures/numerical_sufficiency_atlas/individual_prompt_fits/component_predictions.csv": "44b29fe4c7a802027174d9d7a5b4f8e838a729f9a5298612bf1c9f6747462854",
   "data/figures/numerical_sufficiency_atlas/individual_prompt_fits/decoding_metrics.csv": "a24ad1baf5f1a344892f4f83895881bb8d351b9ef1df22a226da4c280ae76948",
   "data/figures/numerical_sufficiency_atlas/individual_prompt_fits/decoding_predictions.csv": "49249492943ad3fe5c1c55cfd7230e65053f2037935c3c70bfbe6b7e4141badd",
-  "data/figures/numerical_sufficiency_atlas/individual_prompt_fits/manifest.json": "f875d2ce9f22351fa5d4b7b235ca449e8e6c0b8a961c87729b93a0301e7bfd8f",
-  "data/figures/numerical_sufficiency_atlas/individual_prompt_fits/steering_rows.csv.gz": "941cf917cb6ea555c6b313da83ee8424fa50d2f974f2b07a568a961b5658e589",
-  "data/figures/numerical_sufficiency_atlas/individual_prompt_fits/steering_summary.csv": "b0f7af99f915f2f4aec59cf5ff638430568c6ece839085cd1646df53b519fc17",
+  "data/figures/numerical_sufficiency_atlas/individual_prompt_fits/manifest.json": "e0a8a5a1c928eb798c522f00c0cd6ea001a33118c41fca8dc86f797e45cf3047",
+  "data/figures/numerical_sufficiency_atlas/individual_prompt_fits/steering_rows.csv.gz": "b9255ca77c1436e3cb8a1cb4cb17a67fd94d7e83e8de22122ba87c9d0d24aa49",
+  "data/figures/numerical_sufficiency_atlas/individual_prompt_fits/steering_summary.csv": "94857c56caaf5f08dfa89d029db218e636cc635b92f0413a2bb9e6037e556a8d",
   "data/figures/numerical_sufficiency_atlas/steering_accuracy.provenance.json": "81a1a28c73cf8e74fcbc09b11a5bd2bae746af9bc2d72062db22bdbba3176176",
   "data/figures/numerical_sufficiency_atlas/steering_accuracy_rows.csv.gz": "d9f8f0c695c9f43e4bace03ed3e324eba1b25549b690d5097b4581f681ce5ba6",
   "data/figures/panel_sources/spec.json": "d7b29342f81844cdde57f878a70a799d9974b3f93c41e238eaa3ede68ce5521e",
@@ -53,5 +53,5 @@
   "data/figures/refusal/author_evaluations.json": "3209d0ed9c42de33291ff1b6914dae183fc461be36eb75cbe1f9a979079d19de",
   "data/figures/robustness_invariance_structure/factual_relation_faithfulness.json": "48a4dcb6a3444eff4ca6943a07c68979b91273e76e4fc893f5ab32ff312041b2",
   "data/figures/robustness_invariance_structure/literature_sources.json": "8cf683b237e50ddfe28d3c73ec7deb84facc2841d8765454839e8d01fa2c5ed7",
-  "figures/individual_prompt_data.py": "468960466a383d35cc97462ee90f86fc0e2e2144a652b47ff5f39bc9c6a4523b"
+  "figures/individual_prompt_data.py": "1ab3787d06d2147db067847f0ef2818e6ccd0931b698550aebf66d385f696f5d"
 }

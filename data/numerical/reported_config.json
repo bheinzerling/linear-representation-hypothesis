@@ -108,25 +108,6 @@
       "interpretation": "conditional on ten frozen fitted bases; evaluation uncertainty only"
     }
   },
-  "steering_accuracy": {
-    "methods": [
-      "linear",
-      "circular_reg",
-      "centroid_patch"
-    ],
-    "interventions_per_method": 2000,
-    "source_clusters": 100,
-    "target_edits_per_cluster": 20,
-    "metric": "argmax numeric output equals target_output, or differs by at most 10; nonnumeric outputs fail",
-    "reported_mae": "legacy probability-weighted expected numeric output, a different metric",
-    "bootstrap": {
-      "seed": 20261013,
-      "replicates": 10000,
-      "cluster": "baseline_row_idx",
-      "interval": "95% paired source-cluster percentile",
-      "zero_exact_success": "report zero/n and omit degenerate bootstrap interval"
-    }
-  },
   "coefficient_prediction": {
     "source_file": "04_why_strong_lrh_does_not_yield_control/coordinate_prediction_rows.csv.gz",
     "interventions_per_method": 400,
@@ -204,5 +185,65 @@
     "data_level": "Frozen per-model/depth/setting averages of five prompt-family test MAEs; underlying family rows not included.",
     "same_fit_as_figure3d": false,
     "uncertainty": "One fixed value-disjoint split; no refit/evaluation intervals in this aggregate bundle."
+  },
+  "historical_steering_accuracy": {
+    "methods": [
+      "linear",
+      "circular_reg",
+      "centroid_patch"
+    ],
+    "interventions_per_method": 2000,
+    "source_clusters": 100,
+    "target_edits_per_cluster": 20,
+    "metric": "argmax numeric output equals target_output, or differs by at most 10; nonnumeric outputs fail",
+    "reported_mae": "legacy probability-weighted expected numeric output, a different metric",
+    "bootstrap": {
+      "seed": 20261013,
+      "replicates": 10000,
+      "cluster": "baseline_row_idx",
+      "interval": "95% paired source-cluster percentile",
+      "zero_exact_success": "report zero/n and omit degenerate bootstrap interval"
+    },
+    "status": "Superseded Figure 7 inputs retained for the frozen review archive; unused by the current-panel runner."
+  },
+  "steering_accuracy": {
+    "data_directory": "../figures/numerical_sufficiency_atlas/individual_prompt_fits",
+    "model_id": "meta-llama/Llama-3.1-8B",
+    "model_revision": "d04e592bb4f6aa9cfee91e2e20afa771667e1d4b",
+    "layer_index": 10,
+    "dtype": "float16",
+    "attention": "eager",
+    "fitting_condition": "individual prompts",
+    "training_values": 800,
+    "evaluation_cohort": "canonical_dev",
+    "evaluation_values": "Development; previously exposed replication cohort",
+    "methods": [
+      "linear",
+      "circular_reg",
+      "centroid_patch",
+      "no_edit",
+      "full_centroid_shift",
+      "counterfactual_patch",
+      "linear_label_difference",
+      "circular_reg_label_difference"
+    ],
+    "interventions_per_method": 2000,
+    "source_clusters": 100,
+    "target_edits_per_cluster": 20,
+    "metric": "Exact: top-1 token ID equals the counterfactual answer token; lenient: numeric output differs by at most 10, inclusive. Nonnumeric outputs fail.",
+    "fit_ids": {
+      "individual_circular_reg": "322562ce7123b4aaaad8abfacf7dce2d25ca50d2dd8a5d8b9ccb513d17b93fbc",
+      "individual_linear": "2855e6c925ccca42630cb4606277b4d1970c7073113379949125b51bbaa416c6"
+    },
+    "bootstrap": {
+      "clusters": 100,
+      "replicates": 10000,
+      "seed": 1729,
+      "cluster": "source_prompt_id",
+      "interval": "95% paired source-prompt percentile",
+      "zero_exact_success": "report zero/n and omit degenerate bootstrap interval"
+    },
+    "primary_edit_rule": "prediction_corrected",
+    "probe_target_validation": "Post-edit decoded operand equals requested operand after FP16 application; complete-code MSE and applied edit norms retained."
   }
 }

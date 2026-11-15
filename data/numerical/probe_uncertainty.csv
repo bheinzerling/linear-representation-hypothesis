@@ -11,7 +11,7 @@ circular_reg,r2,0.999951540278,0.999935659382,0.999962834954,100,10000,condition
 circular_reg,accuracy,0.16,0.09,0.23,100,10000,conditional_value_bootstrap
 circular_reg,mean_abs_error,1.63,1.42,1.84,100,10000,conditional_value_bootstrap
 circular_reg,median_abs_error,2,1,2,100,10000,conditional_value_bootstrap
-circular_cls,r2,0.999975063167,,,100,0,per_value_predictions_unavailable
-circular_cls,accuracy,0.2,,,100,0,per_value_predictions_unavailable
-circular_cls,mean_abs_error,1.14,,,100,0,per_value_predictions_unavailable
-circular_cls,median_abs_error,1,,,100,0,per_value_predictions_unavailable
+circular_cls,r2,0.999975063167,0.99996579589,0.999981551017,100,10000,conditional_value_bootstrap
+circular_cls,accuracy,0.2,0.12,0.28,100,10000,conditional_value_bootstrap
+circular_cls,mean_abs_error,1.14,0.98,1.3,100,10000,conditional_value_bootstrap
+circular_cls,median_abs_error,1,1,1,100,10000,conditional_value_bootstrap

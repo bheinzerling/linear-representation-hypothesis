@@ -1,0 +1,305 @@
+{
+  "configurations": {
+    "rikyu-explicit-list-v2.json": {
+      "batch_size": 16,
+      "families": [
+        "list"
+      ],
+      "fit_contexts": [
+        "property",
+        "addition"
+      ],
+      "followup_reason": "Preserved first-sweep development outputs show frequent selection of positive members when the requested yes/no label is no. Replace the list instruction with a direct positive or negative predicate and remove the competing answer-yes directive.",
+      "list_prompt_variant": "explicit_predicate",
+      "main": {
+        "alphas": [
+          1.0,
+          2.0,
+          4.0,
+          8.0,
+          16.0
+        ],
+        "candidate_layers": 3,
+        "dev_examples": 60,
+        "test_examples": 100
+      },
+      "matched_to": "individual-property-control-20261110-v1: identical model pins, numeral splits, lists, class transitions, fitting prompts, sites, doses, controls, and scoring. Only the list instruction changes; joint-report experiments are preserved.",
+      "minimum_baseline_accuracy": 0.9,
+      "minimum_identity": 0.95,
+      "minimum_parse_coverage": 0.95,
+      "models": {
+        "llama31_8b": {
+          "chat": false,
+          "fixed_layer": 9,
+          "model_id": "meta-llama/Llama-3.1-8B",
+          "path": "models/d04e592bb4f6aa9cfee91e2e20afa771667e1d4b",
+          "revision": "d04e592bb4f6aa9cfee91e2e20afa771667e1d4b"
+        },
+        "qwen36_27b": {
+          "chat": true,
+          "fixed_layer": 19,
+          "model_id": "Qwen/Qwen3.6-27B",
+          "path": "models/6a9e13bd6fc8f0983b9b99948120bc37f49c13e9",
+          "revision": "6a9e13bd6fc8f0983b9b99948120bc37f49c13e9"
+        }
+      },
+      "pilot": {
+        "alphas": [
+          2.0,
+          8.0
+        ],
+        "candidate_layers": 1,
+        "dev_examples": 16,
+        "test_examples": 16
+      },
+      "pilot_properties": [
+        "parity",
+        "contains_zero",
+        "residue_mod_3"
+      ],
+      "pilot_seed": 20261101,
+      "pilot_use": "Runtime and schema validation only; main selections use development data inside each main split.",
+      "properties": [
+        "parity",
+        "primality",
+        "divisible_by_3",
+        "divisible_by_4",
+        "divisible_by_5",
+        "divisible_by_6",
+        "divisible_by_8",
+        "divisible_by_10",
+        "divisible_by_25",
+        "residue_mod_3",
+        "residue_mod_4",
+        "units_digit",
+        "tens_digit",
+        "hundreds_digit",
+        "digit_count",
+        "distinct_digit_count",
+        "contains_zero",
+        "has_repeated_digit",
+        "palindrome"
+      ],
+      "ridge": [
+        0.1,
+        1.0,
+        10.0,
+        100.0
+      ],
+      "schema_version": 1,
+      "seeds": [
+        20261110,
+        20261111,
+        20261112
+      ],
+      "study": "individual-property-control-explicit-list-20261110-v2"
+    },
+    "rikyu-v1.json": {
+      "batch_size": 16,
+      "fit_contexts": [
+        "property",
+        "addition"
+      ],
+      "main": {
+        "alphas": [
+          1.0,
+          2.0,
+          4.0,
+          8.0,
+          16.0
+        ],
+        "candidate_layers": 3,
+        "dev_examples": 60,
+        "test_examples": 100
+      },
+      "minimum_baseline_accuracy": 0.9,
+      "minimum_identity": 0.95,
+      "minimum_parse_coverage": 0.95,
+      "models": {
+        "llama31_8b": {
+          "chat": false,
+          "fixed_layer": 9,
+          "model_id": "meta-llama/Llama-3.1-8B",
+          "path": "models/d04e592bb4f6aa9cfee91e2e20afa771667e1d4b",
+          "revision": "d04e592bb4f6aa9cfee91e2e20afa771667e1d4b"
+        },
+        "qwen36_27b": {
+          "chat": true,
+          "fixed_layer": 19,
+          "model_id": "Qwen/Qwen3.6-27B",
+          "path": "models/6a9e13bd6fc8f0983b9b99948120bc37f49c13e9",
+          "revision": "6a9e13bd6fc8f0983b9b99948120bc37f49c13e9"
+        }
+      },
+      "pilot": {
+        "alphas": [
+          2.0,
+          8.0
+        ],
+        "candidate_layers": 1,
+        "dev_examples": 16,
+        "test_examples": 16
+      },
+      "pilot_properties": [
+        "parity",
+        "contains_zero",
+        "residue_mod_3"
+      ],
+      "pilot_seed": 20261101,
+      "pilot_use": "Runtime and schema validation only; main selections use development data inside each main split.",
+      "properties": [
+        "parity",
+        "primality",
+        "divisible_by_3",
+        "divisible_by_4",
+        "divisible_by_5",
+        "divisible_by_6",
+        "divisible_by_8",
+        "divisible_by_10",
+        "divisible_by_25",
+        "residue_mod_3",
+        "residue_mod_4",
+        "units_digit",
+        "tens_digit",
+        "hundreds_digit",
+        "digit_count",
+        "distinct_digit_count",
+        "contains_zero",
+        "has_repeated_digit",
+        "palindrome"
+      ],
+      "ridge": [
+        0.1,
+        1.0,
+        10.0,
+        100.0
+      ],
+      "schema_version": 1,
+      "seeds": [
+        20261110,
+        20261111,
+        20261112
+      ],
+      "study": "individual-property-control-20261110-v1"
+    }
+  },
+  "environment": {
+    "attention": "math",
+    "dtype": "bfloat16",
+    "generation": "greedy",
+    "max_new_tokens": {
+      "joint": 40,
+      "list": 64
+    },
+    "python": "3.13.12",
+    "torch": "2.12.1+cu130",
+    "transformers": "5.2.0"
+  },
+  "execution_sources": {
+    "explicit": {
+      "directory": "model_sources",
+      "git_revision": "b5422d8620e3d7d26f024d249870e502561d1cfd",
+      "registered_source_digest": "a06067022a9d49ff7d52a155cb379e59e85c8d72f39dab74f49849eedb03454d"
+    },
+    "generic": {
+      "directory": "model_sources/generic-v1",
+      "git_revision": "1d70b94c00523f30df6d7311f41bc63448ee5334",
+      "registered_source_digest": "b2f76eb6158588eaaf7aed4b85d98dbf5071f3304793ef372836d891704c530e"
+    }
+  },
+  "input_hashes": {
+    "explicit_predicate_cells.json": "aca4b98a8923ea311aadd1ae94367ae307d256b2f9e0ad835c9b7436c5a629ac",
+    "generic_label_cells.json": "7ef7cb1b7c634912942bdaee55ec990811503c9d67a19f4da6335f51d3192678",
+    "summary.json": "3390ca4b4bbfa713c87520cfaaf1a396d64f4f2288c27a34562e13b0c0d306ab"
+  },
+  "instruction_formats": [
+    "generic labels",
+    "explicit predicates"
+  ],
+  "intervals": "CPU replay recomputes 2000 percentile bootstrap draws clustered by numeral across splits and stratified by source class; empty class/split draws excluded; directions fixed; no multiplicity correction.",
+  "model_revisions": {
+    "llama31_8b": {
+      "chat": false,
+      "fixed_layer": 9,
+      "model_id": "meta-llama/Llama-3.1-8B",
+      "revision": "d04e592bb4f6aa9cfee91e2e20afa771667e1d4b"
+    },
+    "qwen36_27b": {
+      "chat": true,
+      "fixed_layer": 19,
+      "model_id": "Qwen/Qwen3.6-27B",
+      "revision": "6a9e13bd6fc8f0983b9b99948120bc37f49c13e9"
+    }
+  },
+  "model_source_sha256": {
+    "configs/individual-property-control/rikyu-explicit-list-v2.json": "dd8343d3970115d7de4551faef0f21c5cf7640465ce8cac396670148466ea6b5",
+    "configs/individual-property-control/rikyu-v1.json": "cbaa84ef6a72fbaede5d6d99a2fee3e6b23b1304bbd8d7bb349ead82c169c3b1",
+    "generic-v1/configs/individual-property-control/rikyu-v1.json": "cbaa84ef6a72fbaede5d6d99a2fee3e6b23b1304bbd8d7bb349ead82c169c3b1",
+    "generic-v1/scripts/run_individual_property_control.py": "96ce4fc88366f489b8c885663143a6a0dcf5ab0897282ddddd005cdcf9a16a1f",
+    "generic-v1/scripts/run_olmo_number_property_steering.py": "972d023ebe666328843b1a8498da4265b79b7a7ed975956eb84a4a47e60bfb7f",
+    "generic-v1/src/introlm/__init__.py": "6f8d7cca209ecf3fde6c20535c35d0b6d2de6a9be7f046c3427dc4ef79bd07d4",
+    "generic-v1/src/introlm/experiments/__init__.py": "04835da20242b03e312d82912aeb98d984e5d79fff4ba07d7ce3d267d7673851",
+    "generic-v1/src/introlm/experiments/divisible_by_3_steering.py": "8103ed2084d5a3719fa86516fa5cf94462c0d985a1f1e0daad798fb5bf4581f6",
+    "generic-v1/src/introlm/experiments/individual_property_control.py": "532841b025231067b3ebfd6fd4294396996b04b165b2d2ad76fc485f25dd5042",
+    "generic-v1/src/introlm/experiments/individual_property_protocol.py": "b13e2ced8028721d7a65371cfaf67d3d88921291e7f8d5a7303aaf1106925dbc",
+    "generic-v1/src/introlm/experiments/number_feature_linear_probe.py": "74df2424816f66f3c920764988ab7038439a9d59627db8a7010cb08ff1bdb533",
+    "generic-v1/src/introlm/experiments/number_property_behavior_screen.py": "f9dc042fe4da8dce7f01465e606579d02cd1c5197ee5afc30ca8a43eeb0b9c9c",
+    "generic-v1/src/introlm/experiments/number_property_steering.py": "5f44cc2cd548bce3e8641911b98bcd8b08bda156bf5cbf7ea3950dd9b466f8b5",
+    "generic-v1/src/introlm/experiments/primality_dissociation.py": "63ac14bf650aefec9c319eb1511958379d4a3f7d0d73c80974fda2aec56f3892",
+    "scripts/analyze_individual_property_control.py": "e6732f39fa380f1e04f5385c2503ab56587c213d48aeba36af9ecd481faaf689",
+    "scripts/run_individual_property_control.py": "96ce4fc88366f489b8c885663143a6a0dcf5ab0897282ddddd005cdcf9a16a1f",
+    "scripts/run_olmo_number_property_steering.py": "972d023ebe666328843b1a8498da4265b79b7a7ed975956eb84a4a47e60bfb7f",
+    "src/introlm/__init__.py": "6f8d7cca209ecf3fde6c20535c35d0b6d2de6a9be7f046c3427dc4ef79bd07d4",
+    "src/introlm/experiments/__init__.py": "04835da20242b03e312d82912aeb98d984e5d79fff4ba07d7ce3d267d7673851",
+    "src/introlm/experiments/divisible_by_3_steering.py": "8103ed2084d5a3719fa86516fa5cf94462c0d985a1f1e0daad798fb5bf4581f6",
+    "src/introlm/experiments/individual_property_analysis.py": "e861141f6f27de3efc0e0117aaa2129a2bde23bb0d6ed171b3dab14b91e3b26e",
+    "src/introlm/experiments/individual_property_control.py": "0ec5214467d99bd75421b11bb52cf16d0c6a0eaeec7ece73f8da911179791ec6",
+    "src/introlm/experiments/individual_property_protocol.py": "17406d444e755573af9b59f11b807cdd57e8c38ef031cf06d3eee1398c6f5d35",
+    "src/introlm/experiments/number_feature_linear_probe.py": "74df2424816f66f3c920764988ab7038439a9d59627db8a7010cb08ff1bdb533",
+    "src/introlm/experiments/number_property_behavior_screen.py": "f9dc042fe4da8dce7f01465e606579d02cd1c5197ee5afc30ca8a43eeb0b9c9c",
+    "src/introlm/experiments/number_property_steering.py": "5f44cc2cd548bce3e8641911b98bcd8b08bda156bf5cbf7ea3950dd9b466f8b5",
+    "src/introlm/experiments/primality_dissociation.py": "63ac14bf650aefec9c319eb1511958379d4a3f7d0d73c80974fda2aec56f3892"
+  },
+  "models": [
+    "meta-llama/Llama-3.1-8B",
+    "Qwen/Qwen3.6-27B"
+  ],
+  "properties": 19,
+  "records": {
+    "explicit-records.jsonl.gz": {
+      "bytes": 6488984,
+      "files": 3578,
+      "generation_records": 132265,
+      "logical_runs": 120,
+      "main_runs": 114,
+      "pilots": 6,
+      "sha256": "00eb376254ab8f250352b5d8e568759a78d0d611c955ea1b738acf70a0d0d5f3",
+      "transformation": "JSONL serialization with reversibly deduplicated case/prompt fields; machine paths and hostnames omitted; scientific fields unchanged"
+    },
+    "generic-records.jsonl.gz": {
+      "bytes": 11207307,
+      "files": 6829,
+      "generation_records": 313366,
+      "logical_runs": 120,
+      "main_runs": 114,
+      "pilots": 6,
+      "sha256": "4675ac299cf76501c395538abdb03d4ec63302a29a2d7a8fa92fc9fcb3aed93d",
+      "transformation": "JSONL serialization with reversibly deduplicated case/prompt fields; machine paths and hostnames omitted; scientific fields unchanged"
+    }
+  },
+  "reported_condition": {
+    "context": "property",
+    "family": "list",
+    "mode": "selected",
+    "model": "qwen36_27b"
+  },
+  "selection_rule": "Enumerate all nineteen properties; require two source classes, three qualifying splits, a passed development identity gate, and strictly higher observed success than every control for each class in each split.",
+  "source_transformations": [
+    "Package-initializer trailing whitespace normalized; registered execution-source digests unchanged."
+  ],
+  "split_seeds": [
+    20261110,
+    20261111,
+    20261112
+  ]
+}

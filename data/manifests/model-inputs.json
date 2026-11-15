@@ -1,6 +1,7 @@
 {
   "bytes": 161665107,
   "description": "Complete prompt datasets, fitted tensors, and reusable model-experiment inputs.",
+  "download_url": "https://github.com/bheinzerling/linear-representation-hypothesis/releases/download/paper-2026-11-15/model-inputs.tar.gz",
   "files": {
     "numerical/data/prompt_cache_canonical_source_splits_t800_d100_te100__a68a297dd188__r0/config.json": {
       "bytes": 780,

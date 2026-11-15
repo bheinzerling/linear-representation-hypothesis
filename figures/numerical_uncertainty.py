@@ -10,7 +10,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "data/figures/conditional_uncertainty"
-PROBE_ROWS = ROOT / "data/figures/probe_tests/reproduced_test_predictions.csv"
+PROBE_ROWS = ROOT / "data/figures/probe_tests/complete_test_predictions.csv"
 PROBE_METRICS = ROOT / "data/figures/decodability_efficiency/probe_metrics.csv"
 STEERING_ROWS = ROOT / "data/figures/numerical_sufficiency_atlas/steering_accuracy_rows.csv.gz"
 REPLICATES = 10000
@@ -32,7 +32,7 @@ def limits(samples: np.ndarray) -> tuple[float, float]:
 
 
 def probe_uncertainty(rows: pd.DataFrame, metrics: pd.DataFrame) -> pd.DataFrame:
-    """Paired value bootstrap, conditional on the three available fitted probes."""
+    """Paired value bootstrap, conditional on the four fitted probes."""
     records = []
     reference = None
     indices = np.random.default_rng(SEED).integers(0, 100, size=(REPLICATES, 100))
@@ -181,7 +181,7 @@ def main():
             "paired_across_methods": True,
             "conditioning": "one frozen split and fitted probe per method; fitting uncertainty excluded",
             "r2_denominator": "target variance recomputed in each resampled evaluation set",
-            "classifier_exception": "Aggregate scores and a median certificate are available; per-value predictions are absent, so no classifier interval is estimated.",
+            "predictions": "All four probes have 100 held-out predictions and conditional evaluation intervals.",
         },
         "steering": {
             "unit": "baseline_row_idx, identifying one source context and value",

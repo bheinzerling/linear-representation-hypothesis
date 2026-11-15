@@ -44,9 +44,6 @@
 \definecolor{tableevidencemixed}{HTML}{C6942F}
 \definecolor{tableagainst}{HTML}{B54D5A}
 \definecolor{tableoutline}{HTML}{91A39F}
-\definecolor{tablelinearrow}{HTML}{E5F0ED}
-\definecolor{tablenonlinearrow}{HTML}{F5EFD9}
-\definecolor{tablemixedrow}{HTML}{F3E6E8}
 \definecolor{cginput}{HTML}{2563EB}
 \definecolor{cglocus}{HTML}{0891B2}
 \definecolor{cgexpected}{HTML}{059669}
@@ -86,9 +83,6 @@
 \newcommand{\EvUntested}{\EvidenceSquare{0}{tableoutline}{}}
 
 \setcounter{dbltopnumber}{1}
-\newcommand{\LinearRow}{\rowcolor{tablelinearrow}}
-\newcommand{\NonlinearRow}{\rowcolor{tablenonlinearrow}}
-\newcommand{\MixedRow}{\rowcolor{tablemixedrow}}
 \newcommand{\ECRow}[2]{%
   \addlinespace[.5pt]%
   \rowcolor{tableheader}%
@@ -136,13 +130,13 @@ Benjamin Heinzerling\textsuperscript{\textnormal{1, 2}} \textnormal{and} Kentaro
 \maketitle
 
 \begin{abstract}
-\looseness=1
 Uses of the linear representation hypothesis (LRH) combine different, often implicit assumptions about what ``linear'' and ``representation'' mean, yielding hypotheses with distinct empirical claims.
 Building on prior work, we develop a framework that organizes these claims into seven categories and defines assessment criteria for each.
-Applying these criteria to the literature shows broad support for linear decodability, with more variable findings for geometry, transfer, and behavioral control.
-We illustrate these distinctions through experiments on number representations in a unified setting.
-The experiments support different conclusions about different properties of the same hypothesized representation, showing why a single judgment about linearity obscures this combination of successful and unsuccessful tests.
-Our framework specifies how to assess the evidence for each claim, helping researchers interpret existing findings and formulate precise, testable hypotheses about linear representations and \mbox{representations more generally}.\footnote{Code and data: \url{https://github.com/bheinzerling/linear-representation-hypothesis}}
+Applying these criteria to the literature reveals differences in the claims studies test and the evidence they present.
+The evidence broadly supports linear decodability, with more variable findings for geometry, transfer, and behavioral control.
+We illustrate these distinctions through experiments on number representations, finding accurate decoding alongside limited transfer across prompts and unsuccessful interventions based on probe predictions.
+The framework can help contextualize existing findings and guide experiments that test explicit representational claims.
+Many of its distinctions also apply to representations more generally, motivating studies of how decodability, structure, and use in computation relate.\footnote{Code and data: \url{https://github.com/bheinzerling/linear-representation-hypothesis}}
 \end{abstract}
 
 \section{Introduction}
@@ -176,14 +170,16 @@ The seven claims on the right concern different properties and may co-occur.}
 \end{figure*}
 
 Prior work has developed several of these distinctions.
+\citet{harding2023operationalising} operationalizes information, use, and misrepresentation criteria for representation through probes and interventions on model activations.
 \citet{costa2025flat} discuss linear decodability, algebraic manipulation of model behavior, and decomposition into feature mixtures.
-\citet{garg2026features} distinguish linear representation from \emph{linear accessibility}, the decodability criterion used here.
+\citet{garg2026features} distinguish linear representation from linear accessibility.
 Finally, \citet{lee2026survey} formulate LRH claims for a model, representation location, feature, and evaluation distribution, and distinguish representation formation from use in computation.
 
-Building on these distinctions, we develop a framework that organizes LRH claims into seven categories (Figure~\ref{fig:claims}) and defines assessment criteria for each.
-We apply these criteria to compare evidence across studies, recording which claims are tested, what the results support, and under what experimental conditions.
+Building on these frameworks, we distinguish seven kinds of claim (Figure~\ref{fig:claims}) and assess the evidence for each, enabling a more fine-grained account of representation in neural networks.
+We define assessment criteria for these claims and compare evidence across studies, recording which claims are tested, what the results support, and under what experimental conditions.
 For example, studies of truth directions in language models show strong decoding but mixed transfer, with necessity and mechanistic sufficiency untested (Table~\ref{tab:evidence-main}).
 To illustrate these claims in a unified setting, we conduct experiments on number representations, finding gaps between accurate decoding, transfer across prompt variants, and behavioral control.
+Numbers have known order and arithmetic relations, allowing us to assess representational geometry against criteria defined independently of probe performance.
 We first define the seven claims (Section~\ref{sec:weak-strong}), then examine evidence for observational claims (Section~\ref{sec:weak-lrh}) and causal claims (Section~\ref{sec:empirical-evidence}).
 
 \begin{table*}[t]
@@ -191,16 +187,19 @@ We first define the seven claims (Section~\ref{sec:weak-strong}), then examine e
 \fontsize{8.2}{9}\selectfont
 \setlength{\tabcolsep}{1.2pt}
 \renewcommand{\arraystretch}{.98}
-\begin{tabularx}{\textwidth}{@{}>{\centering\arraybackslash}m{7mm}>{\raggedright\arraybackslash}p{52mm}>{\raggedright\arraybackslash}X*{6}{>{\centering\arraybackslash}m{3.9mm}}*{2}{>{\centering\arraybackslash}m{4.5mm}}@{}}
+\begin{tabularx}{\textwidth}{@{}>{\centering\arraybackslash}m{7mm}>{\raggedright\arraybackslash}p{65mm}>{\raggedright\arraybackslash}X*{6}{>{\centering\arraybackslash}m{3.9mm}}*{2}{>{\centering\arraybackslash}m{4.5mm}}@{}}
 \toprule
-\multirow{2}{7mm}{\textbf{Type}} & \multirow{2}{52mm}{\textbf{Study and target}} & \multirow{2}{*}{\textbf{Candidate representation}} & \multicolumn{8}{c}{\textbf{Evidence by claim}} \\
+\multirow{2}{7mm}{\textbf{Type}} & \multirow{2}{65mm}{\textbf{Study and target}} & \multirow{2}{*}{\textbf{Candidate representation}} & \multicolumn{8}{c}{\textbf{Evidence by claim}} \\
 \cmidrule(lr){4-11}
 & & & \textbf{D} & \textbf{E} & \textbf{R} & \textbf{I} & \textbf{SC} & \textbf{N} & $\mathbf{S}_{\mathrm C}$ & $\mathbf{S}_{\mathrm M}$ \\
 \midrule
 \cellcolor{spectrumred!22}\textbf{D} & \citet{jobanputra2025subtract}: subtraction sign & Linear sign direction & \EvSupport{1} & \EvUntested & \EvUntested & \EvUntested & \EvUntested & \EvUntested & \EvUntested & \EvUntested \\
 \cellcolor{spectrumred!22}\textbf{D} & \citet{kadlcik2025accurate}: number-token identity & Sinusoidal code; linear class scores & \EvSupport{3} & \EvUntested & \EvUntested & \EvUntested & \EvUntested & \EvUntested & \EvSupport{1} & \EvUntested \\
+\cellcolor{spectrumorange!22}\textbf{E} & \citet{yao2026adaptivek}: text complexity & Linear complexity direction & \EvSupport{3} & \EvSupport{2} & \EvUntested & \EvUntested & \EvUntested & \EvUntested & \EvUntested & \EvUntested \\
 \cellcolor{spectrumorange!22}\textbf{E} & \citet{fu2026convergent}: modular residues & Fourier spectra; modular directions & \EvMixed{3} & \EvSupport{2} & \EvUntested & \EvUntested & \EvUntested & \EvUntested & \EvUntested & \EvUntested \\
 \cellcolor{spectrumyellow!24}\textbf{R} & \citet{chanin2025absorption}: first-letter identity & Linear probes; SAE directions & \EvSupport{3} & \EvUntested & \EvAgainst{2} & \EvUntested & \EvUntested & \EvSupport{1} & \EvMixed{3} & \EvUntested \\
+\cellcolor{spectrumyellow!24}\textbf{R} & \citet{paulo2026sparse}: SAE features & SAE encoder/decoder directions & \EvUntested & \EvUntested & \EvAgainst{3} & \EvUntested & \EvUntested & \EvUntested & \EvUntested & \EvUntested \\
+\cellcolor{spectrumyellow!24}\textbf{R} & \citet{gerasimov2026unstable}: SAE decoder features & Decoder directions; shared subspaces & \EvUntested & \EvUntested & \EvMixed{3} & \EvUntested & \EvUntested & \EvSupport{1} & \EvUntested & \EvUntested \\
 \cellcolor{spectrumgreen!22}\textbf{I} & \citet{gurnee2023language}: space and time & Space/time maps; selected neurons & \EvSupport{3} & \EvSupport{3} & \EvUntested & \EvSupport{2} & \EvUntested & \EvSupport{1} & \EvSupport{1} & \EvUntested \\
 \cellcolor{spectrumgreen!22}\textbf{I} & \citet{marks2024geometry}: factual truth & Probe and mean-difference directions & \EvSupport{3} & \EvUntested & \EvUntested & \EvMixed{3} & \EvUntested & \EvUntested & \EvSupport{2} & \EvUntested \\
 \cellcolor{spectrumgreen!22}\textbf{I} & \citet{bao2025probing}: factual truth & Linear truth-label probes & \EvSupport{3} & \EvSupport{2} & \EvUntested & \EvMixed{3} & \EvUntested & \EvUntested & \EvUntested & \EvUntested \\
@@ -217,13 +216,13 @@ We first define the seven claims (Section~\ref{sec:weak-strong}), then examine e
 \bottomrule
 \end{tabularx}
 \caption{Evidence for the seven \LRH{} claims, with causal ($S_{\mathrm C}$) and mechanistic ($S_{\mathrm M}$) sufficiency rated separately.
-Rows are grouped by the claim category used for this comparison.
+Type marks the claim used to group each study; the evidence columns assess each claim separately.
 D, E, R, I, SC, and N denote decodability, efficiency, robustness, invariance, structural correspondence, and necessity.
 IOI denotes indirect-object identification.
 Claim colors follow Figure~\ref{fig:claims}.
 Green, amber, crossed red, and empty markers indicate support, mixed evidence, counterevidence, and no reported test.
-Fill levels indicate limited, moderate, or strong evidence.
-The excerpt covers 17 of 30 studies, see full coverage in Appendix Table~\ref{tab:evidence-full}).}
+Fill levels distinguish narrow or indirect analyses (limited), direct tests under restricted conditions (moderate), and multiple direct tests within a study (strong).
+The excerpt covers 20 of 30 studies, see full coverage in Appendix Table~\ref{tab:evidence-full}.}
 \label{tab:evidence-main}
 \end{table*}
 
@@ -235,10 +234,11 @@ The excerpt covers 17 of 30 studies, see full coverage in Appendix Table~\ref{ta
 (b) Ridge predictions and a sine--cosine pair from circular regression for 1,000 values (800 used for fitting).
 The gray helix traces the target code.
 (c) Probes on 100 test-value centroids of Llama-3.1-8B layer-10 addition-formula activations, averaged over 20 contexts.
-Whiskers give 95\% test-value bootstrap intervals for fixed fits, except for the classifier, whose results are available only as aggregates.
-(d) Test MAE versus complexity on the same activations and fixed value-disjoint split (log axes).
-$\dagger$~Complexity denotes ridge effective degrees of freedom, PLS component count, or circular-code dimension.
-See Appendix Figure~\ref{fig:circular-components} for all ten circular components and Appendices~\ref{sec:numerical-probe-setup} and \ref{sec:geometric-illustrations} for setup and constructions.}
+Whiskers give 95\% test-value bootstrap intervals for fixed fits.
+(d) Test MAE versus probe-specific dimension or effective degrees of freedom on the same activations and fixed value-disjoint split (log axes).
+$\dagger$~The axis denotes ridge effective degrees of freedom, PLS component count, or circular-code dimension.
+An MDL-based comparison \citep{voita2020information} gives a different ordering (Appendix~\ref{sec:probe-mdl}).
+See Appendix Figure~\ref{fig:circular-components} for all ten circular components and Appendices~\ref{sec:numerical-probe-setup} and \ref{sec:geometric-illustrations} for setup.}
 \label{fig:decodability}
 \end{figure*}
 
@@ -250,14 +250,14 @@ See Appendix Figure~\ref{fig:circular-components} for all ten circular component
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{../figures/fig_number_property_evidence_main_space_optimized.pdf}
-\caption{Probes decode number properties, and parity-direction edits can change classification labels or membership in a list.
-(a) Mean balanced accuracy of probes on full Llama-3.1-8B activations.
-Whiskers show ranges across six to ten value-disjoint splits, each testing every class.
-Red ticks mark chance.
-(b) Contradictions after parity edits and controls on 100 classification queries and 50 enumeration lists, all correct before editing.
+\caption{Linear probes decode number properties, and parity-direction edits can induce contradictory outputs.
+(a) Linear probes predict nineteen categorical properties from Llama-3.1-8B number-token activations in addition prompts.
+Decoding is almost perfect for parity and individual decimal digits.
+Bars show mean balanced accuracy for values held out from probe fitting.
+Whiskers give min--max ranges across six to ten splits whose test sets contain every class; red ticks mark chance for each property.
+(b) Contradictions after parity edits and controls on 100 classification queries (Llama-3.1-8B) and 50 enumeration lists (Qwen3.6-27B), all correct before editing.
 (c) In classification, the edit flips the parity label while preserving the numeral; in enumeration, it adds an even numeral to an otherwise unchanged list of odd numerals.
-Both outputs conflict with the numeral's parity or the request for odd numbers.
-Edits add separately fitted directions to activations, with doses chosen on development data (Appendix~\ref{sec:numerical-control-dimension}).}
+See experimental setup in Appendix~\ref{sec:numerical-control-dimension}.}
 \label{fig:number-property-accessibility-main}
 \end{figure*}
 
@@ -301,13 +301,12 @@ We now examine how prior work tests the five observational claims (Table~\ref{ta
 \subsection{Decodability}
 \label{sec:decodability}
 
-Linear decodability has the broadest evidence base in our review (Table~\ref{tab:evidence-main}, column D).
+Linear decodability has a broad evidence base in our review (Table~\ref{tab:evidence-main}, column D).
 Linear probes predict geographic locations and dates from activations elicited by place names and event descriptions \citep{gurnee2023language}, distinguish representations of true and false statements \citep{marks2024geometry}, and decode board states from a model trained to predict Othello moves \citep{nanda2023emergent}.
 
 However, accurate linear decoding is compatible with nonlinear activation-space structure.
 A linear probe can locally approximate a smooth nonlinear decoder (Figure~\ref{fig:decodability}a).
-For number representations, \citet{kantamneni2025trigonometry} fit a generalized helix whose linear magnitude component permits scalar decoding.
-By accounting for nonlinear helical structure, \citet{kadlcik2025accurate} improve exact-match accuracy with a circular classifier based on Fourier features.
+For number representations, \citet{kantamneni2025trigonometry} fit a generalized helix whose linear magnitude component permits scalar decoding, and \citet{kadlcik2025accurate} improve number decoding accuracy with a circular classifier based on Fourier features.
 
 \begingroup
 \clubpenalty=10000
@@ -318,7 +317,7 @@ All four attain $R^2>.99$, yet mean absolute error (MAE) is 1.1--1.6 for circula
 Combining a scalar prediction with a predicted sine--cosine pair traces an approximate helix in the probe outputs (Figure~\ref{fig:decodability}b).
 A plausible interpretation of these results is that scalar probes recover a linear magnitude component, while other activation components vary nonlinearly with numerical value.
 More generally, this exemplifies how linear decodability places few constraints on the full representational geometry.
-As we will see  (Section~\ref{sec:sufficiency}) this geometric ambiguity leads to a decodability-control gap: interventions based on probe predictions can leave behaviorally relevant components unchanged.
+This geometric ambiguity offers one possible explanation for the decodability--control gap we encounter in Section~\ref{sec:sufficiency}: interventions based on probe predictions can leave behaviorally relevant components unchanged.
 \par
 \endgroup
 
@@ -328,11 +327,11 @@ The efficiency claim concerns the complexity needed to attain a given decoding a
 Evidence for this claim includes linear probes that perform similarly to larger multilayer perceptrons when predicting locations and dates \citep{gurnee2023language} or survey response distributions for demographic groups \citep{jahanparast2026opinions}.
 Minimum-description-length probing measures this trade-off in bits by combining the costs of describing the probe and encoding the labels with it \citep{voita2020information}.
 
-\textbf{Number experiments.} We examine this accuracy--complexity trade-off by varying regularization or dimensionality for the probes from Section~\ref{sec:decodability}, using the same activations and value split (Figure~\ref{fig:decodability}d; six-model sweep in Appendix Figure~\ref{fig:probe-capacity-paths}).
+\textbf{Number experiments.} We examine this accuracy--complexity trade-off by varying regularization or dimensionality within each probe method from Section~\ref{sec:decodability}, using the same activations and value split (Figure~\ref{fig:decodability}d; six-model sweep in Appendix Figure~\ref{fig:probe-capacity-paths}).
 At the smallest tested settings, scalar probes have lower error than circular probes.
 With ten-dimensional codes, however, the circular probes become substantially more accurate.
-One plausible explanation is that scalar probes recover the generalized helix's linear magnitude component at low complexity, while circular probes gain precision by capturing additional periodic structure once their codes have enough components.
-On this interpretation, the efficiency comparison---and, more broadly, whether number representations count as ``linear''---depends on whether the aim is to recover approximate magnitude or make finer distinctions.
+One plausible explanation is that scalar probes recover the generalized helix's linear magnitude component, while circular probes gain precision by capturing additional periodic structure once their codes have enough components.
+On this interpretation, whether number representations count as ``linear'' depends on whether the aim is to recover approximate magnitude or make finer distinctions.
 
 \subsection{Robustness}
 
@@ -376,91 +375,106 @@ The previous section examined decodability and activation-space structure; we no
 \subsection{Necessity}
 \label{sec:necessity}
 
-Necessity tests ask whether removing about the target property disrupts the behavior it is thought to support \citep[Sec.~3.2]{harding2023operationalising}.\footnote{
+Necessity tests ask whether removing information about the target property disrupts the behavior it is thought to support \citep[Sec.~3.2]{harding2023operationalising}.\footnote{
 Removal generally changes the distribution of activations, potentially producing off-distribution states \citep[Appendix~A]{mcgrath2023hydra}.
 Behavioral changes can therefore reflect distribution shift as well as loss of target information.}
-Removal methods include projecting out a probe direction and erasing linearly decodable concept information \citep{ravfogel2020null,belrose2023leace}.
+Removal methods include projecting out a probe direction and erasing linearly decodable information \citep{ravfogel2020null,belrose2023leace}.
 For example, \citet{arditi2024refusal} suppress refusal on harmful instructions by ablating a refusal direction (Figure~\ref{fig:causal-use}a).
-Jointly removing additional refusal directions can suppress refusal further \citep{wollschlager2025geometry}.
+Jointly removing additional directions can suppress refusal further \citep{wollschlager2025geometry}.
 Ablating a sentiment direction also lowers classification accuracy \citep{tigges2023linear} (Figure~\ref{fig:causal-use}b).
 
-\textbf{Number experiments.} We test this necessity claim by deleting a subspace of number-token activations in Llama-3.1-8B.
+\textbf{Number experiments.} We test necessity by deleting a subspace of number-token activations in Llama-3.1-8B.
 The subspace is fitted on addition formulas to magnitude and nineteen categorical properties (Figure~\ref{fig:number-property-accessibility-main}a).
 Because deletion can remove other task-relevant information, we also delete a rank-matched subspace fitted to shuffled labels.
 Deleting the property subspace sharply reduces arithmetic and copying accuracy, with smaller effects on parity and comparison (Figure~\ref{fig:causal-use}c).
-The shuffled-label control is less disruptive on arithmetic and copying, supporting a task-dependent behavioral role for the fitted subspace as a whole.
+The shuffled-label control is less disruptive on arithmetic and copying, supporting a task-dependent behavioral role for this subspace.
 
 \subsection{Sufficiency}
 \label{sec:sufficiency}
 
-Causal sufficiency tests ask whether whether editing activations to represent a target value produces the predicted behavior.
-Interventions can correct a proposed misrepresentation \citep[Sec.~3.3]{harding2023operationalising} or steer activations toward a desired outcome \citep{li2023iti,tigges2023linear,zou2023representation}.
-For example, Steering activations along a refusal direction induces refusal on harmless instructions \citep{arditi2024refusal}.
-However, decoding accuracy alone does not ensure control: truth probes with similar accuracy yield different steering effects \citep{marks2024geometry}.
-For numbers, repairing embeddings using sinusoidal structure improves arithmetic \citep{kadlcik2025accurate}, yet edits from accurate circular digit probes produce the intended number in only 10--15\% of copying trials \citep{levy2025base10}.
+Causal sufficiency tests ask whether editing activations to represent a target value produces the predicted behavior.
+Edits can correct proposed misrepresentations \citep[Sec.~3.3]{harding2023operationalising} or steer behavior \citep{li2023iti,tigges2023linear,zou2023representation}.
+Steering along a refusal direction induces refusal on harmless instructions \citep{arditi2024refusal}.
+However, truth probes with similar accuracy can yield different steering effects \citep{marks2024geometry}.
+For numbers, sinusoidal embedding repair improves arithmetic \citep{kadlcik2025accurate}, yet edits from accurate circular digit probes succeed in only 10--15\% of copying trials \citep{levy2025base10}.
 
-\textbf{Number experiments.} We test whether probe-derived edits can control addition: editing the represented 0 in \texttt{92+0=} to 1 should produce 93.
-We fit scalar ridge and circular-regression probes on individual prompts and use the same fits and source prompts for decoding and steering.
-The probe pseudoinverse maps target--source differences in scalar values or sinusoidal codes into activation edits (Appendix~\ref{sec:numerical-probe-geometry}).
-These edits produce no exact target outputs, but adding differences between target and source activation centroids \citep{wurgaft2026manifold} or patching activations from matched target prompts exceeds 99\% exact accuracy at the same site (Figure~\ref{fig:numerical-sufficiency-atlas}a--c).
-The probe-derived edits preserve activation components that do not affect probe predictions; downstream use of these components could explain the control gap.
+\textbf{Number experiments.} We test control of addition: editing the represented 0 in \texttt{92+0=} to 1 should produce 93.
+Using the same scalar ridge and circular-regression fits and source prompts, we construct edits from the difference between the target code and each probe's current prediction (Appendix~\ref{sec:numerical-probe-geometry}).
+These edits set each probe's prediction to the target code by construction but produce no correct counterfactual sums.
+Adding differences between target and source activation centroids or patching matched target activations exceeds 99\% exact accuracy (Figure~\ref{fig:numerical-sufficiency-atlas}a--c); both controls use target activations at the same site.
+Figure~\ref{fig:numerical-sufficiency-atlas}d illustrates how matching the target code can leave an output-relevant component unchanged.
 
-Because the successful edits change multiple components, we test sufficiency more selectively with parity.
-A direction fitted on Llama-3.1-8B parity questions flips labels while preserving numerals in 93 of 100 cases, versus 3 for a norm-matched random direction (Figure~\ref{fig:number-property-accessibility-main}b,c).
-Directions fitted on addition formulas yield no such contradictions on parity questions despite perfect in-format decoding, indicating context-dependent control.
-A Qwen3.6-27B direction also inserts an even numeral into a list of odd numerals, although reversing the direction or editing a delimiter can also induce contradictions, limiting specificity (Appendix~\ref{sec:property-reasoning}).
+Our centroid-based steering, adapted from \citet{wurgaft2026manifold}, edits activations in a 64-dimensional subspace that plausibly encodes not only magnitude but also other number properties.
+To test whether property directions can reproduce this control, we probe twenty number properties, all linearly decodable with varying accuracy (Figure~\ref{fig:number-property-accessibility-main}a).
+Some properties are encoded along multiple directions, and some are logically dependent; the fitted directions together span a rank-41 subspace.
+Within this subspace, we test whether summing edits predicted from each property's source and target labels controls addition.
+For comparison, joint predictors use source activations and both label sets to predict differences between matched source and target activations.
+On held-out source prompts, linear joint ridge reaches 77\% exact accuracy, versus 0\% for the independent sum and 80\% for radial basis function (RBF) ridge (Figure~\ref{fig:numerical-sufficiency-atlas}f).
+Differences in inputs, training targets, and doses prevent attributing the improvement to nonlinear interactions; evaluation reuses training target values.
+Figure~\ref{fig:numerical-sufficiency-atlas}e illustrates how separately valid edits can omit an interaction required by their joint target.
+A separate search using the requested output's probability reaches 99.5\% accuracy (Appendix~\ref{sec:property-coefficient-control}).
+In summary, the subspace is sufficient for control on this addition task, but independent property edits within it fail to combine successfully.
 
-We also test whether property-based edits combine to control arithmetic within the subspace used for deletion.
-The independent method predicts and sums edits from each property's source and target labels.
-Joint predictors additionally use source activations projected into the subspace to predict coefficients of activation differences between source and matched target prompts (Appendix~\ref{sec:property-coefficient-control}).
-On held-out source prompts, the independent sum yields no exact target outputs, versus 77\% exact accuracy for joint ridge and 80\% for the radial-basis-function predictor (Figure~\ref{fig:numerical-sufficiency-atlas}f).
-The methods differ in inputs, training targets, and doses, and evaluation reuses target values from training.
-A separate search selecting edits by the requested output reaches 99.5\% accuracy in the same subspace (Appendix~\ref{sec:property-coefficient-control}).
-Causal sufficiency here depends on the information and procedure used to construct and select edits.
+The property subspace combines directions for many number properties.
+For a more selective test, we ask whether a single parity direction can change the reported parity while preserving the numeral, as in \texttt{273 odd} becoming \texttt{273 even}.
+To answer this question, we fit a direction to Llama-3.1-8B activations from parity questions and add it to the activations at the query numeral.
+The edit produces such contradictions in 93 of 100 cases, versus 3 for a norm-matched random direction (Figure~\ref{fig:number-property-accessibility-main}b,c).
+Parity directions fitted on addition formulas yield no such contradictions despite perfect decoding in that format; some edits instead change the numeral while keeping its reported parity correct.
+A related test asks Qwen3.6-27B to select odd numerals from a list.
+Adding a fitted parity direction at an even numeral makes the model include that numeral while leaving the rest of the output unchanged in 48 of 50 test lists.
+The same error occurs in 10 of 50 lists when the direction is reversed and 3 of 50 when a delimiter token is edited (Appendix~\ref{sec:property-reasoning}).
+These experiments show that a single linear direction can selectively alter parity-dependent behavior, with control depending on the context in which the direction is fitted.
+We extend these tests to all nineteen categorical number properties and obtain selective linear steering for seven properties (Appendix~\ref{sec:individual-property-control}).
 
-\section{Discussion and Conclusions}
+\section{Conclusions}
 
-The reviewed evidence supports linear decodability across many settings, with more variable findings for geometry, transfer, and behavioral control.
-The number experiments make these differences concrete: magnitude is accurately decodable, yet probe transfer and behavioral control depend on context and intervention construction.
+We have organized diverse invocations of the LRH into seven claims and defined criteria for assessing the evidence for each.
+Comparing the evidence for these claims shows how studies interpret ``linear'' and ``representation'' differently and test distinct representational properties.
+Experiments on number representations illustrate how these distinctions affect representational analysis.
 
-Scalar and circular probes both use linear maps from activations but predict different target encodings.
-Although both attain high $R^2$, circular probes ultimately yield lower numerical error, reversing the ordering seen at low complexity (Figure~\ref{fig:decodability}c,d).
-This pattern is consistent with scalar probes recovering linear magnitude and circular probes capturing additional periodic structure.
-On this interpretation, accurate linear decoding coexists with nonlinear structure that contributes to finer numerical distinctions.
+Linear decodability has broad support in the reviewed literature, with more variable findings for geometry, transfer, and behavioral control.
+In our number experiments, accurate decoding was compatible with nonlinear activation-space structure and coexisted with limited transfer across prompts.
+Causal interventions yielded mixed results, with linear steering producing the intended outputs for some of the probed number properties.
+Ablating a property subspace disrupted task performance.
+Within that subspace, independently constructed property edits failed to combine successfully, although joint linear prediction achieved substantial control of addition.
+These findings show why the different LRH claims should be assessed individually.
 
-For magnitude, the decoding relationship also changes with prompt context.
-Transfer gaps after mean alignment suggest that this dependence extends beyond a shift in average activations (Appendix Figure~\ref{fig:prompt-family-pls-transfer}).
-The parity-steering results extend this context dependence to interventions.
-A direction fitted on parity questions changes labels while preserving numerals (Figure~\ref{fig:number-property-accessibility-main}b), yet directions fitted on addition produce no such contradictions despite perfect in-format decoding.
-
-Control also varies with edit construction within a fixed subspace.
-Deleting the property subspace disrupts arithmetic and copying more than a shuffled-label control, yet summing independent property edits gives no exact target outputs (Figures~\ref{fig:causal-use}c and~\ref{fig:numerical-sufficiency-atlas}f).
-Joint predictors and output-scored search nevertheless achieve substantial control within that same subspace.
-These procedures differ in inputs, training targets, and doses, with search additionally using behavioral feedback.
-The same subspace can therefore be behaviorally consequential under deletion while supporting sharply different control outcomes across edit procedures.
-
-These successful edits establish causal sufficiency under the tested intervention conditions.
-Mechanistic sufficiency further entails explaining how ordinary computation produces and transforms the relevant activation states, and predicting intervention effects on that computation.
-Overall, the seven claims distinguish these coexisting properties, giving a more informative account of representations than a single verdict that they are ``linear''.
+We hope that distinguishing these seven claims helps readers understand what findings in the LRH literature establish and recognize when studies address different questions.
+For practitioners, the distinctions can clarify which aspects of linearity and representation an experiment tests and guide the choice of measurements and controls.
+Many of these distinctions also apply to representations more generally, since decodability, structural correspondence, and use in computation pose separate empirical questions.
+Examining how these properties relate within the same hypothesized representation could help build a cumulative account of representation in neural networks.
 
 \section*{Limitations}
 
-The review prioritizes cited studies with accessible full text and adds cases to cover the seven claim categories (Appendix~\ref{sec:evidence-comparison}).
-This purposive selection leaves the prevalence of claims and evidential gaps in the wider literature unmeasured.
-The evidence ratings also involve judgments about how directly each test bears on a claim.
-LLMs drafted ratings and summaries, which were checked against source papers and adjudicated with AI assistance; agreement among independent human coders was not measured.
+Our framework is likely incomplete.
+For example, nonlinear interactions and composition of linear representations warrant future study.
+Tests of individual directions or subspaces give only a partial account of how several representations combine during computation.
+The conditions under which evidence for one claim supports another also need further analysis.
+
+Applying the framework requires choosing a target property and candidate representation.
+These choices can be difficult to justify for concepts whose content and relations are less precisely defined than those of numbers.
+Assessments depend on the evaluation distribution and the criteria used to judge success (Appendix~\ref{sec:claim-formalization}).
+Differences in these choices can limit comparisons across studies.
+
+We prioritize cited studies with accessible full text, adding cases to cover all seven categories (Appendix~\ref{sec:evidence-comparison}).
+We have not measured how often each claim is made or tested in the wider literature.
+Evidence ratings require judging how directly tests bear on claims.
+LLMs drafted initial ratings and summaries, which we checked against source papers; we then adjudicated the ratings with AI assistance.
+Agreement among independent human coders was not measured.
 
 Our experiments illustrate relationships among the claims for numerical properties in selected models and tasks.
 How the transfer and control patterns generalize to other concepts is untested.
 The helical interpretation is based on selected probe outputs, which leave the full activation-space geometry undetermined.
 The control results apply to the tested probe fits, activation site, and edit rules.
 
-Independent and joint predictors differ in inputs, training targets, and doses, so their comparison does not isolate an advantage from joint prediction.
+Independent and joint predictors differ in inputs, training targets, and edit magnitudes, so their comparison does not isolate an advantage from joint prediction.
 The joint predictors are evaluated on new source prompts but reuse target values from training.
-The separate search uses the requested output to select edits; without matched searches in random, principal-component, or shuffled-label subspaces, its success leaves the property subspace's specific contribution unresolved.
+The separate search uses the requested output to select edits in the subspace fitted to number properties.
+We have not run the same search in subspaces of the same dimension constructed from random directions, principal components, or directions fitted to shuffled labels.
+Its success therefore leaves open whether the number properties used to construct the subspace contribute to control.
 
 The bootstrap intervals reflect variation in evaluation examples with the probes or bases held fixed, so they exclude uncertainty across refits.
-The prompt-transfer results additionally use a single value partition, leaving sensitivity to the split untested.
+The transfer experiments also use a single split of numerical values, leaving sensitivity to other splits untested.
 
 \bibliography{refs}
 
@@ -528,7 +542,8 @@ Non-substantive episodes are bibliography entries or structural fragments; uncle
 Table~\ref{tab:claim-criteria} formalizes the seven claim categories in Section~\ref{sec:weak-strong}.
 For target $C(x)$ and activation $h(x)$ at a layer and position, a linear probe $a$ has held-out error $L(a)=\E[e(a(h(x)),C(x))]$ with task-appropriate error $e$.
 This error is evaluated on inputs independent of fitting data, with a fixed decoding rule for categorical scores.
-In the criteria below, $\epsilon$ bounds error or discrepancy, and $\approx$ denotes approximate agreement.
+Each concrete claim specifies its evaluation distribution, error or agreement measure, and tolerance.
+In the criteria below, $\epsilon$ bounds error or discrepancy, and $\approx$ denotes agreement under that measure and tolerance.
 
 Harding's information criterion corresponds to decodability \citep[Sec.~3.1]{harding2023operationalising}, selective removal tests the use criterion and necessity \citep[Sec.~3.2]{harding2023operationalising}, and correcting misrepresentation provides partial evidence for causal sufficiency \citep[Sec.~3.3]{harding2023operationalising}.
 These representation criteria apply to linear and nonlinear candidates.
@@ -537,42 +552,44 @@ These representation criteria apply to linear and nonlinear candidates.
 \centering
 \small
 \setlength{\tabcolsep}{5pt}
-\renewcommand{\arraystretch}{1.08}
-\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{24mm}>{\raggedright\arraybackslash}p{55mm}>{\raggedright\arraybackslash}X@{}}
+\renewcommand{\arraystretch}{1.00}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{22mm}>{\raggedright\arraybackslash}p{48mm}>{\raggedright\arraybackslash}X@{}}
 \toprule
 \textbf{Claim} & \textbf{Informal statement} & \textbf{Formal criterion and test conditions} \\
 \midrule
 Decodability & A linear probe fitted to labeled activations predicts a target on held-out examples from the evaluation distribution.
 & $\displaystyle L(a)\leq\epsilon$. \\
-\addlinespace[5pt]
+\addlinespace[1.5pt]
 Efficiency & A linear probe has lower complexity or uses fewer labels at comparable predictive performance, or has a shorter total description length.
 & For comparator $b$ on the same evaluation distribution and cost measure $K$, require
 \par $\displaystyle L(a)\leq L(b)+\delta,\qquad K(a)<K(b)$.
 \par The tolerance $\delta\geq0$ permits an error increase; $K$ measures complexity or labels used for fitting.
 The description-length version requires $K(a)<K(b)$ with $K$ combining complexity and fit. \\
-\addlinespace[5pt]
+\addlinespace[1.5pt]
 Robustness & Directions or subspaces agree across repetitions that vary the sampled examples, analysis choices, or model-training settings.
 & $\displaystyle U\approx V$ for directions or subspaces $U,V$ obtained across the tested repetitions.
 The claim specifies which samples, analysis choices, or training settings may vary. \\
-\addlinespace[5pt]
+\addlinespace[1.5pt]
 Invariance & A probe or the direction or subspace it identifies transfers across target-preserving input variations, domains, or value ranges.
 & After a change that preserves target semantics, require
 \par $\displaystyle L(a)\leq\epsilon\qquad\text{and/or}\qquad U\approx V$.
 \par The probe $a$ is fitted in the original setting and frozen during evaluation on the new distribution; $U,V$ are fitted separately in the two settings.
 The claim selects probe transfer, agreement between structures, or both. \\
-\addlinespace[5pt]
+\addlinespace[1.5pt]
 Structural correspondence & Activation-space objects assigned to target values preserve specified target relations, such as distances or operations.
 & Let $\phi$ assign activation-space objects to target values.
 For the evaluated values $u,v$ or tuples $\mathbf c$, compare the target and activation-space relations:
 \par $\displaystyle \begin{gathered}d\!\left(\phi(u),\phi(v)\right)\approx\rho(u,v),\\ g\!\left(\phi(\mathbf c)\right)\approx\phi\!\left(f(\mathbf c)\right).\end{gathered}$
 \par The target space uses distance $\rho$ and operation $f$; the activation space uses $d$ and $g$.
-The map $\phi$ acts componentwise on tuples. \\
-\addlinespace[5pt]
+The map $\phi$ acts componentwise on tuples.
+The claim specifies how $\phi$ is constructed and the permitted forms of $d$ and $g$.
+Any fitted transformations are frozen before evaluation on held-out pairs or tuples. \\
+\addlinespace[1.5pt]
 Necessity & Selectively removing candidate information prevents the specified behavior at the required fidelity.
 & For expected behavioral error $L_B$ under background conditions $B$, selective removal $I_-$, and unedited baseline $I_0$, require
 \par $\displaystyle L_B(I_0)\leq\epsilon<L_B(I_-)$.
 \par Removal reduces candidate information and preserves other relevant information; inputs, the error metric, and $\epsilon$ are fixed. \\
-\addlinespace[5pt]
+\addlinespace[1.5pt]
 Sufficiency & Causal sufficiency: candidate content produces predicted behavior.
 Mechanistic sufficiency: the representation and transformations explain ordinary computation and intervention effects.
 & \emph{Causal:} $L_B^*(I_c)\leq\epsilon<L_B^*(I_0)$, where $I_c$ sets candidate content to $c$ and $L_B^*$ measures expected error relative to the predicted target behavior.
@@ -643,199 +660,165 @@ The evidence ratings support a qualitative synthesis; the Limitations section di
 
 \begin{table}[H]
 \centering
-\fontsize{7.9}{7.9}\selectfont
-\setlength{\tabcolsep}{.75pt}
+\fontsize{7.9}{8.3}\selectfont
+\setlength{\tabcolsep}{1.2pt}
 \setlength{\abovecaptionskip}{6pt}
-\renewcommand{\arraystretch}{1.00}
+\setlength{\extrarowheight}{.25pt}
+\renewcommand{\arraystretch}{1.02}
+\captionsetup{font=footnotesize}
+\let\TableEvidenceSquare\EvidenceSquare
+\renewcommand{\EvidenceSquare}[3]{%
+  \scalebox{.9}{\TableEvidenceSquare{#1}{#2}{#3}}%
+}
 \renewcommand{\ECRow}[2]{%
-  \addlinespace[.5pt]%
+  \addlinespace[.75pt]%
   \rowcolor{tableheader}%
   \multicolumn{11}{@{}l@{}}{%
     \hspace{2pt}\color{white}\bfseries
     \rule{0pt}{1.6ex}#2%
-  }\\[-0.15ex]%
+  }\\%
 }
 \begin{tabularx}{\textwidth}{@{}
-  >{\raggedright\arraybackslash}p{27mm}
-  >{\raggedright\arraybackslash}p{29mm}
-  *{6}{>{\centering\arraybackslash}m{3.5mm}}
-  *{2}{>{\centering\arraybackslash}m{4.4mm}}
+  >{\raggedright\arraybackslash}p{27.5mm}
+  >{\raggedright\arraybackslash}p{28.5mm}
+  *{6}{>{\centering\arraybackslash}m{3.15mm}}
+  *{2}{>{\centering\arraybackslash}m{3.8mm}}
   >{\raggedright\arraybackslash}X@{}}
 \toprule
 \textbf{Study and target} & \textbf{Representation} &
-\textbf{D} & \textbf{E} & \textbf{R} & \textbf{I} & \textbf{SC} & \textbf{N} & $\mathbf{S}_{\mathrm C}$ & $\mathbf{S}_{\mathrm M}$ &
+\textbf{D} & \textbf{E} & \textbf{R} & \textbf{I} & \makebox[0pt]{\textbf{SC}} & \textbf{N} & \makebox[0pt]{$\mathbf{S}_{\mathrm C}$} & \makebox[0pt]{$\mathbf{S}_{\mathrm M}$} &
 \textbf{Key result and limitation} \\
 \midrule
 \ECRow{1}{Decodability}
-\LinearRow
 \citet{jobanputra2025subtract}: subtraction sign & Linear sign direction &
 \EvSupport{1} & \EvUntested & \EvUntested & \EvUntested & \EvUntested & \EvUntested & \EvUntested & \EvUntested &
 Sign probes are near perfect despite omitted minus signs; the evaluation split is undocumented. \\
 
-\NonlinearRow
 \citet{kadlcik2025accurate}: number-token identity & Sinusoidal code; linear class scores &
 \EvSupport{3} & \EvUntested & \EvUntested & \EvUntested & \EvUntested & \EvUntested & \EvSupport{1} & \EvUntested &
 Linear identity scores mostly succeed; OLMo 2 32B fails. Four embedding repairs improve arithmetic. \\
 \ECRow{2}{Efficiency}
-\LinearRow
 \citet{yao2026adaptivek}: text complexity & Linear complexity direction &
 \EvSupport{3} & \EvSupport{2} & \EvUntested & \EvUntested & \EvUntested & \EvUntested & \EvUntested & \EvUntested &
 Ridge and a 256-unit MLP have similar Pythia errors; targets are composite LLM ratings. \\
 
-\MixedRow
 \citet{fu2026convergent}: modular residues & Fourier spectra; modular directions &
 \EvMixed{3} & \EvSupport{2} & \EvUntested & \EvUntested & \EvUntested & \EvUntested & \EvUntested & \EvUntested &
 Training and tokenization affect modular probes; linear probes often match larger MLPs. \\
 \ECRow{3}{Robustness}
-\LinearRow
 \citet{chanin2025absorption}: first-letter identity & Linear probes; SAE directions &
 \EvSupport{3} & \EvUntested & \EvAgainst{2} & \EvUntested & \EvUntested & \EvSupport{1} & \EvMixed{3} & \EvUntested &
 Linear probes outperform SAE recovery; feature assignment and replacement effects vary with settings. \\
-\LinearRow
 \citet{paulo2026sparse}: SAE features & SAE encoder/decoder directions &
 \EvUntested & \EvUntested & \EvAgainst{3} & \EvUntested & \EvUntested & \EvUntested & \EvUntested & \EvUntested &
 Feature sets vary across identical-data seeds; encoder/decoder matches depend on SAE settings. \\
-\LinearRow
 \citet{gerasimov2026unstable}: SAE decoder features & Decoder directions; shared subspaces &
 \EvUntested & \EvUntested & \EvMixed{3} & \EvUntested & \EvUntested & \EvSupport{1} & \EvUntested & \EvUntested &
 Decoder directions vary across seeds; subspaces recur, and masking changes reconstruction and loss. \\
 
 \ECRow{4}{Invariance}
-\LinearRow
 \citet{gurnee2023language}: space and time & Space/time maps; selected neurons &
 \EvSupport{3} & \EvSupport{3} & \EvUntested & \EvSupport{2} & \EvUntested & \EvSupport{1} & \EvSupport{1} & \EvUntested &
 Probe transfer is partial, with weak NYC results; interventions manipulate selected neurons. \\
-\LinearRow
 \citet{marks2024geometry}: factual truth & Probe and mean-difference directions &
 \EvSupport{3} & \EvUntested & \EvUntested & \EvMixed{3} & \EvUntested & \EvUntested & \EvSupport{2} & \EvUntested &
 Truth transfer varies across domains and negations; steering also depends on the fitted estimator. \\
-\LinearRow
 \citet{bao2025probing}: factual truth & Linear truth-label probes &
 \EvSupport{3} & \EvSupport{2} & \EvUntested & \EvMixed{3} & \EvUntested & \EvUntested & \EvUntested & \EvUntested &
 QA accuracy and calibration vary; negation pairs reuse facts, and context-grounding changes the target. \\
-\LinearRow
 \citet{park2024linear}: analogy and language & Unembedding and steering directions &
 \EvSupport{2} & \EvUntested & \EvSupport{1} & \EvSupport{2} & \EvSupport{2} & \EvUntested & \EvSupport{2} & \EvUntested &
 Alignment has exceptions; language directions transfer; additions use contexts where the model predicts king. \\
-\LinearRow
 \citet{sakata2026hierarchy}: concept hierarchies & Parent directions; low-rank inverse maps &
 \EvSupport{3} & \EvUntested & \EvUntested & \EvMixed{2} & \EvSupport{1} & \EvUntested & \EvMixed{2} & \EvUntested &
 Parent decoding transfers; all-layer edits change the relative probabilities of target and original concepts, with effects varying across prompts. \\
 
 \ECRow{5}{Structural correspondence}
-\NonlinearRow
 \citet{csordas2024recurrent}: small GRU sequences & Magnitude-based onion code &
 \EvAgainst{3} & \EvUntested & \EvUntested & \EvUntested & \EvSupport{3} & \EvUntested & \EvSupport{3} & \EvSupport{1} &
 Linear sequence probes fail; denoising and scaled token replacement support partial storage. \\
-\NonlinearRow
 \citet{engels2025notall}: weekdays and months & Two-dimensional circular features &
 \EvUntested & \EvUntested & \EvSupport{1} & \EvSupport{1} & \EvSupport{3} & \EvUntested & \EvSupport{3} & \EvUntested &
 Circular edits change calendar logits with the complement mean-ablated; planes organize new contexts. \\
-\LinearRow
 \citet{hernandez2024linearity}: subject--object relations & Linear maps to object states &
 \EvMixed{3} & \EvUntested & \EvUntested & \EvSupport{2} & \EvMixed{3} & \EvUntested & \EvSupport{2} & \EvUntested &
 Maps fit some of 47 relations and transfer to context-free subjects; edits target first object tokens. \\
-\LinearRow
 \citet{merullo2025linear}: factual relations & Linear maps to object states &
 \EvMixed{2} & \EvUntested & \EvUntested & \EvUntested & \EvMixed{3} & \EvUntested & \EvMixed{2} & \EvUntested &
 Map predictions and edits vary by relation; pretraining co-occurrence correlates with intervention scores. \\
-\LinearRow
 \citet{lee2026tensor}: Othello board states & Tensor-product bindings &
 \EvSupport{3} & \EvSupport{3} & \EvSupport{2} & \EvUntested & \EvSupport{3} & \EvUntested & \EvSupport{2} & \EvUntested &
 Factorized linear probes save parameters; fitted directions agree, and per-board searches aid edits. \\
-\LinearRow
 \citet{park2025geometry}: categorical and hierarchical concepts & Final-layer directions and polytopes &
 \EvSupport{2} & \EvUntested & \EvSupport{1} & \EvUntested & \EvSupport{3} & \EvUntested & \EvSupport{1} & \EvUntested &
 Hierarchy controls support geometry; output-layer algebra predicts log-odds, with generation untested. \\
 
 \ECRow{6}{Necessity}
-\LinearRow
 \citet{arditi2024refusal}: refusal & Selected mean-difference direction &
 \EvUntested & \EvUntested & \EvUntested & \EvUntested & \EvUntested & \EvSupport{3} & \EvSupport{3} & \EvSupport{1} &
 All-layer ablation suppresses refusal; single-layer addition induces it across 13 models, with TruthfulQA degradation. \\
-\LinearRow
 \citet{marshall2025refusal}: refusal & Direction and harmless reference &
 \EvUntested & \EvUntested & \EvUntested & \EvUntested & \EvUntested & \EvMixed{2} & \EvSupport{2} & \EvUntested &
 Linear edits alter refusal across ten models; a harmless reference preserves qualitative RWKV coherence. \\
-\LinearRow
 \citet{tigges2023linear}: sentiment & Sentiment directions; traced circuits &
 \EvSupport{3} & \EvUntested & \EvSupport{3} & \EvMixed{2} & \EvUntested & \EvSupport{3} & \EvSupport{3} & \EvSupport{1} &
 Estimators agree; adverb transfer fails partly; ablation and path patching explain part of the sentiment computation. \\
 
 \ECRow{7}{Sufficiency}
-\LinearRow
 \citet{heinzerling2024monotonic}: expressed numeric properties & Low-dimensional PLS subspaces &
 \EvSupport{2} & \EvSupport{3} & \EvUntested & \EvUntested & \EvSupport{2} & \EvUntested & \EvMixed{3} & \EvUntested &
 PLS scores use development labels preprocessed across splits; monotonic edits also alter other properties. \\
-\LinearRow
 \citet{jahanparast2026opinions}: survey responses & Linear response scores; SAE directions &
 \EvSupport{3} & \EvSupport{3} & \EvUntested & \EvUntested & \EvUntested & \EvUntested & \EvSupport{2} & \EvUntested &
 Probes rival MLPs on survey labels; SAE swaps are evaluated with a different model and prompt distribution. \\
-\NonlinearRow
 \citet{levy2025base10}: decimal digits & Circular digit codes &
 \EvSupport{3} & \EvUntested & \EvUntested & \EvSupport{1} & \EvSupport{2} & \EvUntested & \EvSupport{1} & \EvUntested &
 PCA of unedited activations reveals cycles; digit probes partly transfer to words; scaled reversals give 10--15\% exact control. \\
-\LinearRow
 \citet{nanda2023emergent}: player-relative state & Linear square--state directions &
 \EvSupport{3} & \EvUntested & \EvUntested & \EvUntested & \EvUntested & \EvUntested & \EvSupport{3} & \EvSupport{1} &
 Relative-state edits reproduce counterfactual legal moves; attention partly explains empty squares. \\
-\NonlinearRow
 \citet{wurgaft2026manifold}: cyclic and sequential concepts & Curved concept manifolds &
 \EvUntested & \EvUntested & \EvUntested & \EvUntested & \EvSupport{2} & \EvUntested & \EvSupport{2} & \EvUntested &
 Manifold edits preserve components that straight paths replace, confounding the geometry comparison. \\
-\NonlinearRow
 \citet{feucht2026arithmetic}: addition and cycles & Circular codes; sum harmonics &
 \EvSupport{2} & \EvUntested & \EvUntested & \EvSupport{2} & \EvSupport{3} & \EvSupport{3} & \EvSupport{3} & \EvSupport{2} &
 Held-out harmonic probes and transferred patches support addition; cyclic conversion is unresolved. \\
-\MixedRow
 \citet{kantamneni2025trigonometry}: integer arithmetic & Linear and periodic helix &
 \EvUntested & \EvUntested & \EvUntested & \EvSupport{1} & \EvSupport{3} & \EvSupport{2} & \EvSupport{3} & \EvSupport{2} &
 Helix replacement transfers; ablation explains part of the addition computation, with trigonometry unresolved. \\
-\LinearRow
 \citet{makelov2023subspace}: factual recall and IOI & MLP and residual-stream directions &
 \EvUntested & \EvUntested & \EvSupport{2} & \EvUntested & \EvUntested & \EvSupport{1} & \EvSupport{3} & \EvMixed{3} &
 Illusory MLP patches recruit dormant pathways; residual tests support robustness and explain part of IOI computation. \\
-\NonlinearRow
 \citet{zhou2024fourier}: integer addition & Low/high-frequency Fourier components &
 \EvUntested & \EvUntested & \EvUntested & \EvUntested & \EvSupport{3} & \EvSupport{3} & \EvUntested & \EvSupport{2} &
 Frequency ablation in integer addition predicts magnitude and modular errors, explaining part of the addition computation. \\
 \bottomrule
 \end{tabularx}
-\vspace{.5mm}
-\begin{minipage}{\textwidth}
-\fontsize{7.8}{8.2}\selectfont
-\raggedright
+\caption[Evidence for each claim across the reviewed studies.]{Evidence for each claim across the reviewed studies.
+D, E, R, I, SC, and N denote the first six categories in Figure~\ref{fig:claims}; the seventh, sufficiency, has separate causal ($S_{\mathrm C}$) and mechanistic ($S_{\mathrm M}$) assessments.
+\par\smallskip
 \textit{Evidence:}
 \EvSupport{1}\,\EvSupport{2}\,\EvSupport{3} limited, moderate, and strong support;
 \EvMixed{2} mixed;
 \EvAgainst{2} counterevidence;
 \EvUntested no reported test.
-Filled area gives qualitative evidence strength, not effect size.
-\quad
-\textit{Representation:}
-\begingroup
-\setlength{\fboxsep}{1pt}
-\colorbox{tablelinearrow}{\strut linear}\,
-\colorbox{tablenonlinearrow}{\strut nonlinear}\,
-\colorbox{tablemixedrow}{\strut mixed}.
-\endgroup
-\end{minipage}
-\caption{Evidence for each claim across the reviewed studies.
-D, E, R, I, SC, and N denote the first six categories in Figure~\ref{fig:claims}; the seventh, sufficiency, has separate causal ($S_{\mathrm C}$) and mechanistic ($S_{\mathrm M}$) ratings.
-Ratings were checked against the cited studies.}
+Filled area gives qualitative evidence strength, not effect size.}
 \label{tab:evidence-full}
 \end{table}
 
 \clearpage
 \twocolumn
 
+\input{appendices/probe_mdl}
+
+\clearpage
 \appendixsection{Numerical Probe Design and Transfer}
 \label{sec:numerical-probe-setup}
 
 \paragraph{Llama-3.1-8B setup.}
 
 The representative analysis in Figure~\ref{fig:decodability}c uses \texttt{meta-llama/Llama-3.1-8B} and 4096-dimensional float16 residual activations.
-The extraction metadata omit the checkpoint revision.
+The checkpoint revision for these activations is unrecorded; the released data identify the activation cache by its SHA-256 hash.
 Repository layer index 10 counts the embedding as index 0, so it records the output after the tenth Transformer block.
 We extract this activation at the final token of the right-hand source number in a few-shot addition-formula prompt.
 The prompt has three fixed demonstrations followed by \texttt{$x$+$s$=}, where $s\in\{0,\ldots,999\}$ is the probed source value.
@@ -850,9 +833,9 @@ We average the resulting 20 activations into one value centroid.
 With seed 1729, the fixed value-disjoint partition assigns 800 values to training, 100 to development, and 100 to test.
 Using this partition, we fit all probes on the 800 training centroids and evaluate their decoded predictions on the 100 test centroids by mean and median absolute error, $R^2$, and exact accuracy (Figure~\ref{fig:decodability}c).
 The reported $R^2=1-\mathrm{MSE}/\operatorname{Var}(v)$ uses the test-value population variance.
-For ridge, PLS, and circular regression, Figure~\ref{fig:decodability}c gives 95\% percentile intervals from 10,000 paired resamples of the 100 test values (seed 20261013), conditional on the fixed fitted probes and partition.
+For all four probes, Figure~\ref{fig:decodability}c gives 95\% percentile intervals from 10,000 paired resamples of the 100 test values (seed 20261013), conditional on the fixed fitted probes and partition.
 These intervals measure evaluation-sample uncertainty; variability across refits is unmeasured.
-The classifier's stored aggregates support point estimates, but its individual test predictions are unavailable for resampling.
+The released observations contain all 400 individual test predictions and the complete fitting settings.
 
 For scalar prediction, we use ridge regression with $\lambda=0.552$ or PLS with 16 components and no feature scaling.
 Both produce linear predictions, which we round to the nearest integer and clip to $[0,999]$.
@@ -872,7 +855,7 @@ Figure~\ref{fig:numerical-sufficiency-atlas}b shows C1 and C3 from the individua
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=.70\textwidth]{../figures/fig_circular_component_pairs.pdf}
+\includegraphics[width=\textwidth]{../figures/fig_circular_component_pairs.pdf}
 \caption{Low decoding error coexists with large errors in high-frequency components.
 Gray curves show the fixed code for 0--999; points are circular-regression predictions for 800 training, 100 development, and 100 test values (Figure~\ref{fig:decodability}).
 Departures from the gray curves reveal code errors that accurate numerical decoding can conceal.
@@ -890,10 +873,10 @@ The Llama-3.1-8B condition in Figure~\ref{fig:decodability}c is evaluated separa
 \input{figures/table_prompt_style_examples.tex}
 
 
-\paragraph{Probe complexity.}
+\paragraph{Probe-specific tuning.}
 \label{sec:probe-capacity}
 
-The complexity analysis measures how held-out value-decoding error at the probed token position changes within each probe method.
+The tuning analysis measures how held-out value-decoding error at the probed token position changes within each probe method.
 For PLS and circular probes, the horizontal axis gives the retained component count or sinusoidal code dimension.
 For ridge probes, effective degrees of freedom equal $\sum_j s_j^2/(s_j^2+\lambda)$, where $s_j$ are the singular values of the centered training activation matrix and $\lambda$ is the ridge penalty.
 Figure~\ref{fig:probe-capacity-paths} reports all relative layers in a six-model sweep on the fixed value-disjoint partition, averaged over five prompt variants.
@@ -907,7 +890,7 @@ The eleven relative layers run from 0 to 1 in steps of .1, corresponding to the 
     Curves show held-out MAE at the probed token position for six models and all relative layers, averaged over five prompt variants on one fixed value-disjoint partition; lower is better.
     Color denotes probe method, lighter traces denote shallower layers, and the dashed gray line marks the training-mean baseline.
     The horizontal axis gives ridge effective degrees of freedom, PLS component count, or circular-code dimension, with model-specific ranges.
-    These sweeps show how decoding responds to complexity within each probe method; comparing efficiency across methods additionally requires a common cost measure.}
+    Each curve describes changes within one probe method; Appendix~\ref{sec:probe-mdl} compares online codelengths in bits across methods.}
     \label{fig:probe-capacity-paths}
 \end{figure*}
 
@@ -916,7 +899,7 @@ Figure~\ref{fig:decodability}d uses separate fits on the centroids and split of 
 The tuning optima vary across probe methods and models in the six-model sweep.
 Ridge probes have a median optimum of about 400 effective degrees of freedom; PLS probes typically reach minimum MAE with 16 components.
 Circular classification reaches a median best MAE of 2.45 with a ten-dimensional code, and circular regression reaches a median best MAE of 1.74 at a median code dimension of 1024.
-Code dimension, however, measures only part of classification complexity: Figure~\ref{fig:decodability}d keeps the learned projection width fixed at 100.
+Circular classification additionally uses a learned projection of width 100, held fixed as its code dimension varies.
 
 
 \paragraph{Transfer across prompt variants.}
@@ -985,7 +968,7 @@ Values are rounded to one decimal; the remaining conditions match Figure~\ref{fi
 
 Figure~\ref{fig:numerical-sufficiency-atlas}a--c uses the same scalar ridge and circular-regression fits for numerical decoding and steering at the Llama-3.1-8B layer-10 source-number token.
 Both probes are fitted to individual prompts for the 800 training values, using the partition and prediction rules above.
-Decoding and steering share 100 development prompts, held out from fitting and reused from the earlier steering evaluation.
+Decoding and steering share 100 development prompts held out from probe fitting.
 Decoding MAE is 19.1 for scalar ridge and 1.78 for circular regression.
 The matched activations use checkpoint revision \texttt{d04e592b}, FP16, and eager attention.
 For an addition-formula prompt \texttt{$x$+$s$=}, replacing source operand $s$ with target operand $t$ gives the counterfactual answer $x+t$.
@@ -1011,156 +994,21 @@ For circular regression, let row activation $h\in\mathbb{R}^{1\times d}$ map to 
 \begin{equation}
  z(h)=hW+b,\qquad W\in\mathbb{R}^{d\times 10}.
 \end{equation}
-The probe-derived edit for source value $s$ and target value $t$ is
+To set the probe's prediction to the target code $\phi(t)$, we subtract its prediction at source activation $h_s$:
 \begin{equation}
- \Delta h=\bigl[\phi(t)-\phi(s)\bigr]W^{+},
+ \Delta h=\bigl[\phi(t)-z(h_s)\bigr]W^{+},
 \end{equation}
 where $W^{+}$ is the Moore--Penrose pseudoinverse.
-When $W$ has full column rank, this is the minimum-norm activation edit producing the requested code difference.
-Because the construction uses the label code $\phi(s)$, any discrepancy between the predicted source code $z(h_s)$ and $\phi(s)$ persists after editing.
-The predicted code also leaves null-space components undetermined: adding such a component preserves the prediction but can affect downstream computation.
-Scalar ridge and scalar PLS probes use this construction with a one-dimensional output.
+When $W$ has full column rank, this prediction-corrected edit is the minimum-norm activation change setting the complete predicted code to $\phi(t)$.
+Scalar probes use the same construction with a one-dimensional output.
+As a numerical check, we verify that both probes decode the requested operand in all 2,000 cases after applying the edits in FP16.
+These edits produce zero correct counterfactual sums.
+
+An alternative uses the label-code difference $[\phi(t)-\phi(s)]W^{+}$ and preserves the source prediction error.
+These label-difference edits reach the requested value under the probe in 31/2,000 scalar cases and 704/2,000 circular cases, with zero correct sums.
+Both edit rules leave the source component in the probe's null space unchanged; this component can affect downstream computation.
 
 \FloatBarrier
-
-\appendixsection{Control and Number-Property Experiments}
-\label{sec:numerical-control-dimension}
-
-This appendix documents property decoding and deletion, coefficient-based control, and selective parity edits in the main text.
-The Llama-3.1-8B addition experiments use the activation extraction and 800/100/100 value-disjoint partitions specified in Appendix~\ref{sec:numerical-probe-setup}.
-Appendix~\ref{sec:reproducibility} describes the archived observations and configurations.
-
-\paragraph{Property decoding and deletion.}
-\label{sec:number-property-geometry}
-
-The decoding analysis fits ridge classifiers to the nineteen categorical properties in Figure~\ref{fig:number-property-accessibility-main}a, selecting $\lambda\in\{.01,.1,1,10,100,1000\}$ by development balanced accuracy.
-We evaluate ten value-disjoint splits and retain those whose test partition contains every training class: six for digit count, eight for distinct-digit count, and all ten for the other properties.
-The figure reports means and ranges over these retained splits.
-
-For deletion (Figure~\ref{fig:causal-use}c), each split has a rank-41 basis fitted on addition-formula activations to magnitude and the nineteen categorical properties using the procedure below.
-We remove the activation component in this basis at the source-number token and compare with rank-matched bases fitted to shuffled labels.
-Evaluation covers seven tasks, with 1,000 prompts per task and 639 distinct source values overall.
-Because the ten splits overlap in their evaluation values, the 95\% percentile intervals use 2,000 resamples clustered by source value, averaging control seeds within each split, task, and value before resampling and weighting prompts equally.
-Holding the fitted bases fixed restricts these intervals to evaluation-sample uncertainty.
-
-\paragraph{Coefficient prediction and search.}
-\label{sec:property-coefficient-control}
-
-To construct a basis in which several properties can share a direction, we encode magnitude and one-hot categorical labels in a 68-column target matrix, centering and normalizing each property's block using training values.
-The resulting centered matrix has rank 41, which sets the maximum basis rank.
-To estimate its directions, we repeatedly fit one rank-one probe per property on a deterministic inner 80\% of the 800 training values.
-We select the candidate that best predicts its property's target block from residual activations on the inner 20\%, refit it on all 800 values, and project out its direction before the next step.
-Each direction is labeled by its selecting property, although other properties can also load on it.
-
-The coefficient comparison and search below use the full rank-41 basis.
-Within this basis, Figure~\ref{fig:numerical-sufficiency-atlas}f compares coefficient prediction on 400 interventions from 20 held-out source prompts, with 20 target replacements per prompt.
-The independent method sums edits predicted separately from source and target labels for each property.
-For categorical properties, labels predict the assigned coefficients and their target-minus-source differences define the edit; for magnitude, the edit uses the inverse of a calibrated prediction along the first PLS direction.
-Joint ridge and radial basis function (RBF) kernel ridge additionally use the source activation projected into the basis, together with both label sets, to predict coefficients of counterfactual patch displacements in that basis.
-To fit and select these joint predictors, the 100 source prompts are partitioned into 60 training, 20 validation, and 20 test prompts (seed 20260729).
-After selecting hyperparameters to minimize validation coefficient error, we refit the models on the 80 training and validation prompts.
-Target values occur in both training and evaluation partitions, and intervention doses differ among methods.
-The independent sum yields 0/400 exact outputs, compared with 77\% for joint ridge and 80\% for RBF ridge.
-The nonzero rates have 95\% percentile intervals from 10,000 bootstrap resamples of the 20 source prompts (seed 20260826).
-Under these comparison conditions, most of the observed improvement occurs when coefficients are predicted jointly with source activations available.
-
-A separate experiment tests what edits selected using the requested output can achieve within the same rank-41 basis.
-It evaluates all 2,000 interventions from the 100 source prompts, with projection into the basis capturing 53\% of the exact-patch displacement energy.
-Selecting coefficients by the requested target token's probability under the exact-patch norm budget nevertheless reaches 99.5\% exact accuracy.
-
-\paragraph{Selective parity interventions.}
-\label{sec:property-reasoning}
-
-The Llama classification test in Figure~\ref{fig:number-property-accessibility-main}b,c uses structured ten-shot question--answer prompts and a parity direction fitted on 800 training numerals.
-We add the direction at the query numeral after Transformer block 9 (zero-based index), with dose $\alpha=16$ selected on development values, giving mean edit norm 7.74.
-At this dose, the edit preserves the numeral and flips its parity label in 93 of 100 baseline-correct test prompts, compared with 3 for a norm-matched random direction.
-This label-flipping result contrasts with parity directions fitted on addition formulas, which achieve perfect in-format decoding but produce zero contradictions when transferred at the same $L_2$ dose.
-They instead change the numeral coherently in 50 cases, supporting the context dependence of the intervention effect.
-
-The enumeration test uses a fitted Qwen3.6-27B parity direction (value-disjoint fit, seed 1729).
-Zero-shot prompts list ten numbered inputs and request the odd numerals in their original order.
-We run the model in bfloat16 and use chat templates with thinking disabled, allowing at most 64 output tokens (protocol seed 20260718).
-We edit the targeted numeral's final-digit activation at layer 19.
-Dose $\alpha=12$ is selected from $\{2,4,8,12,16\}$ on 30 development lists by maximizing exact counterfactual-set accuracy subject to at least 98\% source fidelity and untargeted membership accuracy.
-At the selected dose, the edit inserts the targeted even numeral into an otherwise unchanged list of odd numerals in 48 of 50 baseline-correct test lists.
-Norm-matched random, wrong-sign, and delimiter-location controls yield 0, 10, and 3 such contradictions, respectively.
-The nonzero wrong-sign and delimiter effects qualify the specificity of the selected direction and activation site.
-
-\FloatBarrier
-
-\appendixsection{Reproducibility and Computational Resources}
-\label{sec:reproducibility}
-
-\paragraph{Released artifacts.}
-
-The code and data archives accompany the arXiv version as ancillary files, available from its abstract page.
-They contain observations for the quantitative panels in Figures~\ref{fig:lrh-mentions}, \ref{fig:decodability}--\ref{fig:numerical-sufficiency-atlas}, with a map from each panel to its inputs and outputs.
-The software archive's \texttt{README.md} and \texttt{EXPERIMENT\_MAP.md} describe these mappings and the reproduction commands; the data archive's \texttt{README.md} describes the distributed observations.
-The CPU-only workflow verifies SHA-256 manifests and recomputes metrics, uncertainty intervals, and numerical plots, including the six-model complexity sweep and supporting appendix analyses, without downloading a model.
-For model-forward reproduction, the archives also include experiment sources and configurations with synthetic prompts and fixed intervention inputs; running these sources uses public checkpoints and regenerates activation caches.
-The archives exclude model weights, activation caches, and published-paper PDFs.
-
-The numerical data consist of generated integers, arithmetic prompts, and number-property questions, with corresponding model outputs and derived statistics.
-The prompts use English and Arabic numerals and contain no personally identifying or offensive text.
-The data contain no personal records or demographic attributes.
-
-\paragraph{Models and software.}
-
-Table~\ref{tab:experimental-models} identifies the model families used in the numerical experiments and links their model cards or license terms.
-The archives record public checkpoint identifiers and available revisions.
-
-\begin{table}[H]
-\centering
-\small
-\setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{1.08}
-\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{.42\linewidth}>{\raggedright\arraybackslash}p{.18\linewidth}>{\raggedright\arraybackslash}X@{}}
-\toprule
-Model family & Parameters & Model license \\
-\midrule
-\href{https://huggingface.co/meta-llama/Llama-3.2-1B}{Llama 3.2} & 1B, 3B & Llama 3.2 Community \\
-Llama 3/3.1 \citep{grattafiori2024llama} & 8B & \href{https://huggingface.co/meta-llama/Meta-Llama-3-8B}{Llama 3}/\href{https://huggingface.co/meta-llama/Llama-3.1-8B}{3.1 Community} \\
-OLMo 2 \citep{teamolmo2025olmo2} & 13B & \href{https://huggingface.co/allenai/OLMo-2-1124-13B}{Apache 2.0} \\
-OLMo 3 \citep{teamolmo2026olmo3} & 7B & \href{https://huggingface.co/allenai/Olmo-3-1025-7B}{Apache 2.0} \\
-GPT-OSS \citep{openai2025gptoss} & 21B total; 3.6B active & \href{https://huggingface.co/openai/gpt-oss-20b}{Apache 2.0} \\
-Qwen3.6 \citep{qwen2026qwen36} & 27B & \href{https://huggingface.co/Qwen/Qwen3.6-27B}{Apache 2.0} \\
-\bottomrule
-\end{tabularx}
-\caption{Model sizes and licenses for the numerical experiments.
-Parameter counts are rounded; GPT-OSS uses a mixture of experts.}
-\label{tab:experimental-models}
-\end{table}
-
-Model execution and intervention hooks use PyTorch \citep{paszke2019pytorch} and Transformers \citep{wolf2020transformers}.
-Array operations use NumPy \citep{harris2020numpy}; probe fitting uses scikit-learn \citep{pedregosa2011scikit}.
-The CPU verification environment pins NumPy 2.3.3, \href{https://pandas.pydata.org/}{pandas} 3.0.2, and \href{https://matplotlib.org/}{Matplotlib} 3.10.8.
-The archives include locked environments for selected model-forward workflows.
-Appendices~\ref{sec:numerical-probe-setup} and~\ref{sec:numerical-control-dimension}, together with the archived configurations, specify model execution, preprocessing, and evaluation settings.
-
-\paragraph{Artifact licenses.}
-
-Our analysis code uses the MIT license; our original derived measurements and annotations use CC BY 4.0.
-Each archive includes a license file.
-Third-party libraries and model weights are obtained separately from their original distributors under the applicable terms, including the model licenses in Table~\ref{tab:experimental-models}.
-
-\paragraph{Computational resources.}
-
-GPU runs used NVIDIA H200 accelerators on ABCI and an NVIDIA GB10 workstation.
-We estimate approximately 20 accelerator-hours and 100 CPU core-hours for the reported analyses and development runs from partial job records.
-These records account for 10 NVIDIA H200 allocation-hours, 1.1 NVIDIA GB10 hours, and approximately 78 CPU core-hours, counting multi-GPU allocation-hours as elapsed wall time multiplied by the number of allocated devices.
-We extend the recorded totals upward to cover shared cache construction, aggregation, and runs with incomplete timing records, excluding the compute used to pretrain the public checkpoints.
-Reusing released checkpoints and cached activations reduces additional computation and its associated environmental cost.
-
-\paragraph{Research considerations.}
-
-The review discusses refusal suppression \citep{arditi2024refusal}, which can bypass model safeguards.
-The framework's claim distinctions and the Limitations section address the risk of inferring model computation from decoding or intervention results alone.
-
-\paragraph{AI assistance.}
-
-We used OpenAI Codex for literature search and evidence coding, preparing and checking experiment and visualization code, and manuscript revision.
-Appendices~\ref{sec:lrh-search} and~\ref{sec:evidence-comparison} document the literature classification and rating procedures.
-The authors reviewed the manuscript and analyses and take responsibility for the reported claims and results.
 
 \clearpage
 \appendixsection{Geometric Illustrations of Decoding and Intervention}
@@ -1227,5 +1075,243 @@ To compare behaviors consistent with the original activations, consider downstre
 F_\lambda(x,y)=x+\lambda(y-x^2).
 \end{equation}
 All output $t$ on the parabola but $t+\lambda(a^2-t^2)$ on the chord, so varying $\lambda$ changes intervention behavior despite agreement on every original activation.
+
+\appendixsection{Control and Number-Property Experiments}
+\label{sec:numerical-control-dimension}
+
+This appendix documents property decoding and deletion, coefficient-based control, and selective interventions on individual number properties.
+The Llama-3.1-8B addition experiments use the activation extraction and 800/100/100 value-disjoint partitions specified in Appendix~\ref{sec:numerical-probe-setup}.
+Appendix~\ref{sec:reproducibility} describes the archived observations and configurations.
+
+\paragraph{Property decoding and deletion.}
+\label{sec:number-property-geometry}
+
+The decoding analysis fits ridge classifiers to the nineteen categorical properties in Figure~\ref{fig:number-property-accessibility-main}a, selecting $\lambda\in\{.01,.1,1,10,100,1000\}$ by development balanced accuracy.
+We evaluate ten value-disjoint splits and retain those whose test partition contains every training class: six for digit count, eight for distinct-digit count, and all ten for the other properties.
+The figure reports means and ranges over these retained splits.
+
+For deletion (Figure~\ref{fig:causal-use}c), each split has a rank-41 basis fitted on addition-formula activations to magnitude and the nineteen categorical properties using the procedure below.
+We remove the activation component in this basis at the source-number token and compare with rank-matched bases fitted to shuffled labels.
+Evaluation covers seven tasks, with 1,000 prompts per task and 639 distinct source values overall.
+Because the ten splits overlap in their evaluation values, the 95\% percentile intervals use 2,000 resamples clustered by source value, averaging control seeds within each split, task, and value before resampling and weighting prompts equally.
+Holding the fitted bases fixed restricts these intervals to evaluation-sample uncertainty.
+
+\paragraph{Coefficient prediction and search.}
+\label{sec:property-coefficient-control}
+
+To construct a basis in which several properties can share a direction, we encode magnitude and one-hot categorical labels in a 68-column target matrix, centering and normalizing each property's block using training values.
+The resulting centered matrix has rank 41, which sets the maximum basis rank.
+To estimate its directions, we repeatedly fit one rank-one probe per property on a deterministic inner 80\% of the 800 training values.
+We select the candidate that best predicts its property's target block from residual activations on the inner 20\%, refit it on all 800 values, and project out its direction before the next step.
+Each direction is labeled by its selecting property, although other properties can also load on it.
+
+The coefficient comparison and search below use the full rank-41 basis.
+Within this basis, Figure~\ref{fig:numerical-sufficiency-atlas}f compares coefficient prediction on 400 interventions from 20 held-out source prompts, with 20 target replacements per prompt.
+The independent method sums edits predicted separately from source and target labels for each property.
+For categorical properties, labels predict the assigned coefficients and their target-minus-source differences define the edit; for magnitude, the edit uses the inverse of a calibrated prediction along the first PLS direction.
+Joint ridge and radial basis function (RBF) kernel ridge additionally use the source activation projected into the basis, together with both label sets, to predict coefficients of counterfactual patch displacements in that basis.
+To fit and select these joint predictors, the 100 source prompts are partitioned into 60 training, 20 validation, and 20 test prompts (seed 20260729).
+After selecting hyperparameters to minimize validation coefficient error, we refit the models on the 80 training and validation prompts.
+Target values occur in both training and evaluation partitions, and intervention doses differ among methods.
+The independent sum yields 0/400 exact outputs, compared with 77\% for joint ridge and 80\% for RBF ridge.
+The nonzero rates have 95\% percentile intervals from 10,000 bootstrap resamples of the 20 source prompts (seed 20260826).
+Under these comparison conditions, most of the observed improvement occurs when coefficients are predicted jointly with source activations available.
+
+A separate experiment tests what edits selected using the requested output can achieve within the same rank-41 basis.
+It evaluates all 2,000 interventions from the 100 source prompts, with projection into the basis capturing 53\% of the exact-patch displacement energy.
+Selecting coefficients by the requested target token's probability under the exact-patch norm budget nevertheless reaches 99.5\% exact accuracy.
+
+\paragraph{Selective parity interventions.}
+\label{sec:property-reasoning}
+
+The Llama classification test in Figure~\ref{fig:number-property-accessibility-main}b,c uses structured ten-shot question--answer prompts and a parity direction fitted on 800 training numerals.
+We add the direction at the query numeral after Transformer block 9 (zero-based index), with dose $\alpha=16$ selected on development values, giving mean edit norm 7.74.
+At this dose, the edit preserves the numeral and flips its parity label in 93 of 100 baseline-correct test prompts, compared with 3 for a norm-matched random direction.
+This label-flipping result contrasts with parity directions fitted on addition formulas, which achieve perfect in-format decoding but produce zero contradictions when transferred at the same $L_2$ dose.
+They instead change the numeral coherently in 50 cases, supporting the context dependence of the intervention effect.
+
+The enumeration test uses a fitted Qwen3.6-27B parity direction (value-disjoint fit, seed 1729).
+Zero-shot prompts list ten numbered inputs and request the odd numerals in their original order.
+We run the model in bfloat16 and use chat templates with thinking disabled, allowing at most 64 output tokens (protocol seed 20260718).
+We edit the targeted numeral's final-digit activation at layer 19.
+Dose $\alpha=12$ is selected from $\{2,4,8,12,16\}$ on 30 development lists by maximizing exact counterfactual-set accuracy subject to at least 98\% source fidelity and untargeted membership accuracy.
+At the selected dose, the edit inserts the targeted even numeral into an otherwise unchanged list of odd numerals in 48 of 50 baseline-correct test lists.
+Norm-matched random, wrong-sign, and delimiter-location controls yield 0, 10, and 3 such contradictions, respectively.
+The nonzero wrong-sign and delimiter effects qualify the specificity of the selected direction and activation site.
+
+\subsection{Individual control of categorical number properties}
+\label{sec:individual-property-control}
+
+We extend the parity tests to all nineteen categorical properties in Figure~\ref{fig:number-property-accessibility-main}a, evaluating Llama-3.1-8B and Qwen3.6-27B.
+For each property, one task asks the model to copy an input numeral as the result of adding zero and then report its property label.
+The copying prompts include four training demonstrations per class for binary properties and two per class otherwise.
+A second task asks the model to select numerals belonging to a requested class from a list of up to ten inputs.
+List examples draw all numerals from the target's value partition and balance selected and unselected members when enough values are available.
+A successful edit changes the reported class while preserving the copied numeral, or changes exactly the target numeral's membership in the output list while preserving all other entries and their order.
+Binary targets reverse the class, and multiclass targets advance to the next class cyclically.
+
+We stratify the integers 0--999 by property class into approximately 80/10/10 training, development, and test partitions, retaining at least one value per class in each partition.
+Three splits use seeds 20261110, 20261111, and 20261112.
+For a property with $K$ classes, development and test sampling cap each class at $\lceil60/K\rceil$ and $\lceil100/K\rceil$ values, respectively.
+Class-balanced ridge probes are fitted separately to activations from property instructions and addition formulas of the form \texttt{92+n=}.
+Regularization is selected from $\{0.1,1,10,100\}$ by development balanced accuracy.
+Each intervention adds a scaled, normalized difference between the target- and source-class probe weights at the final token of the target numeral, after a Transformer block.
+Llama uses plain prompts, and Qwen uses its chat template with thinking disabled.
+
+Candidate intervention sites comprise the three layers with the highest development probe accuracy and a fixed layer, block 9 for Llama and block 19 for Qwen, indexed from zero.
+For each task and fitting context, development evaluation selects a layer and an edit norm from $\{1,2,4,8,16\}$.
+Selection maximizes success among initially correct development cases, averaging over source classes and requiring at least 95\% numeral-identity preservation.
+Every Qwen list setting in Table~\ref{tab:individual-property-control} passes this identity criterion.
+Controls reverse the selected direction, use an orthogonal random direction, or apply the selected direction at the prompt delimiter.
+The controls use the same nominal edit norm.
+Fixed-layer results are also retained in the experiment records.
+
+Interventions are evaluated when the unedited model reaches at least 90\% exact factual accuracy and 95\% parse coverage on development data.
+We score test interventions on initially correct cases, average success equally over source classes within each split, and then average over qualifying splits.
+The 95\% percentile intervals use 2,000 bootstrap resamples clustered by numeral identity across splits and stratified by source class.
+Resamples missing an observed class--split denominator are excluded.
+These exploratory intervals hold the fitted directions fixed and have no multiplicity correction.
+
+We compare two instruction formats for the list task: generic yes/no labels accompanied by property definitions, and explicit positive or negative predicates, such as selecting numbers that are prime or numbers that are not prime.
+Both formats use the same numeral cases and fitted directions, with layer and norm selected separately on development data.
+Qwen meets the baseline criteria in 9 of 57 property--split settings with generic labels and 39 with explicit predicates.
+Table~\ref{tab:individual-property-control} reports every property for Qwen's explicit-predicate list tests, using directions fitted on property instructions and development-selected sites.
+
+% Source: natural-language-transcoder, commit 332eb60,
+% experiment-reports/artifacts/2026-11-10-individual-property-control/consolidated-analysis.json.
+% Filter: model=qwen36_27b, context=property, family=list, mode=selected.
+\begin{table}[t]
+\centering
+\fontsize{8.2}{9.5}\selectfont
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Property & Success & 95\% CI & Control & $N$ & Splits \\
+\midrule
+\textbf{Parity} & 97.6 & 95.8--99.3 & 1.4 & 299 & 3/3 \\
+\textbf{Primality} & 92.2 & 89.2--94.9 & 0.0 & 199 & 3/3 \\
+\textbf{Divisible by 3} & 86.2 & 81.6--90.4 & 16.7 & 247 & 3/3 \\
+Divisible by 4 & 96.0 & 91.0--100.0 & 3.0 & 74 & 1/3 \\
+\textbf{Divisible by 5} & 68.5 & 62.8--74.2 & 0.0 & 209 & 3/3 \\
+Divisible by 6 & 33.7 & 27.6--39.7 & 0.0 & 199 & 3/3 \\
+Divisible by 8 & 82.9 & 66.2--94.7 & 0.0 & 42 & 1/3 \\
+\textbf{Divisible by 10} & 15.0 & 7.8--23.1 & 0.0 & 180 & 3/3 \\
+Divisible by 25 & 48.5 & 24.1--68.2 & 0.0 & 67 & 2/3 \\
+Residue mod 3 & \multicolumn{4}{c}{Baseline failed} & 0/3 \\
+Residue mod 4 & \multicolumn{4}{c}{Baseline failed} & 0/3 \\
+Units digit & 40.3 & 35.0--45.4 & 0.0 & 290 & 3/3 \\
+Tens digit & \multicolumn{4}{c}{Baseline failed} & 0/3 \\
+Hundreds digit & 28.9 & 24.3--33.4 & 33.5 & 299 & 3/3 \\
+Digit count & 2.1 & 0.5--4.3 & 16.7 & 84 & 2/3 \\
+Distinct digit count & \multicolumn{4}{c}{Baseline failed} & 0/3 \\
+Contains zero & 7.4 & 3.9--11.5 & 0.0 & 204 & 3/3 \\
+\textbf{Repeated digits} & 76.9 & 70.1--83.1 & 14.5 & 226 & 3/3 \\
+\textbf{Palindrome} & 93.2 & 87.6--97.5 & 32.4 & 175 & 3/3 \\
+\bottomrule
+\end{tabular}
+\caption{Selective control in Qwen's list task.
+Success and control rates are percentages, averaged over source classes and qualifying splits among initially correct cases.
+Control gives the largest mean rate among the reversed-direction, random-direction, and delimiter controls.
+$N$ counts eligible test cases across the qualifying splits.
+Intervals resample numeral identities while holding fitted directions fixed.
+Bold rows mark the seven properties for which both class transitions have higher observed success than every control in all three splits.
+Baseline failures receive no intervention score.}
+\label{tab:individual-property-control}
+\end{table}
+
+Both class transitions exceed every control in all three splits for the seven properties highlighted in Table~\ref{tab:individual-property-control}.
+The remaining outcomes include limited split coverage, uneven effects across classes, and effects exceeded by controls.
+Divisibility by 4 and by 8 have large effects but qualify in only one split each.
+Units-digit changes average 40.3\% success, but the lowest class success within each split averages 3.3\%.
+The hundreds-digit and digit-count effects are exceeded by controls.
+
+Task and model differences are substantial.
+Llama fails the list baseline for every property under both instruction formats, but shows control of primality and divisibility by 25 in the copying and classification task.
+Qwen's parity edits produce zero target successes in that task, despite their high success in the list task.
+Rare classes have few held-out numerals, including one value per split for one-digit numbers.
+The directions in these experiments are fitted separately for each property and context.
+The addition comparison in Section~\ref{sec:sufficiency} uses the rank-41 basis described earlier in this appendix.
+
+The experiment comprises 228 runs across the two instruction formats.
+Scoring and development selection are independently verified from saved generation records.
+
+\FloatBarrier
+
+\appendixsection{Reproducibility and Computational Resources}
+\label{sec:reproducibility}
+
+\paragraph{Released artifacts.}
+
+The code and data archives accompany the arXiv version as ancillary files, available from its abstract page.
+They contain observations for the quantitative panels in Figures~\ref{fig:lrh-mentions}, \ref{fig:decodability}--\ref{fig:numerical-sufficiency-atlas}, with a map from each panel to its inputs and outputs.
+The software archive's \texttt{README.md} and \texttt{EXPERIMENT\_MAP.md} describe these mappings and the reproduction commands; the data archive's \texttt{README.md} describes the distributed observations.
+The CPU-only workflow verifies SHA-256 manifests and recomputes metrics, uncertainty intervals, and numerical plots, including the six-model complexity sweep and supporting appendix analyses, without downloading a model.
+For model-forward reproduction, the archives also include experiment sources and configurations with synthetic prompts and fixed intervention inputs; running these sources uses public checkpoints and regenerates activation caches.
+The archives exclude model weights, activation caches, and published-paper PDFs.
+
+The numerical data consist of generated integers, arithmetic prompts, and number-property questions, with corresponding model outputs and derived statistics.
+The prompts use English and Arabic numerals and contain no personally identifying or offensive text.
+The data contain no personal records or demographic attributes.
+
+\paragraph{Models and software.}
+
+Table~\ref{tab:experimental-models} identifies the model families used in the numerical experiments and links their model cards or license terms.
+The archives record public checkpoint identifiers and available revisions.
+
+\begin{table}[H]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.08}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{.42\linewidth}>{\raggedright\arraybackslash}p{.18\linewidth}>{\raggedright\arraybackslash}X@{}}
+\toprule
+Model family & Parameters & Model license \\
+\midrule
+\href{https://huggingface.co/meta-llama/Llama-3.2-1B}{Llama 3.2} & 1B, 3B & Llama 3.2 Community \\
+Llama 3/3.1 \citep{grattafiori2024llama} & 8B & \href{https://huggingface.co/meta-llama/Meta-Llama-3-8B}{Llama 3}/\href{https://huggingface.co/meta-llama/Llama-3.1-8B}{3.1 Community} \\
+OLMo 2 \citep{teamolmo2025olmo2} & 13B & \href{https://huggingface.co/allenai/OLMo-2-1124-13B}{Apache 2.0} \\
+OLMo 3 \citep{teamolmo2026olmo3} & 7B & \href{https://huggingface.co/allenai/Olmo-3-1025-7B}{Apache 2.0} \\
+GPT-OSS \citep{openai2025gptoss} & 21B total; 3.6B active & \href{https://huggingface.co/openai/gpt-oss-20b}{Apache 2.0} \\
+Qwen3.6 \citep{qwen2026qwen36} & 27B & \href{https://huggingface.co/Qwen/Qwen3.6-27B}{Apache 2.0} \\
+\bottomrule
+\end{tabularx}
+\caption{Model sizes and licenses for the numerical experiments.
+Parameter counts are rounded; GPT-OSS uses a mixture of experts.}
+\label{tab:experimental-models}
+\end{table}
+
+Model execution and intervention hooks use PyTorch \citep{paszke2019pytorch} and Transformers \citep{wolf2020transformers}.
+Array operations use NumPy \citep{harris2020numpy}; probe fitting uses scikit-learn \citep{pedregosa2011scikit}.
+The CPU verification environment pins NumPy 2.3.3, \href{https://pandas.pydata.org/}{pandas} 3.0.2, and \href{https://matplotlib.org/}{Matplotlib} 3.10.8.
+The archives include locked environments for selected model-forward workflows.
+Appendices~\ref{sec:numerical-probe-setup} and~\ref{sec:numerical-control-dimension}, together with the archived configurations, specify model execution, preprocessing, and evaluation settings.
+
+\paragraph{Artifact licenses.}
+
+Our analysis code uses the MIT license; our original derived measurements and annotations use CC BY 4.0.
+Each archive includes a license file.
+Third-party libraries and model weights are obtained separately from their original distributors under the applicable terms, including the model licenses in Table~\ref{tab:experimental-models}.
+
+\paragraph{Computational resources.}
+
+Numerical probing and the experiments on transfer and addition used NVIDIA H200 accelerators on ABCI and an NVIDIA GB10 workstation.
+We estimate approximately 20 accelerator-hours and 100 CPU core-hours for these experiments and their development from partial job records.
+These records account for 10 NVIDIA H200 allocation-hours, 1.1 NVIDIA GB10 hours, and approximately 78 CPU core-hours, counting multi-GPU allocation-hours as elapsed wall time multiplied by the number of allocated devices.
+We extend the recorded totals upward to cover shared cache construction, aggregation, and runs with incomplete timing records, excluding the compute used to pretrain the public checkpoints.
+The individual-property control experiments used approximately 40 GPU-hours on Rikyu, including twelve runtime pilots in addition to the 228 experimental runs.
+Reusing released checkpoints and cached activations reduces additional computation and its associated environmental cost.
+
+\paragraph{Research considerations.}
+
+The review discusses refusal suppression \citep{arditi2024refusal}, which can bypass model safeguards.
+The framework's claim distinctions and the Limitations section address the risk of inferring model computation from decoding or intervention results alone.
+
+\paragraph{AI assistance.}
+
+We used OpenAI Codex for literature search and evidence coding, preparing and checking experiment and visualization code, and manuscript revision.
+Appendices~\ref{sec:lrh-search} and~\ref{sec:evidence-comparison} document the literature classification and rating procedures.
+The authors reviewed the manuscript and analyses and take responsibility for the reported claims and results.
+
+
 
 \end{document}

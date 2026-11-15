@@ -4,79 +4,79 @@
   "purpose": "CPU verification of current paper numerical panels",
   "files": {
     "probe_outputs.csv.gz": {
-      "source": "data/figures/decodability_efficiency/probe_outputs.csv",
+      "source": "figures/data/decodability_efficiency/probe_outputs.csv",
       "source_sha256": "a7d5378f0f029aaf24a27b2aaa98d39536fa91a58af5e26016d08cf0e145129c",
       "sha256": "632ca8cae0e8a87b189638e0360fea924d8d95aef99f1b3161bcfaa2afc14653",
       "transformation": "gzip compression, timestamp zero; decompressed bytes unchanged"
     },
     "probe_capacity.csv": {
-      "source": "data/figures/decodability_efficiency/capacity_points.csv",
+      "source": "figures/data/decodability_efficiency/capacity_points.csv",
       "source_sha256": "a888bd7bd26db69154efbd819f63967b23b4a005bcd0baa048ff061ad51a5995",
       "sha256": "a888bd7bd26db69154efbd819f63967b23b4a005bcd0baa048ff061ad51a5995",
       "transformation": "byte-for-byte copy"
     },
     "probe_metrics.csv": {
-      "source": "data/figures/decodability_efficiency/probe_metrics.csv",
+      "source": "figures/data/decodability_efficiency/probe_metrics.csv",
       "source_sha256": "5eabd78cf310e647f4e131e729e11a39ce02d20db95748c128a9afe0e8d9ad85",
       "sha256": "5eabd78cf310e647f4e131e729e11a39ce02d20db95748c128a9afe0e8d9ad85",
       "transformation": "byte-for-byte copy"
     },
     "pls_directions.csv.gz": {
-      "source": "data/figures/pls_grid/pls_directions.csv",
+      "source": "figures/data/invariance_numerical_candidates/pls_directions.csv",
       "source_sha256": "7484a6bb4609638698edf9c73a31e33aa9bbf18d04f6fda42edb4599849d083a",
       "sha256": "3c50ecfde6a2a930a5b9804c9f3b08d310ff66a746ac1732833e78fca3f89bee",
       "transformation": "gzip compression, timestamp zero; decompressed bytes unchanged"
     },
     "pls_transfer.csv.gz": {
-      "source": "data/figures/pls_grid/pls_transfer.csv",
+      "source": "figures/data/invariance_numerical_candidates/pls_transfer.csv",
       "source_sha256": "e120f6b97615ab9b8a55f1fa3144856b1840209ebd147c380c3c5ff188fa70af",
       "sha256": "3d0ec0dccfa4ac32880495fb3e9939f5f5d50e12f9a9617d75c0cee90259e938",
       "transformation": "gzip compression, timestamp zero; decompressed bytes unchanged"
     },
     "pls_transfer_means.csv": {
-      "source": "data/figures/prompt_transfer_robustness/pls_family_transfer.csv",
+      "source": "figures/data/prompt_transfer_robustness/pls_family_transfer.csv",
       "source_sha256": "e7ffd5c970f5173ae1d9f7550bd6fa50ed5f51702f9fd99665700f2e73df719b",
       "sha256": "e7ffd5c970f5173ae1d9f7550bd6fa50ed5f51702f9fd99665700f2e73df719b",
       "transformation": "byte-for-byte copy"
     },
     "deletion_summary.csv": {
-      "source": "data/figures/deletion/summary.csv",
+      "source": "figures/data/figure5c_numerical_use_candidates/summary.csv",
       "source_sha256": "0439eeb487b7efefa7e74922de0ad33b9eb60bf9b9381d832be7efc1ed6ee0f5",
       "sha256": "0439eeb487b7efefa7e74922de0ad33b9eb60bf9b9381d832be7efc1ed6ee0f5",
       "transformation": "byte-for-byte copy"
     },
     "deletion_per_split.csv": {
-      "source": "data/figures/deletion/per_split.csv",
+      "source": "figures/data/figure5c_numerical_use_candidates/per_split.csv",
       "source_sha256": "c18c06622febdf58e84dfd917f039607ace1e94336f7a76ffa43834f4f9d77db",
       "sha256": "c18c06622febdf58e84dfd917f039607ace1e94336f7a76ffa43834f4f9d77db",
       "transformation": "byte-for-byte copy"
     },
     "deletion_control_contrasts.csv": {
-      "source": "data/figures/deletion/paired_control_contrasts.csv",
+      "source": "figures/data/figure5c_numerical_use_candidates/paired_control_contrasts.csv",
       "source_sha256": "dc5f919e602038505bb48c686c94376de8739c936c60ac993f1c58899b917dff",
       "sha256": "dc5f919e602038505bb48c686c94376de8739c936c60ac993f1c58899b917dff",
       "transformation": "byte-for-byte copy"
     },
     "parity_contradiction_counts.csv": {
-      "source": "data/figures/number_property_evidence_main/contradiction_counts.csv",
+      "source": "figures/data/number_property_evidence_main/contradiction_counts.csv",
       "source_sha256": "70c1145802fa206c3f25acb551d1fb56fa486cff619fe981d2b16cc5b5dc2aec",
       "sha256": "70c1145802fa206c3f25acb551d1fb56fa486cff619fe981d2b16cc5b5dc2aec",
       "transformation": "byte-for-byte copy"
     },
     "parity_contradiction_examples.json": {
-      "source": "data/figures/number_property_evidence_main/examples.json",
+      "source": "figures/data/number_property_evidence_main/examples.json",
       "source_sha256": "41262bda65831029d3b6d952b14156400902fdf579b18485839256631b2c12e7",
       "sha256": "990a6432985b261a70bd78b86ea176609f7166ad8294ee8fa95a2075f2c0948f",
-      "transformation": "Frozen experiment configurations with relative artifact identifiers and SHA-256 hashes."
+      "transformation": "Copy all example/configuration fields; replace source repository names with anonymous descriptive labels. Retain upstream relative artifact names and SHA-256 hashes."
     },
     "property_accessibility.csv": {
-      "source": "data/figures/number_property_evidence_main/accessibility.csv",
+      "source": "figures/data/number_property_evidence_main/accessibility.csv",
       "source_sha256": "dfafee10665b7f98438974856ce81545365e569ccd47605e089b7764bdfe1654",
       "sha256": "dfafee10665b7f98438974856ce81545365e569ccd47605e089b7764bdfe1654",
       "transformation": "byte-for-byte copy"
     },
     "steering_accuracy_rows.csv.gz": {
-      "source": "data/figures/numerical_sufficiency_atlas/steering_accuracy_rows.csv.gz",
+      "source": "figures/data/numerical_sufficiency_atlas/steering_accuracy_rows.csv.gz",
       "source_sha256": "d9f8f0c695c9f43e4bace03ed3e324eba1b25549b690d5097b4581f681ce5ba6",
       "sha256": "d9f8f0c695c9f43e4bace03ed3e324eba1b25549b690d5097b4581f681ce5ba6",
       "transformation": "byte-for-byte copy"
@@ -1070,28 +1070,107 @@
       "transformation": "Select split, task_id, source_value, family, baseline_correct, intervention_correct. Average control seeds within split/task/value/family; retain 56,000 source-condition units from 98,000 raw rows."
     },
     "probe_uncertainty.csv": {
-      "source": "data/figures/conditional_uncertainty/probe_metrics.csv",
+      "source": "figures/data/conditional_uncertainty/probe_metrics.csv",
       "source_sha256": "5af9ae33be6e459c0f17de432cf0ebce00cddddb62b2040eee145c4480e6cf63",
-      "sha256": "5af9ae33be6e459c0f17de432cf0ebce00cddddb62b2040eee145c4480e6cf63",
+      "sha256": "655d579076e2693ce39787cf84a046e7916dd612b3dfedb32c31370bc8321a78",
       "transformation": "byte-for-byte copy; independently recalculated by current CPU runner"
     },
     "steering_uncertainty.csv": {
-      "source": "data/figures/conditional_uncertainty/steering_accuracy.csv",
+      "source": "figures/data/conditional_uncertainty/steering_accuracy.csv",
       "source_sha256": "2232af8843a4f89c4e33d28bb27b1561a8969eff170d9d0090bdb2943a4ad378",
       "sha256": "2232af8843a4f89c4e33d28bb27b1561a8969eff170d9d0090bdb2943a4ad378",
       "transformation": "byte-for-byte copy; independently recalculated by current CPU runner"
     },
     "appendix_capacity_points.jsonl.gz": {
-      "source": "data/figures/probe_capacity_paths/points.jsonl",
+      "source": "figures/data/probe_capacity_paths/points.jsonl",
       "source_sha256": "bd5ee278cbedde36f583eb8ad35c3e141984bbaf4e8307e94cba610c745fc173",
       "sha256": "685cbff7aab266f80c36308b7183be6d613b1da3cb29d9f231774deec2370be4",
       "transformation": "gzip compression with timestamp zero; decoded bytes unchanged"
     },
     "appendix_capacity_baselines.jsonl": {
-      "source": "data/figures/probe_capacity_paths/baseline_by_model.jsonl",
+      "source": "figures/data/probe_capacity_paths/baseline_by_model.jsonl",
       "source_sha256": "06f965e88bde1ba77244ce20dd774ee6010e6859fcd4ce4b08cfcaadf6470f22",
       "sha256": "06f965e88bde1ba77244ce20dd774ee6010e6859fcd4ce4b08cfcaadf6470f22",
       "transformation": "byte-for-byte copy"
+    },
+    "../figures/numerical_sufficiency_atlas/individual_prompt_fits/code_support.csv": {
+      "source": "figures/data/numerical_sufficiency_atlas/individual_prompt_fits/code_support.csv",
+      "source_sha256": "4ebe35dfd0b9af90332ed58331f2d42543df44c462e58f724688f97f17b516a7",
+      "sha256": "4ebe35dfd0b9af90332ed58331f2d42543df44c462e58f724688f97f17b516a7",
+      "transformation": "byte-for-byte copy; current matched individual-prompt Figure 7 packet"
+    },
+    "../figures/numerical_sufficiency_atlas/individual_prompt_fits/component_predictions.csv": {
+      "source": "figures/data/numerical_sufficiency_atlas/individual_prompt_fits/component_predictions.csv",
+      "source_sha256": "44b29fe4c7a802027174d9d7a5b4f8e838a729f9a5298612bf1c9f6747462854",
+      "sha256": "44b29fe4c7a802027174d9d7a5b4f8e838a729f9a5298612bf1c9f6747462854",
+      "transformation": "byte-for-byte copy; current matched individual-prompt Figure 7 packet"
+    },
+    "../figures/numerical_sufficiency_atlas/individual_prompt_fits/decoding_metrics.csv": {
+      "source": "figures/data/numerical_sufficiency_atlas/individual_prompt_fits/decoding_metrics.csv",
+      "source_sha256": "a24ad1baf5f1a344892f4f83895881bb8d351b9ef1df22a226da4c280ae76948",
+      "sha256": "a24ad1baf5f1a344892f4f83895881bb8d351b9ef1df22a226da4c280ae76948",
+      "transformation": "byte-for-byte copy; current matched individual-prompt Figure 7 packet"
+    },
+    "../figures/numerical_sufficiency_atlas/individual_prompt_fits/decoding_predictions.csv": {
+      "source": "figures/data/numerical_sufficiency_atlas/individual_prompt_fits/decoding_predictions.csv",
+      "source_sha256": "49249492943ad3fe5c1c55cfd7230e65053f2037935c3c70bfbe6b7e4141badd",
+      "sha256": "49249492943ad3fe5c1c55cfd7230e65053f2037935c3c70bfbe6b7e4141badd",
+      "transformation": "byte-for-byte copy; current matched individual-prompt Figure 7 packet"
+    },
+    "../figures/numerical_sufficiency_atlas/individual_prompt_fits/manifest.json": {
+      "source": "figures/data/numerical_sufficiency_atlas/individual_prompt_fits/manifest.json",
+      "source_sha256": "e0a8a5a1c928eb798c522f00c0cd6ea001a33118c41fca8dc86f797e45cf3047",
+      "sha256": "e0a8a5a1c928eb798c522f00c0cd6ea001a33118c41fca8dc86f797e45cf3047",
+      "transformation": "byte-for-byte copy; current matched individual-prompt Figure 7 packet"
+    },
+    "../figures/numerical_sufficiency_atlas/individual_prompt_fits/steering_rows.csv.gz": {
+      "source": "figures/data/numerical_sufficiency_atlas/individual_prompt_fits/steering_rows.csv.gz",
+      "source_sha256": "b9255ca77c1436e3cb8a1cb4cb17a67fd94d7e83e8de22122ba87c9d0d24aa49",
+      "sha256": "b9255ca77c1436e3cb8a1cb4cb17a67fd94d7e83e8de22122ba87c9d0d24aa49",
+      "transformation": "byte-for-byte copy; current matched individual-prompt Figure 7 packet"
+    },
+    "../figures/numerical_sufficiency_atlas/individual_prompt_fits/steering_summary.csv": {
+      "source": "figures/data/numerical_sufficiency_atlas/individual_prompt_fits/steering_summary.csv",
+      "source_sha256": "94857c56caaf5f08dfa89d029db218e636cc635b92f0413a2bb9e6037e556a8d",
+      "sha256": "94857c56caaf5f08dfa89d029db218e636cc635b92f0413a2bb9e6037e556a8d",
+      "transformation": "byte-for-byte copy; current matched individual-prompt Figure 7 packet"
+    },
+    "reported_config.json": {
+      "source": "Figure 7 matched-fit manifest and preserved experiment conditions",
+      "sha256": "1e0a5a0b72462be4032d77669e37242636083bd37575d74ecba5d147b44acbcd",
+      "transformation": "Current Figure 7 metadata updated; other experiment conditions preserved."
+    },
+    "figure7_model_sources.json": {
+      "source": "Pinned numerical source snapshot and original Figure 7 input manifest",
+      "sha256": "c02ab78ca91a322c47e55a46287c44448d9fdf19c3c36828c4f8184ce92f97ee",
+      "transformation": "Source hashes checked against the original run; exporter checked against the observation manifest."
+    },
+    "reproduced_test_predictions.csv": {
+      "sha256": "3511e14eaa284793d3a29229bdf4f3791cc49a91ea03af74d98216171bc91cb0",
+      "bytes": 7737,
+      "transformation": "Complete held-out probe predictions; classifier fitting settings and source identities are recorded in probe_prediction_provenance.json."
+    },
+    "probe_prediction_provenance.json": {
+      "sha256": "54f59b991df04563662fed097f066f660c7cdc2079f1a5bbd77523b8b3e3573f",
+      "bytes": 1086,
+      "transformation": "Complete held-out probe predictions; classifier fitting settings and source identities are recorded in probe_prediction_provenance.json."
+    }
+  },
+  "figure7_update": {
+    "date": "2026-10-17",
+    "run_identity": "c5398ee4b3b87d6df98409189a13c2028078e136171e11a91265793fdb44e437",
+    "superseded_inputs": [
+      "steering_accuracy_rows.csv.gz",
+      "steering_uncertainty.csv"
+    ],
+    "current_input_directory": "figure7_individual",
+    "primary_edit_rule": "prediction_corrected",
+    "intervention_rows": 16000,
+    "post_edit_probe_target_counts": {
+      "linear": 2000,
+      "circular_reg": 2000,
+      "linear_label_difference": 31,
+      "circular_reg_label_difference": 704
     }
   }
 }

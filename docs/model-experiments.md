@@ -1,11 +1,12 @@
 # Model experiments
 
-The two experiment directories have separate environments:
+The experiment directories have separate environments:
 
 | Directory | Python | Experiments |
 | --- | --- | --- |
 | `experiments/numerical/` | 3.12 | Numerical probes, complexity, prompt transfer, deletion, parity classification, and coefficient prediction |
 | `experiments/properties/` | 3.13 | Property directions, prompt screening, and number-list steering |
+| `experiments/individual_property_control/` | 3.13 | Complete nineteen-property experiment under both instruction formats |
 
 Run `uv sync --locked` within the selected directory. Each directory includes
 its source dependencies, configuration files, and resolved `uv.lock`. Model
@@ -14,15 +15,17 @@ Obtain checkpoints from their providers under the relevant access terms.
 
 ## Inputs and configurations
 
-The `model-inputs.tar.gz` artifact contains complete reusable prompt datasets,
+The [paper-2026-11-15 release](https://github.com/bheinzerling/linear-representation-hypothesis/releases/tag/paper-2026-11-15)
+provides `model-inputs.tar.gz`, containing complete reusable prompt datasets,
 fitted tensors, and intermediate results. Its contents and checksums are in
 `data/manifests/model-inputs.json`. Extract it from the repository root:
 
 ```bash
-uv run python scripts/prepare_model_inputs.py --archive artifacts/model-inputs.tar.gz
+uv run python scripts/prepare_model_inputs.py --download
 ```
 
-The command verifies the archive and each extracted file, places the inputs
+The command downloads the release asset when it is absent, verifies the archive
+and each extracted file, and places the inputs
 under the two experiment directories, and refuses to overwrite differing
 existing files. These are full inputs; no tensor axes or prompt tables are
 truncated. Checkpoints and large activation caches are obtained or generated
@@ -146,3 +149,32 @@ Use each entry point's `--help` for stage and output options. The CPU evidence
 contains all 1,200 held-out coefficient-prediction rows and the summary from the
 separate output-scored search. Their input information, doses, and reused target
 values are documented in the numerical data guide and manuscript.
+
+## Figure 7 decoding and interventions
+
+The individual-prompt probes are fitted on 800 training values and evaluated
+on 100 development source prompts, with twenty target replacements each.
+The prediction-corrected edit subtracts the current probe prediction from the
+target code before applying the probe pseudoinverse. Post-edit probe predictions
+are checked after application in FP16.
+
+From `experiments/numerical/`, prepare and execute the matched comparison:
+
+```bash
+uv run python scripts/prepare_figure7_matched_inputs.py --model-path /path/to/checkpoint --output out/figure7_inputs
+CUBLAS_WORKSPACE_CONFIG=:4096:8 uv run python scripts/run_figure7_matched_probes.py --inputs out/figure7_inputs --model-path /path/to/checkpoint --output out/figure7_run
+```
+
+The preparation script identifies its canonical prompt, replacement-panel, and
+activation-cache inputs. The release includes its fitting, validation and export
+sources. The complete CPU observations are in
+`data/figures/numerical_sufficiency_atlas/individual_prompt_fits/`.
+The root numerical workflow verifies all eight conditions and post-edit probe
+targets and writes the prediction and intervention diagnostics to `out/reproduction/`.
+
+The appendix property-control observations are in `data/individual_property_control/`.
+Its CPU calculation independently replays both formats' saved outputs, baseline
+qualification, development selections, paired controls, and bootstrap intervals.
+The full nineteen-property enumeration identifies seven properties under the
+caption's observed-rate rule. The [property-control guide](individual-property-control.md)
+documents the complete configuration and model-execution commands.
