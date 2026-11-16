@@ -18,6 +18,8 @@ provide a framework for assessing the evidence for each claim.
   and the completed [60-episode author audit](data/literature/human_audit/README.md).
 - [Experiment map](docs/experiment-map.md): each paper figure's inputs,
   calculations, and reproduction command.
+- [Figure 1 retrieval evidence](data/mentions/README.md): dated count records,
+  all screening candidate identities, and disclosed historical retrieval limits.
 - [Numerical data](data/numerical/README.md): frozen observations, experiment
   configurations, and uncertainty definitions.
 - [Individual property control](docs/individual-property-control.md): complete saved generations, development selection, paired controls, and CPU reconstruction of the appendix intervals and seven-property result.
@@ -65,6 +67,9 @@ With a LaTeX installation providing `pdflatex`, `bibtex`, and `texfot`, run:
 
 The PDF and SyncTeX mapping are written to `paper/out/`. See
 [paper/README.md](paper/README.md).
+
+[Publisher-record verification](docs/bibliography-verification.md) documents the
+four references checked in the provenance follow-up and the unavailable exports.
 
 ## Citation and licenses
 

@@ -11,6 +11,7 @@ from pathlib import Path
 from lrh.analysis.human_audit import verify as verify_human_audit
 from lrh.analysis.human_audit import verify_manuscript
 from lrh.analysis.probe_mdl import calculate as verify_probe_mdl
+from lrh.analysis.retrieval_provenance import verify as verify_retrieval_provenance
 from lrh.io import sha256
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -118,6 +119,7 @@ def verify_paper_tables(root: Path = ROOT) -> int:
 
 def main() -> None:
     inputs = verify_manifest()
+    retrieval = verify_retrieval_provenance(ROOT / "data/mentions")
     sources = verify_model_imports()
     figure7_sources = verify_figure7_sources()
     cells = verify_paper_tables()
@@ -135,6 +137,11 @@ def main() -> None:
     print(
         f"Verified {inputs} frozen inputs, {sources} model-source files, "
         f"{figure7_sources} Figure 7 source hashes, and {cells} manuscript table cells."
+    )
+    print(
+        f"Verified {retrieval['annual_observations']} frozen search observations and "
+        f"{retrieval['screening']['title_groups']} candidate identities; "
+        "historical search execution remains independently unverified."
     )
 
 

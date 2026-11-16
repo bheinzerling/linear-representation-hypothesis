@@ -1151,8 +1151,8 @@
       "transformation": "Complete held-out probe predictions; classifier fitting settings and source identities are recorded in probe_prediction_provenance.json."
     },
     "probe_prediction_provenance.json": {
-      "sha256": "54f59b991df04563662fed097f066f660c7cdc2079f1a5bbd77523b8b3e3573f",
-      "bytes": 1086,
+      "sha256": "0139e04269cdce86b0cbc8c33859a1510eac2077907e5677e39abe59ae6faa4a",
+      "bytes": 1530,
       "transformation": "Complete held-out probe predictions; classifier fitting settings and source identities are recorded in probe_prediction_provenance.json."
     }
   },

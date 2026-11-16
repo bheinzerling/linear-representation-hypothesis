@@ -1,0 +1,186 @@
+{
+  "report_stem": "2026-07-30-lrh-mentions-over-time",
+  "started_at": "2026-07-30T09:25:24+00:00",
+  "completed_at": "2026-07-30T09:29:49+00:00",
+  "year_range": [
+    2010,
+    2026
+  ],
+  "partial_year": 2026,
+  "semantic_scholar": {
+    "release_id": "2026-07-21",
+    "endpoint": "https://api.semanticscholar.org/graph/v1/paper/search/bulk",
+    "scope": "fieldsOfStudy=Computer Science",
+    "search_fields": "title and abstract",
+    "query_audit": [
+      {
+        "source": "semantic_scholar",
+        "lexicon": "explicit_label",
+        "query": "\"linear representation hypothesis\"",
+        "reported_total": 58,
+        "retrieved": 58
+      },
+      {
+        "source": "semantic_scholar",
+        "lexicon": "linear_representation",
+        "query": "\"linear representation\"",
+        "reported_total": 1631,
+        "retrieved": 1631
+      },
+      {
+        "source": "semantic_scholar",
+        "lexicon": "linear_representation",
+        "query": "\"linearly represented\"",
+        "reported_total": 209,
+        "retrieved": 209
+      },
+      {
+        "source": "semantic_scholar",
+        "lexicon": "linear_representation",
+        "query": "\"represented linearly\"",
+        "reported_total": 275,
+        "retrieved": 275
+      },
+      {
+        "source": "semantic_scholar",
+        "lexicon": "linear_probe",
+        "query": "\"linear probe\"",
+        "reported_total": 1447,
+        "retrieved": 1447
+      },
+      {
+        "source": "semantic_scholar",
+        "lexicon": "linear_probe",
+        "query": "\"linear probing\"",
+        "reported_total": 1447,
+        "retrieved": 1447
+      }
+    ]
+  },
+  "acl_anthology": {
+    "repository": "https://github.com/acl-org/acl-anthology",
+    "commit": "50c6ff08685b8f8d0515cbb26f3fccb7a7b3bd71",
+    "metadata_path": "data/xml",
+    "parse_errors": []
+  },
+  "openalex": {
+    "endpoint": "https://api.openalex.org/works",
+    "scope": "primary_topic.field.id=17 (Computer Science)",
+    "search_fields": "title, abstract, and separate full-text index query",
+    "deduplication": "normalized title; earliest publication year retained",
+    "query_audit": [
+      {
+        "source": "openalex",
+        "field": "title_and_abstract",
+        "lexicon": "explicit_label",
+        "query": "\"linear representation hypothesis\"",
+        "reported_total": 97,
+        "retrieved": 97
+      },
+      {
+        "source": "openalex",
+        "field": "title_and_abstract",
+        "lexicon": "linear_representation",
+        "query": "\"linear representation\"",
+        "reported_total": 1096,
+        "retrieved": 1098
+      },
+      {
+        "source": "openalex",
+        "field": "title_and_abstract",
+        "lexicon": "linear_representation",
+        "query": "\"linearly represented\"",
+        "reported_total": 163,
+        "retrieved": 164
+      },
+      {
+        "source": "openalex",
+        "field": "title_and_abstract",
+        "lexicon": "linear_representation",
+        "query": "\"represented linearly\"",
+        "reported_total": 175,
+        "retrieved": 175
+      },
+      {
+        "source": "openalex",
+        "field": "title_and_abstract",
+        "lexicon": "linear_probe",
+        "query": "\"linear probe\"",
+        "reported_total": 1456,
+        "retrieved": 1450
+      },
+      {
+        "source": "openalex",
+        "field": "title_and_abstract",
+        "lexicon": "linear_probe",
+        "query": "\"linear probing\"",
+        "reported_total": 1456,
+        "retrieved": 1448
+      }
+    ],
+    "fulltext_reported_total": 651,
+    "fulltext_retrieved": 651,
+    "fulltext_deduped": 567
+  },
+  "arxiv": {
+    "endpoint": "https://export.arxiv.org/api/query",
+    "scope_categories": [
+      "cs.AI",
+      "cs.CL",
+      "cs.CV",
+      "cs.LG",
+      "cs.NE",
+      "stat.ML"
+    ],
+    "year": "first submission year",
+    "search_fields": "arXiv API all metadata fields; exact title/abstract check local",
+    "query_audit": [
+      {
+        "source": "arxiv",
+        "lexicon": "explicit_label",
+        "query": "all:\"linear representation hypothesis\"",
+        "reported_total_all_categories": 57,
+        "retrieved_in_scope": 56
+      },
+      {
+        "source": "arxiv",
+        "lexicon": "linear_representation",
+        "query": "all:\"linear representation\"",
+        "reported_total_all_categories": 941,
+        "retrieved_in_scope": 308
+      },
+      {
+        "source": "arxiv",
+        "lexicon": "linear_representation",
+        "query": "all:\"linearly represented\"",
+        "reported_total_all_categories": 24,
+        "retrieved_in_scope": 18
+      },
+      {
+        "source": "arxiv",
+        "lexicon": "linear_representation",
+        "query": "all:\"represented linearly\"",
+        "reported_total_all_categories": 12,
+        "retrieved_in_scope": 4
+      },
+      {
+        "source": "arxiv",
+        "lexicon": "linear_probe",
+        "query": "all:\"linear probe\"",
+        "reported_total_all_categories": 959,
+        "retrieved_in_scope": 878
+      },
+      {
+        "source": "arxiv",
+        "lexicon": "linear_probe",
+        "query": "all:\"linear probing\"",
+        "reported_total_all_categories": 960,
+        "retrieved_in_scope": 879
+      }
+    ]
+  },
+  "software": {
+    "python": "3.14.3 (main, Mar 24 2026, 22:47:01) [Clang 22.1.1 ]",
+    "collector_sha256": "66e50ca49035de2299ef31d1dfc55067843d80c6fe6c602228a66f65de203e63"
+  }
+}

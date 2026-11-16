@@ -15,7 +15,7 @@ Obtain checkpoints from their providers under the relevant access terms.
 
 ## Inputs and configurations
 
-The [paper-2026-11-16 release](https://github.com/bheinzerling/linear-representation-hypothesis/releases/tag/paper-2026-11-16)
+The [paper-2026-11-16-provenance release](https://github.com/bheinzerling/linear-representation-hypothesis/releases/tag/paper-2026-11-16-provenance)
 provides `model-inputs.tar.gz`, containing complete reusable prompt datasets,
 fitted tensors, and intermediate results. Its contents and checksums are in
 `data/manifests/model-inputs.json`. Extract it from the repository root:
@@ -32,14 +32,29 @@ truncated. Checkpoints and large activation caches are obtained or generated
 separately.
 
 The input downloader retains the checksum-pinned 15 November asset URL; the
-16 November release supplies the identical input archive. The corrected
-reproduction sources and manuscript are in the 16 November source archive.
+provenance follow-up release supplies the identical input archive. The corrected
+reproduction sources, retrieval evidence, and manuscript are in its source archive.
 
 `data/numerical/reported_config.json` records the paper's comparison conditions.
 Preserve checkpoint revisions, numerical precision, prompt partitions, and
 selection settings for a matched rerun. The appendix complexity sweep uses
 Llama 3.1 8B; the transfer sweep uses Llama 3 8B. The complexity configurations
 for this distinction are in `configs/figure10_llama31_capacity_20260909/`.
+
+## Historical Figure 3 activations
+
+The historical Llama-3.1-8B cache has SHA-256
+`42cf4af31df100654d0efebc27e0a82d375464fd1833e54b121e85cc9418092a`.
+The surviving collection records identify the model, layer, prompts, seed,
+batch size and precision, but contain no resolved checkpoint revision,
+attention implementation or collection software versions. The release excludes
+this large cache. Exact historical activation regeneration is unavailable.
+
+The root CPU workflow verifies Figure 3's results from released predictions
+and observations, whose hashes are in `data/MANIFEST.sha256` and
+`data/numerical/probe_prediction_provenance.json`. A new model-forward run
+is a replication with a newly recorded checkpoint, runtime and activation
+hash. The pinned Figure 7 checkpoint identifies its separate matched run.
 
 ## Transfer and complexity
 

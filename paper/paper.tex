@@ -489,11 +489,14 @@ The transfer experiments also use a single split of numerical values, leaving se
 \appendixsection{Search Procedure for Figure~\ref{fig:lrh-mentions}}
 \label{sec:lrh-search}
 
-Figure~\ref{fig:lrh-mentions} counts scholarly database results for the exact phrase \emph{``linear representation hypothesis''}, once per result.
-The gray \href{https://scholar.google.com/}{Google Scholar} series was collected in December 2025 \citep{lee2026survey}; the ochre Google Scholar and blue \href{https://openalex.org/}{OpenAlex} series were collected on 31 July 2026.
-Google Scholar reports approximate totals under default settings, potentially including multiple versions and references; OpenAlex \texttt{search.exact} searches titles, abstracts, and indexed full text, including references.
-Because these retrieval procedures differ, the series should be interpreted separately.
-Dashed segments indicate partial 2026 counts.
+Figure~\ref{fig:lrh-mentions} reproduces stored annual counts of database search results for the exact phrase \emph{``linear representation hypothesis''}.
+The gray \href{https://scholar.google.com/}{Google Scholar} series is transcribed from the December 2025 counts in Table~1 of \citet{lee2026survey}; the ochre Google Scholar and blue \href{https://openalex.org/}{OpenAlex} series are dated 31 July 2026 in the original count table.
+The Google Scholar totals are approximate estimates.
+The recorded OpenAlex URL specifies \texttt{search.exact} and grouping by publication year across all fields.
+Because these retrieval procedures differ, the series should be interpreted separately; dashed segments indicate partial 2026 counts.
+The reproducibility packet preserves the dated source table, recorded query URLs, and a ledger distinguishing these annual observations from the screening corpus below.
+The original July responses, page captures, and exact access times were not retained; Google Scholar's year-filter parameters are also unavailable.
+These omissions prevent independent verification of the historical July database totals.
 
 As a manual check of retrieved mentions, we examined passages from the 206-document full-text corpus described in Appendix~\ref{sec:evidence-comparison}.
 This corpus comprises accessible PDFs from candidates with at least one citation and detected main-body phrase matches.
@@ -610,8 +613,12 @@ For efficiency, invariance, and structural correspondence, a concrete claim spec
 \appendixsection{Expanded Evidence Comparison}
 \label{sec:evidence-comparison}
 
-Table~\ref{tab:evidence-full} compares 11 citation-prioritized studies from the OpenAlex exact-phrase search in Figure~\ref{fig:lrh-mentions} with 19 studies drawn from the broader literature review.
-For the exact-phrase corpus, 519 of 567 OpenAlex candidates resolved to Semantic Scholar \citep{ammar2018semantic}.
+Table~\ref{tab:evidence-full} compares 11 citation-prioritized studies from the OpenAlex screening corpus with 19 studies drawn from the broader literature review.
+The screening corpus comes from a separate full-text search restricted to Computer Science, recorded by the collector run on 30 July 2026.
+Its 651 retrieved records yielded 567 candidates after merging normalized titles and retaining the earliest publication year within each group.
+For empty normalized titles, grouping used arXiv identifiers, then DOIs, then OpenAlex identifiers.
+This pool differs from Figure~\ref{fig:lrh-mentions}'s annual observations in query date, search expression, and field restriction.
+Of these 567 candidates, 519 resolved to Semantic Scholar \citep{ammar2018semantic}.
 Among these matches, we sought full text for the 311 candidates with at least one citation, in citation order, retaining 206 documents with main-body phrase matches.
 To complement this citation-prioritized selection, the broader review includes favorable and contrary findings across every claim category.
 Both tables group studies by the claim category used to organize the comparison.
@@ -818,7 +825,8 @@ Filled area gives qualitative evidence strength, not effect size.}
 \paragraph{Llama-3.1-8B setup.}
 
 The representative analysis in Figure~\ref{fig:decodability}c uses \texttt{meta-llama/Llama-3.1-8B} and 4096-dimensional float16 residual activations.
-The checkpoint revision for these activations is unrecorded; the released data identify the activation cache by its SHA-256 hash.
+The checkpoint revision is unrecorded, preventing exact historical activation regeneration.
+The CPU workflow verifies released predictions and observations.
 Repository layer index 10 counts the embedding as index 0, so it records the output after the tenth Transformer block.
 We extract this activation at the final token of the right-hand source number in a few-shot addition-formula prompt.
 The prompt has three fixed demonstrations followed by \texttt{$x$+$s$=}, where $s\in\{0,\ldots,999\}$ is the probed source value.
@@ -1246,7 +1254,8 @@ The code and data archives accompany the arXiv version as ancillary files, avail
 They contain observations for the quantitative panels in Figures~\ref{fig:lrh-mentions}, \ref{fig:decodability}--\ref{fig:numerical-sufficiency-atlas}, with a map from each panel to its inputs and outputs.
 The software archive's \texttt{README.md} and \texttt{EXPERIMENT\_MAP.md} describe these mappings and the reproduction commands; the data archive's \texttt{README.md} describes the distributed observations.
 The CPU-only workflow verifies SHA-256 manifests and recomputes metrics, uncertainty intervals, and numerical plots, including the six-model complexity sweep and supporting appendix analyses, without downloading a model.
-For model-forward reproduction, the archives also include experiment sources and configurations with synthetic prompts and fixed intervention inputs; running these sources uses public checkpoints and regenerates activation caches.
+For model-forward reproduction, the archives provide experiment sources and configurations with synthetic prompts and fixed intervention inputs.
+These sources regenerate activations from public checkpoints, with the historical Figure~\ref{fig:decodability} limitation described in Appendix~\ref{sec:numerical-probe-setup}.
 The archives exclude model weights, activation caches, and published-paper PDFs.
 
 The numerical data consist of generated integers, arithmetic prompts, and number-property questions, with corresponding model outputs and derived statistics.

@@ -41,6 +41,12 @@ uv run --group dev ruff check src scripts tests
 The numerical results are recalculated from saved observations. This workflow
 does not collect new activations or refit models. Bootstrap intervals condition
 on the stored fitted probes, intervention bases, and experimental conditions.
+The original Figure 3 activation cache is excluded from the release, and its
+checkpoint revision and collection software versions were not recorded.
+Exact regeneration of that historical input is unavailable. Released per-value
+predictions and observations support CPU verification of the reported results;
+new activation collection constitutes a replication with a newly recorded
+checkpoint and runtime. See [the model guide](model-experiments.md#historical-figure-3-activations).
 The numerical data guide describes complete per-value probe predictions and the fixed
 evaluation sets for which no population-sampling interpretation is claimed.
 
@@ -64,7 +70,7 @@ After an authorized publication, verify the actual public branch, tag, and
 downloaded release assets:
 
 ```bash
-uv run python scripts/verify_publication.py --tag paper-2026-11-16
+uv run python scripts/verify_publication.py --tag paper-2026-11-16-provenance
 ```
 
 The verifier requires a clean checkout, the default branch and release tag to

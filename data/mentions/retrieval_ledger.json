@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "assembled_on": "2026-11-16",
+  "historical_retrieval_independently_verified": false,
+  "annual_series": [
+    {
+      "series_id": "google_scholar_survey",
+      "snapshot_date": "2025-12",
+      "date_precision": "month",
+      "source_record": "source_evidence/annual_count_records.csv",
+      "source_url_recorded": "https://openreview.net/pdf/f6fec7a1ed49130ca273456ad46bb02e8392ffc2.pdf",
+      "request_timestamp_utc": null,
+      "raw_response_file": null,
+      "response_http_status": null,
+      "raw_response_sha256": null,
+      "historical_execution_independently_verified": false,
+      "annual_counts": {
+        "2022": 2,
+        "2023": 11,
+        "2024": 149,
+        "2025": 447
+      },
+      "partial_years": [],
+      "measurement": "approximate Google Scholar totals transcribed from the survey",
+      "request_parameters_recorded": null,
+      "annual_filter_parameters": null,
+      "filters_known_complete": false,
+      "published_confirmation": {
+        "url": "https://aclanthology.org/2026.blackboxnlp-1.48/",
+        "table": 1,
+        "pdf_page": 1
+      },
+      "evidence_status": "published count table; original authors' search requests and captures unavailable"
+    },
+    {
+      "series_id": "google_scholar_current",
+      "snapshot_date": "2026-07-31",
+      "date_precision": "day",
+      "source_record": "source_evidence/annual_count_records.csv",
+      "source_url_recorded": "https://scholar.google.com/scholar?q=%22linear+representation+hypothesis%22",
+      "request_timestamp_utc": null,
+      "raw_response_file": null,
+      "response_http_status": null,
+      "raw_response_sha256": null,
+      "historical_execution_independently_verified": false,
+      "annual_counts": {
+        "2022": 3,
+        "2023": 13,
+        "2024": 157,
+        "2025": 491,
+        "2026": 676
+      },
+      "partial_years": [
+        2026
+      ],
+      "measurement": "approximate annual result counts from the recorded low-rate pilot",
+      "request_parameters_recorded": {
+        "q": "\"linear representation hypothesis\""
+      },
+      "year_selection": "year labels in the frozen table; exact year-filter parameters not retained",
+      "annual_filter_parameters": null,
+      "filters_known_complete": false,
+      "evidence_status": "dated table; original page captures, access time, locale and exact year-filter URLs unavailable"
+    },
+    {
+      "series_id": "openalex_current",
+      "snapshot_date": "2026-07-31",
+      "date_precision": "day",
+      "source_record": "source_evidence/annual_count_records.csv",
+      "source_url_recorded": "https://api.openalex.org/works?search.exact=%22linear%20representation%20hypothesis%22&group_by=publication_year",
+      "request_timestamp_utc": null,
+      "raw_response_file": null,
+      "response_http_status": null,
+      "raw_response_sha256": null,
+      "historical_execution_independently_verified": false,
+      "annual_counts": {
+        "2022": 0,
+        "2023": 21,
+        "2024": 136,
+        "2025": 183,
+        "2026": 526
+      },
+      "partial_years": [
+        2026
+      ],
+      "measurement": "database result counts as recorded in the historical table",
+      "request_parameters_recorded": {
+        "search.exact": "\"linear representation hypothesis\"",
+        "group_by": "publication_year"
+      },
+      "year_selection": "publication_year response groups; no request year or field filter is recorded",
+      "annual_filter_parameters": null,
+      "filters_known_complete": false,
+      "evidence_status": "dated table and query URL; raw grouped response not retained"
+    }
+  ],
+  "screening": {
+    "run_started_at": "2026-07-30T09:25:24+00:00",
+    "run_completed_at": "2026-07-30T09:29:49+00:00",
+    "timestamp_definition": "whole-collector interval; individual OpenAlex HTTP request times were not recorded",
+    "query_evidence_status": "archived run metadata and surviving collector; exact HTTP requests unavailable",
+    "endpoint": "https://api.openalex.org/works",
+    "parameters_from_surviving_collector": {
+      "filter": "fulltext.search:\"linear representation hypothesis\",primary_topic.field.id:17",
+      "select": "id,doi,display_name,publication_year,publication_date,ids,primary_topic,type,content_urls",
+      "per-page": 100,
+      "initial_cursor": "*"
+    },
+    "field_id": "https://openalex.org/fields/17",
+    "reported_and_retrieved_records": 651,
+    "source_id_memberships": 651,
+    "unique_source_ids": 649,
+    "title_groups": 567,
+    "resolved_to_semantic_scholar": 519,
+    "positive_citation_candidates": 311,
+    "retained_documents": 206,
+    "deduplication": "NFKC normalize, collapse whitespace, casefold, replace runs outside ASCII a-z/0-9 with one space, and strip; group identical nonempty normalized titles; retain first record ID, concatenate source-ID memberships, and retain earliest nonzero publication year. Fallback keys for an empty normalized title: arXiv ID, DOI, then OpenAlex ID.",
+    "recorded_collector_sha256": "66e50ca49035de2299ef31d1dfc55067843d80c6fe6c602228a66f65de203e63",
+    "surviving_collector_sha256": "1dc48bc9abb1eb79a96c677dd775029359e106d24729adcbc0f660ff5fef32fe",
+    "exact_recorded_collector_recovered": false,
+    "candidate_file": "screening_candidates.csv"
+  },
+  "annual_to_screening_relationship": {
+    "plotted_openalex_2022_2026_sum": 866,
+    "annual_query_date": "2026-07-31",
+    "screening_collection_date": "2026-07-30",
+    "annual_search_expression": "search.exact",
+    "screening_search_expression": "fulltext.search with Computer Science primary field",
+    "screening_is_deduplicated_subset_of_annual_response_verified": false
+  },
+  "limitations": [
+    "The July annual series are preserved dated observations; the original HTTP responses or Google Scholar page captures and exact access times are unavailable.",
+    "The July Google Scholar records omit exact year-filter URLs and locale. No such parameters have been invented.",
+    "The OpenAlex annual URL records search.exact and grouping, but is not a saved request/response log; completeness of other request settings cannot be certified.",
+    "The screening pool and annual count series use different dates, search expressions and field restrictions. Their totals must not be treated as the same denominator.",
+    "The collector-run metadata records a source hash that does not match the surviving collector or either recovered Git version. The excerpt documents surviving code; the exact historical executable was not recovered.",
+    "The candidate packet preserves grouped identifiers and retained years, not complete pre-deduplication API responses. Two source IDs appear twice within their groups; 651 memberships therefore contain 649 distinct IDs.",
+    "Current database queries cannot independently validate historical result totals."
+  ],
+  "files": {
+    "fulltext_comparison_counts.csv": {
+      "sha256": "99645d1293a5321a183069647988ec9445b0ef8d1760d0df6fed64871034ba5e"
+    },
+    "screening_candidates.csv": {
+      "sha256": "b9d32b39073c9aa5f1b37b01010f73cac95131d4b79eddce0eeaa2ddbf9e98a4"
+    },
+    "source_evidence/annual_count_records.csv": {
+      "sha256": "b03da556e966abf11f2e4a770953a27aba6e83b7a968a8fda964fb6a65205403"
+    },
+    "source_evidence/collector_run.json": {
+      "sha256": "22addd3c12458af6d715b9a1b9cdab5408b537244cc1f9528dece8deb507b974"
+    },
+    "source_evidence/collector_excerpt.txt": {
+      "sha256": "73fa81ebb99e761eb18e9d80244df8edc06008159e2ed311dbddbd19da5014a8"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "primary_url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/7d6e43c0800b2465e4e3cb1012e6820e-Abstract-Conference.html",
+  "publisher_metadata": {
+    "citation_title": [
+      "Convergent Evolution: How Different Language Models Learn Similar Number Representations"
+    ],
+    "citation_author": [
+      "Fu, Deqing",
+      "Zhou, Tianyi",
+      "Belkin, Mikhail",
+      "Sharan, Vatsal",
+      "Jia, Robin"
+    ],
+    "citation_journal_title": [
+      "Conference On Language Models"
+    ],
+    "citation_volume": [
+      "3"
+    ],
+    "citation_pdf_url": [
+      "proceedings.colm.cc/paper_files/paper/2026/file/7d6e43c0800b2465e4e3cb1012e6820e-Paper-Conference.pdf"
+    ],
+    "citation_publication_date": [
+      "2026-10-15"
+    ]
+  },
+  "bibtex_download_available": false,
+  "raw_html_sha256": "f9c029ff7713d68e308db408ffda09df4bcf57412cb619bd7cab3ab90534fce6"
+}

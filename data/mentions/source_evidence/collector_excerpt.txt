@@ -1,0 +1,87 @@
+Evidence excerpt from the surviving collector, not the exact executable recorded for the historical run.
+Full surviving-file SHA-256: 1dc48bc9abb1eb79a96c677dd775029359e106d24729adcbc0f660ff5fef32fe
+
+def normalize_space(text: str | None) -> str:
+    return " ".join((text or "").split())
+
+def normalize_title(text: str | None) -> str:
+    text = unicodedata.normalize("NFKC", normalize_space(text)).casefold()
+    return re.sub(r"[^a-z0-9]+", " ", text).strip()
+
+def openalex_cursor_search(
+    session: requests.Session,
+    *,
+    filter_value: str,
+    select: str,
+) -> tuple[list[dict[str, Any]], int]:
+    endpoint = "https://api.openalex.org/works"
+    cursor = "*"
+    records: list[dict[str, Any]] = []
+    reported_total = 0
+    while cursor:
+        payload = request_json(
+            session,
+            endpoint,
+            params={
+                "filter": filter_value,
+                "select": select,
+                "per-page": 100,
+                "cursor": cursor,
+            },
+            min_delay=0.12,
+        )
+        reported_total = payload.get("meta", {}).get("count", reported_total)
+        records.extend(payload.get("results", []))
+        cursor = payload.get("meta", {}).get("next_cursor")
+    return records, reported_total
+
+def openalex_dedup_key(record: dict[str, Any]) -> str:
+    title_key = normalize_title(record.get("title"))
+    if title_key:
+        return f"title:{title_key}"
+    ids = record.get("external_ids") or {}
+    if ids.get("arxiv"):
+        return f"arxiv:{ids['arxiv']}"
+    if record.get("doi"):
+        return f"doi:{record['doi'].casefold()}"
+    return f"openalex:{record['paper_id']}"
+
+def merge_openalex_duplicates(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    merged: dict[str, dict[str, Any]] = {}
+    for record in records:
+        key = openalex_dedup_key(record)
+        if key not in merged:
+            record["duplicate_openalex_ids"] = [record["paper_id"]]
+            merged[key] = record
+            continue
+        target = merged[key]
+        target["duplicate_openalex_ids"].append(record["paper_id"])
+        years = [y for y in (target.get("year"), record.get("year")) if y]
+        if years:
+            target["year"] = min(years)
+        for query in record.get("candidate_queries", []):
+            if query not in target["candidate_queries"]:
+                target["candidate_queries"].append(query)
+        for lexicon in LEXICONS:
+            for field in ("title", "abstract", "title_or_abstract"):
+                target["hits"][lexicon][field] = (
+                    target["hits"][lexicon][field]
+                    or record["hits"][lexicon][field]
+                )
+    return sorted(
+        merged.values(),
+        key=lambda r: ((r.get("year") or 0), r["title"], r["paper_id"]),
+    )
+
+fulltext_filter = (
+        'fulltext.search:"linear representation hypothesis",'
+        "primary_topic.field.id:17"
+    )
+    fulltext_results, fulltext_total = openalex_cursor_search(
+        session,
+        filter_value=fulltext_filter,
+        select=(
+            "id,doi,display_name,publication_year,publication_date,ids,"
+            "primary_topic,type,content_urls"
+        ),
+    )

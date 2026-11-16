@@ -5,5 +5,6 @@
     "candidate_queries": [
       "\"linear representation hypothesis\""
     ]
-  }
+  },
+  "retrieval_provenance": "retrieval_ledger.json"
 }

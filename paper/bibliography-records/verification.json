@@ -1,0 +1,52 @@
+{
+  "date": "2026-11-16",
+  "records": {
+    "bereska2024mechanistic": {
+      "primary_url": "https://jmlr.org/tmlr/papers/bib/ePUVetPKu6.bib",
+      "source_file": "bereska2024mechanistic.bib",
+      "source_sha256": "9b23a8de100012b276bf9e5baa9d2f7deb0054d90a85c5a60f78f637e2dcb7b5",
+      "citation_entry_sha256": "6a8401872ff3c7ead98e8647d9d5b49e2702af4cada0f104c2928cac0bc44670",
+      "status": "available_publisher_fields_verified",
+      "raw_export": "retrieved"
+    },
+    "marks2024geometry": {
+      "primary_url": "https://proceedings.colm.cc/paper_files/paper/2024/hash/32ebb6b560ee58abbdae834e5f37cb5d-Abstract-Conference.html",
+      "source_file": "marks2024geometry.json",
+      "citation_entry_sha256": "e0d897a0851b41c69413097d83265eece6e7fcc7e1c647f0293ec85a9d1906da",
+      "status": "available_publisher_fields_verified",
+      "raw_export": "not_provided_by_proceedings",
+      "raw_html_sha256": "91246de9b1669149d747f715c68bee7ffac711e562a6d76dd56b9aaaf3e5fa13",
+      "source_sha256": "038ea78e345150adf2c3de9a868bfac553c3c7fb307348c6f746690756181303"
+    },
+    "fu2026convergent": {
+      "primary_url": "https://proceedings.colm.cc/paper_files/paper/2026/hash/7d6e43c0800b2465e4e3cb1012e6820e-Abstract-Conference.html",
+      "source_file": "fu2026convergent.json",
+      "citation_entry_sha256": "8442a4a0ed84f4e139906bba9629eff5287a23ab9970dece6d8f2b11e272a046",
+      "status": "available_publisher_fields_verified",
+      "raw_export": "not_provided_by_proceedings",
+      "raw_html_sha256": "f9c029ff7713d68e308db408ffda09df4bcf57412cb619bd7cab3ab90534fce6",
+      "source_sha256": "163f315c895ed21fd0da7a9b59ea061207db56be332e4f6e13e347b76608a77e",
+      "published_pdf": {
+        "url": "https://proceedings.colm.cc/paper_files/paper/2026/file/7d6e43c0800b2465e4e3cb1012e6820e-Paper-Conference.pdf",
+        "sha256": "44c52d1622e7e2762d27e82715b5fe32ea6efe9fa01689efd44e2c5d2a4b0265",
+        "byline_and_COLM_2026_header_verified": true
+      }
+    },
+    "teamolmo2025olmo2": {
+      "primary_url": "https://proceedings.colm.cc/paper_files/paper/2025/hash/e68f3154ffebe9acddb8047cc197cb71-Abstract-Conference.html",
+      "source_file": "teamolmo2025olmo2.json",
+      "citation_entry_sha256": "e01010ea3ed95f89eba36b619376039e74edb30129d393446fb43ee34e2c2901",
+      "status": "available_publisher_fields_verified",
+      "raw_export": "not_provided_by_proceedings",
+      "raw_html_sha256": "26964b582fe2532839500f43d9129be838bae184bba659b3580b6f86f3cdc428",
+      "source_sha256": "84f3fa52361bc158b66989687014c5d3e3c4530df266655e66361bc848afe41c"
+    }
+  },
+  "limits": [
+    "OpenReview raw exports and fresh OLMo publisher-PDF download encountered access challenges.",
+    "OLMo Team corporate byline verified in the indexed publisher PDF.",
+    "COLM pre-proceedings omit BibTeX downloads and report pending DOI assignment; no DOI or pages were inferred.",
+    "The OLMo proceedings PDF URL returns HTTP 404; its corporate byline was checked in the indexed OpenReview PDF.",
+    "COLM HTML citation_publication_date is 2026-10-15 even for the 2024 and 2025 volumes; citation years follow the conference volume and accepted-paper records."
+  ]
+}

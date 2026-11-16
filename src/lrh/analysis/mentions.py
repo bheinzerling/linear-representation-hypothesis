@@ -9,6 +9,7 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 
+from lrh.analysis.retrieval_provenance import verify as verify_retrieval_provenance
 from lrh.io import require_files, write_json
 
 OCHRE = "#ac7d00"
@@ -169,6 +170,7 @@ def plot_counts(ax: plt.Axes, rows: list[dict[str, str]]) -> None:
 
 def main() -> None:
     args = parse_args()
+    provenance = verify_retrieval_provenance(args.data_dir)
     data_path = args.data_dir / "fulltext_comparison_counts.csv"
     require_files([data_path, args.data_dir / "query_definitions.json"])
     rows = read_rows(data_path)
@@ -205,6 +207,7 @@ def main() -> None:
     write_json(
         args.output_dir / "metrics.json",
         {
+            "retrieval_provenance": provenance,
             "annual_counts": {
                 f"{series_id}:{year}": count for (series_id, year), count in sorted(lookup.items())
             },

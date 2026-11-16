@@ -5,6 +5,12 @@ This directory contains the observations consumed by the CPU numerical runner.
 records input identities and transformations. `../MANIFEST.sha256` covers all
 supplied data files.
 
+The historical Figure 3 activation cache is excluded from the release and its
+checkpoint revision was not recorded. Exact regeneration of that input is
+unavailable. The released predictions and observations reproduce the reported
+CPU results; [the model guide](../../docs/model-experiments.md#historical-figure-3-activations)
+describes the distinction between those calculations and new model-forward replications.
+
 | Files | Contents |
 | --- | --- |
 | `probe_outputs.csv.gz`, `probe_metrics.csv`, `reproduced_test_predictions.csv` | Supervised outputs, held-out summaries, and the available per-value predictions |
