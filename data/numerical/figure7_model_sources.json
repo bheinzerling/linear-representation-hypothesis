@@ -12,11 +12,15 @@
     },
     "scripts/run_figure7_matched_probes.py": {
       "sha256": "e0f7a57dd10ae89d3becf80553a709e9581b7480f8e595266a97fe64c85236e9",
-      "verification": "Original input manifest"
+      "verification": "Original input manifest",
+      "reproduction_sha256": "ef99b602ae5c3572beff970d6da32871c5db1c797b91193f231b81b9dcd5d3ee",
+      "reproduction_change": "2026-11-16: make the separate historical activation comparison optional; preserve fresh matched fitting and intervention settings."
     },
     "scripts/prepare_figure7_matched_inputs.py": {
       "sha256": "8e811d34130c6106251ee7d64d7b4b0938bf80a7098fd109d158943ed9d480b4",
-      "verification": "Original input manifest"
+      "verification": "Original input manifest",
+      "reproduction_sha256": "aead14e62945a1335299d060aef449f5a6a24955d3c8017b00042ab460b9c859",
+      "reproduction_change": "2026-11-16: make the separate historical activation comparison optional; preserve fresh matched fitting and intervention settings."
     },
     "scripts/export_figure7_individual_paper_data.py": {
       "sha256": "7a40312013f618b4e58aee2c2b54930839de9282aed8e9ec03850de540a0beb2",
@@ -49,6 +53,10 @@
     "src/source_value_steering.py": {
       "sha256": "4ebd7ec51c12efd713d145f94b304466284658faefcab5d643dc96529f238ce8",
       "verification": "Original input manifest; existing snapshot unchanged"
+    },
+    "src/figure7_historical_comparison.py": {
+      "sha256": "639ce0dcc64cd39a24bce7b055dee21bd78a98f86e8643058b56d6af01997002",
+      "verification": "Added for portable reproduction on 2026-11-16; not part of the original execution."
     }
   },
   "added_files": [
@@ -57,7 +65,13 @@
     "scripts/run_figure7_matched_probes.py",
     "scripts/prepare_figure7_matched_inputs.py",
     "scripts/export_figure7_individual_paper_data.py",
-    "scripts/validate_figure7_matched_results.py"
+    "scripts/validate_figure7_matched_results.py",
+    "src/figure7_historical_comparison.py"
   ],
-  "input_manifest_sha256": "d8603f6d94a3ab104f48874986915f5c9902f9f87810468ab6fe442a5951dbd7"
+  "input_manifest_sha256": "d8603f6d94a3ab104f48874986915f5c9902f9f87810468ab6fe442a5951dbd7",
+  "reproduction_update": {
+    "date": "2026-11-16",
+    "original_execution": "Original sha256 fields and input_manifest_sha256 are retained unchanged. Revised scripts use reproduction_sha256; the new optional-comparison helper has no original execution hash.",
+    "scientific_changes": "None: prompts, value splits, target replacements, checkpoint revision, activation site, probe fitting, and intervention construction are unchanged."
+  }
 }

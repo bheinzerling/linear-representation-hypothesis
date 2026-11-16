@@ -15,7 +15,7 @@ Obtain checkpoints from their providers under the relevant access terms.
 
 ## Inputs and configurations
 
-The [paper-2026-11-15 release](https://github.com/bheinzerling/linear-representation-hypothesis/releases/tag/paper-2026-11-15)
+The [paper-2026-11-16 release](https://github.com/bheinzerling/linear-representation-hypothesis/releases/tag/paper-2026-11-16)
 provides `model-inputs.tar.gz`, containing complete reusable prompt datasets,
 fitted tensors, and intermediate results. Its contents and checksums are in
 `data/manifests/model-inputs.json`. Extract it from the repository root:
@@ -30,6 +30,10 @@ under the two experiment directories, and refuses to overwrite differing
 existing files. These are full inputs; no tensor axes or prompt tables are
 truncated. Checkpoints and large activation caches are obtained or generated
 separately.
+
+The input downloader retains the checksum-pinned 15 November asset URL; the
+16 November release supplies the identical input archive. The corrected
+reproduction sources and manuscript are in the 16 November source archive.
 
 `data/numerical/reported_config.json` records the paper's comparison conditions.
 Preserve checkpoint revisions, numerical precision, prompt partitions, and
@@ -158,16 +162,24 @@ The prediction-corrected edit subtracts the current probe prediction from the
 target code before applying the probe pseudoinverse. Post-edit probe predictions
 are checked after application in FP16.
 
-From `experiments/numerical/`, prepare and execute the matched comparison:
+First install the complete prompt and replacement-panel inputs with
+`uv run python scripts/prepare_model_inputs.py --download` from the repository
+root. From `experiments/numerical/`, prepare and execute the matched comparison:
 
 ```bash
 uv run python scripts/prepare_figure7_matched_inputs.py --model-path /path/to/checkpoint --output out/figure7_inputs
 CUBLAS_WORKSPACE_CONFIG=:4096:8 uv run python scripts/run_figure7_matched_probes.py --inputs out/figure7_inputs --model-path /path/to/checkpoint --output out/figure7_run
 ```
 
-The preparation script identifies its canonical prompt, replacement-panel, and
-activation-cache inputs. The release includes its fitting, validation and export
-sources. The complete CPU observations are in
+The matched run collects fresh activations and requires no historical
+activation cache. For the separate historical comparison, add
+`--historical-repr-npz /path/to/source_token_representations.npz` to the
+preparation command. The manifest binds that archive's hash and derived
+centroids; the comparison leaves probe fitting and interventions unchanged.
+`data/numerical/figure7_model_sources.json` retains original execution hashes
+and records revised reproduction hashes separately.
+
+The release includes fitting, validation and export sources. The complete CPU observations are in
 `data/figures/numerical_sufficiency_atlas/individual_prompt_fits/`.
 The root numerical workflow verifies all eight conditions and post-edit probe
 targets and writes the prediction and intervention diagnostics to `out/reproduction/`.

@@ -59,3 +59,16 @@ uv run python scripts/build_release.py
 The ZIP includes code, compact evidence, manuscript sources, and figure assets.
 Generated outputs, environments, and accelerator input bundles are kept
 separately in `artifacts/`.
+
+After an authorized publication, verify the actual public branch, tag, and
+downloaded release assets:
+
+```bash
+uv run python scripts/verify_publication.py --tag paper-2026-11-16
+```
+
+The verifier requires a clean checkout, the default branch and release tag to
+match the local commit, checks that the tag is the latest published release, downloads the
+assets and verifies their checksums, and compares every archived source file
+with that commit. It writes a receipt under `out/publication-verification/`.
+A prepared local archive is not evidence that a repair has been published.

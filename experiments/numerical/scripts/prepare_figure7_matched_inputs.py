@@ -14,7 +14,8 @@ import numpy as np
 import pandas as pd
 from transformers import AutoTokenizer
 
-from src.figure7_matched_probes import content_sha256, file_sha256, replace_source, validate_partitions, value_centroids
+from src.figure7_historical_comparison import prepare_historical_comparison
+from src.figure7_matched_probes import content_sha256, file_sha256, replace_source, validate_partitions
 from src.source_value_rhs_addition_dataset import build_rhs_addition_frame
 from src.source_value_steering import sample_stratified_target_values
 from src.utils import atomic_write_json, atomic_write_jsonl
@@ -53,7 +54,11 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--model-path", type=Path, required=True)
     parser.add_argument("--output", type=Path, default=ROOT / "out/figure7-matched-20261015/inputs")
+    parser.add_argument("--historical-repr-npz", type=Path,
+                        help="Optional historical activation archive for a separate comparison; omitted by default.")
     args = parser.parse_args()
+    if args.historical_repr_npz is not None and not args.historical_repr_npz.is_file():
+        raise FileNotFoundError(args.historical_repr_npz)
     if (args.output / "manifest.json").exists():
         raise ValueError("Inputs are frozen; select a fresh directory for a revised protocol.")
     args.output.mkdir(parents=True, exist_ok=True)
@@ -106,17 +111,19 @@ def main():
         assert cases["case_id"].nunique() == 2000 and cases["shifted_target"].between(0, 999).all()
         atomic_write_jsonl(args.output / f"cases_{bank}.jsonl", cases.to_dict("records"))
         counts[bank] = {"source_prompts": 100, "interventions": len(cases)}
-    archive = ROOT / "out/runs/source_value_rhs_addition_dataset_llama_3_1_8b_layer10__2026_06_15/representations/llama_3_1_8b/layer_10/source_token_representations.npz"
-    with np.load(archive) as old:
-        mask = old["style_ids"] == "addition_formula_rhs_source"
-        np.save(args.output / "archived_centroids.npy", value_centroids(old["activations"][mask], old["source_values"][mask]))
+    historical = prepare_historical_comparison(args.historical_repr_npz, args.output)
+    historical_sources = {str(legacy_path.relative_to(ROOT)): file_sha256(legacy_path)}
+    if historical["enabled"]:
+        historical_sources[str(args.historical_repr_npz.resolve())] = historical["source_sha256"]
     code_files = [p for p in sorted((ROOT / "src").glob("*.py"))] + [Path(__file__), ROOT / "scripts/run_figure7_matched_probes.py"]
-    manifest = {"version": 1, "seed": 1729, "split": split, "counts": counts,
+    manifest = {"version": 2, "seed": 1729, "split": split, "counts": counts,
                 "rhs_rows": len(rhs), "canonical_rows": len(canonical), "revision": "d04e592bb4f6aa9cfee91e2e20afa771667e1d4b",
-                "files": {p.name: file_sha256(p) for p in sorted(args.output.iterdir()) if p.is_file()},
+                "files": {p.name: file_sha256(p) for p in sorted(args.output.iterdir())
+                          if p.is_file() and (historical["enabled"] or p.name != "archived_centroids.npy")},
                 "model_files": {str(p.relative_to(args.model_path)): file_sha256(p) for p in sorted(args.model_path.rglob('*')) if p.is_file()},
                 "code_files": {str(p.relative_to(ROOT)): file_sha256(p) for p in code_files},
-                "historical_sources": {str(legacy_path.relative_to(ROOT)): file_sha256(legacy_path), str(archive.relative_to(ROOT)): file_sha256(archive)}}
+                "historical_sources": historical_sources,
+                "historical_activation_comparison": historical}
     atomic_write_json(args.output / "manifest.json", manifest)
     print(json.dumps({"status": "passed", "rhs_rows": len(rhs), "canonical_rows": len(canonical), "counts": counts,
                       "manifest_sha256": file_sha256(args.output / "manifest.json")}, indent=2))

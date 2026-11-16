@@ -360,7 +360,7 @@ The transfer gap shows that decodability within a prompt variant does not by its
 \subsection{Structural Correspondence}
 
 Structural correspondence is tested by checking whether activation-space geometry or transformations preserve target relations.
-For hierarchical concepts, \citet{park2025geometry} find that successive refinements such as animal\,$\to$\,mammal\,$\to$\,dog correspond to approximately orthogonal vector differences (Figure~\ref{fig:robustness-invariance-structure}c, top).
+For hierarchical concepts, \citet{park2025geometry} find that, under a suitable inner product, successive refinements such as animal\,$\to$\,mammal\,$\to$\,dog correspond to approximately orthogonal vector differences (Figure~\ref{fig:robustness-invariance-structure}c, top).
 \citet{hernandez2024linearity} fit relation-specific linear maps from subject representations to states predicting related objects, such as a musician's instrument (Figure~\ref{fig:robustness-invariance-structure}c, bottom).
 
 However, \citet{hernandez2024linearity} find that these maps perform poorly for some relations even when the model predicts correctly.
@@ -928,7 +928,7 @@ Outlines mark probes evaluated in their training variant, providing a reference 
 Figures~\ref{fig:prompt-style-transfer}--\ref{fig:prompt-transfer-ridge} report context averaging for circular regression, scalar PLS, and scalar ridge on the same six-model, eleven-layer panel.
 For each integer and prompt variant, we compare one deterministic context with the mean activation over all available contexts.
 To compare these aggregation conditions at fixed complexity, we choose the tuning quantity once from single-context within-variant development performance and hold it fixed; both conditions share a value-disjoint partition of 800 training, 100 development, and 100 test integers.
-With these choices fixed, context averaging reduces mean within-variant held-out MAE from 14.1 to 9.6, but cross-variant mean MAE increases from 49.9 to 50.6, leaving the transfer gap intact.
+With these choices fixed, context averaging reduces mean within-variant held-out MAE from 14.1 to 9.5, but cross-variant mean MAE increases from 49.9 to 50.6, leaving the transfer gap intact.
 
 \begin{figure*}[t]
 \centering

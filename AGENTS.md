@@ -29,3 +29,11 @@ Python's `ZipFile.extractall` does not restore those modes.
 
 This repository is public. Follow the user's publication instructions before
 committing, pushing, tagging, or uploading release artifacts.
+
+For an authorized public release, distinguish prepared local repairs from
+published repairs. Do not mark a public-artifact finding resolved until the
+default branch and new release contain the fix. Run
+`uv run python scripts/verify_publication.py --tag <tag>` after publication;
+retain its receipt, release URL, commit, and downloaded asset checksums.
+If publication is pending, report that state explicitly in the finding and
+completion summary.

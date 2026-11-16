@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import ast
 import csv
+import json
 import re
 from pathlib import Path
 
@@ -36,6 +37,19 @@ def verify_manifest(root: Path = ROOT) -> int:
     if listed != actual:
         raise ValueError(f"Unlisted or stale data paths: {sorted(listed ^ actual)}")
     return checked
+
+
+def verify_figure7_sources(root: Path = ROOT) -> int:
+    record = json.loads((root / "data/numerical/figure7_model_sources.json").read_text())
+    source_root = (root / "experiments/numerical").resolve()
+    for name, entry in record["files"].items():
+        path = (source_root / name).resolve()
+        if not path.is_relative_to(source_root) or not path.is_file():
+            raise ValueError(f"Missing or invalid Figure 7 source: {name}")
+        expected = entry.get("reproduction_sha256", entry["sha256"])
+        if sha256(path) != expected:
+            raise ValueError(f"Figure 7 reproduction source hash mismatch: {name}")
+    return len(record["files"])
 
 
 def verify_model_imports(root: Path = ROOT) -> int:
@@ -105,6 +119,7 @@ def verify_paper_tables(root: Path = ROOT) -> int:
 def main() -> None:
     inputs = verify_manifest()
     sources = verify_model_imports()
+    figure7_sources = verify_figure7_sources()
     cells = verify_paper_tables()
     human_audit = verify_human_audit(ROOT / "data/literature")
     verify_manuscript((ROOT / "paper/paper.tex").read_text(), human_audit)
@@ -118,7 +133,8 @@ def main() -> None:
     if symlinks:
         raise ValueError(f"Repository content must use regular files: {symlinks}")
     print(
-        f"Verified {inputs} frozen inputs, {sources} model-source files, and {cells} manuscript table cells."
+        f"Verified {inputs} frozen inputs, {sources} model-source files, "
+        f"{figure7_sources} Figure 7 source hashes, and {cells} manuscript table cells."
     )
 
 

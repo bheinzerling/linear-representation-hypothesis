@@ -20,6 +20,7 @@ import pandas as pd
 import torch
 
 from src.activation_steering import get_model_layers, hidden_states_hook
+from src.figure7_historical_comparison import historical_activation_comparison
 from src.figure7_matched_probes import (
     content_sha256, evaluate_decoding, file_sha256, requested_edit,
     summarize_behavior, validate_partitions, value_centroids,
@@ -200,12 +201,8 @@ def main():
     canon_x = collect_states(model, tokenizer, canonical, args.batch_size, path=args.output / "canonical_activations.npy")
     centroids = value_centroids(rhs_x, rhs["source_value"].to_numpy())
     np.save(args.output / "centroids.npy", centroids)
-    old_centroids = np.load(args.inputs / "archived_centroids.npy")
-    atomic_write_json(args.output / "historical_activation_comparison.json", {
-        "historical_revision_recorded": False, "new_revision": REVISION,
-        "relative_l2": float(np.linalg.norm(centroids - old_centroids) / np.linalg.norm(old_centroids)),
-        "max_absolute_difference": float(np.max(np.abs(centroids - old_centroids))),
-        "note": "Historical revision and runtime were not fully recorded; the fresh matched comparison is primary."})
+    atomic_write_json(args.output / "historical_activation_comparison.json",
+                      historical_activation_comparison(args.inputs, manifest, centroids, REVISION))
     train_mask = canonical["partition"].eq("train").to_numpy()
     fits = {}
     decoding_summaries, decoding_details, code_parts, fit_records = [], [], [], []

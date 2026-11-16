@@ -21,6 +21,23 @@ def test_repository_inputs_and_model_imports():
     assert VERIFY["verify_manifest"]() > 100
     assert VERIFY["verify_model_imports"]() > 50
     assert VERIFY["verify_paper_tables"]() == 400
+    assert VERIFY["verify_figure7_sources"]() == 13
+
+
+def test_figure7_reproduction_hash_is_checked_without_rewriting_execution_hash(tmp_path):
+    metadata = tmp_path / "data/numerical/figure7_model_sources.json"
+    metadata.parent.mkdir(parents=True)
+    source = tmp_path / "experiments/numerical/scripts/prepare_figure7_matched_inputs.py"
+    source.parent.mkdir(parents=True)
+    source.write_text("# revised reproduction source\n")
+    original = "8e811d34130c6106251ee7d64d7b4b0938bf80a7098fd109d158943ed9d480b4"
+    entry = {"sha256": original, "reproduction_sha256": sha256(source)}
+    write_json(metadata, {"files": {"scripts/prepare_figure7_matched_inputs.py": entry}})
+    assert VERIFY["verify_figure7_sources"](tmp_path) == 1
+    assert json.loads(metadata.read_text())["files"]["scripts/prepare_figure7_matched_inputs.py"]["sha256"] == original
+    source.write_text("# unrecorded change\n")
+    with pytest.raises(ValueError, match="source hash mismatch"):
+        VERIFY["verify_figure7_sources"](tmp_path)
 
 
 def test_paper_table_check_detects_a_changed_rating(tmp_path):

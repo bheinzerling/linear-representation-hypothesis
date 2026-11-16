@@ -1142,8 +1142,8 @@
     },
     "figure7_model_sources.json": {
       "source": "Pinned numerical source snapshot and original Figure 7 input manifest",
-      "sha256": "c02ab78ca91a322c47e55a46287c44448d9fdf19c3c36828c4f8184ce92f97ee",
-      "transformation": "Source hashes checked against the original run; exporter checked against the observation manifest."
+      "sha256": "fd9ffd2a635ff739a2523f8e950a17e7eaa0f78df2e8903e75c0f95b52d240df",
+      "transformation": "Original execution hashes and observation-manifest hash retained; revised reproduction scripts separately hashed after making historical activation comparison optional on 2026-11-16."
     },
     "reproduced_test_predictions.csv": {
       "sha256": "3511e14eaa284793d3a29229bdf4f3791cc49a91ea03af74d98216171bc91cb0",
@@ -1172,5 +1172,9 @@
       "linear_label_difference": 31,
       "circular_reg_label_difference": 704
     }
+  },
+  "figure7_reproduction_update": {
+    "date": "2026-11-16",
+    "change": "Historical activation comparison is optional; all frozen observations and original execution hashes remain unchanged."
   }
 }
