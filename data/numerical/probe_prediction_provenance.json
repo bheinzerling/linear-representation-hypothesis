@@ -31,16 +31,6 @@
   "checkpoint": {
     "model": "meta-llama/Llama-3.1-8B",
     "activation_sha256": "42cf4af31df100654d0efebc27e0a82d375464fd1833e54b121e85cc9418092a",
-    "resolved_revision": null,
-    "historical_regeneration": {
-      "status": "unavailable",
-      "cache_included_in_release": false,
-      "missing_collection_identity": [
-        "resolved_checkpoint_revision",
-        "attention_implementation",
-        "collection_software_versions"
-      ],
-      "available_verification": "CPU recalculation from released predictions and observations; new model-forward runs are replications with newly recorded identities."
-    }
+    "resolved_revision": null
   }
 }

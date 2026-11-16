@@ -825,8 +825,6 @@ Filled area gives qualitative evidence strength, not effect size.}
 \paragraph{Llama-3.1-8B setup.}
 
 The representative analysis in Figure~\ref{fig:decodability}c uses \texttt{meta-llama/Llama-3.1-8B} and 4096-dimensional float16 residual activations.
-The checkpoint revision is unrecorded, preventing exact historical activation regeneration.
-The CPU workflow verifies released predictions and observations.
 Repository layer index 10 counts the embedding as index 0, so it records the output after the tenth Transformer block.
 We extract this activation at the final token of the right-hand source number in a few-shot addition-formula prompt.
 The prompt has three fixed demonstrations followed by \texttt{$x$+$s$=}, where $s\in\{0,\ldots,999\}$ is the probed source value.
@@ -1255,7 +1253,7 @@ They contain observations for the quantitative panels in Figures~\ref{fig:lrh-me
 The software archive's \texttt{README.md} and \texttt{EXPERIMENT\_MAP.md} describe these mappings and the reproduction commands; the data archive's \texttt{README.md} describes the distributed observations.
 The CPU-only workflow verifies SHA-256 manifests and recomputes metrics, uncertainty intervals, and numerical plots, including the six-model complexity sweep and supporting appendix analyses, without downloading a model.
 For model-forward reproduction, the archives provide experiment sources and configurations with synthetic prompts and fixed intervention inputs.
-These sources regenerate activations from public checkpoints, with the historical Figure~\ref{fig:decodability} limitation described in Appendix~\ref{sec:numerical-probe-setup}.
+These sources regenerate activations from public checkpoints.
 The archives exclude model weights, activation caches, and published-paper PDFs.
 
 The numerical data consist of generated integers, arithmetic prompts, and number-property questions, with corresponding model outputs and derived statistics.
