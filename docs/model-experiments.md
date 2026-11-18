@@ -15,7 +15,7 @@ Obtain checkpoints from their providers under the relevant access terms.
 
 ## Inputs and configurations
 
-The [paper-2026-11-16-audit-correction release](https://github.com/bheinzerling/linear-representation-hypothesis/releases/tag/paper-2026-11-16-audit-correction)
+The [paper-2026-11-18-parity-command-fix release](https://github.com/bheinzerling/linear-representation-hypothesis/releases/tag/paper-2026-11-18-parity-command-fix)
 provides `model-inputs.tar.gz`, containing complete reusable prompt datasets,
 fitted tensors, and intermediate results. Its contents and checksums are in
 `data/manifests/model-inputs.json`. Extract it from the repository root:
@@ -32,7 +32,7 @@ truncated. Checkpoints and large activation caches are obtained or generated
 separately.
 
 The input downloader retains the checksum-pinned 15 November asset URL; the
-audit-correction release supplies the identical input archive. The corrected
+current release supplies the identical input archive. The corrected
 reproduction sources, retrieval evidence, and manuscript are in its source archive.
 
 `data/numerical/reported_config.json` records the paper's comparison conditions.
@@ -127,6 +127,7 @@ From `experiments/properties/`, replay the enumeration condition with:
 ```bash
 uv run python scripts/run_number_property_list_steering.py \
   --model Qwen/Qwen3.6-27B \
+  --property parity \
   --behavior-run-dir out/number_property_list_filter/qwen3_6_27b_parity_corrected_v1 \
   --direction-run-dir out/digit_parity_steering_cross_model/full_v1/qwen3_6_27b \
   --output-dir out/parity_enumeration_replay --no-local-files-only

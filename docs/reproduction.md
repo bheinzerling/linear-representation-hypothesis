@@ -64,7 +64,7 @@ After an authorized publication, verify the actual public branch, tag, and
 downloaded release assets:
 
 ```bash
-uv run python scripts/verify_publication.py --tag paper-2026-11-16-audit-correction
+uv run python scripts/verify_publication.py --tag paper-2026-11-18-parity-command-fix
 ```
 
 The verifier requires a clean checkout, the default branch and release tag to
